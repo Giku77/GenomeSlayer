@@ -8,6 +8,8 @@ public class PlayerInput : MonoBehaviour
     public static readonly string AttackButton = "Fire1";
     public static readonly string reloadButton = "Reload";
 
+    public VitualJoyStick moveJoystick;
+
 
     public float MoveX { get; private set; }
     public float MoveZ { get; private set; }
@@ -22,9 +24,15 @@ public class PlayerInput : MonoBehaviour
     {
         MoveX = Input.GetAxisRaw(verticalAxis);
         MoveZ = Input.GetAxisRaw(horizontalAxis);
-        //Roatate = Input.GetAxis(horizontalAxis);
+//#if UNITY_ANDROID
+//        if (moveJoystick != null)
+//        {
+//            MoveX = moveJoystick.Input.y;
+//            MoveZ = moveJoystick.Input.x;
+//        }
+//#endif
 
-        Attack = Input.GetButton(AttackButton);
+        Attack = Input.GetButtonDown(AttackButton);
         Jump = Input.GetButtonDown("Jump");
 
         //if (Input.GetKeyDown(KeyCode.Escape))
