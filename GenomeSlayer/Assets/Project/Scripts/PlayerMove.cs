@@ -3,10 +3,14 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private static readonly int MoveHash = Animator.StringToHash("Move");
+    private static readonly int JumpHash = Animator.StringToHash("Jump");
+    private static readonly int GroundHash = Animator.StringToHash("IsGround");
     private static readonly int IdleHash = Animator.StringToHash("Idle");
+    private static readonly int AttackHash = Animator.StringToHash("Attack");
 
     public float moveSpeed = 5f;
     public float rotationSpeed = 180f;
+    public float jumpForce = 5f;
 
     private AudioSource audioSource;
 
@@ -16,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerInput playerInput;
     private Rigidbody rb;
     private Animator animator;
+    private bool isJumping = false;
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -28,7 +33,7 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //È¸Àü
+        //íšŒì „
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         Plane plane = new Plane(Vector3.up, new Vector3(0, transform.position.y, 0));
@@ -54,7 +59,7 @@ public class PlayerMove : MonoBehaviour
         //    transform.LookAt(target);
         //}
 
-        //ÀÌµ¿
+        //ì´ë™
         Vector3 worldDir = new Vector3(playerInput.MoveZ, 0f, playerInput.MoveX);  
         if (worldDir.sqrMagnitude > 1f) worldDir.Normalize();
 
@@ -62,11 +67,28 @@ public class PlayerMove : MonoBehaviour
         //rb.MovePosition(rb.position + transform.forward * playerInput.MoveX * moveSpeed * Time.fixedDeltaTime);
         //rb.MovePosition(transform.position + transform.forward * playerInput.Move * moveSpeed * Time.deltaTime);
 
-        //¾Ö´Ï¸ÞÀÌ¼Ç ¼³Á¤
+
+        //ì í”„
+        isJumping = rb.linearVelocity.y > 0.1f || rb.linearVelocity.y < -0.1f;
+
+        if (playerInput.Jump /*&& !playerHealth.IsDead*/ && !isJumping)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+            //if (audioSource != null && audioSource.clip != null)
+            //{
+            //    audioSource.Play();
+            //}
+        }
+       
+
+        //ì• ë‹ˆë©”ì´ì…˜ ì„¤ì •
         if (animator != null)
         {
             float move = new Vector3(playerInput.MoveX, 0f, playerInput.MoveZ).magnitude;
             animator.SetFloat(MoveHash, move);
+            animator.SetBool(JumpHash, playerInput.Jump /*&& !playerHealth.IsDead*/);
+            animator.SetBool(GroundHash, !isJumping);
+            animator.SetBool(AttackHash, playerInput.Attack /*&& !playerHealth.IsDead*/);
         }
     }
 }
