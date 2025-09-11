@@ -22,8 +22,8 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        MoveX = Input.GetAxisRaw(verticalAxis);
-        MoveZ = Input.GetAxisRaw(horizontalAxis);
+        MoveX = Input.GetAxisRaw(horizontalAxis);
+        MoveZ = Input.GetAxisRaw(verticalAxis);
 //#if UNITY_ANDROID
 //        if (moveJoystick != null)
 //        {

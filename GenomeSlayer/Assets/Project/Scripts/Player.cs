@@ -22,7 +22,7 @@ public class Player : Entity
     public override void OnDamage(int damage)
     {
         base.OnDamage(damage);
-        Debug.Log($"Player OnDamage {damage}, health {health}");
+        //Debug.Log($"Player OnDamage {damage}, health {health}");
     }
 
     public void Attack()
@@ -44,13 +44,13 @@ public class Player : Entity
         //capsuleCollider.enabled = false;
         animator.SetTrigger(hashDie);
         StartCoroutine(Restart());
-        Destroy(gameObject, 5f);
+        //Destroy(gameObject, 5f);
     }
 
 
     private IEnumerator Restart()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
