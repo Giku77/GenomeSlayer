@@ -5,14 +5,15 @@ public class PlayerInput : MonoBehaviour
 {
     public static readonly string verticalAxis = "Vertical";
     public static readonly string horizontalAxis = "Horizontal";
-    public static readonly string fireButton = "Fire1";
+    public static readonly string AttackButton = "Fire1";
     public static readonly string reloadButton = "Reload";
 
 
     public float MoveX { get; private set; }
     public float MoveZ { get; private set; }
     public float Roatate { get; private set; }
-    public bool Fire { get; private set; }
+    public bool Attack { get; private set; }
+    public bool Jump { get; private set; }
 
     //public GameObject PauseUI;
     //public bool Reload { get; private set; }
@@ -23,7 +24,8 @@ public class PlayerInput : MonoBehaviour
         MoveZ = Input.GetAxisRaw(horizontalAxis);
         //Roatate = Input.GetAxis(horizontalAxis);
 
-        Fire = Input.GetButton(fireButton);
+        Attack = Input.GetButton(AttackButton);
+        Jump = Input.GetButtonDown("Jump");
 
         //if (Input.GetKeyDown(KeyCode.Escape))
         //{
