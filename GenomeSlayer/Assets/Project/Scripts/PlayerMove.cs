@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class PlayerMove : MonoBehaviour
     public float rotationSpeed = 180f;
     public float jumpForce = 5f;
 
+    public Hitbox hitbox;
+
 
 
     private AudioSource audioSource;
@@ -23,7 +27,25 @@ public class PlayerMove : MonoBehaviour
     private Player player;
     private Rigidbody rb;
     private Animator animator;
-    private bool isJumping = false;
+    private CapsuleCollider cap;
+    //private bool isJumping = false;
+
+    private int groundMask = ~0;
+    private float groundedSkin = 0.05f; 
+    private bool IsGrounded()
+    {
+        Vector3 center = transform.TransformPoint(cap.center);
+        float radius = Mathf.Max(0.01f, cap.radius * 0.95f);
+
+        Vector3 up = transform.up;
+        float half = Mathf.Max(0f, (cap.height * 0.5f) - radius);
+        Vector3 p1 = center + up * (half - groundedSkin);
+        Vector3 p2 = center - up * (half - groundedSkin);
+
+
+        return Physics.CheckCapsule(p1, p2, radius, groundMask, QueryTriggerInteraction.Ignore);
+    }
+
     private void Awake()
     {
         player = GetComponent<Player>();
@@ -33,6 +55,7 @@ public class PlayerMove : MonoBehaviour
         //playerHealth = GetComponent<PlayerHealth>();
         //gun = GetComponentInChildren<Gun>();
         audioSource = GetComponent<AudioSource>();
+        cap = GetComponent<CapsuleCollider>();
     }
 
     private void FixedUpdate()
@@ -47,10 +70,11 @@ public class PlayerMove : MonoBehaviour
             Vector3 hitPoint = ray.GetPoint(enter);
             Vector3 dir = hitPoint - transform.position;
             dir.y = 0f;
-            if (dir.sqrMagnitude < 0.2f * 0.2f) return;
-
-            Quaternion targetRot = Quaternion.LookRotation(dir);
-            rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, 720f * Time.fixedDeltaTime));
+            if (dir.sqrMagnitude >= 0.04f) 
+            {
+                Quaternion targetRot = Quaternion.LookRotation(dir);
+                rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, 720f * Time.fixedDeltaTime));
+            }
         }
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //RaycastHit hit;
@@ -64,22 +88,36 @@ public class PlayerMove : MonoBehaviour
         //}
 
         //이동
-        Vector3 worldDir = new Vector3(playerInput.MoveZ, 0f, playerInput.MoveX);  
-        if (worldDir.sqrMagnitude > 1f) worldDir.Normalize();
+        Vector3 camFwd = Camera.main.transform.forward;
+        Vector3 camRight = Camera.main.transform.right;
 
-        if(animator.isActiveAndEnabled && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-        {
-            worldDir = Vector3.zero;
-        }
-        rb.MovePosition(rb.position + -worldDir * moveSpeed * Time.fixedDeltaTime);
-        //rb.MovePosition(rb.position + transform.forward * playerInput.MoveX * moveSpeed * Time.fixedDeltaTime);
-        //rb.MovePosition(transform.position + transform.forward * playerInput.Move * moveSpeed * Time.deltaTime);
+        camFwd.y = 0f; camRight.y = 0f;
+        camFwd.Normalize(); camRight.Normalize();
+
+
+        Vector3 move = camRight * playerInput.MoveX + camFwd * playerInput.MoveZ;
+        if (move.sqrMagnitude > 1f) move.Normalize();
+
+        //bool grounded = IsGrounded(); 
+        bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
+        float speedMul = isAttacking ? 0.7f : 1f;
+
+        rb.MovePosition(rb.position + move * (moveSpeed * speedMul) * Time.fixedDeltaTime);
+        //Vector3 worldDir = new Vector3(playerInput.MoveZ, 0f, playerInput.MoveX);  
+        //if (worldDir.sqrMagnitude > 1f) worldDir.Normalize();
+
+        //if(animator.isActiveAndEnabled && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        //{
+        //    worldDir = Vector3.zero;
+        //}
+        //rb.MovePosition(rb.position + worldDir * moveSpeed * Time.fixedDeltaTime);
+
 
 
         //점프
-        isJumping = rb.linearVelocity.y > 0.1f || rb.linearVelocity.y < -0.1f;
+        //isJumping = rb.linearVelocity.y > 0.1f || rb.linearVelocity.y < -0.1f;
 
-        if (playerInput.Jump /*&& !playerHealth.IsDead*/ && !isJumping)
+        if (playerInput.Jump /*&& !playerHealth.IsDead*/ && IsGrounded())
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
             //if (audioSource != null && audioSource.clip != null)
@@ -88,21 +126,31 @@ public class PlayerMove : MonoBehaviour
             //}
         }
 
-        if (playerInput.Attack /*&& !playerHealth.IsDead*/)
+        if (playerInput.Attack && !player.isDead && animator != null)
         {
-            Debug.Log("Player Attack");
-            player.Attack();
+            StartCoroutine(HitboxPulse(0.12f));
+            animator.SetTrigger(AttackHash);
+            //Debug.Log("Player Attack");
+            //player.Attack();
         }
+
 
 
         //애니메이션 설정
         if (animator != null)
         {
-            float move = new Vector3(playerInput.MoveX, 0f, playerInput.MoveZ).magnitude;
-            animator.SetFloat(MoveHash, move);
-            animator.SetBool(JumpHash, playerInput.Jump /*&& !playerHealth.IsDead*/);
-            animator.SetBool(GroundHash, !isJumping);
-            animator.SetBool(AttackHash, playerInput.Attack /*&& !playerHealth.IsDead*/);
+            float moveV = new Vector3(playerInput.MoveX, 0f, playerInput.MoveZ).magnitude;
+            animator.SetFloat(MoveHash, moveV);
+            animator.SetBool(JumpHash, playerInput.Jump && !player.isDead);
+            animator.SetBool(GroundHash, IsGrounded());
+            //animator.SetBool(AttackHash, playerInput.Attack && !player.isDead);
         }
+    }
+
+    private IEnumerator HitboxPulse(float t)
+    {
+        hitbox.Open();
+        yield return new WaitForSeconds(t);
+        hitbox.Close();
     }
 }
