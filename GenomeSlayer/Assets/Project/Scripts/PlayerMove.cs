@@ -12,17 +12,21 @@ public class PlayerMove : MonoBehaviour
     public float rotationSpeed = 180f;
     public float jumpForce = 5f;
 
+
+
     private AudioSource audioSource;
 
     //private Gun gun;
     //private PlayerHealth playerHealth;
 
     private PlayerInput playerInput;
+    private Player player;
     private Rigidbody rb;
     private Animator animator;
     private bool isJumping = false;
     private void Awake()
     {
+        player = GetComponent<Player>();
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -63,6 +67,10 @@ public class PlayerMove : MonoBehaviour
         Vector3 worldDir = new Vector3(playerInput.MoveZ, 0f, playerInput.MoveX);  
         if (worldDir.sqrMagnitude > 1f) worldDir.Normalize();
 
+        if(animator.isActiveAndEnabled && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            worldDir = Vector3.zero;
+        }
         rb.MovePosition(rb.position + -worldDir * moveSpeed * Time.fixedDeltaTime);
         //rb.MovePosition(rb.position + transform.forward * playerInput.MoveX * moveSpeed * Time.fixedDeltaTime);
         //rb.MovePosition(transform.position + transform.forward * playerInput.Move * moveSpeed * Time.deltaTime);
@@ -79,7 +87,13 @@ public class PlayerMove : MonoBehaviour
             //    audioSource.Play();
             //}
         }
-       
+
+        if (playerInput.Attack /*&& !playerHealth.IsDead*/)
+        {
+            Debug.Log("Player Attack");
+            player.Attack();
+        }
+
 
         //애니메이션 설정
         if (animator != null)
