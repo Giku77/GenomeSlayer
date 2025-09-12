@@ -225,6 +225,7 @@ public class Enemy : Entity
         state = State.Die;
         animator.SetTrigger(hashDie);
         EventBus.EnemyDied?.Invoke();
+        EventBus.EnemyDropSeed?.Invoke(gameObject.transform.position);
         Destroy(gameObject, 5f);
         //StartCoroutine(onDead());
     }
