@@ -206,8 +206,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 2.9309886e-16, y: 0.9041623, z: -0.42718917, w: 6.2035497e-16}
-  m_LocalPosition: {x: 0, y: 10.4, z: 2.91}
+  m_LocalRotation: {x: 0.000000040231782, y: 0.72846174, z: -0.6850865, w: 0.000000042779}
+  m_LocalPosition: {x: 0, y: 13.860001, z: 0.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1222,7 +1222,6 @@ GameObject:
   - component: {fileID: 1757115121}
   - component: {fileID: 1757115120}
   - component: {fileID: 1757115123}
-  - component: {fileID: 1757115122}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -1281,42 +1280,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757115119}
   serializedVersion: 2
-  m_LocalRotation: {x: 2.01202e-16, y: 0.9041623, z: -0.42718926, w: 5.769366e-16}
-  m_LocalPosition: {x: 0, y: 10.4, z: 2.91}
+  m_LocalRotation: {x: 0.00000004023185, y: 0.72846174, z: -0.6850865, w: 0.000000042779064}
+  m_LocalPosition: {x: 0, y: 13.860001, z: 0.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1757115122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757115119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Composition:
-    ScreenPosition: {x: 0, y: 0}
-    DeadZone:
-      Enabled: 0
-      Size: {x: 0.2, y: 0.2}
-    HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 0.8}
-      Offset: {x: 0, y: 0}
-  CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 0.5, y: 0.5}
-  Lookahead:
-    Enabled: 0
-    Time: 0
-    Smoothing: 0
-    IgnoreY: 0
 --- !u!114 &1757115123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,7 +1305,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 3.54, z: 2.91}
+  FollowOffset: {x: 0, y: 7, z: 0.43}
 --- !u!1 &2064534683
 GameObject:
   m_ObjectHideFlags: 0
