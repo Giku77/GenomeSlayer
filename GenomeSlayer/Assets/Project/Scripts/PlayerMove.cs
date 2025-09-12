@@ -98,7 +98,7 @@ public class PlayerMove : MonoBehaviour
         Vector3 move = camRight * playerInput.MoveX + camFwd * playerInput.MoveZ;
         if (move.sqrMagnitude > 1f) move.Normalize();
 
-        //bool grounded = IsGrounded(); 
+        bool grounded = IsGrounded(); 
         bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
         float speedMul = isAttacking ? 0.7f : 1f;
 
@@ -117,7 +117,7 @@ public class PlayerMove : MonoBehaviour
         //점프
         //isJumping = rb.linearVelocity.y > 0.1f || rb.linearVelocity.y < -0.1f;
 
-        if (playerInput.Jump /*&& !playerHealth.IsDead*/ && IsGrounded())
+        if (playerInput.Jump /*&& !playerHealth.IsDead*/ && grounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
             //if (audioSource != null && audioSource.clip != null)
@@ -142,7 +142,7 @@ public class PlayerMove : MonoBehaviour
             float moveV = new Vector3(playerInput.MoveX, 0f, playerInput.MoveZ).magnitude;
             animator.SetFloat(MoveHash, moveV);
             animator.SetBool(JumpHash, playerInput.Jump && !player.isDead);
-            animator.SetBool(GroundHash, IsGrounded());
+            animator.SetBool(GroundHash, grounded);
             //animator.SetBool(AttackHash, playerInput.Attack && !player.isDead);
         }
     }
