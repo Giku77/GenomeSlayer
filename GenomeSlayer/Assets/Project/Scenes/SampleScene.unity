@@ -230,7 +230,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1413532375872308500, guid: feebb44a1a2b243c1aa64237c8c66cb5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1376432514}
   m_SourcePrefab: {fileID: 100100000, guid: feebb44a1a2b243c1aa64237c8c66cb5, type: 3}
 --- !u!1 &136801370
 GameObject:
@@ -279,6 +282,7 @@ MonoBehaviour:
   HealthSilder: {fileID: 1906479466}
   CurrentWave: {fileID: 1214942639}
   WaveTimer: {fileID: 1034911897}
+  WaveButton: {fileID: 1376432514}
 --- !u!224 &317479334 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8410482421825571773, guid: 708a896f9982543d49e614b187e5dcad, type: 3}
@@ -472,7 +476,7 @@ GameObject:
   - component: {fileID: 358311698}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -930,6 +934,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &948976503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1413532375872308500, guid: feebb44a1a2b243c1aa64237c8c66cb5, type: 3}
+  m_PrefabInstance: {fileID: 100419426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &963625634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -987,6 +996,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 138c247563160d644ab2d20fdcec755a, type: 3}
+--- !u!1 &1001083542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001083544}
+  - component: {fileID: 1001083543}
+  m_Layer: 0
+  m_Name: ItemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1001083543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001083542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1852e69b2a382341acf18367be12d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SeedPrefab: {fileID: 1108796928463255217, guid: 45ca61369b825064daafb3b68941f0e2, type: 3}
+  ItemPrefab: {fileID: 1122613437025185266, guid: a5b49a1791cb8454ca85e741c6105863, type: 3}
+--- !u!4 &1001083544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001083542}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009562830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1117,7 @@ MonoBehaviour:
   waveDef: {fileID: 11400000, guid: 44f8bf2602fb49746b582048307076fc, type: 2}
   enemyPrefab: {fileID: 5472856209527987515, guid: 0ad7a15707c63984f8e1a45a36fdf069, type: 3}
   uiManager: {fileID: 136801373}
+  player: {fileID: 358311697}
 --- !u!4 &1092306235
 Transform:
   m_ObjectHideFlags: 0
@@ -1198,6 +1254,73 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 699689678740409495, guid: feebb44a1a2b243c1aa64237c8c66cb5, type: 3}
   m_PrefabInstance: {fileID: 100419426}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1376432512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7140534327744055793, guid: feebb44a1a2b243c1aa64237c8c66cb5, type: 3}
+  m_PrefabInstance: {fileID: 100419426}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948976503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1376432514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948976503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1376432512}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1092306234}
+        m_TargetAssemblyTypeName: WaveManager, Assembly-CSharp
+        m_MethodName: SpawnWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1447919485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2098,3 +2221,4 @@ SceneRoots:
   - {fileID: 1092306235}
   - {fileID: 632530384}
   - {fileID: 136801372}
+  - {fileID: 1001083544}
