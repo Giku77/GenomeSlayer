@@ -27,8 +27,8 @@ public class PlayerInput : MonoBehaviour
 //#if UNITY_ANDROID
 //        if (moveJoystick != null)
 //        {
-//            MoveX = moveJoystick.Input.y;
-//            MoveZ = moveJoystick.Input.x;
+//            MoveX = moveJoystick.Input.x;
+//            MoveZ = moveJoystick.Input.y;
 //        }
 //#endif
 

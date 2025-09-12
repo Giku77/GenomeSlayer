@@ -7,21 +7,33 @@ public class Player : Entity
     private Animator animator;
     private CapsuleCollider capsuleCollider;
     private static readonly int hashDie = Animator.StringToHash("Die");
+    public UIManager uiManager;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider>();
     }
+
+    public void Heal(int amount)
+    {
+        health += amount;
+        if (health > maxhealth)
+        {
+            health = maxhealth;
+        }
+        uiManager.UpdateHealth(health, maxhealth);
+    }
     protected override void OnEnable()
     {
         //base.OnEnable();
-        health = 100;
-
+        health = 1000;
+        maxhealth = 1000;
     }
     public override void OnDamage(int damage)
     {
         base.OnDamage(damage);
+        uiManager.UpdateHealth(health, maxhealth);
         //Debug.Log($"Player OnDamage {damage}, health {health}");
     }
 
