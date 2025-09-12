@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+    protected int maxhealth = 100;
     protected int health = 100;
     protected int damage = 10;
     protected float speed = 5f;
