@@ -2,15 +2,37 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemIds
+{
+    UNKNOWN_ITEM = -1,
+    Mace_Durian = 1011001,
+    Katana_Pepper = 1011002,
+    Bowling_Coconut = 1022001,
+    Armor_Watermelon = 1032001,
+    Water = 1041001,
+    Earthy_Fertilizer = 1041002,
+    Durian_Seed = 1051001,
+    Watermelon_Seed = 1051002,
+    Pepper_Seed = 1051003,
+    Coconut_Seed = 1051004,
+}
+
 public class ItemManager : MonoBehaviour
 {
     public GameObject SeedPrefab;
     public GameObject ItemPrefab;
-    private List<GameObject> activeItems = new List<GameObject>();
+    private List<ItemData> activeItems = new List<ItemData>();
 
     private void Awake()
     {
         EventBus.EnemyDropSeed += SpawnItems;
+    }
+
+    private void AddItemData(GameObject go, int id)
+    {
+        var i = go.GetComponent<Item>();
+        i.SetItemData(DataTableManger.ItemTable.GetItem(id));
+        activeItems.Add(DataTableManger.ItemTable.GetItem(id));
     }
 
     public void SpawnItems(Vector3 position)
@@ -23,7 +45,7 @@ public class ItemManager : MonoBehaviour
     {
         position.y += 1f;
         var s = Instantiate(SeedPrefab, position, Quaternion.identity);
-        activeItems.Add(s);
+        AddItemData(s, (int)ItemIds.Durian_Seed);
     }
 
     public void SpawnItem(Vector3 position)
@@ -32,15 +54,7 @@ public class ItemManager : MonoBehaviour
         position.x += Random.Range(-1f, 1f);
         position.z += Random.Range(-1f, 1f);
         var i = Instantiate(ItemPrefab, position, Quaternion.identity);
-        activeItems.Add(i);
+        AddItemData(i, (int)ItemIds.Earthy_Fertilizer);
     }
 
-    private void Update()
-    {
-        foreach (var item in activeItems)
-        {
-            if (item == null) continue;
-            item.transform.Rotate(Vector3.up, 50 * Time.deltaTime);
-        }
-    }
 }

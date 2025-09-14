@@ -8,6 +8,7 @@ public class Player : Entity
     private CapsuleCollider capsuleCollider;
     private static readonly int hashDie = Animator.StringToHash("Die");
     public UIManager uiManager;
+    public QuickSlotInventory quickSlotInventory = new QuickSlotInventory(5);
 
     private void Awake()
     {

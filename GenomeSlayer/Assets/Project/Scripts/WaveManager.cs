@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -20,6 +19,8 @@ public class WaveManager : MonoBehaviour
 
     private bool waveInProgress = false;
 
+    public bool waveDone => waveInProgress;
+
     private void Awake()
     {
         EventBus.EnemyDied += OnEnemyDefeated;
@@ -29,7 +30,7 @@ public class WaveManager : MonoBehaviour
     {
         waveDef.currentEnemyCount = 0;
         waveDef.currentWave = 0;
-        waveDef.WaveInterval = 30f;
+        waveDef.WaveInterval = 60f;
         uiManager.UpdateWave(waveDef.currentWave);
     }
 
@@ -75,7 +76,7 @@ public class WaveManager : MonoBehaviour
         }
         player.Heal(1000);
         waveInProgress = true;
-        waveDef.WaveInterval = 30f;
+        waveDef.WaveInterval = 60f;
         waveCoroutine = StartCoroutine(WaveTimer());
         uiManager.ActiveWaveButton(false);
         waveDef.currentWave++;
