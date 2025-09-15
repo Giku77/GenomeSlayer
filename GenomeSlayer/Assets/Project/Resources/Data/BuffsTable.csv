@@ -1,0 +1,6 @@
+buffId,buffName,buffTo,buffStat,buffStatPercent,buffStatFixed,buffPeriod,isBuffOverlap
+1411001,플레이어 공격력 20% 증가,"1",1,0.2,0,0,FALSE
+1412002,플레이어 공격 속도 30% 증가,"1",2,0.3,0,0,FALSE
+1414003,초당 플레이어 체력 1씩 회복,"1",4,0,1,1,TRUE
+1423004,적 이동속도 25% 감소,"2",3,-0.25,0,0,FALSE
+1434005,초당 적 체력 5씩 감소,"3",4,0,-5,1,TRUE
