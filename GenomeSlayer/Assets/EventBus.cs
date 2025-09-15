@@ -9,4 +9,6 @@ public static class EventBus
     public static Action<int> WaveStarted;
     //public static Action<TreeEntity> TreeGrown;
     public static Action<int> PointsChanged;
+    public static Action<int, string, string> UpdateSlot;
+    public static Action RaiseFruitHarvested;
 }

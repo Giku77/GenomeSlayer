@@ -12,6 +12,8 @@ public class PlayerInteractor : MonoBehaviour
     public SeedDef[] seedDefs;               
     private Dictionary<int, SeedDef> seedMap;
 
+    public bool IsInteracting { get; set; } = false;
+
     private QuickSlotInventory quickSlotInventory;
 
     void Awake()
@@ -23,7 +25,13 @@ public class PlayerInteractor : MonoBehaviour
 
     void Update()
     {
+#if UNITY_EDITOR
         if (!Input.GetKeyDown(key)) return;
+#endif
+#if UNITY_ANDROID && !UNITY_EDITOR
+        if (!IsInteracting) return;
+        IsInteracting = false;
+#endif
 
         var cam = Camera.main;
         var ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -72,5 +80,6 @@ public class PlayerInteractor : MonoBehaviour
 
         // 인벤토리에서 씨앗 1개 소모
         quickSlotInventory.Consume(slotIndex, 1);
+        EventBus.UpdateSlot?.Invoke(slotIndex, quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : "0", quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : quickSlotInventory.GetSlot(slotIndex).quantity.ToString());
     }
 }

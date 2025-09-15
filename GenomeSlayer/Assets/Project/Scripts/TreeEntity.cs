@@ -98,6 +98,7 @@ public class TreeEntity : MonoBehaviour
         if (fruitInstance) Destroy(fruitInstance);
         Destroy(gameObject);    
         fruitInstance = null;
+        EventBus.RaiseFruitHarvested();
 
         // EventBus.RaiseFruitHarvested(transform.position);
     }

@@ -15,7 +15,10 @@ public class Item : MonoBehaviour
         {
             var player = collision.gameObject.GetComponent<Player>();
             if (player != null)
+            {
                 player.quickSlotInventory.AddItem(itemData.itemId, 1, itemData.itemDurability);
+                EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, itemData.itemName, player.quickSlotInventory.GetSlotCount().ToString());
+            }
             Debug.Log($"Picked up item: {itemData.itemName}");
             Destroy(gameObject);
         }

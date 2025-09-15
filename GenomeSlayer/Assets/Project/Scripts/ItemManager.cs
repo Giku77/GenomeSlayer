@@ -17,6 +17,7 @@ public enum ItemIds
     Coconut_Seed = 1051004,
 }
 
+
 public class ItemManager : MonoBehaviour
 {
     public GameObject SeedPrefab;
@@ -26,6 +27,15 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
         EventBus.EnemyDropSeed += SpawnItems;
+        EventBus.RaiseFruitHarvested += AddEquipItem;
+    }
+
+    private void AddEquipItem()
+    {
+        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        var weapon = DataTableManger.ItemTable.GetItem((int)ItemIds.Mace_Durian);
+        player.quickSlotInventory.AddItem((int)ItemIds.Mace_Durian, 1, weapon.itemDurability, weapon.itemQuantity);
+        EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, DataTableManger.ItemTable.GetItem((int)ItemIds.Mace_Durian).itemName, player.quickSlotInventory.GetSlotCount().ToString());
     }
 
     private void AddItemData(GameObject go, int id)

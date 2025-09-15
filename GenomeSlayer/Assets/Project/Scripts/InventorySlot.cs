@@ -21,15 +21,39 @@ public class QuickSlotInventory
             slots[i] = new InventorySlot();
     }
 
-    public bool AddItem(int itemId, int amount = 1, int durability = 100)
+    public int GetSlotIndex()
     {
         for (int i = 0; i < slots.Length; i++)
         {
+            if (slots[i].IsEmpty)
+                return i;
+        }
+        return -1;
+    }
+
+    public int GetSlotCount()
+    {
+        return slots[SelectedIndex].quantity;
+    }
+
+    public int SelectedIndex { get; set; } = -1;
+
+    public bool AddItem(int itemId, int amount = 1, int durability = 100, int quantity = 99)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].itemId == itemId && slots[i].quantity != quantity)
+            {
+                slots[i].quantity += amount;
+                SelectedIndex = i;
+                return true;
+            }
             if (slots[i].IsEmpty)
             {
                 slots[i].itemId = itemId;
                 slots[i].quantity = amount;
                 slots[i].durability = durability;
+                SelectedIndex = i;
                 return true;
             }
         }

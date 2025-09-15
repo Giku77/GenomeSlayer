@@ -8,7 +8,20 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI CurrentWave;
     public TextMeshProUGUI WaveTimer;
     public Button WaveButton;
+    public GameObject InventoryUI;
+    private InventorySlotUI[] SlotItems;
 
+
+    private void Awake()
+    {
+        SlotItems = InventoryUI.GetComponentsInChildren<InventorySlotUI>();
+        for (int i = 0; i < SlotItems.Length; i++)
+        {
+            SlotItems[i].itemName.text = "";
+            SlotItems[i].itemCount.text = "";
+        }
+        EventBus.UpdateSlot += UpdateInventory;
+    }
 
     public void UpdateHealth(int health, int max)
     {
@@ -29,5 +42,13 @@ public class UIManager : MonoBehaviour
     public void UpdateWaveTimer(float time)
     {
         WaveTimer.text = $"{time:F0}";
+    }
+
+    public void UpdateInventory(int index, string name, string count)
+    {
+        if (index < 0 || index >= SlotItems.Length) return;
+        if (name != "0")
+         SlotItems[index].itemName.text = name;
+        SlotItems[index].itemCount.text = count;
     }
 }
