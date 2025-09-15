@@ -10,5 +10,6 @@ public static class EventBus
     //public static Action<TreeEntity> TreeGrown;
     public static Action<int> PointsChanged;
     public static Action<int, string, string> UpdateSlot;
+    //public static Func<bool> GetBuff;
     public static Action RaiseFruitHarvested;
 }

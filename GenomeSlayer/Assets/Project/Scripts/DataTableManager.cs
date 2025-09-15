@@ -31,10 +31,19 @@ public static class DataTableManger
     //itemTable.Load(DataTableIds.Item);
     itemTable.Load(ItemTable.ItemTableId);
     tables.Add(ItemTable.ItemTableId, itemTable);
+    var buffTable = new BuffTable();
+    buffTable.Load(BuffTable.BuffTableId);
+    tables.Add(BuffTable.BuffTableId, buffTable);
+    var plantTable = new PlantTable();
+    plantTable.Load(PlantTable.PlantTableId);
+    tables.Add(PlantTable.PlantTableId, plantTable);
     }
 
     //public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
     public static ItemTable ItemTable => Get<ItemTable>(ItemTable.ItemTableId);
+    public static BuffTable BuffTable => Get<BuffTable>(BuffTable.BuffTableId);
+
+    public static PlantTable PlantTable => Get<PlantTable>(PlantTable.PlantTableId);
 
     public static T Get<T>(string id) where T : DataTable
     {

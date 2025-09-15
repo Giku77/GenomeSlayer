@@ -16,7 +16,7 @@ public class PlantData
 
 public class PlantTable : DataTable
 {
-    public static readonly string BuffTableId = "PlantsTable";
+    public static readonly string PlantTableId = "PlantsTable";
     //private static readonly string UnknownItemKey = "UNKNOWN_ITEM";
 
     private Dictionary<int, PlantData> _plants = new Dictionary<int, PlantData>();
