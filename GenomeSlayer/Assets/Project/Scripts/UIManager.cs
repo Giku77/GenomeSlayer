@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI WaveTimer;
     public Button WaveButton;
     public GameObject InventoryUI;
+    public GameObject StateUI;
     private InventorySlotUI[] SlotItems;
 
 
@@ -50,5 +51,18 @@ public class UIManager : MonoBehaviour
         if (name != "0")
          SlotItems[index].itemName.text = name;
         SlotItems[index].itemCount.text = count;
+    }
+
+    public void CloseButton()
+    {         
+        StateUI.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            StateUI.SetActive(!StateUI.activeSelf);
+        }
     }
 }
