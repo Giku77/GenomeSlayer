@@ -89,4 +89,15 @@ public class EquipItem : MonoBehaviour
         //}
     }
 
+    public void UnEquipItem()
+    {
+        var HandHitbox = GetComponentsInChildren<Hitbox>();
+        for (int i = 0; i < PoolWeapons.Length; i++)
+        {
+            PoolWeapons[i].gameObject.SetActive(false);
+            HandHitbox[0].enabled = true;
+            currentWeapon = null;
+        }
+    }
+
 }

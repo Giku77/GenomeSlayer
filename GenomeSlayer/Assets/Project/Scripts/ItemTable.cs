@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class ItemData
 {
-    public int itemId { get; set; }
+    public int itemID { get; set; }
     public string itemName { get; set; }
     public string itemInfo { get; set; }
     public int itemType { get; set; }
     public int itemAttribute { get; set; }
     public int itemQuantity { get; set; }
-    public int itemDurability { get; set; }
-    public float itemDamage { get; set; }
-    public float itemAttackSpeed { get; set; }
-    public float itemArmor { get; set; }
-    public float itemBarrier { get; set; }
-    public float itemHeal { get; set; }
-    public int breedStat1 { get; set; }
-    public float breedStatAmount1 { get; set; }
-    public int breedStat2 { get; set; }
-    public float breedStatAmount2 { get; set; }
+    public int itemEffectID { get; set; }
+    public float plantID { get; set; }
+    public int itemImprovedNum { get; set; }
 }
 
 public class ItemTable : DataTable
@@ -47,7 +40,7 @@ public class ItemTable : DataTable
             Debug.LogWarning($"No records found in string table: {fileName}");
             return;
         }
-        _items = records.ToDictionary(r => r.itemId, r => r);
+        _items = records.ToDictionary(r => r.itemID, r => r);
         //foreach (var record in records)
         //{
         //    if (!_items.ContainsKey(record.itemId))

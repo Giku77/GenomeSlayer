@@ -37,10 +37,15 @@ public static class DataTableManger
     var plantTable = new PlantTable();
     plantTable.Load(PlantTable.PlantTableId);
     tables.Add(PlantTable.PlantTableId, plantTable);
+    var equipmentTable = new EquipmentTable();
+    equipmentTable.Load(EquipmentTable.EquipTableId);
+    tables.Add(EquipmentTable.EquipTableId, equipmentTable);
     }
 
     //public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
     public static ItemTable ItemTable => Get<ItemTable>(ItemTable.ItemTableId);
+
+    public static EquipmentTable EquipmentTable => Get<EquipmentTable>(EquipmentTable.EquipTableId);
     public static BuffTable BuffTable => Get<BuffTable>(BuffTable.BuffTableId);
 
     public static PlantTable PlantTable => Get<PlantTable>(PlantTable.PlantTableId);

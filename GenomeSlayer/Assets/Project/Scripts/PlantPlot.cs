@@ -44,7 +44,8 @@ public class PlantPlot : MonoBehaviour, IInteractable
     void TryComplete()
     {
         if (progress < 1f || seed == null || seed.treePrefab == null) return;
-        Instantiate(seed.treePrefab, transform.position, Quaternion.identity);
+        var t = Instantiate(seed.treePrefab, transform.position, Quaternion.identity);
+        EventBus.RemoveObj.Add(t);
         Destroy(gameObject);
     }
 

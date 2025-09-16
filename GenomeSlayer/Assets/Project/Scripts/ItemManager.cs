@@ -5,16 +5,16 @@ using UnityEngine;
 public enum ItemIds
 {
     UNKNOWN_ITEM = -1,
-    Mace_Durian = 1011001,
-    Katana_Pepper = 1011002,
-    Bowling_Coconut = 1022001,
-    Armor_Watermelon = 1032001,
-    Water = 1041001,
-    Earthy_Fertilizer = 1041002,
-    Durian_Seed = 1051001,
-    Watermelon_Seed = 1051002,
-    Pepper_Seed = 1051003,
-    Coconut_Seed = 1051004,
+    Mace_Durian = 1010001,
+    Katana_Pepper = 1010002,
+    Bowling_Coconut = 1020003,
+    Armor_Watermelon = 1030004,
+    Water = 1110001,
+    Earthy_Fertilizer = 1110002,
+    Durian_Seed = 1120001,
+    Watermelon_Seed = 1120002,
+    Pepper_Seed = 1120003,
+    Coconut_Seed = 1120004,
 }
 
 
@@ -33,9 +33,9 @@ public class ItemManager : MonoBehaviour
     private void AddEquipItem()
     {
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        var weapon = DataTableManger.ItemTable.GetItem((int)ItemIds.Mace_Durian);
-        player.quickSlotInventory.AddItem((int)ItemIds.Mace_Durian, 1, weapon.itemDurability, weapon.itemQuantity);
-        EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, DataTableManger.ItemTable.GetItem((int)ItemIds.Mace_Durian).itemName, player.quickSlotInventory.GetSlotCount().ToString());
+        var weapon = DataTableManger.EquipmentTable.GetItem((int)ItemIds.Mace_Durian);
+        player.quickSlotInventory.AddItem((int)ItemIds.Mace_Durian, 1, weapon.equipDurability, weapon.equipQuantity);
+        EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, DataTableManger.EquipmentTable.GetItem((int)ItemIds.Mace_Durian).equipName, player.quickSlotInventory.GetSlotCount().ToString());
     }
 
     private void AddItemData(GameObject go, int id)
@@ -55,6 +55,8 @@ public class ItemManager : MonoBehaviour
     {
         position.y += 1f;
         var s = Instantiate(SeedPrefab, position, Quaternion.identity);
+        Destroy(s, 10f);
+        EventBus.RemoveObj.Add(s);
         AddItemData(s, (int)ItemIds.Durian_Seed);
     }
 
@@ -64,6 +66,8 @@ public class ItemManager : MonoBehaviour
         position.x += Random.Range(-1f, 1f);
         position.z += Random.Range(-1f, 1f);
         var i = Instantiate(ItemPrefab, position, Quaternion.identity);
+        Destroy(i, 10f);
+        EventBus.RemoveObj.Add(i);
         AddItemData(i, (int)ItemIds.Earthy_Fertilizer);
     }
 

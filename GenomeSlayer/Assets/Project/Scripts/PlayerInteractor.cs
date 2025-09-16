@@ -75,6 +75,7 @@ public class PlayerInteractor : MonoBehaviour
             point = navHit.position;
 
         var go = Instantiate(plantPlotPrefab, point, Quaternion.identity);
+        EventBus.RemoveObj.Add(go);
         var plot = go.GetComponent<PlantPlot>();
         plot.seed = seedDef;
 

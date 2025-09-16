@@ -1,0 +1,9 @@
+equipID,equipName,equipInfo,equipType,equipAttribute,equipQuantity,equipDurability,equipAttack,equipAttackSpeed,equipArmor,equipBarrier,debuffToEnemy,buffToPlayer,equipImprovedNum,improvedSeedID,seedID,regressedSeedID
+1010001,철퇴 두리안 (+0),"줄기가 길어 모닝스타처럼 휘두를 수 있는 거대한 두리안,
+휘두를 때마다 악취로 적들을 일정 확률로 도망가게 한다.",1,3,1,50,20,1,0,0,0,0,0 ,1121001,1120001,1120001
+1010002,카타나 페퍼 (+0),"긴 일본도 모양의 거대한 청양고추, 칼집같은 껍질 안쪽엔 날카로운 칼날이 있다. 
+휘두를 때마다 주변 지형과 적에게 불을 붙여 지속적인 피해를 준다.",1,1,1,50,10,2,0,0,0,0,0 ,0 ,0 ,0 
+1020003,볼링 코코넛 (+0),"볼링공처럼 3개의 구멍이 있는 코코넛 열매,
+굴려서 적에게 적중하면 주변 다른 적에게 튕기고 돌아온다.",2,3,1,50,30,0.5,0,0,0,0,0 ,0 ,0 ,0 
+1030004,갑옷 수박 (+0),"축축하지만 단단하여 방어구로 입을 수 있는 거대한 수박 껍질,
+내구도가 줄어들 때마다 씨앗과 더불어 물도 같이 드랍한다.",3,1,1,30,0,0,1,30,0,0,0 ,0 ,0 ,0 

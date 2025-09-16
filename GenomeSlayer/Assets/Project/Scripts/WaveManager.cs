@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class WaveManager : MonoBehaviour
 {
@@ -62,6 +64,7 @@ public class WaveManager : MonoBehaviour
         if (waveDef.WaveInterval <= -1 || waveDef.currentWave == 0)
         {
             //Debug.Log("Spawning Wave " + (waveDef.currentWave + 1));
+            ResetWaves();
             uiManager.ActiveWaveButton(true);
             waveInProgress = false;
             //SpawnWave();
@@ -85,7 +88,8 @@ public class WaveManager : MonoBehaviour
         waveDef.currentEnemyCount = currentEnemyCount;
         for (int i = 0; i < currentEnemyCount; i++)
         {
-            Instantiate(enemyPrefab, spawnPoint1.position, Quaternion.identity);
+            var e = Instantiate(enemyPrefab, spawnPoint1.position, Quaternion.identity);
+            EventBus.RemoveObj.Add(e);
         }
     }
 
@@ -97,5 +101,26 @@ public class WaveManager : MonoBehaviour
         {
             currentEnemyCount = 0;
         }
+    }
+
+    public void ResetWaves()
+    {
+        foreach (var obj in EventBus.RemoveObj)
+        {
+            if (obj != null)
+                Destroy(obj);
+        }
+        var inv = player.quickSlotInventory;
+        for (int i = 0; i < 7; i++)
+        {
+            var slot = inv.GetSlot(i);
+            if (slot != null && !slot.IsEmpty)
+            {
+                inv.RemoveItem(i);
+                EventBus.UpdateSlot?.Invoke(i, string.Empty, string.Empty);
+            }
+        }
+        var equip = player.GetComponent<EquipItem>();
+        equip.UnEquipItem();
     }
 }
