@@ -7,6 +7,7 @@ public class Enemy : Entity
 {
     private NavMeshAgent agent;
     private Animator animator;
+    private BuffController buffController;
 
 
     public enum State
@@ -89,6 +90,7 @@ public class Enemy : Entity
 
     public void Awake()
     {
+        buffController = GetComponent<BuffController>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider>();
@@ -169,6 +171,7 @@ public class Enemy : Entity
             return;
         }
         //animator.SetBool("HasTarget", true);
+        agent.speed = speed * buffController.MoveSpeedMul;
         agent.SetDestination(target.position);
     }
 

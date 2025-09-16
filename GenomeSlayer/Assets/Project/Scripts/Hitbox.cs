@@ -22,7 +22,7 @@ public class Hitbox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (!active) return;
+        if (!active) return;
         Debug.Log("Hitbox OnTriggerEnter: " + other.name);
         if (((1 << other.gameObject.layer) & targetLayers) == 0) return;
 

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee7641f931ff3ad459a714fc6503f930, type: 3}
+  m_Name: TestBuff
+  m_EditorClassIdentifier: 
+  id: 1423004
+  displayName: 
+  duration: 0
+  maxStacks: 1
+  isAura: 1
+  targets:
+    serializedVersion: 2
+    m_Bits: 64
+  moveSpeedMul: 0
+  damageAdd: 0
+  armorAdd: 0

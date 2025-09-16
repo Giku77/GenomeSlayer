@@ -1,0 +1,17 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "BuffDef", menuName = "Scriptable Objects/BuffDef")]
+public class BuffDef : ScriptableObject
+{
+    public int id;                    
+    public string displayName;
+    public float duration = 0f;       // 0 = Áö¼Ó
+    public int maxStacks = 1;
+    public bool isAura = true;
+
+    public LayerMask targets;         
+
+    public float moveSpeedMul = 1f;   
+    public float damageAdd = 0f;
+    public float armorAdd = 0f;
+}

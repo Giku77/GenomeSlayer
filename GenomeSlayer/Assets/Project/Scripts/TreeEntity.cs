@@ -4,24 +4,33 @@ using UnityEngine;
 
 public class TreeEntity : MonoBehaviour
 {
+    public TreeDef treeDef;
+
     [Header("Fruit")]
-    public GameObject fruitPrefab;
+    private GameObject fruitPrefab;
     private Transform fruitSocket;      // 열매 붙일 위치(빈 자식)
     public float pairRadius = 4f;      // 서로 붙어있다고 보는 거리
     public float unpairRadius = 5f;    // 떨어졌다고 보는 거리(히스테리시스)
     public LayerMask treeLayer;
 
     private TreeEntity partner;
+    private BuffEmitter buffEmitter;
     private GameObject fruitInstance;
     private bool hasFruit => fruitInstance != null;
 
-    void OnEnable()
+    private void Awake()
+    {
+        buffEmitter = GetComponent<BuffEmitter>();
+        fruitPrefab = treeDef.Fruitprefab;
+    }
+
+    private void OnEnable()
     {
         fruitSocket = GetComponentsInChildren<Transform>()[5];
         StartCoroutine(CheckNeighborLoop());
     }
 
-    IEnumerator CheckNeighborLoop()
+    private IEnumerator CheckNeighborLoop()
     {
         var hits = new Collider[8];
         while (true)
@@ -65,11 +74,17 @@ public class TreeEntity : MonoBehaviour
 
                 if (best != null)
                 {
+                    buffEmitter.SetEnabled(false);
+                    best.buffEmitter.SetEnabled(false);
                     partner = best;
                     best.partner = this;
 
                     SpawnFruitIfNeeded();
                     best.SpawnFruitIfNeeded();
+                }
+                else
+                {
+                    buffEmitter.SetEnabled(true);
                 }
             }
 
@@ -77,7 +92,7 @@ public class TreeEntity : MonoBehaviour
         }
     }
 
-    void SpawnFruitIfNeeded()
+    private void SpawnFruitIfNeeded()
     {
         if (hasFruit || fruitPrefab == null || fruitSocket == null) return;
         fruitInstance = Instantiate(fruitPrefab, fruitSocket.position, fruitSocket.rotation, fruitSocket);
@@ -96,14 +111,15 @@ public class TreeEntity : MonoBehaviour
     public void OnFruitHarvested()
     {
         if (fruitInstance) Destroy(fruitInstance);
-        Destroy(gameObject);    
+        Destroy(gameObject);
+        buffEmitter.SetEnabled(false);
         fruitInstance = null;
         EventBus.RaiseFruitHarvested();
 
         // EventBus.RaiseFruitHarvested(transform.position);
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green; Gizmos.DrawWireSphere(transform.position, pairRadius);
         Gizmos.color = Color.red; Gizmos.DrawWireSphere(transform.position, unpairRadius);
