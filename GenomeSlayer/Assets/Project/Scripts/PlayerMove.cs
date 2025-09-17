@@ -128,7 +128,7 @@ public class PlayerMove : MonoBehaviour
 
         if (playerInput.Attack && !player.isDead && animator != null)
         {
-            StartCoroutine(HitboxPulse(0.15f));
+            StartCoroutine(HitboxPulse(0.3f));
             animator.SetTrigger(AttackHash);
             //Debug.Log("Player Attack");
             //player.Attack();

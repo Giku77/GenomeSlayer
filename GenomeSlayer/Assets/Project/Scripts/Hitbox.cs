@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Hitbox : MonoBehaviour
 {
-    public int damage = 10;
+    private int damage = 10;
+    public WeaponDef weaponDef;
     public LayerMask targetLayers;
     public int maxTargetsPerSwing = 999;
 
@@ -11,6 +12,11 @@ public class Hitbox : MonoBehaviour
     private readonly HashSet<Entity> hitEntities = new();
     private int hitCountThisSwing;
 
+    private void Start()
+    {
+        if (weaponDef != null)
+            damage = weaponDef.damage;
+    }
     public void Open()
     {
         active = true;

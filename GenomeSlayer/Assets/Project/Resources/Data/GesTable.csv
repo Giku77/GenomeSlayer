@@ -1,4 +1,4 @@
-UpgradeId,upgradeName,itemName,upgradeStat,upgradeStatAmount,maxUpgrade,genomePoint1,genomePoint2,genomePoint3,genomePoint4,genomePoint5
+UpgradeId,upgradeName,itemId,upgradeStat,upgradeStatAmount,maxUpgrade,genomePoint1,genomePoint2,genomePoint3,genomePoint4,genomePoint5
 1301001,철퇴 두리안 공격력 증가,"1011001",1,0.25,5,100,200,400,800,1600
 1301002,카타나 페퍼 공격력 증가,"1011002",1,0.25,5,100,200,400,800,1600
 1302002,카타나 페퍼 공격 속도 증가,"1011002",2,0.25,5,100,200,400,800,1600

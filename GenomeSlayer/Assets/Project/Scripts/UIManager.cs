@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject InventoryUI;
     public GameObject StateUI;
     private InventorySlotUI[] SlotItems;
+    public TextMeshProUGUI StateNameText;
 
 
     private void Awake()
@@ -22,7 +23,21 @@ public class UIManager : MonoBehaviour
             SlotItems[i].itemCount.text = "";
         }
         EventBus.UpdateSlot += UpdateInventory;
+        var s = StateUI.GetComponentInChildren<GridLayoutGroup>().GetComponentsInChildren<Button>();
+        var name = DataTableManger.GeTable.GetAllItems();
+        //foreach (var b in s)
+        for (int i = 0; i < s.Length; i++)
+        {
+            var b = s[i];
+            int index = i;
+            b.onClick.AddListener(() =>
+            {
+                //var name = b.GetComponentsInChildren<TextMeshProUGUI>();
+                StateNameText.text = name[index].upgradeName;
+            });
+        }
     }
+
 
     public void UpdateHealth(int health, int max)
     {

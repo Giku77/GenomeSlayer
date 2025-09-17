@@ -72,11 +72,13 @@ public class EquipItem : MonoBehaviour
             case (int)ItemIds.Mace_Durian:
                 PoolWeapons[0].gameObject.SetActive(true);
                 HandHitbox[0].enabled = false;
+                HandHitbox[0].weaponDef.weaponId = WeaponIds.Mace_Durian;
                 currentWeapon = PoolWeapons[0];
                 break;
             default:
                 PoolWeapons[0].gameObject.SetActive(false);
                 HandHitbox[0].enabled = true;
+                HandHitbox[0].weaponDef.weaponId = WeaponIds.UNKNOWN_WEAPON;
                 currentWeapon = null;
                 break;
         }
@@ -92,6 +94,8 @@ public class EquipItem : MonoBehaviour
     public void UnEquipItem()
     {
         var HandHitbox = GetComponentsInChildren<Hitbox>();
+        //var weaponId = GetComponentInChildren<Hitbox>();
+        HandHitbox[0].weaponDef.weaponId = WeaponIds.UNKNOWN_WEAPON;
         for (int i = 0; i < PoolWeapons.Length; i++)
         {
             PoolWeapons[i].gameObject.SetActive(false);

@@ -144,7 +144,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.16
-  m_Height: 0.2
+  m_Height: 0.22
   m_Direction: 0
   m_Center: {x: 0, y: 0.06, z: 0}
 --- !u!136 &4837450417445796384
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0e3d0e5c7f387488c1a598dc256cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 70
+  weaponDef: {fileID: 11400000, guid: 6d1729ee53d26bc4b9ba1544b62a0f8c, type: 2}
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
