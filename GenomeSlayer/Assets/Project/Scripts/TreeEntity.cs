@@ -39,13 +39,13 @@ public class TreeEntity : MonoBehaviour
             if (partner != null)
             {
                 float d = Vector3.Distance(transform.position, partner.transform.position);
-                if (d > unpairRadius)
-                {
+                //if (d > unpairRadius)
+                //{
 
-                    partner.NotifyUnpaired(this);
-                    NotifyUnpaired(partner);
-                    partner = null;
-                }
+                //    partner.NotifyUnpaired(this);
+                //    NotifyUnpaired(partner);
+                //    partner = null;
+                //}
             }
             else
             {

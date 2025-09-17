@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class PlayerMove : MonoBehaviour
@@ -15,6 +17,10 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce = 5f;
 
     public Hitbox hitbox;
+
+    public GameObject TopCamera;
+    public GameObject PlayerCamera;
+    private bool isViewTop = false;
 
 
 
@@ -132,6 +138,13 @@ public class PlayerMove : MonoBehaviour
             animator.SetTrigger(AttackHash);
             //Debug.Log("Player Attack");
             //player.Attack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            isViewTop = !isViewTop;
+            TopCamera.SetActive(isViewTop);
+            PlayerCamera.SetActive(!isViewTop);
         }
 
 

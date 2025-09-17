@@ -3,6 +3,7 @@ using UnityEngine.AI;
 using System.Collections.Generic;
 using System.Linq;
 
+
 public class PlayerInteractor : MonoBehaviour
 {
     public KeyCode key = KeyCode.F;

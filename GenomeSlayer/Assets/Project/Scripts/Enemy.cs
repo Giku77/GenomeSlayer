@@ -224,12 +224,18 @@ public class Enemy : Entity
         //audioSource.PlayOneShot(zombieDie, AudioManager.instance.sfxVolume);
         //base.Die();
         capsuleCollider.enabled = false;
+        var rb = GetComponent<Rigidbody>();
+        if (rb)
+        {
+            rb.isKinematic = true;
+            rb.detectCollisions = false;
+        }
 
         state = State.Die;
         animator.SetTrigger(hashDie);
         EventBus.EnemyDied?.Invoke();
         EventBus.EnemyDropSeed?.Invoke(gameObject.transform.position);
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3f);
         //StartCoroutine(onDead());
     }
 
