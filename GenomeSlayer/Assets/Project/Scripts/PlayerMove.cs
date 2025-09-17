@@ -22,6 +22,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject PlayerCamera;
     private bool isViewTop = false;
 
+    public bool IsMobileVeiwTopClicked { get; set; } = false;
 
 
     private AudioSource audioSource;
@@ -140,11 +141,12 @@ public class PlayerMove : MonoBehaviour
             //player.Attack();
         }
 
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V) || IsMobileVeiwTopClicked)
         {
             isViewTop = !isViewTop;
             TopCamera.SetActive(isViewTop);
             PlayerCamera.SetActive(!isViewTop);
+            IsMobileVeiwTopClicked = false;
         }
 
 

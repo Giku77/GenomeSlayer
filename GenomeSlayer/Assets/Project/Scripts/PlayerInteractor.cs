@@ -14,6 +14,7 @@ public class PlayerInteractor : MonoBehaviour
     private Dictionary<int, SeedDef> seedMap;
 
     public bool IsInteracting { get; set; } = false;
+    public Vector3 lastWorldPos { get; set; }
 
     private QuickSlotInventory quickSlotInventory;
 
@@ -74,13 +75,20 @@ public class PlayerInteractor : MonoBehaviour
         // NavMesh가 있다면 근처 NavMesh로 스냅(선택)
         if (NavMesh.SamplePosition(point, out var navHit, 2f, NavMesh.AllAreas))
             point = navHit.position;
-
+        
+#if UNITY_EDITOR && !UNITY_ANDROID
         var go = Instantiate(plantPlotPrefab, point, Quaternion.identity);
         EventBus.RemoveObj.Add(go);
         var plot = go.GetComponent<PlantPlot>();
         plot.seed = seedDef;
+#endif
+#if !UNITY_EDITOR && UNITY_ANDROID
+        var go = Instantiate(plantPlotPrefab, lastWorldPos, Quaternion.identity);
+        EventBus.RemoveObj.Add(go);
+        var plot = go.GetComponent<PlantPlot>();
+        plot.seed = seedDef;
+#endif
 
-        // 인벤토리에서 씨앗 1개 소모
         quickSlotInventory.Consume(slotIndex, 1);
         EventBus.UpdateSlot?.Invoke(slotIndex, quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : "0", quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : quickSlotInventory.GetSlot(slotIndex).quantity.ToString());
     }
