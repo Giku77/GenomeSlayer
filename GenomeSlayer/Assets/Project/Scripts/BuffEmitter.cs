@@ -42,6 +42,13 @@ public class BuffEmitter : MonoBehaviour
             bc.RemoveByIssuer(buff, this);
     }
 
+    private void OnDestroy()
+    {
+        foreach (var bc in inside)
+            bc.RemoveByIssuer(buff, this);
+        inside.Clear();
+    }
+
     // 나무 2그루 붙었을 때 오라 on/off 규칙을 TreeEntity에서 호출
     public void SetEnabled(bool on)
     {

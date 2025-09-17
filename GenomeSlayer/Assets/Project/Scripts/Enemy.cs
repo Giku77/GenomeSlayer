@@ -58,7 +58,8 @@ public class Enemy : Entity
             {
                 case State.Idle:
                     animator.SetBool(hashTarget, false);
-                    agent.isStopped = true;
+                    if(agent.isOnNavMesh)
+                     agent.isStopped = true;
                     break;
                 case State.Trace:
                     animator.SetBool(hashTarget, true);
@@ -233,17 +234,26 @@ public class Enemy : Entity
 
         state = State.Die;
         animator.SetTrigger(hashDie);
-        EventBus.EnemyDied?.Invoke();
+        EventBus.EnemyDied?.Invoke(gameObject);
         EventBus.EnemyDropSeed?.Invoke(gameObject.transform.position);
-        Destroy(gameObject, 3f);
-        //StartCoroutine(onDead());
+        //Destroy(gameObject, 3f);
     }
 
-    //private IEnumerator onDead()
-    //{
-    //    yield return new WaitForSeconds(5.0f);
-    //    Destroy(gameObject);
-    //    //gameObject.SetActive(false);
-    //}
+    public void ResetEnemy()
+    {
+        capsuleCollider.enabled = true;
+        var rb = GetComponent<Rigidbody>();
+        if (rb)
+        {
+            rb.isKinematic = false;
+            rb.detectCollisions = true;
+        }
+        health = maxhealth;
+        animator.ResetTrigger(hashDie);
+        state = State.Idle;
+        animator.Rebind();
+        animator.Update(0f);
+    }
+
 
 }

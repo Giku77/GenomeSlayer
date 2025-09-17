@@ -6983,6 +6983,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 655734903748249272, guid: 138c247563160d644ab2d20fdcec755a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 655734903748249272, guid: 138c247563160d644ab2d20fdcec755a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.618568
+      objectReference: {fileID: 0}
+    - target: {fileID: 655734903748249272, guid: 138c247563160d644ab2d20fdcec755a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -50
+      objectReference: {fileID: 0}
     - target: {fileID: 814791859587827297, guid: 138c247563160d644ab2d20fdcec755a, type: 3}
       propertyPath: m_Name
       value: DemoMap
@@ -23042,6 +23054,14 @@ PrefabInstance:
     - target: {fileID: 8981779693767356841, guid: d9c638b95a38349368bc8d7acad515a4, type: 3}
       propertyPath: m_Value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981779693767356841, guid: d9c638b95a38349368bc8d7acad515a4, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981779693767356841, guid: d9c638b95a38349368bc8d7acad515a4, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
