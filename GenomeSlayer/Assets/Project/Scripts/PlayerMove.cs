@@ -67,8 +67,9 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (player.isDead) return;
         //회전
-        
+
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         //Plane plane = new Plane(Vector3.up, new Vector3(0, transform.position.y, 0));
@@ -112,11 +113,23 @@ public class PlayerMove : MonoBehaviour
 
         rb.MovePosition(rb.position + move * (moveSpeed * speedMul) * Time.fixedDeltaTime);
 
-        if (move.sqrMagnitude > 0.001f)
+        bool hasMoveInput = (new Vector2(playerInput.MoveX, playerInput.MoveZ).sqrMagnitude > 0.0001f);
+
+        if (!hasMoveInput) 
         {
-            Quaternion targetRot = Quaternion.LookRotation(move, Vector3.up);
-            rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, rotationSpeed * Time.fixedDeltaTime));
+            camFwd = Camera.main.transform.forward; camFwd.y = 0; camFwd.Normalize();
+            if (camFwd.sqrMagnitude > 0.001f)
+            {
+                Quaternion target = Quaternion.LookRotation(camFwd, Vector3.up);
+                rb.MoveRotation(Quaternion.Slerp(rb.rotation, target, 8f * Time.deltaTime));
+            }
         }
+
+        //if (move.sqrMagnitude > 0.001f)
+        //{
+        //    Quaternion targetRot = Quaternion.LookRotation(move, Vector3.up);
+        //    rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, rotationSpeed * Time.fixedDeltaTime));
+        //}
         //Vector3 worldDir = new Vector3(playerInput.MoveZ, 0f, playerInput.MoveX);  
         //if (worldDir.sqrMagnitude > 1f) worldDir.Normalize();
 

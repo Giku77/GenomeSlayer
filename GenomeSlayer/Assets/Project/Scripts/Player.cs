@@ -53,8 +53,13 @@ public class Player : Entity
 
     protected override void Die()
     {
-        Debug.Log("Player is dead.");
-        //capsuleCollider.enabled = false;
+        capsuleCollider.enabled = false;
+        var rb = GetComponent<Rigidbody>();
+        if (rb)
+        {
+            rb.isKinematic = true;
+            rb.detectCollisions = false;
+        }
         animator.SetTrigger(hashDie);
         StartCoroutine(Restart());
         //Destroy(gameObject, 5f);
