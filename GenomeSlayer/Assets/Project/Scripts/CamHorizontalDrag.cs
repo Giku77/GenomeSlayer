@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.Cinemachine;
+using UnityEngine.EventSystems;
 
 public class CamHorizontalDrag : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CamHorizontalDrag : MonoBehaviour
     void Update()
     {
         if (orbital == null) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         if (Input.GetMouseButtonDown(0)) last = Input.mousePosition;
         if (Input.GetMouseButtonUp(0)) last = null;
