@@ -42,6 +42,7 @@ public class PlayerInput : MonoBehaviour
         });
         viewButton.onClick.AddListener(() =>
         {
+            Debug.Log("click");
             var pm = GetComponent<PlayerMove>();
             pm.IsMobileVeiwTopClicked = true;
         });
@@ -81,12 +82,12 @@ public class PlayerInput : MonoBehaviour
         {
             viewButton.gameObject.SetActive(true);    
         }
-        for (int i = 0; i < Input.touchCount; i++)
-        {
-            var t = Input.GetTouch(i);
-            if (!EventSystem.current.IsPointerOverGameObject(t.fingerId))
-                UpdateWorldPos(t.position);
-        }
+        //for (int i = 0; i < Input.touchCount; i++)
+        //{
+        //    var t = Input.GetTouch(i);
+        //    if (!EventSystem.current.IsPointerOverGameObject(t.fingerId))
+        //        UpdateWorldPos(t.position);
+        //}
 #endif
 
         //Attack = Input.GetButtonDown(AttackButton);

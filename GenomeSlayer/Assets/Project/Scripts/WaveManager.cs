@@ -34,7 +34,7 @@ public class WaveManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("WaveManager Awake");
+        Application.targetFrameRate = -1;
         EventBus.EnemyDied += OnEnemyDefeated;
         for(int i = 0; i < waveDef.maxEnemyCount; i++)
         {
