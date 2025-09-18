@@ -20,12 +20,13 @@ public class PlayerInput : MonoBehaviour
     public VitualJoyStick moveJoystick;
     public Button interactButton;
     public Button viewButton;
+    public Button attackButton;
 
 
     public float MoveX { get; private set; }
     public float MoveZ { get; private set; }
     public float Roatate { get; private set; }
-    public bool Attack { get; private set; }
+    public bool Attack { get; set; }
     public bool Jump { get; private set; }
 
     //public GameObject PauseUI;
@@ -44,6 +45,7 @@ public class PlayerInput : MonoBehaviour
             var pm = GetComponent<PlayerMove>();
             pm.IsMobileVeiwTopClicked = true;
         });
+        attackButton.onClick.AddListener(() => Attack = true);
     }
 
     private void UpdateWorldPos(Vector2 screenPos)
@@ -87,7 +89,7 @@ public class PlayerInput : MonoBehaviour
         }
 #endif
 
-        Attack = Input.GetButtonDown(AttackButton);
+        //Attack = Input.GetButtonDown(AttackButton);
         Jump = Input.GetButtonDown("Jump");
 
         //if (Input.GetKeyDown(KeyCode.Escape))

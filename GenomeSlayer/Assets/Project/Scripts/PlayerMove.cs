@@ -68,21 +68,22 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         //회전
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        Plane plane = new Plane(Vector3.up, new Vector3(0, transform.position.y, 0));
+        //Plane plane = new Plane(Vector3.up, new Vector3(0, transform.position.y, 0));
 
-        if (plane.Raycast(ray, out float enter))
-        {
-            Vector3 hitPoint = ray.GetPoint(enter);
-            Vector3 dir = hitPoint - transform.position;
-            dir.y = 0f;
-            if (dir.sqrMagnitude >= 0.04f) 
-            {
-                Quaternion targetRot = Quaternion.LookRotation(dir);
-                rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, 720f * Time.fixedDeltaTime));
-            }
-        }
+        //if (plane.Raycast(ray, out float enter))
+        //{
+        //    Vector3 hitPoint = ray.GetPoint(enter);
+        //    Vector3 dir = hitPoint - transform.position;
+        //    dir.y = 0f;
+        //    if (dir.sqrMagnitude >= 0.04f) 
+        //    {
+        //        Quaternion targetRot = Quaternion.LookRotation(dir);
+        //        rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, 720f * Time.fixedDeltaTime));
+        //    }
+        //}
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //RaycastHit hit;
 
@@ -110,6 +111,12 @@ public class PlayerMove : MonoBehaviour
         float speedMul = isAttacking ? 0.7f : 1f;
 
         rb.MovePosition(rb.position + move * (moveSpeed * speedMul) * Time.fixedDeltaTime);
+
+        if (move.sqrMagnitude > 0.001f)
+        {
+            Quaternion targetRot = Quaternion.LookRotation(move, Vector3.up);
+            rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, rotationSpeed * Time.fixedDeltaTime));
+        }
         //Vector3 worldDir = new Vector3(playerInput.MoveZ, 0f, playerInput.MoveX);  
         //if (worldDir.sqrMagnitude > 1f) worldDir.Normalize();
 
@@ -135,6 +142,7 @@ public class PlayerMove : MonoBehaviour
 
         if (playerInput.Attack && !player.isDead && animator != null)
         {
+            playerInput.Attack = false;
             StartCoroutine(HitboxPulse(0.3f));
             animator.SetTrigger(AttackHash);
             //Debug.Log("Player Attack");

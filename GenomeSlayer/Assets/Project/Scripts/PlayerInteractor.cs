@@ -34,27 +34,27 @@ public class PlayerInteractor : MonoBehaviour
         if (!IsInteracting) return;
         IsInteracting = false;
 #endif
+        TryPlantAt(transform.position);
+        //var cam = Camera.main;
+        //var ray = cam.ScreenPointToRay(Input.mousePosition);
 
-        var cam = Camera.main;
-        var ray = cam.ScreenPointToRay(Input.mousePosition);
+        //if (Physics.Raycast(ray, out var hit, maxDistance))
+        //{
+        //    Debug.Log($"PlayerInteractor: Hit {hit.collider.name} at {hit.point}");
+        //    if (hit.collider.TryGetComponent<IInteractable>(out var inter))
+        //    {
+        //        Debug.Log("PlayerInteractor: Interacting with " + hit.collider.name);
+        //        inter.Interact(GetComponent<Player>());
+        //        return;
+        //    }
 
-        if (Physics.Raycast(ray, out var hit, maxDistance))
-        {
-            Debug.Log($"PlayerInteractor: Hit {hit.collider.name} at {hit.point}");
-            if (hit.collider.TryGetComponent<IInteractable>(out var inter))
-            {
-                Debug.Log("PlayerInteractor: Interacting with " + hit.collider.name);
-                inter.Interact(GetComponent<Player>());
-                return;
-            }
 
-   
-            if (((1 << hit.collider.gameObject.layer) & groundMask) != 0)
-            {
-                Debug.Log("PlayerInteractor: Planting at ground");
-                TryPlantAt(hit.point);
-            }
-        }
+        //    if (((1 << hit.collider.gameObject.layer) & groundMask) != 0)
+        //    {
+        //        Debug.Log("PlayerInteractor: Planting at ground");
+        //        TryPlantAt(hit.point);
+        //    }
+        //}
     }
 
     void TryPlantAt(Vector3 point)
@@ -75,19 +75,48 @@ public class PlayerInteractor : MonoBehaviour
         // NavMesh가 있다면 근처 NavMesh로 스냅(선택)
         if (NavMesh.SamplePosition(point, out var navHit, 2f, NavMesh.AllAreas))
             point = navHit.position;
-        
-#if UNITY_EDITOR && !UNITY_ANDROID
+
+        Collider[] hits = Physics.OverlapSphere(point, 5f); // 반경 3f
+        foreach (var h in hits)
+        {
+            if (h.TryGetComponent<IInteractable>(out var inter))
+            {
+                Debug.Log("PlayerInteractor: Interacting with " + h.name);
+                inter.Interact(GetComponent<Player>());
+                return;
+            }
+            //PlantPlot plot = h.GetComponent<PlantPlot>();
+            //if (plot != null)
+            //{
+            //    plot.seed = seedDef;
+            //    plot.Grow(); // PlantPlot 안에 Grow() 같은 메서드 있다고 가정
+            //    quickSlotInventory.Consume(slotIndex, 1);
+            //    EventBus.UpdateSlot?.Invoke(
+            //        slotIndex,
+            //        quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : "0",
+            //        quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : quickSlotInventory.GetSlot(slotIndex).quantity.ToString()
+            //    );
+            //    return;
+            //}
+        }
+
+        //#if UNITY_EDITOR && !UNITY_ANDROID
+        //        var go = Instantiate(plantPlotPrefab, point, Quaternion.identity);
+        //        EventBus.RemoveObj.Add(go);
+        //        var plot = go.GetComponent<PlantPlot>();
+        //        plot.seed = seedDef;
+        //#endif
+        //#if !UNITY_EDITOR && UNITY_ANDROID
+        //        var go = Instantiate(plantPlotPrefab, lastWorldPos, Quaternion.identity);
+        //        EventBus.RemoveObj.Add(go);
+        //        var plot = go.GetComponent<PlantPlot>();
+        //        plot.seed = seedDef;
+        //#endif
+
         var go = Instantiate(plantPlotPrefab, point, Quaternion.identity);
         EventBus.RemoveObj.Add(go);
         var plot = go.GetComponent<PlantPlot>();
         plot.seed = seedDef;
-#endif
-#if !UNITY_EDITOR && UNITY_ANDROID
-        var go = Instantiate(plantPlotPrefab, lastWorldPos, Quaternion.identity);
-        EventBus.RemoveObj.Add(go);
-        var plot = go.GetComponent<PlantPlot>();
-        plot.seed = seedDef;
-#endif
 
         quickSlotInventory.Consume(slotIndex, 1);
         EventBus.UpdateSlot?.Invoke(slotIndex, quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : "0", quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : quickSlotInventory.GetSlot(slotIndex).quantity.ToString());

@@ -34,6 +34,7 @@ public class WaveManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("WaveManager Awake");
         EventBus.EnemyDied += OnEnemyDefeated;
         for(int i = 0; i < waveDef.maxEnemyCount; i++)
         {
@@ -90,6 +91,7 @@ public class WaveManager : MonoBehaviour
                 StopCoroutine(c);
             }
         }
+        EventBus.EnemyDied -= OnEnemyDefeated;
     }
 
 
