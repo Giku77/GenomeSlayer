@@ -33,6 +33,18 @@ public class BuffController : MonoBehaviour
         if (dirty) Recalc();
     }
 
+    public void ClearAll()
+    {
+        if (active.Count == 0) return;
+        active.Clear();
+        Recalc();
+    }
+
+    private void OnDisable()
+    {
+        ClearAll();
+    }
+
     public void AddOrRefresh(BuffDef def, Object issuer, int stacks = 1)
     {
         var found = active.Find(b => b.def == def && b.issuer == issuer);

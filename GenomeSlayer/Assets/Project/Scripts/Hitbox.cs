@@ -19,28 +19,37 @@ public class Hitbox : MonoBehaviour
     }
     public void Open()
     {
+        Debug.Log("Hitbox Open");
         active = true;
         hitEntities.Clear();
         hitCountThisSwing = 0;
     }
 
-    public void Close() => active = false;
+    public void Close()
+    {
+        Debug.Log("Hitbox Close");
+        //active = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Hitbox OnTriggerEnter: " + other.name + " / " + active);
         if (!active) return;
-        Debug.Log("Hitbox OnTriggerEnter: " + other.name);
         if (((1 << other.gameObject.layer) & targetLayers) == 0) return;
 
         if (!other.TryGetComponent<Entity>(out var e))
             e = other.GetComponentInParent<Entity>();
         if (e == null || e.isDead) return;
-
+        Debug.Log("Hitbox OnTriggerEnter2: " + other.name);
         if (!hitEntities.Add(e)) return;
+
+        Debug.Log("Hitbox OnTriggerEnter3: " + other.name);
 
         e.OnDamage(damage);
         hitCountThisSwing++;
 
         if (hitCountThisSwing >= maxTargetsPerSwing) active = false;
+        //hitEntities.Clear();
+        active = false;
     }
 }

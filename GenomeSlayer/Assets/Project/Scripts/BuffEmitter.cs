@@ -28,8 +28,12 @@ public class BuffEmitter : MonoBehaviour
             bc = other.GetComponentInParent<BuffController>();
         if (!bc) return;
 
-        if (inside.Add(bc))
-            bc.AddOrRefresh(buff, this, 1);
+        bc.AddOrRefresh(buff, this, 0);
+
+        inside.Add(bc);
+
+        //if (inside.Add(bc))
+        //    bc.AddOrRefresh(buff, this, 1);
     }
 
     private void OnTriggerExit(Collider other)

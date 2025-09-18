@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     private static readonly int GroundHash = Animator.StringToHash("IsGround");
     private static readonly int IdleHash = Animator.StringToHash("Idle");
     private static readonly int AttackHash = Animator.StringToHash("Attack");
+    private static readonly int HashDoNext = Animator.StringToHash("Combo");
 
     public float moveSpeed = 5f;
     public float rotationSpeed = 180f;
@@ -65,6 +66,63 @@ public class PlayerMove : MonoBehaviour
         cap = GetComponent<CapsuleCollider>();
     }
 
+    [SerializeField, Range(0f, 1f)] float comboWindowOpen = 0.5f;
+    [SerializeField, Range(0f, 1f)] float comboWindowClose = 0.85f;
+
+    bool queuedCombo;  
+
+    public void OnAttackButton()  
+    {
+        if (player.isDead || animator == null) return;
+
+        var st = animator.GetCurrentAnimatorStateInfo(0);
+        bool inAttack = st.IsTag("Attack");  
+
+        if (!inAttack)
+        {
+            animator.ResetTrigger(AttackHash);
+            animator.SetTrigger(AttackHash);
+            queuedCombo = false;
+        }
+        else
+        {
+            var equip = GetComponent<EquipItem>();
+            if (equip.IsEquipped())
+            {
+                StartCoroutine(HitboxPulse(0.3f));
+                animator.SetTrigger(AttackHash);
+            }
+          
+            queuedCombo = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (player.isDead || animator == null) return;
+
+        var st = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (st.IsTag("Attack"))
+        {
+            float t = st.normalizedTime % 1f;  // 0..1
+
+            if (queuedCombo && t >= comboWindowOpen && t <= comboWindowClose)
+            {
+                queuedCombo = false;
+                animator.SetBool(HashDoNext, true);   // Combo = true
+            }
+
+            if (t > comboWindowClose)
+                animator.SetBool(HashDoNext, false);
+        }
+        else
+        {
+            animator.SetBool(HashDoNext, false);
+            queuedCombo = false;
+        }
+    }
+
     private void FixedUpdate()
     {
         if (player.isDead) return;
@@ -107,7 +165,7 @@ public class PlayerMove : MonoBehaviour
         Vector3 move = camRight * playerInput.MoveX + camFwd * playerInput.MoveZ;
         if (move.sqrMagnitude > 1f) move.Normalize();
 
-        bool grounded = IsGrounded(); 
+        bool grounded = IsGrounded();
         bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
         float speedMul = isAttacking ? 0.7f : 1f;
 
@@ -115,7 +173,7 @@ public class PlayerMove : MonoBehaviour
 
         bool hasMoveInput = (new Vector2(playerInput.MoveX, playerInput.MoveZ).sqrMagnitude > 0.0001f);
 
-        if (!hasMoveInput) 
+        if (!hasMoveInput)
         {
             camFwd = Camera.main.transform.forward; camFwd.y = 0; camFwd.Normalize();
             if (camFwd.sqrMagnitude > 0.001f)
@@ -125,11 +183,12 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        //if (move.sqrMagnitude > 0.001f)
-        //{
-        //    Quaternion targetRot = Quaternion.LookRotation(move, Vector3.up);
-        //    rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, rotationSpeed * Time.fixedDeltaTime));
-        //}
+        if (move.sqrMagnitude > 0.001f)
+        {
+            Quaternion targetRot = Quaternion.LookRotation(move, Vector3.up);
+            rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, rotationSpeed * Time.fixedDeltaTime));
+        }
+
         //Vector3 worldDir = new Vector3(playerInput.MoveZ, 0f, playerInput.MoveX);  
         //if (worldDir.sqrMagnitude > 1f) worldDir.Normalize();
 
@@ -185,6 +244,7 @@ public class PlayerMove : MonoBehaviour
 
     private IEnumerator HitboxPulse(float t)
     {
+        Debug.Log("Hitbox Pulse");
         hitbox.Open();
         yield return new WaitForSeconds(t);
         hitbox.Close();

@@ -14,10 +14,13 @@ public class EquipItem : MonoBehaviour
     private GameObject[] PoolWeapons;
     private GameObject currentWeapon;
 
+    private EquipController equipController;
+
     private int index = -1;
 
     private void Awake()
     {
+        equipController = GetComponent<EquipController>();
         inventory = GetComponent<Player>().quickSlotInventory;
         buttons = slots.GetComponentsInChildren<Button>();
         for (int i = 0; i < buttons.Length; i++)
@@ -72,14 +75,18 @@ public class EquipItem : MonoBehaviour
             case (int)ItemIds.Mace_Durian:
                 PoolWeapons[0].gameObject.SetActive(true);
                 HandHitbox[0].enabled = false;
+                HandHitbox[1].enabled = false;
                 HandHitbox[0].weaponDef.weaponId = WeaponIds.Mace_Durian;
                 currentWeapon = PoolWeapons[0];
+                equipController.SetEquipped(true);
                 break;
             default:
                 PoolWeapons[0].gameObject.SetActive(false);
                 HandHitbox[0].enabled = true;
+                HandHitbox[1].enabled = true;
                 HandHitbox[0].weaponDef.weaponId = WeaponIds.UNKNOWN_WEAPON;
                 currentWeapon = null;
+                equipController.SetEquipped(false);
                 break;
         }
         //for (int i = 0; i < parts.Length; i++)
@@ -102,6 +109,9 @@ public class EquipItem : MonoBehaviour
             HandHitbox[0].enabled = true;
             currentWeapon = null;
         }
+        equipController.SetEquipped(false);
     }
+
+    public bool IsEquipped() => currentWeapon != null;
 
 }

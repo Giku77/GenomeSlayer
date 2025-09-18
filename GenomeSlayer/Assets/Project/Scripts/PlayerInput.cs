@@ -46,7 +46,7 @@ public class PlayerInput : MonoBehaviour
             var pm = GetComponent<PlayerMove>();
             pm.IsMobileVeiwTopClicked = true;
         });
-        attackButton.onClick.AddListener(() => Attack = true);
+        //attackButton.onClick.AddListener(() => Attack = true);
     }
 
     private void UpdateWorldPos(Vector2 screenPos)

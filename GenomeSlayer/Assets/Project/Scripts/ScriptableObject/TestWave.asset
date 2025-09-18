@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872f0f5e0b877484d8dcadeb86c779b9, type: 3}
   m_Name: TestWave
   m_EditorClassIdentifier: 
-  currentWave: 0
-  WaveInterval: 60
-  currentEnemyCount: 0
-  maxEnemyCount: 30
+  currentWave: 1
+  WaveInterval: 17
+  currentEnemyCount: 5
+  maxEnemyCount: 5

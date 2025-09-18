@@ -236,6 +236,7 @@ public class Enemy : Entity
         animator.SetTrigger(hashDie);
         EventBus.EnemyDied?.Invoke(gameObject);
         EventBus.EnemyDropSeed?.Invoke(gameObject.transform.position);
+
         //Destroy(gameObject, 3f);
     }
 
