@@ -69,7 +69,7 @@ public class QuickSlotInventory
         }
     }
 
-    public void Consume(int slotIndex, int c)
+    public bool Consume(int slotIndex, int c)
     {
         if (slotIndex >= 0 && slotIndex < slots.Length && !slots[slotIndex].IsEmpty)
         {
@@ -78,7 +78,9 @@ public class QuickSlotInventory
             {
                 RemoveItem(slotIndex);
             }
+            return true;
         }
+        return false;
     }
 
     public int FindFirstSeedSlot(HashSet<int> seedIds)

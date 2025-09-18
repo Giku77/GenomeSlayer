@@ -74,8 +74,8 @@ public class TreeEntity : MonoBehaviour
 
                 if (best != null)
                 {
-                    buffEmitter.SetEnabled(false);
-                    best.buffEmitter.SetEnabled(false);
+                    //buffEmitter.SetEnabled(false);
+                    //best.buffEmitter.SetEnabled(false);
                     partner = best;
                     best.partner = this;
 

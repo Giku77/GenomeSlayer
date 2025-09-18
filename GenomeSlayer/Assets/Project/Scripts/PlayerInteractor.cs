@@ -72,13 +72,11 @@ public class PlayerInteractor : MonoBehaviour
 
         if (!seedMap.TryGetValue(slot.itemId, out var seedDef)) return;
 
-        // NavMesh가 있다면 근처 NavMesh로 스냅(선택)
-        if (NavMesh.SamplePosition(point, out var navHit, 2f, NavMesh.AllAreas))
-            point = navHit.position;
 
         Collider[] hits = Physics.OverlapSphere(point, 5f); // 반경 3f
         foreach (var h in hits)
         {
+            Debug.Log($"PlayerInteractor: Checking hit {h.name}");
             if (h.TryGetComponent<IInteractable>(out var inter))
             {
                 Debug.Log("PlayerInteractor: Interacting with " + h.name);
@@ -113,7 +111,11 @@ public class PlayerInteractor : MonoBehaviour
         //        plot.seed = seedDef;
         //#endif
 
-        var go = Instantiate(plantPlotPrefab, point, Quaternion.identity);
+        // NavMesh가 있다면 근처 NavMesh로 스냅(선택)
+        if (NavMesh.SamplePosition(point, out var navHit, 2f, NavMesh.AllAreas))
+            point = navHit.position;
+
+        var go = Instantiate(plantPlotPrefab, point + Vector3.forward, Quaternion.identity);
         EventBus.RemoveObj.Add(go);
         var plot = go.GetComponent<PlantPlot>();
         plot.seed = seedDef;

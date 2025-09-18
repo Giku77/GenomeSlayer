@@ -4,17 +4,22 @@ public class PlantPlot : MonoBehaviour, IInteractable
 {
     [Header("Refs")]
     public SeedDef seed;          
-    public LineRenderer ring;     
+    public LineRenderer ring;
 
     [Header("Growth")]
     public float progress;        // 0~1
     public float interactCharge = 0.25f;  // F 한번당 채워질 양
     //public float autoGrowRate = 0f;       // 초당 자동 성장(선택)
 
+    private GameObject player;
+
+
     public string Prompt => $"[F] Grow ({Mathf.RoundToInt(progress * 100)}%)";
+
 
     void Awake()
     {
+        player = GameObject.FindWithTag("Player");
         if (ring != null)
         {
             ring.useWorldSpace = false;  
@@ -36,9 +41,16 @@ public class PlantPlot : MonoBehaviour, IInteractable
 
     public void Interact(Player player)
     {
-        progress = Mathf.Min(1f, progress + interactCharge);
-        Debug.Log($"PlantPlot: Progress increased to {progress}");
-        TryComplete();
+        var inventory = player.quickSlotInventory;  
+        var i = inventory.FindSlotWithItem((int)ItemIds.Earthy_Fertilizer);
+        Debug.Log($"PlantPlot: Found fertilizer slot at index {i}");
+        if (inventory.Consume(i, 1))
+        {
+            EventBus.UpdateSlot?.Invoke(i, inventory.GetSlot(i).IsEmpty ? string.Empty : "0", inventory.GetSlot(i).IsEmpty ? string.Empty : inventory.GetSlot(i).quantity.ToString());
+            progress = Mathf.Min(1f, progress + interactCharge);
+            Debug.Log($"PlantPlot: Progress increased to {progress}");
+            TryComplete();
+        }
     }
 
     void TryComplete()
