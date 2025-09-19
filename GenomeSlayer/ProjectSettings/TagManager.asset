@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - SpawnFruit
+  - Joystick
+  - BlockUI
+  - sLV
   layers:
   - Default
   - TransparentFX

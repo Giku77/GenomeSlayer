@@ -22,3 +22,20 @@ public enum WeaponIds
     Katana_Pepper = 1010002,
     Bowling_Coconut = 1020003,
 }
+
+public enum GenomIds
+{
+    // Player
+    PlayerAttackUp = 1401000, // 플레이어 공격력 증가
+    PlayerAttackSpeedUp = 1402000, // 플레이어 공격속도 증가
+    PlayerMoveSpeedUp = 1403000, // 플레이어 이동 속도 증가
+
+    // Weapons / Fruits
+    MaceDurianAttackUp = 1401001, // 철퇴 두리안 공격력 증가
+    KatanaPepperAttackUp = 1401002, // 카타나 페퍼 공격력 증가
+    KatanaPepperAtkSpeedUp = 1402002, // 카타나 페퍼 공격 속도 증가
+    BowlingCoconutAttackUp = 1401003, // 볼링 코코넛 공격력 증가
+    BowlingCoconutAtkSpeedUp = 1402003, // 볼링 코코넛 공격 속도 증가
+    ArmorWatermelonDefenseUp = 1404004, // 갑옷 수박 방어력 증가
+    ArmorWatermelonMaxHpUp = 1405004, // 갑옷 수박 추가 체력 증가
+}

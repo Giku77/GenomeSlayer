@@ -11,7 +11,7 @@ public class VitualJoyStick : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -36,7 +36,6 @@ public class VitualJoyStick : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     {
         Input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
-        throw new System.NotImplementedException();
     }
 
 
@@ -51,6 +50,6 @@ public class VitualJoyStick : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input);
+        //Debug.Log(Input);
     }
 }

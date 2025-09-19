@@ -1,5 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
 using Unity.Cinemachine;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CamHorizontalDrag : MonoBehaviour
@@ -13,8 +14,32 @@ public class CamHorizontalDrag : MonoBehaviour
     int camFingerId = -1;             
     CinemachineOrbitalFollow orbital;
 
+
+    bool IsOverBlockingUI(Vector2 screenPos)
+    {
+        if (EventSystem.current == null) return false;
+
+        var ped = new PointerEventData(EventSystem.current) { position = screenPos };
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(ped, results);
+
+        foreach (var r in results)
+        {
+            var go = r.gameObject;
+
+            if (go.CompareTag("Joystick") || go.name.Contains("Joystick"))
+                continue;
+
+            if (go.CompareTag("BlockUI") || go.name.Contains("Pause") || go.name.Contains("Menu"))
+                return true;
+        }
+        return false;
+    }
+
     void Awake()
     {
+        Input.multiTouchEnabled = true;
+        Input.simulateMouseWithTouches = false;
         orbital = vcam.GetComponent<CinemachineOrbitalFollow>();
     }
 
@@ -48,7 +73,8 @@ public class CamHorizontalDrag : MonoBehaviour
         for (int i = 0; i < Input.touchCount; i++)
         {
             var t = Input.GetTouch(i);
-            bool overUI = EventSystem.current.IsPointerOverGameObject(t.fingerId);
+            //bool overUI = EventSystem.current.IsPointerOverGameObject(t.fingerId);
+            bool overUI = IsOverBlockingUI(t.position);
 
             if (t.phase == TouchPhase.Began)
             {
