@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,14 +16,16 @@ public class UIManager : MonoBehaviour
     public GameObject AcceptUI;
     public TextMeshProUGUI AcceptUIPoint;
 
-    public StateDef StateDefData;
+    public StateManager stateManager;
 
     private int currentIndex = 0;
+
+    private static readonly string rStr = "레벨업을 하시겠습니까?";
 
 
     private void Awake()
     {
-        AcceptUIPoint.text = StateDefData.GenomePoint.ToString();
+        AcceptUIPoint.text = stateManager.StateDefData.GenomePoint.ToString();
         SlotItems = InventoryUI.GetComponentsInChildren<InventorySlotUI>();
         for (int i = 0; i < SlotItems.Length; i++)
         {
@@ -32,18 +35,19 @@ public class UIManager : MonoBehaviour
         EventBus.UpdateSlot += UpdateInventory;
         var s = StateUI.GetComponentInChildren<GridLayoutGroup>().GetComponentsInChildren<Button>();
         var name = DataTableManger.GeTable.GetAllItems();
-        StateDefData.id = new int[s.Length];
-        StateDefData.lv = new int[s.Length];
+        var w = AcceptUI.GetComponentsInChildren<TextMeshProUGUI>()[1];
         //foreach (var b in s)
         for (int i = 0; i < s.Length; i++)
         {
+            var t = StateUI.GetComponentInChildren<GridLayoutGroup>().GetComponentsInChildren<TextMeshProUGUI>()[i];
+            t.text = stateManager.StateDefData.lv[i].ToString();
             var b = s[i];
             int index = i;
-            StateDefData.id[index] = name[index].UpgradeId;
+            stateManager.StateDefData.id[index] = name[index].UpgradeId;
             b.onClick.AddListener(() =>
             {
+                w.text = rStr;
                 currentIndex = index;
-                //var name = b.GetComponentsInChildren<TextMeshProUGUI>();
                 AcceptUI.SetActive(true);
                 AcceptUI.GetComponentsInChildren<TextMeshProUGUI>()[2].text = name[index].upgradeName;
                 StateNameText.text = name[index].upgradeName;
@@ -58,14 +62,8 @@ public class UIManager : MonoBehaviour
 
     public void AcceptButtonClicked(int index)
     {
-        var lv = StateDefData.lv[index]++;
-        StateDefData.GenomePoint -= DataTableManger.GeTable.GetItem(StateDefData.id[index]).genomePoint1;
-        AcceptUIPoint.text = StateDefData.GenomePoint.ToString();
-        //var t = StateUI.GetComponentInChildren<GridLayoutGroup>()
-        var t = GameObject.FindGameObjectsWithTag("sLV")[index].GetComponent<TextMeshProUGUI>();
-        t.text = lv.ToString();
-        //EventBus.RaiseStateChanged?.Invoke(StateDefData.id[StateDefData.currentState], StateDefData.lv[StateDefData.currentState]);
-        AcceptUI.SetActive(false);
+        var w = AcceptUI.GetComponentsInChildren<TextMeshProUGUI>()[1];
+        stateManager.UpdateLv(index, AcceptUIPoint, StateUI, AcceptUI, w);
     }
 
     public void UpdateHealth(int health, int max)
