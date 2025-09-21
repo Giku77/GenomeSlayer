@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
     {
         AcceptUIPoint.text = stateManager.GenomePoint.ToString();
         typingText = GetComponent<TypingText>();
+        WaveButton.interactable = false;
         ShowTypingText();
         SlotItems = InventoryUI.GetComponentsInChildren<InventorySlotUI>();
         for (int i = 0; i < SlotItems.Length; i++)
@@ -178,6 +179,7 @@ public class UIManager : MonoBehaviour
         {
             case 0:
                 TypingTextObject.SetActive(false);
+                WaveButton.interactable = true;
                 return;
             case 1601004:
                 uIFocusHighlighter.target = joystickZone.GetComponent<RectTransform>();
