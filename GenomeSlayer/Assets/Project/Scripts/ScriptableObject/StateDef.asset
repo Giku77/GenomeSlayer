@@ -12,6 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd210ee80e4f634d8f400486aa2daa0, type: 3}
   m_Name: StateDef
   m_EditorClassIdentifier: 
-  GenomePoint: 9999
-  id: 09da13000ada1300f2dd13000bda1300f3dd1300c4e51300ace9130008da1300f0dd1300d8e11300
-  lv: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
+  GenomePoint: 0
+  sharedCostCurve: 64000000c8000000900100002003000040060000
+  rows:
+  - id: 1401001
+    defaultLv: 0
+    overrideCostCurve: 
+  - id: 1401002
+    defaultLv: 0
+    overrideCostCurve: 
+  - id: 1402002
+    defaultLv: 0
+    overrideCostCurve: 
+  - id: 1401003
+    defaultLv: 0
+    overrideCostCurve: 
+  - id: 1402003
+    defaultLv: 0
+    overrideCostCurve: 
+  - id: 1404004
+    defaultLv: 0
+    overrideCostCurve: 
+  - id: 1405004
+    defaultLv: 0
+    overrideCostCurve: 
+  - id: 1401000
+    defaultLv: 0
+    overrideCostCurve: 
+  - id: 1402000
+    defaultLv: 0
+    overrideCostCurve: 
+  - id: 1403000
+    defaultLv: 0
+    overrideCostCurve: 

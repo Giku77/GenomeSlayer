@@ -1,7 +1,7 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static StateManager;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,61 +9,139 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI CurrentWave;
     public TextMeshProUGUI WaveTimer;
     public Button WaveButton;
+
     public GameObject InventoryUI;
     public GameObject StateUI;
-    private InventorySlotUI[] SlotItems;
     public TextMeshProUGUI StateNameText;
+
     public GameObject AcceptUI;
     public TextMeshProUGUI AcceptUIPoint;
 
     public StateManager stateManager;
 
+    private InventorySlotUI[] SlotItems;
     private int currentIndex = 0;
-
     private static readonly string rStr = "레벨업을 하시겠습니까?";
 
+    public GameObject TypingTextObject;
+    private TypingText typingText;
+    private int typingID = 1601001;
 
-    private void Awake()
+    public UIFocusHighlighter uIFocusHighlighter;
+    public GameObject slideZone;
+    public GameObject joystickZone;
+    public GameObject AttackButton;
+    public GameObject InteractButton;
+    public GameObject ViewButton;
+    public GameObject timerZone;
+
+    void Awake()
     {
-        AcceptUIPoint.text = stateManager.StateDefData.GenomePoint.ToString();
+        AcceptUIPoint.text = stateManager.GenomePoint.ToString();
+        typingText = GetComponent<TypingText>();
+        ShowTypingText();
         SlotItems = InventoryUI.GetComponentsInChildren<InventorySlotUI>();
         for (int i = 0; i < SlotItems.Length; i++)
         {
             SlotItems[i].itemName.text = "";
             SlotItems[i].itemCount.text = "";
         }
+
+       
         EventBus.UpdateSlot += UpdateInventory;
-        var s = StateUI.GetComponentInChildren<GridLayoutGroup>().GetComponentsInChildren<Button>();
-        var name = DataTableManger.GeTable.GetAllItems();
-        var w = AcceptUI.GetComponentsInChildren<TextMeshProUGUI>()[1];
-        //foreach (var b in s)
-        for (int i = 0; i < s.Length; i++)
+
+      
+        SetupStateGrid();
+
+     
+        var acceptButtons = AcceptUI.GetComponentsInChildren<Button>();
+      
+        acceptButtons[1].onClick.AddListener(() =>
         {
-            var t = StateUI.GetComponentInChildren<GridLayoutGroup>().GetComponentsInChildren<TextMeshProUGUI>()[i];
-            t.text = stateManager.StateDefData.lv[i].ToString();
-            var b = s[i];
-            int index = i;
-            stateManager.StateDefData.id[index] = name[index].UpgradeId;
-            b.onClick.AddListener(() =>
-            {
-                w.text = rStr;
-                currentIndex = index;
-                AcceptUI.SetActive(true);
-                AcceptUI.GetComponentsInChildren<TextMeshProUGUI>()[2].text = name[index].upgradeName;
-                StateNameText.text = name[index].upgradeName;
-            });
-        }
-        var AcceptButtons = AcceptUI.GetComponentsInChildren<Button>();
-        AcceptButtons[1].onClick.AddListener(() =>
-        {
-            AcceptButtonClicked(currentIndex);
+            OnAcceptLevelUpClicked();
         });
+
+        stateManager.OnGenomePointChanged += (pt) =>
+        {
+            AcceptUIPoint.text = pt.ToString();
+        };
+        stateManager.OnLevelChanged += (id, newLv) =>
+        {
+            RefreshStateLevels();
+        };
     }
 
-    public void AcceptButtonClicked(int index)
+    private void SetupStateGrid()
     {
-        var w = AcceptUI.GetComponentsInChildren<TextMeshProUGUI>()[1];
-        stateManager.UpdateLv(index, AcceptUIPoint, StateUI, AcceptUI, w);
+        var grid = StateUI.GetComponentInChildren<GridLayoutGroup>();
+        var buttons = grid.GetComponentsInChildren<Button>();
+        var levelTexts = grid.GetComponentsInChildren<TextMeshProUGUI>();
+
+        var nameTable = DataTableManger.GeTable.GetAllItems();
+
+        int count = Mathf.Min(buttons.Length, stateManager.RowCount);
+
+        for (int i = 0; i < count; i++)
+        {
+            int index = i;
+            var row = stateManager.GetRow(index);
+
+            levelTexts[i].text = stateManager.GetLevelByIndex(index).ToString();
+
+            buttons[i].onClick.RemoveAllListeners();
+            buttons[i].onClick.AddListener(() =>
+            {
+                currentIndex = index;
+                AcceptUI.SetActive(true);
+
+                var txts = AcceptUI.GetComponentsInChildren<TextMeshProUGUI>();
+   
+                txts[1].text = rStr;
+                txts[2].text = nameTable[index].upgradeName;
+
+                StateNameText.text = nameTable[index].upgradeName;
+            });
+        }
+    }
+
+    private void RefreshStateLevels()
+    {
+        var grid = StateUI.GetComponentInChildren<GridLayoutGroup>();
+        var levelTexts = grid.GetComponentsInChildren<TextMeshProUGUI>();
+
+        int count = Mathf.Min(levelTexts.Length, stateManager.RowCount);
+        for (int i = 0; i < count; i++)
+        {
+            levelTexts[i].text = stateManager.GetLevelByIndex(i).ToString();
+        }
+
+        AcceptUIPoint.text = stateManager.GenomePoint.ToString();
+    }
+
+    private void OnAcceptLevelUpClicked()
+    {
+        // int cost = stateManager.GetNextCostByIndex(currentIndex);
+        var result = stateManager.TryLevelUpByIndexResult(currentIndex);
+
+        switch (result)
+        {
+            case LevelUpResult.Ok:
+                RefreshStateLevels();
+                AcceptUI.SetActive(false);
+                break;
+
+            case LevelUpResult.NotEnoughPoint:
+                AcceptUI.GetComponentsInChildren<TextMeshProUGUI>()[1].text = "포인트가 부족합니다.";
+                break;
+
+            case LevelUpResult.ReachedMaxLevel:
+                AcceptUI.GetComponentsInChildren<TextMeshProUGUI>()[1].text = "이미 최대 레벨입니다.";
+                break;
+
+            case LevelUpResult.InvalidIndex:
+                AcceptUI.GetComponentsInChildren<TextMeshProUGUI>()[1].text = "잘못된 선택입니다.";
+                break;
+        }
     }
 
     public void UpdateHealth(int health, int max)
@@ -72,44 +150,86 @@ public class UIManager : MonoBehaviour
         HealthSilder.value = health;
     }
 
-    public void ActiveWaveButton(bool t)
-    {
-        WaveButton.gameObject.SetActive(t);
-    }
+    public void ActiveWaveButton(bool t) => WaveButton.gameObject.SetActive(t);
 
-    public void UpdateWave(int wave)
-    {
-        CurrentWave.text = "CHAPTER: " + wave.ToString("D2");
-    }
+    public void UpdateWave(int wave) => CurrentWave.text = "CHAPTER: " + wave.ToString("D2");
 
-    public void UpdateWaveTimer(float time)
-    {
-        WaveTimer.text = $"{time:F0}";
-    }
+    public void UpdateWaveTimer(float time) => WaveTimer.text = $"{time:F0}";
 
     public void UpdateInventory(int index, string name, string count)
     {
         if (index < 0 || index >= SlotItems.Length) return;
-        if (name != "0")
-         SlotItems[index].itemName.text = name;
+        if (name != "0") SlotItems[index].itemName.text = name;
         SlotItems[index].itemCount.text = count;
     }
 
-    public void CloseButton()
-    {         
-        StateUI.SetActive(false);
-    }
-
-    public void CloseAccpet()
-    {
-        AcceptUI.SetActive(false);
-    }
+    public void CloseButton() => StateUI.SetActive(false);
+    public void CloseAccpet() => AcceptUI.SetActive(false);
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
-        {
+        if (Input.GetKeyDown(KeyCode.Tab))
             StateUI.SetActive(!StateUI.activeSelf);
+    }
+
+    public void ShowTypingText()
+    {
+        switch (typingID)
+        {
+            case 0:
+                TypingTextObject.SetActive(false);
+                return;
+            case 1601004:
+                uIFocusHighlighter.target = joystickZone.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601005:
+                uIFocusHighlighter.target = slideZone.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601006:
+                uIFocusHighlighter.target = InventoryUI.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601007:
+                uIFocusHighlighter.target = SlotItems[0].GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601008:
+            case 1601009:
+                uIFocusHighlighter.target = InteractButton.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601013:
+                uIFocusHighlighter.target = InteractButton.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601014:
+                uIFocusHighlighter.target = AttackButton.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601015:
+                uIFocusHighlighter.target = WaveButton.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601016:
+                uIFocusHighlighter.target = ViewButton.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601017:
+                uIFocusHighlighter.target = timerZone.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1601018:
+                uIFocusHighlighter.target = HealthSilder.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            default:
+                uIFocusHighlighter.gameObject.SetActive(false);
+                break;
         }
+        var message = DataTableManger.StringTable.GetItem(typingID);
+        typingText.Play(message.toolTipText);
+        typingID = message.nextToolTip;
     }
 }

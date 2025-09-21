@@ -59,6 +59,8 @@ public class PlantPlot : MonoBehaviour, IInteractable
         var t = Instantiate(seed.treePrefab, transform.position, Quaternion.identity);
         EventBus.RemoveObj.Add(t);
         Destroy(gameObject);
+        var g = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>();
+        g.AddGenomePoint(100);
     }
 
     void DrawCircle(LineRenderer lr, float radius, int seg)

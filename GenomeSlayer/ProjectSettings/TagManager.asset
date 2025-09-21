@@ -8,6 +8,7 @@ TagManager:
   - Joystick
   - BlockUI
   - sLV
+  - Ges
   layers:
   - Default
   - TransparentFX

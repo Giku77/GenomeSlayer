@@ -43,6 +43,9 @@ public static class DataTableManger
     var gesTable = new GeTable();
     gesTable.Load(GeTable.GesTableId);
     tables.Add(GeTable.GesTableId, gesTable);
+    var stringTable = new StringTable();
+    stringTable.Load(StringTable.StrTableId);
+    tables.Add(StringTable.StrTableId, stringTable);
     }
 
     //public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
@@ -53,6 +56,8 @@ public static class DataTableManger
 
     public static PlantTable PlantTable => Get<PlantTable>(PlantTable.PlantTableId);
     public static GeTable GeTable => Get<GeTable>(GeTable.GesTableId);
+
+    public static StringTable StringTable => Get<StringTable>(StringTable.StrTableId);
 
     public static T Get<T>(string id) where T : DataTable
     {

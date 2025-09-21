@@ -169,7 +169,9 @@ public class PlayerMove : MonoBehaviour
         bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
         float speedMul = isAttacking ? 0.7f : 1f;
 
-        rb.MovePosition(rb.position + move * (moveSpeed * speedMul) * Time.fixedDeltaTime);
+        var g = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>();
+
+        rb.MovePosition(rb.position + move * ((moveSpeed + g.GetUpgradeStatAmount((int)GenomIds.PlayerMoveSpeedUp))* speedMul) * Time.fixedDeltaTime);
 
         bool hasMoveInput = (new Vector2(playerInput.MoveX, playerInput.MoveZ).sqrMagnitude > 0.0001f);
 

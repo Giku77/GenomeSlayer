@@ -125,7 +125,7 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if (waveDef.WaveInterval <= -1 || waveDef.currentWave == 0)
+        if ((waveDef.WaveInterval <= -1 || waveDef.currentWave == 0))
         {
             //Debug.Log("Spawning Wave " + (waveDef.currentWave + 1));
             ResetWaves();

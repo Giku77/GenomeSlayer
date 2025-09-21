@@ -1,83 +1,111 @@
-using JetBrains.Annotations;
 using System;
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class StateManager : MonoBehaviour
 {
-    public float DamageP { get; private set; } 
-    public int Health { get; private set; }
+    [SerializeField] private StateDef def;
+    private Dictionary<int, int> levels;
 
-    public StateDef StateDefData;
+    public int GenomePoint { get; private set; }
 
-    public int GesPoint
+    public int RowCount => def != null ? def.rows.Count : 0;
+    public StateDef.Row GetRow(int index) => def.rows[index];
+
+    public event Action<int, int> OnLevelChanged;
+    public event Action<int> OnGenomePointChanged;
+
+    public enum LevelUpResult
     {
-        get => StateDefData.GenomePoint;
-        set
-        {
-            StateDefData.GenomePoint = value;
-        }
+        Ok,
+        NotEnoughPoint,
+        ReachedMaxLevel,
+        InvalidIndex
     }
 
-    private void Awake()
+    void Awake()
     {
-        if (StateDefData.id.Length == 0)
-        {
-            var s = DataTableManger.GeTable.GetAllItems();
-            StateDefData.id = new int[s.Count];
-            StateDefData.lv = new int[s.Count];
-        }
+        GenomePoint = def.GenomePoint;
+        OnGenomePointChanged?.Invoke(GenomePoint);
+        levels = new Dictionary<int, int>();
+        // TODO: JSON 로드 연결
     }
 
-
-    private int GetNeedPoint(GesPointData gs, int lv)
+    public LevelUpResult TryLevelUpByIndexResult(int index, int? overrideCost = null)
     {
-        switch (lv)
-        {
-            case 1:
-                return gs.genomePoint1;
-            case 2:
-                return gs.genomePoint2;
-            case 3:
-                return gs.genomePoint3;
-            case 4:
-                return gs.genomePoint4;
-            case 5:
-                return gs.genomePoint5;
-        }
-        return -1;
+        if (index < 0 || index >= RowCount) return LevelUpResult.InvalidIndex;
+
+        var row = def.rows[index];
+        int curLv = GetLevel(row.id);
+        int maxLv = def.MaxLevelFor(row.id);
+        if (curLv >= maxLv) return LevelUpResult.ReachedMaxLevel;
+
+        int cost = overrideCost ?? GetNextCostByIndex(index);
+        if (GenomePoint < cost) return LevelUpResult.NotEnoughPoint;
+
+        GenomePoint -= cost;
+        int newLv = curLv + 1;
+        levels[row.id] = newLv;
+
+        OnGenomePointChanged?.Invoke(GenomePoint);
+        OnLevelChanged?.Invoke(row.id, newLv);
+        // SaveJson(); 필요 시
+        return LevelUpResult.Ok;
     }
 
-
-    public void UpdateDamage(int id)
+    public int GetLevel(int id)
     {
-        DamageP = DataTableManger.GeTable.GetItem(id).upgradeStatAmount;
+        return levels != null && levels.TryGetValue(id, out var lv) ? lv
+             : (def.TryGet(id, out var row) ? row.defaultLv : 0);
     }
 
-    public void UpdateLv(int index, TextMeshProUGUI point, GameObject StateUI, GameObject AcceptUI,TextMeshProUGUI w)
+    public int GetLevelByIndex(int index)
     {
-        var currentLv = StateDefData.lv[index];
-        var currentPoint = StateDefData.GenomePoint;
-        var needPoint = GetNeedPoint(DataTableManger.GeTable.GetItem(StateDefData.id[index]), currentLv + 1);
-        if (currentPoint < needPoint)
-        {
-            w.text = "포인트가 부족합니다.";
-            return;
-        }
-        if (needPoint < 0)
-        {
-            w.text = "최대 레벨입니다.";
-            return;
-        }
+        var id = def.rows[index].id;
+        return GetLevel(id);
+    }
 
+    public int GetNextCostByIndex(int index)
+    {
+        var row = def.rows[index];
+        int curLv = GetLevel(row.id);
+        int nextLv = curLv + 1;
+        return def.GetCost(row.id, nextLv);
+    }
 
-        StateDefData.lv[index]++;
-        StateDefData.GenomePoint -= DataTableManger.GeTable.GetItem(StateDefData.id[index]).genomePoint1;
-        point.text = StateDefData.GenomePoint.ToString();
-        var t = StateUI.GetComponentInChildren<GridLayoutGroup>().GetComponentsInChildren<TextMeshProUGUI>()[index];
-        t.text = StateDefData.lv[index].ToString();
-        AcceptUI.SetActive(false);
+    public bool TryLevelUpByIndex(int index, int? overrideCost = null)
+    {
+        var row = def.rows[index];
+
+        // 레벨 상한
+        int maxLv = def.MaxLevelFor(row.id);
+        int curLv = GetLevel(row.id);
+        if (curLv >= maxLv) return false;
+
+        int cost = overrideCost ?? GetNextCostByIndex(index);
+        if (GenomePoint < cost) return false;
+
+        GenomePoint -= cost;
+        int newLv = curLv + 1;
+        levels[row.id] = newLv;
+
+        OnGenomePointChanged?.Invoke(GenomePoint);
+        OnLevelChanged?.Invoke(row.id, newLv);
+        // TODO: SaveJson()
+        return true;
+    }
+
+    public void AddGenomePoint(int amount)
+    {
+        GenomePoint += amount;
+        OnGenomePointChanged?.Invoke(GenomePoint);
+    }
+
+    public float GetUpgradeStatAmount(int id)
+    {
+        var a = DataTableManger.GeTable.GetItem(id).upgradeStatAmount;
+        var lv = GetLevel(id);
+        return a * lv;
     }
 
 }
