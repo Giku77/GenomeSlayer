@@ -231,6 +231,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8011547812132947903, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1539,6 +1547,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8011547812132947903, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2473,6 +2489,14 @@ PrefabInstance:
     - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Name
       value: Slot1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8011547812132947903, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Sprite
@@ -11741,6 +11765,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1271505827}
   - component: {fileID: 1271505828}
+  - component: {fileID: 1271505830}
+  - component: {fileID: 1271505829}
   m_Layer: 5
   m_Name: QuickSlot
   m_TagString: BlockUI
@@ -11802,6 +11828,44 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1271505829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271505826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1271505830
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271505826}
+  m_CullTransparentMesh: 1
 --- !u!1 &1279021949
 GameObject:
   m_ObjectHideFlags: 0
@@ -13655,6 +13719,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8011547812132947903, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -13969,6 +14041,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8011547812132947903, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -14207,6 +14287,14 @@ PrefabInstance:
     - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Name
       value: Slot1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8011547812132947903, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Sprite
@@ -22402,11 +22490,19 @@ MonoBehaviour:
   joystickRoot: {fileID: 1575564770}
   dragSpeedX: 0.32
   dragSpeedY: 0.1
-  useDpiScale: 1
+  useDpiScale: 0
   doubleTapTime: 0.3
   doubleTapMaxPixels: 40
   snapDuration: 0.25
   snapEaseOut: 1
+  minFov: 35
+  wheelZoomSpeed: 50
+  pinchZoomSpeed: 0.07
+  fovSmoothTime: 0.08
+  turnSmoothTime: 0.1
+  turnMaxSpeed: 1080
+  minVertical: -30
+  maxVertical: 60
 --- !u!114 &1757115125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23681,6 +23777,14 @@ PrefabInstance:
     - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Name
       value: Slot1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362334938244603140, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8011547812132947903, guid: b4b767c7ae18b4687bc481a63184cfd2, type: 3}
       propertyPath: m_Sprite

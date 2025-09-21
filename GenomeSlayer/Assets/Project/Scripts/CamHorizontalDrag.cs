@@ -16,10 +16,31 @@ public class CamHorizontalDrag : MonoBehaviour
     public bool useDpiScale = true;
 
     [Header("Double Tap to Snap")]
-    public float doubleTapTime = 0.3f;         // 두 번 탭 사이 최대 시간(초)
-    public float doubleTapMaxPixels = 40f;     // 두 탭 사이 최대 이동(픽셀)
-    public float snapDuration = 0.25f;         // 스냅 보간 시간
-    public bool snapEaseOut = true;           // 부드러운 감쇠
+    public float doubleTapTime = 0.3f;         
+    public float doubleTapMaxPixels = 40f;    
+    public float snapDuration = 0.25f;        
+    public bool snapEaseOut = true;           
+
+    [Header("Zoom (FOV)")]
+    public float minFov = 35f;         
+    public float wheelZoomSpeed = 5f;  
+    public float pinchZoomSpeed = 0.05f; 
+    public float fovSmoothTime = 0.08f;
+
+    [Header("Turn Smoothing")]
+    public float turnSmoothTime = 0.07f;     
+    public float turnMaxSpeed = 1080f;    
+    public float minVertical = -30f;      
+    public float maxVertical = 60f;
+
+    float targetH, targetV;   
+    float hVel, vVel;        
+    bool dragging;           
+
+    float defaultFov;    
+    float fovVel;        
+    bool isPinching;   
+
 
     Vector2 lastPos;
     int camFingerId = -1;
@@ -71,11 +92,15 @@ public class CamHorizontalDrag : MonoBehaviour
 
         orbital = vcam.GetComponent<CinemachineOrbitalFollow>();
 
-   
+        defaultFov = vcam.Lens.FieldOfView;
+
         if (orbital != null)
         {
             defaultH = orbital.HorizontalAxis.Value;
             defaultV = orbital.VerticalAxis.Value;
+
+            targetH = defaultH;
+            targetV = defaultV;
         }
     }
 
@@ -102,10 +127,12 @@ public class CamHorizontalDrag : MonoBehaviour
 
             lastPos = pos;
             camFingerId = 0;
+            dragging = true;
         }
         else if (Input.GetMouseButtonUp(0))
         {
             camFingerId = -1;
+            dragging = false;
         }
 
         if (camFingerId != -1 && Input.GetMouseButton(0))
@@ -113,6 +140,16 @@ public class CamHorizontalDrag : MonoBehaviour
             Vector2 now = (Vector2)Input.mousePosition;
             ApplyDelta(now - lastPos);
             lastPos = now;
+        }
+
+        float wheel = Input.mouseScrollDelta.y;
+        if (Mathf.Abs(wheel) > 0.0001f)
+        {
+            float target = vcam.Lens.FieldOfView - wheel * wheelZoomSpeed;
+            target = Mathf.Clamp(target, minFov, defaultFov);
+            // 부드럽게
+            float fov = Mathf.SmoothDamp(vcam.Lens.FieldOfView, target, ref fovVel, fovSmoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
+            vcam.Lens.FieldOfView = fov;
         }
 #else
         if (EventSystem.current == null) return;
@@ -138,6 +175,7 @@ public class CamHorizontalDrag : MonoBehaviour
                 {
                     camFingerId = t.fingerId;
                     lastPos = t.position;
+                    dragging = true;
                 }
             }
 
@@ -151,10 +189,60 @@ public class CamHorizontalDrag : MonoBehaviour
                 if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled)
                 {
                     camFingerId = -1;
+                    dragging = false;    
                 }
             }
         }
+        if (Input.touchCount >= 2)
+{
+    var t0 = Input.GetTouch(0);
+    var t1 = Input.GetTouch(1);
+
+    if (!(IsOverBlockingUI(t0.position) || IsOverBlockingUI(t1.position)))
+    {
+        Vector2 p0Prev = t0.position - t0.deltaPosition;
+        Vector2 p1Prev = t1.position - t1.deltaPosition;
+
+        float prevDist = (p0Prev - p1Prev).magnitude;
+        float currDist = (t0.position - t1.position).magnitude;
+        float delta = currDist - prevDist; // +면 벌림(줌 인), -면 좁힘(줌 아웃)
+
+        if (!isPinching)
+        {
+            isPinching = true;
+            camFingerId = -1;
+        }
+
+        float target = vcam.Lens.FieldOfView - delta * pinchZoomSpeed;
+        target = Mathf.Clamp(target, minFov, defaultFov);
+        float fov = Mathf.SmoothDamp(vcam.Lens.FieldOfView, target, ref fovVel, fovSmoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
+        vcam.Lens.FieldOfView = fov;
+    }
+}
+else
+{
+    isPinching = false;
+}
 #endif
+        if (orbital != null && snapCo == null)
+        {
+            float dt = Time.unscaledDeltaTime;  
+
+            float curH = orbital.HorizontalAxis.Value;
+            float curV = orbital.VerticalAxis.Value;
+
+            curH = Mathf.SmoothDampAngle(curH, targetH, ref hVel, turnSmoothTime, turnMaxSpeed, dt);
+            curV = Mathf.SmoothDamp(curV, targetV, ref vVel, turnSmoothTime, turnMaxSpeed, dt);
+
+            orbital.HorizontalAxis.Value = curH;
+            orbital.VerticalAxis.Value = curV;
+        }
+
+        if (!dragging)
+        {
+            hVel *= 0.90f;   
+            vVel *= 0.90f;
+        }
     }
 
     bool IsDoubleTap(Vector2 currentPos)
@@ -202,6 +290,11 @@ public class CamHorizontalDrag : MonoBehaviour
 
         orbital.HorizontalAxis.Value = defaultH;
         orbital.VerticalAxis.Value = defaultV;
+
+        targetH = defaultH;
+        targetV = defaultV;
+        hVel = vVel = 0f;
+
         snapCo = null;
     }
 
@@ -210,7 +303,8 @@ public class CamHorizontalDrag : MonoBehaviour
         float startV = orbital.VerticalAxis.Value;
         float startH = orbital.HorizontalAxis.Value; // 방향은 고정
 
-        float targetV = defaultV;
+
+        float snapV = defaultV;
 
         float t = 0f;
         while (t < 1f)
@@ -222,13 +316,19 @@ public class CamHorizontalDrag : MonoBehaviour
   
             orbital.HorizontalAxis.Value = startH;
    
-            orbital.VerticalAxis.Value = Mathf.Lerp(startV, targetV, k);
+            orbital.VerticalAxis.Value = Mathf.Lerp(startV, snapV, k);
 
             yield return null;
         }
 
         orbital.HorizontalAxis.Value = startH;   
-        orbital.VerticalAxis.Value = targetV;  
+        orbital.VerticalAxis.Value = snapV;
+
+        targetH = orbital.HorizontalAxis.Value;
+        targetV = orbital.VerticalAxis.Value;
+
+        hVel = 0f;
+        vVel = 0f;
         snapCo = null;
     }
 
@@ -238,7 +338,11 @@ public class CamHorizontalDrag : MonoBehaviour
         float dx = delta.x / dpiScale;
         float dy = delta.y / dpiScale;
 
-        orbital.HorizontalAxis.Value += dx * dragSpeedX;
-        orbital.VerticalAxis.Value -= dy * dragSpeedY;
+        targetH += dx * dragSpeedX;
+        targetV -= dy * dragSpeedY;
+        targetV = Mathf.Clamp(targetV, minVertical, maxVertical);
+
+        //orbital.HorizontalAxis.Value += dx * dragSpeedX;
+        //orbital.VerticalAxis.Value -= dy * dragSpeedY;
     }
 }
