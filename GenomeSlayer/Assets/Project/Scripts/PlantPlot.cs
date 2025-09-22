@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlantPlot : MonoBehaviour, IInteractable
@@ -46,7 +47,7 @@ public class PlantPlot : MonoBehaviour, IInteractable
         Debug.Log($"PlantPlot: Found fertilizer slot at index {i}");
         if (inventory.Consume(i, 1))
         {
-            EventBus.UpdateSlot?.Invoke(i, inventory.GetSlot(i).IsEmpty ? string.Empty : "0", inventory.GetSlot(i).IsEmpty ? string.Empty : inventory.GetSlot(i).quantity.ToString());
+            EventBus.UpdateSlot?.Invoke(i, inventory.GetSlot(i).IsEmpty ? string.Empty : "0", inventory.GetSlot(i).IsEmpty ? string.Empty : inventory.GetSlot(i).quantity.ToString(), -1);
             progress = Mathf.Min(1f, progress + interactCharge);
             Debug.Log($"PlantPlot: Progress increased to {progress}");
             TryComplete();
@@ -57,6 +58,9 @@ public class PlantPlot : MonoBehaviour, IInteractable
     {
         if (progress < 1f || seed == null || seed.treePrefab == null) return;
         var t = Instantiate(seed.treePrefab, transform.position, Quaternion.identity);
+        var s = t.GetComponent<TreeEntity>();
+        var table = DataTableManger.ItemTable.GetItem(seed.itemId);
+        s.SeedNum = table.itemImprovedNum;
         EventBus.RemoveObj.Add(t);
         Destroy(gameObject);
         var g = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>();

@@ -18,6 +18,8 @@ public class EquipItem : MonoBehaviour
 
     private int index = -1;
 
+    public int SelectedIndex { get; set; }
+
     private void Awake()
     {
         equipController = GetComponent<EquipController>();
@@ -29,6 +31,7 @@ public class EquipItem : MonoBehaviour
             buttons[i].onClick.AddListener(() =>
             {
                 EventSystem.current.SetSelectedGameObject(buttons[closureIndex].gameObject);
+                SelectedIndex = closureIndex;
             });
         }
         PoolWeapons = new GameObject[weapons.Length];

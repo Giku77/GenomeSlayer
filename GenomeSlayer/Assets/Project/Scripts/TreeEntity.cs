@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class TreeEntity : MonoBehaviour
     private BuffEmitter buffEmitter;
     private GameObject fruitInstance;
     private bool hasFruit => fruitInstance != null;
+
+    public int SeedNum { get; set; }
 
     private void Awake()
     {
@@ -114,7 +117,21 @@ public class TreeEntity : MonoBehaviour
         Destroy(gameObject);
         buffEmitter.SetEnabled(false);
         fruitInstance = null;
-        EventBus.RaiseFruitHarvested();
+        var s = Math.Abs(SeedNum - partner.SeedNum);
+        if (s >= 2)
+        {
+            if (SeedNum > partner.SeedNum)
+            {
+                SeedNum --;
+                //partner.SeedNum ++;
+            }
+            else
+            {
+                SeedNum ++;
+                //partner.SeedNum --;
+            }
+        }
+        EventBus.RaiseFruitHarvested(treeDef.TreeID, SeedNum);
 
         // EventBus.RaiseFruitHarvested(transform.position);
     }

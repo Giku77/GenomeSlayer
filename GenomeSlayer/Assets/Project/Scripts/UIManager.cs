@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI CurrentWave;
     public TextMeshProUGUI WaveTimer;
     public Button WaveButton;
+    public Button GenomButton;
 
     public GameObject InventoryUI;
     public GameObject StateUI;
@@ -46,6 +47,7 @@ public class UIManager : MonoBehaviour
         {
             SlotItems[i].itemName.text = "";
             SlotItems[i].itemCount.text = "";
+            SlotItems[i].slotIndex = i;
         }
 
        
@@ -70,6 +72,14 @@ public class UIManager : MonoBehaviour
         {
             RefreshStateLevels();
         };
+    }
+
+    public void ActiveFalseSlider()
+    {
+        for (int i = 0; i < SlotItems.Length; i++)
+        {
+            SlotItems[i].durSlider.gameObject.SetActive(false);
+        }
     }
 
     private void SetupStateGrid()
@@ -153,15 +163,24 @@ public class UIManager : MonoBehaviour
 
     public void ActiveWaveButton(bool t) => WaveButton.gameObject.SetActive(t);
 
+    public void ActiveGenomButton(bool t) => GenomButton.gameObject.SetActive(t);
+
     public void UpdateWave(int wave) => CurrentWave.text = "CHAPTER: " + wave.ToString("D2");
 
     public void UpdateWaveTimer(float time) => WaveTimer.text = $"{time:F0}";
 
-    public void UpdateInventory(int index, string name, string count)
+    public void UpdateInventory(int index, string name, string count, int dur)
     {
         if (index < 0 || index >= SlotItems.Length) return;
         if (name != "0") SlotItems[index].itemName.text = name;
         SlotItems[index].itemCount.text = count;
+        if (dur > 0)
+        {
+            SlotItems[index].durSlider.gameObject.SetActive(true);
+            SlotItems[index].durSlider.maxValue = dur;
+            SlotItems[index].durSlider.value = dur;
+        }
+      
     }
 
     public void CloseButton() => StateUI.SetActive(false);
@@ -172,6 +191,12 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
             StateUI.SetActive(!StateUI.activeSelf);
     }
+
+    public void OnStateUIButtonClicked()
+    {
+        StateUI.SetActive(!StateUI.activeSelf);
+    }
+
 
     public void ShowTypingText()
     {

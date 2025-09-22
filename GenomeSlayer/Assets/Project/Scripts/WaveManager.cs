@@ -130,6 +130,7 @@ public class WaveManager : MonoBehaviour
             //Debug.Log("Spawning Wave " + (waveDef.currentWave + 1));
             ResetWaves();
             uiManager.ActiveWaveButton(true);
+            uiManager.ActiveGenomButton(true);
             waveInProgress = false;
             //SpawnWave();
         }
@@ -174,6 +175,7 @@ public class WaveManager : MonoBehaviour
         waveDef.WaveInterval = 60f;
         waveCoroutine = StartCoroutine(WaveTimer());
         uiManager.ActiveWaveButton(false);
+        uiManager.ActiveGenomButton(false);
         waveDef.currentWave++;
         uiManager.UpdateWave(waveDef.currentWave);
         spawnEnemyCount = waveDef.currentWave * 2;
@@ -216,7 +218,7 @@ public class WaveManager : MonoBehaviour
             if (slot != null && !slot.IsEmpty)
             {
                 inv.RemoveItem(i);
-                EventBus.UpdateSlot?.Invoke(i, string.Empty, string.Empty);
+                EventBus.UpdateSlot?.Invoke(i, string.Empty, string.Empty, -1);
             }
         }
         foreach (var enemy in activeEnemies.ToArray())
@@ -227,5 +229,6 @@ public class WaveManager : MonoBehaviour
 
         var equip = player.GetComponent<EquipItem>();
         equip.UnEquipItem();
+        uiManager.ActiveFalseSlider();
     }
 }

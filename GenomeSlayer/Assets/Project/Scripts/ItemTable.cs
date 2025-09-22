@@ -66,4 +66,14 @@ public class ItemTable : DataTable
         //return (UnknownItemKey, -1, -1, UnknownItemKey);
     }
 
+    public int GetItemCount()
+    {
+        return _items.Count;
+    }
+
+    public List<ItemData> GetAllItems()
+    {
+        return _items.Values.ToList();
+    }
+
 }

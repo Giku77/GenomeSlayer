@@ -17,9 +17,9 @@ public class Item : MonoBehaviour
             if (player != null)
             {
                 player.quickSlotInventory.AddItem(itemData.itemID, 1);
-                EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, itemData.itemName, player.quickSlotInventory.GetSlotCount().ToString());
+                EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, itemData.itemName, player.quickSlotInventory.GetSlotCount().ToString(), -1);
             }
-            Debug.Log($"Picked up item: {itemData.itemName}");
+            //Debug.Log($"Picked up item: {itemData.itemName}");
             Destroy(gameObject);
         }
     }

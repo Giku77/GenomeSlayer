@@ -19,6 +19,7 @@ public class PlayerInput : MonoBehaviour
 
     public VitualJoyStick moveJoystick;
     public Button interactButton;
+    public Button harvButton;
     public Button viewButton;
     public Button attackButton;
 
@@ -38,6 +39,11 @@ public class PlayerInput : MonoBehaviour
         interactButton.onClick.AddListener(() =>
         {
             playerInteractor.IsInteracting = true;
+            playerInteractor.lastWorldPos = lastWorldPos;
+        });
+        harvButton.onClick.AddListener(() =>
+        {
+            playerInteractor.IsHarv = true;
             playerInteractor.lastWorldPos = lastWorldPos;
         });
         viewButton.onClick.AddListener(() =>

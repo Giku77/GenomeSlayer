@@ -15,12 +15,14 @@ public class ItemManager : MonoBehaviour
         EventBus.RaiseFruitHarvested += AddEquipItem;
     }
 
-    private void AddEquipItem()
+    private void AddEquipItem(int TreeId, int num)
     {
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        var weapon = DataTableManger.EquipmentTable.GetItem((int)ItemIds.Mace_Durian);
-        player.quickSlotInventory.AddItem((int)ItemIds.Mace_Durian, 1, weapon.equipDurability, weapon.equipQuantity);
-        EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, DataTableManger.EquipmentTable.GetItem((int)ItemIds.Mace_Durian).equipName, player.quickSlotInventory.GetSlotCount().ToString());
+        var itemId = (int)ItemIds.Mace_Durian + (1000 * num);
+        var weapon = DataTableManger.EquipmentTable.GetItem(itemId);
+        player.quickSlotInventory.AddItem(itemId, 1, weapon.equipDurability, weapon.equipQuantity);
+        var item = DataTableManger.EquipmentTable.GetItem(itemId);
+        EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, item.equipName, player.quickSlotInventory.GetSlotCount().ToString(), item.equipDurability);
     }
 
     private void AddItemData(GameObject go, int id)
@@ -42,7 +44,7 @@ public class ItemManager : MonoBehaviour
         var s = Instantiate(SeedPrefab, position, Quaternion.identity);
         Destroy(s, 10f);
         EventBus.RemoveObj.Add(s);
-        AddItemData(s, (int)ItemIds.Durian_Seed);
+        AddItemData(s, (int)ItemIds.Mystery_Seed);
     }
 
     public void SpawnItem(Vector3 position)

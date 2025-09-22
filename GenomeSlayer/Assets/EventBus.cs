@@ -11,8 +11,9 @@ public static class EventBus
     public static Action<GameObject> EnemyDied;
     public static Action<Vector3> EnemyDropSeed;
     public static Action<int> WaveStarted;
+    public static Action AttackDur;
     //public static Action<TreeEntity> TreeGrown;
     public static Action<int> PointsChanged;
-    public static Action<int, string, string> UpdateSlot;
-    public static Action RaiseFruitHarvested;
+    public static Action<int, string, string, int> UpdateSlot;
+    public static Action<int, int> RaiseFruitHarvested;
 }
