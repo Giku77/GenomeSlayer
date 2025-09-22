@@ -126,13 +126,8 @@ public class PlayerInteractor : MonoBehaviour
         var plot = go.GetComponent<PlantPlot>();
         plot.seed = seedDef;
 
-        quickSlotInventory.Consume(slotIndex, 1);
-        EventBus.UpdateSlot?.Invoke(
-            slotIndex,
-            slot.IsEmpty ? string.Empty : "0",
-            slot.IsEmpty ? string.Empty : slot.quantity.ToString(),
-            -1
-        );
+        quickSlotInventory.TryConsume(slotIndex, 1);
+        //EventBus.UpdateSlot?.Invoke(slotIndex, quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : "0", quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : quickSlotInventory.GetSlot(slotIndex).quantity.ToString(), -1);
     }
 
 
@@ -194,7 +189,7 @@ public class PlayerInteractor : MonoBehaviour
 
 
 
-        quickSlotInventory.Consume(slotIndex, 1);
-        EventBus.UpdateSlot?.Invoke(slotIndex, quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : "0", quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : quickSlotInventory.GetSlot(slotIndex).quantity.ToString(), -1);
+        quickSlotInventory.TryConsume(slotIndex, 1);
+        //EventBus.UpdateSlot?.Invoke(slotIndex, quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : "0", quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : quickSlotInventory.GetSlot(slotIndex).quantity.ToString(), -1);
     }
 }

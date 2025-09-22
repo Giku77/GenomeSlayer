@@ -15,5 +15,22 @@ public static class EventBus
     //public static Action<TreeEntity> TreeGrown;
     public static Action<int> PointsChanged;
     public static Action<int, string, string, int> UpdateSlot;
+    public static Action<int> UpdateSelected;
     public static Action<int, int> RaiseFruitHarvested;
+
+    public static void WireToEventBus(QuickSlotInventory inv, Func<int, string> getItemName)
+    {
+        inv.OnSlotChanged += (idx, slot) =>
+        {
+            string name = slot.IsEmpty ? string.Empty : getItemName(slot.itemId);
+            string count = slot.IsEmpty ? string.Empty : slot.quantity.ToString();
+            int dur = slot.IsEmpty ? -1 : slot.durability;
+            UpdateSlot?.Invoke(idx, name, count, dur);
+        };
+
+        inv.OnSelectedIndexChanged += (oldIdx, newIdx) =>
+        {
+            UpdateSelected?.Invoke(newIdx);
+        };
+    }
 }

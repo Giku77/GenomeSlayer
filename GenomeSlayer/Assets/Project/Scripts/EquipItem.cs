@@ -71,9 +71,11 @@ public class EquipItem : MonoBehaviour
     {
         if (index < 0 || index >= buttons.Length) return;
         var EquipId = inventory.GetSlot(GetSelectedIndex()).itemId;
+        int BaseId = ToBaseId(EquipId);
+        //int enh = GetEnhanceLevel(EquipId);
         var HandHitbox = GetComponentsInChildren<Hitbox>();
         Debug.Log($"EquipId: {EquipId}");   
-        switch (EquipId)
+        switch (BaseId)
         {
             case (int)ItemIds.Mace_Durian:
                 PoolWeapons[0].gameObject.SetActive(true);
@@ -100,6 +102,9 @@ public class EquipItem : MonoBehaviour
         //        parts[i].gameObject.SetActive(false);
         //}
     }
+
+    static int GetEnhanceLevel(int id) => (id / 1000) % 10;
+    static int ToBaseId(int id) => id - GetEnhanceLevel(id) * 1000;
 
     public void UnEquipItem()
     {

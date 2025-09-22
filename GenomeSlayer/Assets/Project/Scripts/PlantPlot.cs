@@ -45,9 +45,9 @@ public class PlantPlot : MonoBehaviour, IInteractable
         var inventory = player.quickSlotInventory;  
         var i = inventory.FindSlotWithItem((int)ItemIds.Earthy_Fertilizer);
         Debug.Log($"PlantPlot: Found fertilizer slot at index {i}");
-        if (inventory.Consume(i, 1))
+        if (inventory.TryConsume(i, 1))
         {
-            EventBus.UpdateSlot?.Invoke(i, inventory.GetSlot(i).IsEmpty ? string.Empty : "0", inventory.GetSlot(i).IsEmpty ? string.Empty : inventory.GetSlot(i).quantity.ToString(), -1);
+            //EventBus.UpdateSlot?.Invoke(i, inventory.GetSlot(i).IsEmpty ? string.Empty : "0", inventory.GetSlot(i).IsEmpty ? string.Empty : inventory.GetSlot(i).quantity.ToString(), -1);
             progress = Mathf.Min(1f, progress + interactCharge);
             Debug.Log($"PlantPlot: Progress increased to {progress}");
             TryComplete();

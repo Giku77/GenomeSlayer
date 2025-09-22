@@ -18,11 +18,12 @@ public class ItemManager : MonoBehaviour
     private void AddEquipItem(int TreeId, int num)
     {
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        var itemId = (int)ItemIds.Mace_Durian + (1000 * num);
+        var itemId = ((int)ItemIds.Mace_Durian) + (1000 * num);
+        Debug.Log($"Adding Equip Item with ID: {itemId}");
         var weapon = DataTableManger.EquipmentTable.GetItem(itemId);
-        player.quickSlotInventory.AddItem(itemId, 1, weapon.equipDurability, weapon.equipQuantity);
+        player.quickSlotInventory.TryAddItem(itemId, 1, weapon.equipDurability, weapon.equipQuantity);
         var item = DataTableManger.EquipmentTable.GetItem(itemId);
-        EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, item.equipName, player.quickSlotInventory.GetSlotCount().ToString(), item.equipDurability);
+        //EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, item.equipName, player.quickSlotInventory.GetSlotCount().ToString(), item.equipDurability);
     }
 
     private void AddItemData(GameObject go, int id)

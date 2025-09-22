@@ -16,8 +16,8 @@ public class Item : MonoBehaviour
             var player = collision.gameObject.GetComponent<Player>();
             if (player != null)
             {
-                player.quickSlotInventory.AddItem(itemData.itemID, 1);
-                EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, itemData.itemName, player.quickSlotInventory.GetSlotCount().ToString(), -1);
+                player.quickSlotInventory.TryAddItem(itemData.itemID, 1);
+                //EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, itemData.itemName, player.quickSlotInventory.GetSlotCount().ToString(), -1);
             }
             //Debug.Log($"Picked up item: {itemData.itemName}");
             Destroy(gameObject);

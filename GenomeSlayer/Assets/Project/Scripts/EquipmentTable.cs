@@ -52,6 +52,11 @@ public class EquipmentTable : DataTable
 
     }
 
+    public bool TryGetItem(int key, out EquipItemData item)
+    {
+        return _equips.TryGetValue(key, out item);
+    }
+
     public EquipItemData GetItem(int key)
     {
         if (_equips.TryGetValue(key, out var value))

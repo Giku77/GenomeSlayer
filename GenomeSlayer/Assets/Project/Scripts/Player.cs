@@ -16,6 +16,23 @@ public class Player : Entity
         capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
+    private void Start()
+    {
+        EventBus.WireToEventBus(
+            quickSlotInventory,
+            itemId =>
+            {
+                if (DataTableManger.ItemTable.TryGetItem(itemId, out var item))
+                    return item.itemName;
+
+                if (DataTableManger.EquipmentTable.TryGetItem(itemId, out var equip))
+                    return equip.equipName; 
+
+                return string.Empty; 
+            }
+        );
+    }
+
     public void Heal(int amount)
     {
         health += amount;

@@ -15,14 +15,16 @@ public class InventorySlotUI : MonoBehaviour
     private Player player => GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     private EquipItem equipItem => GameObject.FindGameObjectWithTag("Player").GetComponent<EquipItem>();
 
-    private void Awake()
-    {
-       EventBus.AttackDur += UpdatedurSlider;
-    }
+    void OnEnable() { EventBus.AttackDur += UpdatedurSlider; }
+    void OnDisable() { EventBus.AttackDur -= UpdatedurSlider; }
 
     public void UpdatedurSlider()
     {
+        if (!this) return;
+        if (!durSlider) return;
         if (!durSlider.gameObject.activeSelf) return;
+        var selected = equipItem ? equipItem.SelectedIndex : -1;
+        if (selected != slotIndex) return;
 
         var inventory = player.quickSlotInventory;
         var eId = inventory.GetSlot(slotIndex).itemId;
@@ -37,21 +39,21 @@ public class InventorySlotUI : MonoBehaviour
             s = PickUniqueInts(4, 0, 4);
 
         if (durSlider.value > 0)
-            durSlider.value -= 1;
+            durSlider.value -= 10;
 
-        if (durSlider.value <= 75 && s[0] != -1)
+        if (durSlider.value <= durSlider.maxValue * 0.75 && s[0] != -1)
         {
             Debug.Log("Adding seed at 75% durability");
             AddSeed(seeds, s[0], inventory);
             s[0] = -1;
         }
-        if (durSlider.value <= 50 && s[1] != -1)
+        if (durSlider.value <= durSlider.maxValue * 0.5 && s[1] != -1)
         {
             Debug.Log("Adding seed at 50% durability");
             AddSeed(seeds, s[1], inventory);
             s[1] = -1;
         }
-        if (durSlider.value <= 25 && s[2] != -1)
+        if (durSlider.value <= durSlider.maxValue * 0.25 && s[2] != -1)
         {
             Debug.Log("Adding seed at 25% durability");
             AddSeed(seeds, s[2], inventory);
@@ -61,12 +63,12 @@ public class InventorySlotUI : MonoBehaviour
         {
 
             inventory.RemoveItem(slotIndex);
-            EventBus.UpdateSlot?.Invoke(slotIndex, string.Empty, string.Empty, -1);
+            //EventBus.UpdateSlot?.Invoke(slotIndex, string.Empty, string.Empty, -1);
             durSlider.gameObject.SetActive(false);
             equipItem.UnEquipItem();
 
             Debug.Log("Adding seed at 0% durability and unequipping item");
-            AddSeed(seeds, s[2], inventory);
+            AddSeed(seeds, s[3], inventory);
             s[3] = -1;
             s = null;
 
@@ -88,16 +90,16 @@ public class InventorySlotUI : MonoBehaviour
         {
             case 0:
             case 1:
-                inv.AddItem(seedid[0], 1);
-                EventBus.UpdateSlot?.Invoke(inv.SelectedIndex, itable.GetItem(seedid[0]).itemName, inv.GetSlotCount().ToString(), -1);
+                inv.TryAddItem(seedid[0], 1);
+                //EventBus.UpdateSlot?.Invoke(inv.SelectedIndex, itable.GetItem(seedid[0]).itemName, inv.GetSlotCount().ToString(), -1);
                 break;
             case 2:
-                inv.AddItem(seedid[1], 1);
-                EventBus.UpdateSlot?.Invoke(inv.SelectedIndex, itable.GetItem(seedid[1]).itemName, inv.GetSlotCount().ToString(), -1);
+                inv.TryAddItem(seedid[1], 1);
+                //EventBus.UpdateSlot?.Invoke(inv.SelectedIndex, itable.GetItem(seedid[1]).itemName, inv.GetSlotCount().ToString(), -1);
                 break;
             case 3:
-                inv.AddItem(seedid[2], 1);
-                EventBus.UpdateSlot?.Invoke(inv.SelectedIndex, itable.GetItem(seedid[2]).itemName, inv.GetSlotCount().ToString(), -1);
+                inv.TryAddItem(seedid[2], 1);
+                //EventBus.UpdateSlot?.Invoke(inv.SelectedIndex, itable.GetItem(seedid[2]).itemName, inv.GetSlotCount().ToString(), -1);
                 break;
             default:
                 break;

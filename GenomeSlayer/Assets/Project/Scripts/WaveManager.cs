@@ -74,7 +74,7 @@ public class WaveManager : MonoBehaviour
     {
         waveDef.currentEnemyCount = 0;
         waveDef.currentWave = 0;
-        waveDef.WaveInterval = 60f;
+        waveDef.WaveInterval = 600f;
         uiManager.UpdateWave(waveDef.currentWave);
     }
 
@@ -172,7 +172,7 @@ public class WaveManager : MonoBehaviour
         }
         player.Heal(1000);
         waveInProgress = true;
-        waveDef.WaveInterval = 60f;
+        waveDef.WaveInterval = 600f;
         waveCoroutine = StartCoroutine(WaveTimer());
         uiManager.ActiveWaveButton(false);
         uiManager.ActiveGenomButton(false);
@@ -218,7 +218,7 @@ public class WaveManager : MonoBehaviour
             if (slot != null && !slot.IsEmpty)
             {
                 inv.RemoveItem(i);
-                EventBus.UpdateSlot?.Invoke(i, string.Empty, string.Empty, -1);
+                //EventBus.UpdateSlot?.Invoke(i, string.Empty, string.Empty, -1);
             }
         }
         foreach (var enemy in activeEnemies.ToArray())
