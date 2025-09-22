@@ -2,12 +2,14 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : Entity
 {
     private NavMeshAgent agent;
     private Animator animator;
     private BuffController buffController;
+    private Slider healthSlider;
 
 
     public enum State
@@ -91,6 +93,9 @@ public class Enemy : Entity
 
     public void Awake()
     {
+        healthSlider = GetComponentInChildren<Slider>();
+        healthSlider.maxValue = maxhealth;
+        healthSlider.value = health;
         buffController = GetComponent<BuffController>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -178,12 +183,11 @@ public class Enemy : Entity
 
     private void UpdateIdle()
     {
+        target = FindTargetT(traceDist);
         if (target != null && Vector3.Distance(transform.position, target.position) <= traceDist)
         {
             state = State.Trace;
         }
-
-        target = FindTarget(traceDist).transform;
     }
 
     //protected override void OnEnable()
@@ -201,7 +205,8 @@ public class Enemy : Entity
     public override void OnDamage(int damage)
     {
         base.OnDamage(damage);
-        //healthSlider.value = Health / MaxHealth;
+
+        healthSlider.value = health;
         //StartCoroutine(bloodEffect(hitPoint));
     }
 
@@ -224,6 +229,7 @@ public class Enemy : Entity
     {
         //audioSource.PlayOneShot(zombieDie, AudioManager.instance.sfxVolume);
         //base.Die();
+        healthSlider.gameObject.SetActive(false);
         capsuleCollider.enabled = false;
         var rb = GetComponent<Rigidbody>();
         if (rb)
@@ -242,6 +248,7 @@ public class Enemy : Entity
 
     public void ResetEnemy()
     {
+        healthSlider.gameObject.SetActive(true);
         capsuleCollider.enabled = true;
         var rb = GetComponent<Rigidbody>();
         if (rb)
@@ -250,10 +257,11 @@ public class Enemy : Entity
             rb.detectCollisions = true;
         }
         health = maxhealth;
+        healthSlider.value = health;
         animator.ResetTrigger(hashDie);
         state = State.Idle;
-        animator.Rebind();
-        animator.Update(0f);
+        //animator.Rebind();
+        //animator.Update(0f);
     }
 
 

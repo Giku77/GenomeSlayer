@@ -45,6 +45,7 @@ public class Hitbox : MonoBehaviour
 
         //Debug.Log("Hitbox OnTriggerEnter3: " + other.name);
 
+        Haptics.Light();
         e.OnDamage(damage);
         hitCountThisSwing++;
 

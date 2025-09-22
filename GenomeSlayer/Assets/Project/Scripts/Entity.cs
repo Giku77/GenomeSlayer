@@ -15,13 +15,21 @@ public class Entity : MonoBehaviour
     protected Collider FindTarget(float radius)
     {
         var colliders = Physics.OverlapSphere(transform.position, radius, targetPlayer.value);
-        if (colliders.Length == 0)
+        if (colliders == null || colliders.Length == 0)
         {
             return null;
         }
 
         return colliders.OrderBy(x => Vector3.Distance(x.transform.position, transform.position)).First();
 
+    }
+
+    protected Transform FindTargetT(float radius)
+    {
+        var cols = Physics.OverlapSphere(transform.position, radius, targetPlayer);
+        if (cols == null || cols.Length == 0) return null;
+        return cols.OrderBy(c => Vector3.Distance(c.transform.position, transform.position))
+                   .First().transform;
     }
 
     protected virtual void Die()
