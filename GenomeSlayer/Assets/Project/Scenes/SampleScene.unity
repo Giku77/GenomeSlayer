@@ -1175,11 +1175,6 @@ MonoBehaviour:
   pauseOnPunct: 1
   punctPause: 0.2
   skipKey: 32
---- !u!137 &148394414 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1472431848603662618, guid: 83628a2e699576147adabb30587f44d4, type: 3}
-  m_PrefabInstance: {fileID: 1609306530}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &149277598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,8 +3616,6 @@ GameObject:
   - component: {fileID: 358311699}
   - component: {fileID: 358311700}
   - component: {fileID: 358311701}
-  - component: {fileID: 358311702}
-  - component: {fileID: 358311703}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -3788,6 +3781,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   righthitbox: {fileID: 2146749215}
   lefthitbox: {fileID: 605593572}
+  DurianAttackbox: {fileID: 1350704896382971645, guid: 03bdb08937e47f74684ef720f63cb18a, type: 3}
+  PepperAttackbox: {fileID: 2613753834690058826, guid: 1906ce760c0ba7a40af32a185e0ed9cd, type: 3}
+  CoconutAttackbox: {fileID: 2648588286860662042, guid: d660c2101843e6e4e8f6a6f5ad08fce5, type: 3}
 --- !u!114 &358311699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3868,7 +3864,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 3765008650632650752, guid: 03bdb08937e47f74684ef720f63cb18a, type: 3}
   - {fileID: 691305412657191795, guid: 1906ce760c0ba7a40af32a185e0ed9cd, type: 3}
-  - {fileID: 434498900596218342, guid: d660c2101843e6e4e8f6a6f5ad08fce5, type: 3}
+  - {fileID: 3277943639347227717, guid: d660c2101843e6e4e8f6a6f5ad08fce5, type: 3}
   slots: {fileID: 1271505826}
 --- !u!114 &358311701
 MonoBehaviour:
@@ -3883,34 +3879,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 358311696}
---- !u!114 &358311702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358311690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104a441cc7a41034d8009e98084f3abd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  righthitbox: {fileID: 2146749215}
-  lefthitbox: {fileID: 605593572}
---- !u!114 &358311703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358311690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca013333977f8d478988e22c0f0f82b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerBodySMR: {fileID: 148394414}
-  armorSMR: {fileID: 0}
 --- !u!1 &383746479
 GameObject:
   m_ObjectHideFlags: 0

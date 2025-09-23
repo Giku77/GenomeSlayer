@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+//[RequireComponent(typeof(Collider))]
 public class Projectile : MonoBehaviour
 {
     Entity owner;
@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
     Vector3 outDir;
     bool returning;
 
-    public void Init(Entity owner, WeaponDef def, LayerMask targetLayers)
+    public void Init(Entity owner, WeaponDef def, LayerMask targetLayers, Vector3 dir)
     {
         this.owner = owner;
         this.def = def;
@@ -24,9 +24,13 @@ public class Projectile : MonoBehaviour
         hitSet.Clear();
         pierceCount = 0;
 
-        outDir = owner.transform.forward.normalized;
+        //outDir = owner.transform.forward.normalized;
+        //outDir = muzzle.forward.normalized;
+        outDir = dir.normalized;
+        transform.rotation = Quaternion.LookRotation(outDir, Vector3.up);
+        //transform.forward = outDir;
 
-        var col = GetComponent<Collider>();
+        var col = GetComponentInChildren<Collider>();
         var ownerCols = owner.GetComponentsInChildren<Collider>();
         foreach (var oc in ownerCols) Physics.IgnoreCollision(col, oc, true);
     }
@@ -48,6 +52,9 @@ public class Projectile : MonoBehaviour
             float dist = toOwner.magnitude;
             if (dist < 0.5f)
             {
+                var e = GameObject.FindGameObjectWithTag("Player").GetComponent<EquipItem>();
+                if (e.currentWeapon != null)
+                    e.currentWeapon.SetActive(true);
                 Destroy(gameObject);
                 return;
             }
@@ -56,6 +63,7 @@ public class Projectile : MonoBehaviour
             transform.forward = dir; 
         }
     }
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -82,6 +90,8 @@ public class Projectile : MonoBehaviour
             if (!returning) returning = true;        
             else Destroy(gameObject);              
         }
+        if (other.GetComponent<Enemy>())
+            EventBus.AttackDur?.Invoke();
     }
 
     void OnDestroy()

@@ -8,6 +8,9 @@ public class Hitbox : MonoBehaviour
     public LayerMask targetLayers;
     public int maxTargetsPerSwing = 999;
 
+    //public bool isStop { get; set; }
+    public WeaponIds currentWeaponId { get; set; } = WeaponIds.UNKNOWN_WEAPON;
+
     private bool active;
     private readonly HashSet<Entity> hitEntities = new();
     private int hitCountThisSwing;
@@ -19,21 +22,17 @@ public class Hitbox : MonoBehaviour
     }
     public void Open()
     {
+        //if (isStop) return;
         if (weaponDef == null) return;
 
         Debug.Log("Hitbox Open: " + weaponDef.weaponId + " / " + weaponDef.kind);
 
-        if(weaponDef.weaponId == WeaponIds.Bowling_Coconut)
-            weaponDef.kind = WeaponKind.Projectile;
-        else weaponDef.kind = WeaponKind.Melee;
-
-        if (weaponDef.kind == WeaponKind.Projectile)
+        if (weaponDef.kind == WeaponKind.Projectile || weaponDef.kind == WeaponKind.ThrownReturn)
         {
             FireProjectile();
         }
         else
         {
-            Debug.Log("Hitbox Open");
             active = true;
             hitEntities.Clear();
             hitCountThisSwing = 0;
@@ -43,17 +42,34 @@ public class Hitbox : MonoBehaviour
     private void FireProjectile()
     {
         Debug.Log("FireProjectile");
-        Transform muzzle = transform; 
-        var proj = Instantiate(weaponDef.projectilePrefab, muzzle.position, muzzle.rotation);
-        proj.Init(owner: GetComponentInParent<Player>(),
+        Transform muzzle = transform;
+
+        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        var dir = Vector3.ProjectOnPlane(player.transform.forward, Vector3.up).normalized;
+        if (dir.sqrMagnitude < 0.0001f) dir = Vector3.forward;
+
+        //var fwdFlat = Vector3.ProjectOnPlane(muzzle.forward, Vector3.up).normalized;
+
+        const float spawnForward = 0.35f;
+        //const float spawnUp = 1f;
+        var spawnPos = player.transform.position + dir * spawnForward;
+
+        var rot = Quaternion.LookRotation(dir, Vector3.up);
+
+        var proj = Instantiate(weaponDef.projectilePrefab, spawnPos, rot);
+        //var proj = Instantiate(weaponDef.projectilePrefab, muzzle.position, muzzle.rotation);
+        proj.Init(owner: GameObject.FindGameObjectWithTag("Player").GetComponent<Player>(),
                   def: weaponDef,
-                  targetLayers: targetLayers);
+                  targetLayers: targetLayers, dir: dir);
+        var e = GameObject.FindGameObjectWithTag("Player").GetComponent<EquipItem>();
+        if (e.currentWeapon != null)
+            e.currentWeapon.SetActive(false);
     }
 
     public void Close()
     {
-        //Debug.Log("Hitbox Close");
-        //active = false;
+            //Debug.Log("Hitbox Close");
+            //active = false;
     }
 
     private void OnTriggerEnter(Collider other)

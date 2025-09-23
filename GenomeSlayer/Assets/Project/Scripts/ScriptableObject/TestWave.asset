@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TestWave
   m_EditorClassIdentifier: 
   currentWave: 1
-  WaveInterval: 578
-  currentEnemyCount: 10
-  maxEnemyCount: 10
+  WaveInterval: 547
+  currentEnemyCount: 3
+  maxEnemyCount: 3
