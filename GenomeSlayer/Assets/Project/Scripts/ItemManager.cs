@@ -18,11 +18,27 @@ public class ItemManager : MonoBehaviour
     private void AddEquipItem(int TreeId, int num)
     {
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        var itemId = ((int)ItemIds.Mace_Durian) + (1000 * num);
+        var id = (int)WeaponIds.UNKNOWN_WEAPON;
+        switch (TreeId)
+        {
+            case (int)TreeIds.Durian_Tree:
+                id = (int)WeaponIds.Mace_Durian;
+                break;
+            case (int)TreeIds.Pepper_Tree:
+                id = (int)WeaponIds.Katana_Pepper;
+                break;
+            case (int)TreeIds.Coconut_Tree:
+                id = (int)WeaponIds.Bowling_Coconut;
+                break;
+            default:
+                Debug.LogWarning($"Unknown TreeId: {TreeId}");
+                return;
+        }
+        var itemId = (id + (1000 * num));
         Debug.Log($"Adding Equip Item with ID: {itemId}");
         var weapon = DataTableManger.EquipmentTable.GetItem(itemId);
         player.quickSlotInventory.TryAddItem(itemId, 1, weapon.equipDurability, weapon.equipQuantity);
-        var item = DataTableManger.EquipmentTable.GetItem(itemId);
+        //var item = DataTableManger.EquipmentTable.GetItem(itemId);
         //EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, item.equipName, player.quickSlotInventory.GetSlotCount().ToString(), item.equipDurability);
     }
 

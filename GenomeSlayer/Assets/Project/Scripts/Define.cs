@@ -11,9 +11,9 @@ public enum ItemIds
     Earthy_Fertilizer = 1110002,
     Mystery_Seed = 1120000,
     Durian_Seed = 1120001,
-    Watermelon_Seed = 1120002,
-    Pepper_Seed = 1120003,
-    Coconut_Seed = 1120004,
+    Pepper_Seed = 1120002,
+    Coconut_Seed = 1120003,
+    Watermelon_Seed = 1120004,
 }
 
 public enum WeaponIds
@@ -22,6 +22,16 @@ public enum WeaponIds
     Mace_Durian = 1010001,
     Katana_Pepper = 1010002,
     Bowling_Coconut = 1020003,
+    Watermelon_Armor = 1030004,
+}
+
+public enum TreeIds
+{
+    UNKNOWN_TREE = -1,
+    Durian_Tree = 1220001,
+    Pepper_Tree = 1221002,
+    Coconut_Tree = 1222003,
+    Watermelon_Tree = 1224004,
 }
 
 public enum GenomIds

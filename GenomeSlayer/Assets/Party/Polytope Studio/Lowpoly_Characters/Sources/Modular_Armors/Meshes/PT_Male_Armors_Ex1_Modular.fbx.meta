@@ -1,0 +1,6106 @@
+fileFormatVersion: 2
+guid: 643e130d300582f49ab24a41475e311f
+ModelImporter:
+  serializedVersion: 20300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: PT_Medieval_Male_Armor_Cape
+  - first:
+      1: 100002
+    second: PT_Medieval_Male_Armor_Ex1_body_01
+  - first:
+      1: 100004
+    second: PT_Medieval_Male_Armor_Ex1_body_02
+  - first:
+      1: 100006
+    second: PT_Medieval_Male_Armor_Ex1_body_03
+  - first:
+      1: 100008
+    second: PT_Medieval_Male_Armor_Ex1_body_04
+  - first:
+      1: 100010
+    second: PT_Medieval_Male_Armor_Ex1_body_05
+  - first:
+      1: 100012
+    second: PT_Medieval_Male_Armor_Ex1_body_06
+  - first:
+      1: 100014
+    second: PT_Medieval_Male_Armor_Ex1_body_07
+  - first:
+      1: 100016
+    second: PT_Medieval_Male_Armor_Ex1_body_08
+  - first:
+      1: 100018
+    second: PT_Medieval_Male_Armor_Ex1_body_09
+  - first:
+      1: 100020
+    second: PT_Medieval_Male_Armor_Ex1_body_10
+  - first:
+      1: 100022
+    second: PT_Medieval_Male_Armor_Ex1_body_11
+  - first:
+      1: 100024
+    second: PT_Medieval_Male_Armor_Ex1_body_12
+  - first:
+      1: 100026
+    second: PT_Medieval_Male_Armor_Ex1_body_13
+  - first:
+      1: 100028
+    second: PT_Medieval_Male_Armor_Ex1_body_14
+  - first:
+      1: 100030
+    second: PT_Medieval_Male_Armor_Ex1_body_15
+  - first:
+      1: 100032
+    second: PT_Medieval_Male_Armor_Ex1_body_16
+  - first:
+      1: 100034
+    second: PT_Medieval_Male_Armor_Ex1_body_17
+  - first:
+      1: 100036
+    second: PT_Medieval_Male_Armor_Ex1_body_18
+  - first:
+      1: 100038
+    second: PT_Medieval_Male_Armor_Ex1_body_19
+  - first:
+      1: 100040
+    second: PT_Medieval_Male_Armor_Ex1_body_20
+  - first:
+      1: 100042
+    second: PT_Medieval_Male_Armor_Ex1_body_21
+  - first:
+      1: 100044
+    second: PT_Medieval_Male_Armor_Ex1_body_22
+  - first:
+      1: 100046
+    second: PT_Medieval_Male_Armor_Ex1_body_23
+  - first:
+      1: 100048
+    second: PT_Medieval_Male_Armor_Ex1_body_24
+  - first:
+      1: 100050
+    second: PT_Medieval_Male_Armor_Ex1_body_25
+  - first:
+      1: 100052
+    second: PT_Medieval_Male_Armor_Ex1_body_26
+  - first:
+      1: 100054
+    second: PT_Medieval_Male_Armor_Ex1_body_27
+  - first:
+      1: 100056
+    second: PT_Medieval_Male_Armor_Ex1_body_28
+  - first:
+      1: 100058
+    second: PT_Medieval_Male_Armor_Ex1_body_29
+  - first:
+      1: 100060
+    second: PT_Medieval_Male_Armor_Ex1_body_30
+  - first:
+      1: 100062
+    second: PT_Medieval_Male_Armor_Ex1_body_31
+  - first:
+      1: 100064
+    second: PT_Medieval_Male_Armor_Ex1_body_32
+  - first:
+      1: 100066
+    second: PT_Medieval_Male_Armor_Ex1_boots_01
+  - first:
+      1: 100068
+    second: PT_Medieval_Male_Armor_Ex1_boots_02
+  - first:
+      1: 100070
+    second: PT_Medieval_Male_Armor_Ex1_boots_03
+  - first:
+      1: 100072
+    second: PT_Medieval_Male_Armor_Ex1_boots_04
+  - first:
+      1: 100074
+    second: PT_Medieval_Male_Armor_Ex1_boots_05
+  - first:
+      1: 100076
+    second: PT_Medieval_Male_Armor_Ex1_boots_06
+  - first:
+      1: 100078
+    second: PT_Medieval_Male_Armor_Ex1_boots_07
+  - first:
+      1: 100080
+    second: PT_Medieval_Male_Armor_Ex1_boots_08
+  - first:
+      1: 100082
+    second: PT_Medieval_Male_Armor_Ex1_boots_09
+  - first:
+      1: 100084
+    second: PT_Medieval_Male_Armor_Ex1_boots_10
+  - first:
+      1: 100086
+    second: PT_Medieval_Male_Armor_Ex1_boots_11
+  - first:
+      1: 100088
+    second: PT_Medieval_Male_Armor_Ex1_boots_12
+  - first:
+      1: 100090
+    second: PT_Medieval_Male_Armor_Ex1_boots_13
+  - first:
+      1: 100092
+    second: PT_Medieval_Male_Armor_Ex1_boots_14
+  - first:
+      1: 100094
+    second: PT_Medieval_Male_Armor_Ex1_boots_15
+  - first:
+      1: 100096
+    second: PT_Medieval_Male_Armor_Ex1_boots_16
+  - first:
+      1: 100098
+    second: PT_Medieval_Male_Armor_Ex1_boots_17
+  - first:
+      1: 100100
+    second: PT_Medieval_Male_Armor_Ex1_boots_18
+  - first:
+      1: 100102
+    second: PT_Medieval_Male_Armor_Ex1_boots_19
+  - first:
+      1: 100104
+    second: PT_Medieval_Male_Armor_Ex1_boots_20
+  - first:
+      1: 100106
+    second: PT_Medieval_Male_Armor_Ex1_boots_21
+  - first:
+      1: 100108
+    second: PT_Medieval_Male_Armor_Ex1_boots_22
+  - first:
+      1: 100110
+    second: PT_Medieval_Male_Armor_Ex1_boots_23
+  - first:
+      1: 100112
+    second: PT_Medieval_Male_Armor_Ex1_boots_24
+  - first:
+      1: 100114
+    second: PT_Medieval_Male_Armor_Ex1_boots_25
+  - first:
+      1: 100116
+    second: PT_Medieval_Male_Armor_Ex1_boots_26
+  - first:
+      1: 100118
+    second: PT_Medieval_Male_Armor_Ex1_cape_01
+  - first:
+      1: 100120
+    second: PT_Medieval_Male_Armor_Ex1_cape_02
+  - first:
+      1: 100122
+    second: PT_Medieval_Male_Armor_Ex1_cape_03
+  - first:
+      1: 100124
+    second: PT_Medieval_Male_Armor_Ex1_cape_04
+  - first:
+      1: 100126
+    second: PT_Medieval_Male_Armor_Ex1_cape_05
+  - first:
+      1: 100128
+    second: PT_Medieval_Male_Armor_Ex1_cape_06
+  - first:
+      1: 100130
+    second: PT_Medieval_Male_Armor_Ex1_cape_07
+  - first:
+      1: 100132
+    second: PT_Medieval_Male_Armor_Ex1_cape_08
+  - first:
+      1: 100134
+    second: PT_Medieval_Male_Armor_Ex1_cape_09
+  - first:
+      1: 100136
+    second: PT_Medieval_Male_Armor_Ex1_cape_10
+  - first:
+      1: 100138
+    second: PT_Medieval_Male_Armor_Ex1_cape_11
+  - first:
+      1: 100140
+    second: PT_Medieval_Male_Armor_Ex1_cape_12
+  - first:
+      1: 100142
+    second: PT_Medieval_Male_Armor_Ex1_cape_13
+  - first:
+      1: 100144
+    second: PT_Medieval_Male_Armor_Ex1_cape_14
+  - first:
+      1: 100146
+    second: PT_Medieval_Male_Armor_Ex1_cape_15
+  - first:
+      1: 100148
+    second: PT_Medieval_Male_Armor_Ex1_cape_16
+  - first:
+      1: 100150
+    second: PT_Medieval_Male_Armor_Ex1_cape_17
+  - first:
+      1: 100152
+    second: PT_Medieval_Male_Armor_Ex1_cape_18
+  - first:
+      1: 100154
+    second: PT_Medieval_Male_Armor_Ex1_cape_19
+  - first:
+      1: 100156
+    second: PT_Medieval_Male_Armor_Ex1_cape_20
+  - first:
+      1: 100158
+    second: PT_Medieval_Male_Armor_Ex1_cape_21
+  - first:
+      1: 100160
+    second: PT_Medieval_Male_Armor_Ex1_cape_22
+  - first:
+      1: 100162
+    second: PT_Medieval_Male_Armor_Ex1_cape_23
+  - first:
+      1: 100164
+    second: PT_Medieval_Male_Armor_Ex1_cape_24
+  - first:
+      1: 100166
+    second: PT_Medieval_Male_Armor_Ex1_cape_25
+  - first:
+      1: 100168
+    second: PT_Medieval_Male_Armor_Ex1_cape_26
+  - first:
+      1: 100170
+    second: PT_Medieval_Male_Armor_Ex1_cape_27
+  - first:
+      1: 100172
+    second: PT_Medieval_Male_Armor_Ex1_cape_28
+  - first:
+      1: 100174
+    second: PT_Medieval_Male_Armor_Ex1_cape_29
+  - first:
+      1: 100176
+    second: PT_Medieval_Male_Armor_Ex1_cape_30
+  - first:
+      1: 100178
+    second: PT_Medieval_Male_Armor_Ex1_cape_31
+  - first:
+      1: 100180
+    second: PT_Medieval_Male_Armor_Ex1_cape_32
+  - first:
+      1: 100182
+    second: PT_Medieval_Male_Armor_Ex1_cape_33
+  - first:
+      1: 100184
+    second: PT_Medieval_Male_Armor_Ex1_cape_34
+  - first:
+      1: 100186
+    second: PT_Medieval_Male_Armor_Ex1_cape_35
+  - first:
+      1: 100188
+    second: PT_Medieval_Male_Armor_Ex1_cape_36
+  - first:
+      1: 100190
+    second: PT_Medieval_Male_Armor_Ex1_cape_37
+  - first:
+      1: 100192
+    second: PT_Medieval_Male_Armor_Ex1_cape_38
+  - first:
+      1: 100194
+    second: PT_Medieval_Male_Armor_Ex1_cape_39
+  - first:
+      1: 100196
+    second: PT_Medieval_Male_Armor_Ex1_cape_40
+  - first:
+      1: 100198
+    second: PT_Medieval_Male_Armor_Ex1_cape_41
+  - first:
+      1: 100200
+    second: PT_Medieval_Male_Armor_Ex1_cape_42
+  - first:
+      1: 100202
+    second: PT_Medieval_Male_Armor_Ex1_cape_43
+  - first:
+      1: 100204
+    second: PT_Medieval_Male_Armor_Ex1_cape_44
+  - first:
+      1: 100206
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_01
+  - first:
+      1: 100208
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_02
+  - first:
+      1: 100210
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_03
+  - first:
+      1: 100212
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_04
+  - first:
+      1: 100214
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_05
+  - first:
+      1: 100216
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_06
+  - first:
+      1: 100218
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_07
+  - first:
+      1: 100220
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_08
+  - first:
+      1: 100222
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_09
+  - first:
+      1: 100224
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_10
+  - first:
+      1: 100226
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_11
+  - first:
+      1: 100228
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_12
+  - first:
+      1: 100230
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_13
+  - first:
+      1: 100232
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_14
+  - first:
+      1: 100234
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_15
+  - first:
+      1: 100236
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_16
+  - first:
+      1: 100238
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_17
+  - first:
+      1: 100240
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_18
+  - first:
+      1: 100242
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_19
+  - first:
+      1: 100244
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_20
+  - first:
+      1: 100246
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_21
+  - first:
+      1: 100248
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_22
+  - first:
+      1: 100250
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_23
+  - first:
+      1: 100252
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_24
+  - first:
+      1: 100254
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_25
+  - first:
+      1: 100256
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_26
+  - first:
+      1: 100258
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_27
+  - first:
+      1: 100260
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_28
+  - first:
+      1: 100262
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_29
+  - first:
+      1: 100264
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_30
+  - first:
+      1: 100266
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_31
+  - first:
+      1: 100268
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_32
+  - first:
+      1: 100270
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_33
+  - first:
+      1: 100272
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_34
+  - first:
+      1: 100274
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_35
+  - first:
+      1: 100276
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_36
+  - first:
+      1: 100278
+    second: PT_Medieval_Male_Armor_Ex1_helmet_05
+  - first:
+      1: 100280
+    second: PT_Medieval_Male_Armor_Ex1_helmet_15
+  - first:
+      1: 100282
+    second: PT_Medieval_Male_Armor_Ex1_helmet_16
+  - first:
+      1: 100284
+    second: PT_Medieval_Male_Armor_Ex1_helmet_17
+  - first:
+      1: 100286
+    second: PT_Medieval_Male_Armor_Ex1_helmet_18
+  - first:
+      1: 100288
+    second: PT_Medieval_Male_Armor_Ex1_helmet_19
+  - first:
+      1: 100290
+    second: PT_Medieval_Male_Armor_Ex1_helmet_20
+  - first:
+      1: 100292
+    second: PT_Medieval_Male_Armor_Ex1_helmet_21
+  - first:
+      1: 100294
+    second: PT_Medieval_Male_Armor_Ex1_helmet_22
+  - first:
+      1: 100296
+    second: PT_Medieval_Male_Armor_Ex1_helmet_23
+  - first:
+      1: 100298
+    second: PT_Medieval_Male_Armor_Ex1_helmet_24
+  - first:
+      1: 100300
+    second: PT_Medieval_Male_Armor_Ex1_helmet_25
+  - first:
+      1: 100302
+    second: PT_Medieval_Male_Armor_Ex1_helmet_26
+  - first:
+      1: 100304
+    second: PT_Medieval_Male_Armor_Ex1_helmet_27
+  - first:
+      1: 100306
+    second: PT_Medieval_Male_Armor_Ex1_helmet_28
+  - first:
+      1: 100308
+    second: PT_Medieval_Male_Armor_Ex1_helmet_29
+  - first:
+      1: 100310
+    second: PT_Medieval_Male_Armor_Ex1_helmet_30
+  - first:
+      1: 100312
+    second: PT_Medieval_Male_Armor_Ex1_helmet_31
+  - first:
+      1: 100314
+    second: PT_Medieval_Male_Armor_Ex1_helmet_32
+  - first:
+      1: 100316
+    second: PT_Medieval_Male_Armor_Ex1_helmet_33
+  - first:
+      1: 100318
+    second: PT_Medieval_Male_Armor_Ex1_helmet_34
+  - first:
+      1: 100320
+    second: PT_Medieval_Male_Armor_Ex1_helmet_35
+  - first:
+      1: 100322
+    second: PT_Medieval_Male_Armor_Ex1_helmet_36
+  - first:
+      1: 100324
+    second: PT_Medieval_Male_Armor_Ex1_helmet_37
+  - first:
+      1: 100326
+    second: PT_Medieval_Male_Armor_Ex1_helmet_38
+  - first:
+      1: 100328
+    second: PT_Medieval_Male_Armor_Ex1_helmet_39
+  - first:
+      1: 100330
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_01
+  - first:
+      1: 100332
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_02
+  - first:
+      1: 100334
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_03
+  - first:
+      1: 100336
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_04
+  - first:
+      1: 100338
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_06
+  - first:
+      1: 100340
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_07
+  - first:
+      1: 100342
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_08
+  - first:
+      1: 100344
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_09
+  - first:
+      1: 100346
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_10
+  - first:
+      1: 100348
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_11
+  - first:
+      1: 100350
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_12
+  - first:
+      1: 100352
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_13
+  - first:
+      1: 100354
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_14
+  - first:
+      1: 100356
+    second: PT_Medieval_Male_Armor_Ex1_legs_01
+  - first:
+      1: 100358
+    second: PT_Medieval_Male_Armor_Ex1_legs_02
+  - first:
+      1: 100360
+    second: PT_Medieval_Male_Armor_Ex1_legs_03
+  - first:
+      1: 100362
+    second: PT_Medieval_Male_Armor_Ex1_legs_04
+  - first:
+      1: 100364
+    second: PT_Medieval_Male_Armor_Ex1_legs_05
+  - first:
+      1: 100366
+    second: PT_Medieval_Male_Armor_Ex1_legs_06
+  - first:
+      1: 100368
+    second: PT_Medieval_Male_Armor_Ex1_legs_07
+  - first:
+      1: 100370
+    second: PT_Medieval_Male_Armor_Ex1_legs_08
+  - first:
+      1: 100372
+    second: PT_Medieval_Male_Armor_Ex1_legs_09
+  - first:
+      1: 100374
+    second: PT_Medieval_Male_Armor_Ex1_legs_10
+  - first:
+      1: 100376
+    second: PT_Medieval_Male_Armor_Ex1_legs_11
+  - first:
+      1: 100378
+    second: PT_Medieval_Male_Armor_Ex1_legs_12
+  - first:
+      1: 100380
+    second: PT_Medieval_Male_Armor_Ex1_legs_13
+  - first:
+      1: 100382
+    second: PT_Medieval_Male_Armor_Ex1_legs_14
+  - first:
+      1: 100384
+    second: PT_Medieval_Male_Armor_Ex1_legs_15
+  - first:
+      1: 100386
+    second: PT_Medieval_Male_Armor_Ex1_legs_16
+  - first:
+      1: 100388
+    second: PT_Medieval_Male_Armor_Ex1_legs_17
+  - first:
+      1: 100390
+    second: PT_Medieval_Male_Armor_Ex1_legs_18
+  - first:
+      1: 100392
+    second: PT_Medieval_Male_Armor_Ex1_legs_19
+  - first:
+      1: 100394
+    second: PT_Medieval_Male_Armor_Ex1_legs_20
+  - first:
+      1: 100396
+    second: PT_Medieval_Male_Armor_Ex1_legs_21
+  - first:
+      1: 100398
+    second: PT_Medieval_Male_Armor_Ex1_legs_22
+  - first:
+      1: 100400
+    second: PT_Medieval_Male_Armor_Ex1_legs_23
+  - first:
+      1: 100402
+    second: PT_Medieval_Male_Armor_Ex1_legs_24
+  - first:
+      1: 100404
+    second: PT_Medieval_Male_Armor_Ex1_legs_25
+  - first:
+      1: 100406
+    second: PT_Medieval_Male_Armor_Ex1_legs_26
+  - first:
+      1: 100408
+    second: PT_Medieval_Male_Armor_Head
+  - first:
+      1: 100410
+    second: PT_Medieval_Male_Armor_HeadTop
+  - first:
+      1: 100412
+    second: PT_Medieval_Male_Armor_HeadTopFeathers
+  - first:
+      1: 100414
+    second: PT_Medieval_Male_Armor_Hips
+  - first:
+      1: 100416
+    second: PT_Medieval_Male_Armor_Left_BackCloth
+  - first:
+      1: 100418
+    second: PT_Medieval_Male_Armor_Left_BackCloth2
+  - first:
+      1: 100420
+    second: PT_Medieval_Male_Armor_Left_BackCloth3
+  - first:
+      1: 100422
+    second: PT_Medieval_Male_Armor_Left_FrontCloth
+  - first:
+      1: 100424
+    second: PT_Medieval_Male_Armor_Left_FrontCloth2
+  - first:
+      1: 100426
+    second: PT_Medieval_Male_Armor_Left_FrontCloth3
+  - first:
+      1: 100428
+    second: PT_Medieval_Male_Armor_LeftArm
+  - first:
+      1: 100430
+    second: PT_Medieval_Male_Armor_LeftCape
+  - first:
+      1: 100432
+    second: PT_Medieval_Male_Armor_LeftCape2
+  - first:
+      1: 100434
+    second: PT_Medieval_Male_Armor_LeftCape3
+  - first:
+      1: 100436
+    second: PT_Medieval_Male_Armor_LeftCape4
+  - first:
+      1: 100438
+    second: PT_Medieval_Male_Armor_LeftFoot
+  - first:
+      1: 100440
+    second: PT_Medieval_Male_Armor_LeftForeArm
+  - first:
+      1: 100442
+    second: PT_Medieval_Male_Armor_LeftHand
+  - first:
+      1: 100444
+    second: PT_Medieval_Male_Armor_LeftHandIndex1
+  - first:
+      1: 100446
+    second: PT_Medieval_Male_Armor_LeftHandIndex2
+  - first:
+      1: 100448
+    second: PT_Medieval_Male_Armor_LeftHandIndex3
+  - first:
+      1: 100450
+    second: PT_Medieval_Male_Armor_LeftHandMiddle1
+  - first:
+      1: 100452
+    second: PT_Medieval_Male_Armor_LeftHandMiddle2
+  - first:
+      1: 100454
+    second: PT_Medieval_Male_Armor_LeftHandMiddle3
+  - first:
+      1: 100456
+    second: PT_Medieval_Male_Armor_LeftHandPinky1
+  - first:
+      1: 100458
+    second: PT_Medieval_Male_Armor_LeftHandPinky2
+  - first:
+      1: 100460
+    second: PT_Medieval_Male_Armor_LeftHandPinky3
+  - first:
+      1: 100462
+    second: PT_Medieval_Male_Armor_LeftHandRing1
+  - first:
+      1: 100464
+    second: PT_Medieval_Male_Armor_LeftHandRing2
+  - first:
+      1: 100466
+    second: PT_Medieval_Male_Armor_LeftHandRing3
+  - first:
+      1: 100468
+    second: PT_Medieval_Male_Armor_LeftHandThumb1
+  - first:
+      1: 100470
+    second: PT_Medieval_Male_Armor_LeftHandThumb2
+  - first:
+      1: 100472
+    second: PT_Medieval_Male_Armor_LeftHandThumb3
+  - first:
+      1: 100474
+    second: PT_Medieval_Male_Armor_LeftLeg
+  - first:
+      1: 100476
+    second: PT_Medieval_Male_Armor_LeftShoulder
+  - first:
+      1: 100478
+    second: PT_Medieval_Male_Armor_LeftToe
+  - first:
+      1: 100480
+    second: PT_Medieval_Male_Armor_LeftUpLeg
+  - first:
+      1: 100482
+    second: PT_Medieval_Male_Armor_Neck
+  - first:
+      1: 100484
+    second: PT_Medieval_Male_Armor_Right_BackCloth
+  - first:
+      1: 100486
+    second: PT_Medieval_Male_Armor_Right_BackCloth3
+  - first:
+      1: 100488
+    second: PT_Medieval_Male_Armor_Right_FrontCloth
+  - first:
+      1: 100490
+    second: PT_Medieval_Male_Armor_Right_FrontCloth2
+  - first:
+      1: 100492
+    second: PT_Medieval_Male_Armor_Right_FrontCloth3
+  - first:
+      1: 100494
+    second: PT_Medieval_Male_Armor_RightArm
+  - first:
+      1: 100496
+    second: PT_Medieval_Male_Armor_RightBackCloth2
+  - first:
+      1: 100498
+    second: PT_Medieval_Male_Armor_RightCape
+  - first:
+      1: 100500
+    second: PT_Medieval_Male_Armor_RightCape2
+  - first:
+      1: 100502
+    second: PT_Medieval_Male_Armor_RightCape3
+  - first:
+      1: 100504
+    second: PT_Medieval_Male_Armor_RightCape4
+  - first:
+      1: 100506
+    second: PT_Medieval_Male_Armor_RightFoot
+  - first:
+      1: 100508
+    second: PT_Medieval_Male_Armor_RightForeArm
+  - first:
+      1: 100510
+    second: PT_Medieval_Male_Armor_RightHand
+  - first:
+      1: 100512
+    second: PT_Medieval_Male_Armor_RightHandIndex1
+  - first:
+      1: 100514
+    second: PT_Medieval_Male_Armor_RightHandIndex2
+  - first:
+      1: 100516
+    second: PT_Medieval_Male_Armor_RightHandIndex3
+  - first:
+      1: 100518
+    second: PT_Medieval_Male_Armor_RightHandMiddle1
+  - first:
+      1: 100520
+    second: PT_Medieval_Male_Armor_RightHandMiddle2
+  - first:
+      1: 100522
+    second: PT_Medieval_Male_Armor_RightHandMiddle3
+  - first:
+      1: 100524
+    second: PT_Medieval_Male_Armor_RightHandPinky1
+  - first:
+      1: 100526
+    second: PT_Medieval_Male_Armor_RightHandPinky2
+  - first:
+      1: 100528
+    second: PT_Medieval_Male_Armor_RightHandPinky3
+  - first:
+      1: 100530
+    second: PT_Medieval_Male_Armor_RightHandRing1
+  - first:
+      1: 100532
+    second: PT_Medieval_Male_Armor_RightHandRing2
+  - first:
+      1: 100534
+    second: PT_Medieval_Male_Armor_RightHandRing3
+  - first:
+      1: 100536
+    second: PT_Medieval_Male_Armor_RightHandThumb1
+  - first:
+      1: 100538
+    second: PT_Medieval_Male_Armor_RightHandThumb2
+  - first:
+      1: 100540
+    second: PT_Medieval_Male_Armor_RightHandThumb3
+  - first:
+      1: 100542
+    second: PT_Medieval_Male_Armor_RightLeg
+  - first:
+      1: 100544
+    second: PT_Medieval_Male_Armor_RightShoulder
+  - first:
+      1: 100546
+    second: PT_Medieval_Male_Armor_RightToe
+  - first:
+      1: 100548
+    second: PT_Medieval_Male_Armor_RightUpLeg
+  - first:
+      1: 100550
+    second: PT_Medieval_Male_Armor_Spine
+  - first:
+      1: 100552
+    second: PT_Medieval_Male_Armor_Spine2
+  - first:
+      1: 100554
+    second: PT_Medieval_Male_Armor_Spine3
+  - first:
+      1: 100556
+    second: //RootNode
+  - first:
+      1: 100558
+    second: PT_Medieval_Male_Armor_04_A_helmet
+  - first:
+      1: 100560
+    second: PT_Medieval_Male_Armor_04_B_helmet
+  - first:
+      1: 100562
+    second: PT_Medieval_Male_Armor_04_C_helmet
+  - first:
+      1: 100564
+    second: PT_Medieval_Male_Armor_05_A_helmet
+  - first:
+      1: 100566
+    second: PT_Medieval_Male_Armor_05_B_helmet
+  - first:
+      1: 100568
+    second: PT_Medieval_Male_Armor_05_C_helmet
+  - first:
+      1: 100570
+    second: PT_Medieval_Male_Armor_leather_00_helmet_nv
+  - first:
+      1: 100572
+    second: PT_Medieval_Male_Armor_plate_00_helmet_nv
+  - first:
+      1: 100574
+    second: PT_Medieval_Male_Armor_Large_Shield_slot
+  - first:
+      1: 100576
+    second: PT_Medieval_Male_Armor_Left_Hand_Weapon_slot
+  - first:
+      1: 100578
+    second: PT_Medieval_Male_Armor_Long_Bow_slot
+  - first:
+      1: 100580
+    second: PT_Medieval_Male_Armor_Medium_Bow_slot
+  - first:
+      1: 100582
+    second: PT_Medieval_Male_Armor_Medium_Shield_slot
+  - first:
+      1: 100584
+    second: PT_Medieval_Male_Armor_Quiver_slot
+  - first:
+      1: 100586
+    second: PT_Medieval_Male_Armor_Right_Hand_Weapon_slot
+  - first:
+      1: 100588
+    second: PT_Medieval_Male_Armor_Second_Weapon_slot
+  - first:
+      1: 100590
+    second: PT_Medieval_Male_Armor_Sheat_slot
+  - first:
+      1: 100592
+    second: PT_Medieval_Male_Armor_Small_Shield_slot
+  - first:
+      1: 100594
+    second: group1
+  - first:
+      1: 100596
+    second: PT_Medieval_Female_Armor_Cape
+  - first:
+      1: 100598
+    second: PT_Medieval_Female_Armor_Head
+  - first:
+      1: 100600
+    second: PT_Medieval_Female_Armor_HeadTop
+  - first:
+      1: 100602
+    second: PT_Medieval_Female_Armor_HeadTopFeathers
+  - first:
+      1: 100604
+    second: PT_Medieval_Female_Armor_Hips
+  - first:
+      1: 100606
+    second: PT_Medieval_Female_Armor_Left_BackCloth
+  - first:
+      1: 100608
+    second: PT_Medieval_Female_Armor_Left_BackCloth3
+  - first:
+      1: 100610
+    second: PT_Medieval_Female_Armor_Left_FrontCloth
+  - first:
+      1: 100612
+    second: PT_Medieval_Female_Armor_Left_FrontCloth2
+  - first:
+      1: 100614
+    second: PT_Medieval_Female_Armor_Left_FrontCloth3
+  - first:
+      1: 100616
+    second: PT_Medieval_Female_Armor_LeftArm
+  - first:
+      1: 100618
+    second: PT_Medieval_Female_Armor_LeftBackCloth2
+  - first:
+      1: 100620
+    second: PT_Medieval_Female_Armor_LeftCape
+  - first:
+      1: 100622
+    second: PT_Medieval_Female_Armor_LeftCape2
+  - first:
+      1: 100624
+    second: PT_Medieval_Female_Armor_LeftCape3
+  - first:
+      1: 100626
+    second: PT_Medieval_Female_Armor_LeftCape4
+  - first:
+      1: 100628
+    second: PT_Medieval_Female_Armor_LeftFoot
+  - first:
+      1: 100630
+    second: PT_Medieval_Female_Armor_LeftForeArm
+  - first:
+      1: 100632
+    second: PT_Medieval_Female_Armor_LeftHand
+  - first:
+      1: 100634
+    second: PT_Medieval_Female_Armor_LeftHandIndex1
+  - first:
+      1: 100636
+    second: PT_Medieval_Female_Armor_LeftHandIndex2
+  - first:
+      1: 100638
+    second: PT_Medieval_Female_Armor_LeftHandIndex3
+  - first:
+      1: 100640
+    second: PT_Medieval_Female_Armor_LeftHandMiddle1
+  - first:
+      1: 100642
+    second: PT_Medieval_Female_Armor_LeftHandMiddle2
+  - first:
+      1: 100644
+    second: PT_Medieval_Female_Armor_LeftHandMiddle3
+  - first:
+      1: 100646
+    second: PT_Medieval_Female_Armor_LeftHandPinky1
+  - first:
+      1: 100648
+    second: PT_Medieval_Female_Armor_LeftHandPinky2
+  - first:
+      1: 100650
+    second: PT_Medieval_Female_Armor_LeftHandPinky3
+  - first:
+      1: 100652
+    second: PT_Medieval_Female_Armor_LeftHandRing1
+  - first:
+      1: 100654
+    second: PT_Medieval_Female_Armor_LeftHandRing2
+  - first:
+      1: 100656
+    second: PT_Medieval_Female_Armor_LeftHandRing3
+  - first:
+      1: 100658
+    second: PT_Medieval_Female_Armor_LeftHandThumb1
+  - first:
+      1: 100660
+    second: PT_Medieval_Female_Armor_LeftHandThumb2
+  - first:
+      1: 100662
+    second: PT_Medieval_Female_Armor_LeftHandThumb3
+  - first:
+      1: 100664
+    second: PT_Medieval_Female_Armor_LeftLeg
+  - first:
+      1: 100666
+    second: PT_Medieval_Female_Armor_LeftShoulder
+  - first:
+      1: 100668
+    second: PT_Medieval_Female_Armor_LeftToe
+  - first:
+      1: 100670
+    second: PT_Medieval_Female_Armor_LeftUpLeg
+  - first:
+      1: 100672
+    second: PT_Medieval_Female_Armor_Neck
+  - first:
+      1: 100674
+    second: PT_Medieval_Female_Armor_Right_BackCloth
+  - first:
+      1: 100676
+    second: PT_Medieval_Female_Armor_Right_BackCloth3
+  - first:
+      1: 100678
+    second: PT_Medieval_Female_Armor_Right_FrontCloth
+  - first:
+      1: 100680
+    second: PT_Medieval_Female_Armor_Right_FrontCloth2
+  - first:
+      1: 100682
+    second: PT_Medieval_Female_Armor_Right_FrontCloth3
+  - first:
+      1: 100684
+    second: PT_Medieval_Female_Armor_RightArm
+  - first:
+      1: 100686
+    second: PT_Medieval_Female_Armor_RightBackCloth2
+  - first:
+      1: 100688
+    second: PT_Medieval_Female_Armor_RightCape
+  - first:
+      1: 100690
+    second: PT_Medieval_Female_Armor_RightCape2
+  - first:
+      1: 100692
+    second: PT_Medieval_Female_Armor_RightCape3
+  - first:
+      1: 100694
+    second: PT_Medieval_Female_Armor_RightCape4
+  - first:
+      1: 100696
+    second: PT_Medieval_Female_Armor_RightFoot
+  - first:
+      1: 100698
+    second: PT_Medieval_Female_Armor_RightForeArm
+  - first:
+      1: 100700
+    second: PT_Medieval_Female_Armor_RightHand
+  - first:
+      1: 100702
+    second: PT_Medieval_Female_Armor_RightHandIndex1
+  - first:
+      1: 100704
+    second: PT_Medieval_Female_Armor_RightHandIndex2
+  - first:
+      1: 100706
+    second: PT_Medieval_Female_Armor_RightHandIndex3
+  - first:
+      1: 100708
+    second: PT_Medieval_Female_Armor_RightHandMiddle1
+  - first:
+      1: 100710
+    second: PT_Medieval_Female_Armor_RightHandMiddle2
+  - first:
+      1: 100712
+    second: PT_Medieval_Female_Armor_RightHandMiddle3
+  - first:
+      1: 100714
+    second: PT_Medieval_Female_Armor_RightHandPinky1
+  - first:
+      1: 100716
+    second: PT_Medieval_Female_Armor_RightHandPinky2
+  - first:
+      1: 100718
+    second: PT_Medieval_Female_Armor_RightHandPinky3
+  - first:
+      1: 100720
+    second: PT_Medieval_Female_Armor_RightHandRing1
+  - first:
+      1: 100722
+    second: PT_Medieval_Female_Armor_RightHandRing2
+  - first:
+      1: 100724
+    second: PT_Medieval_Female_Armor_RightHandRing3
+  - first:
+      1: 100726
+    second: PT_Medieval_Female_Armor_RightHandThumb1
+  - first:
+      1: 100728
+    second: PT_Medieval_Female_Armor_RightHandThumb2
+  - first:
+      1: 100730
+    second: PT_Medieval_Female_Armor_RightHandThumb3
+  - first:
+      1: 100732
+    second: PT_Medieval_Female_Armor_RightLeg
+  - first:
+      1: 100734
+    second: PT_Medieval_Female_Armor_RightShoulder
+  - first:
+      1: 100736
+    second: PT_Medieval_Female_Armor_RightToe
+  - first:
+      1: 100738
+    second: PT_Medieval_Female_Armor_RightUpLeg
+  - first:
+      1: 100740
+    second: PT_Medieval_Female_Armor_Spine
+  - first:
+      1: 100742
+    second: PT_Medieval_Female_Armor_Spine2
+  - first:
+      1: 100744
+    second: PT_Medieval_Female_Armor_Spine3
+  - first:
+      1: 100746
+    second: PT_Medieval_Male_Armor_hair_01
+  - first:
+      1: 100748
+    second: PT_Medieval_Male_Armor_head_01
+  - first:
+      1: 100750
+    second: PT_Medieval_Male_Armor_beard_01
+  - first:
+      4: 400000
+    second: PT_Medieval_Male_Armor_Cape
+  - first:
+      4: 400002
+    second: PT_Medieval_Male_Armor_Ex1_body_01
+  - first:
+      4: 400004
+    second: PT_Medieval_Male_Armor_Ex1_body_02
+  - first:
+      4: 400006
+    second: PT_Medieval_Male_Armor_Ex1_body_03
+  - first:
+      4: 400008
+    second: PT_Medieval_Male_Armor_Ex1_body_04
+  - first:
+      4: 400010
+    second: PT_Medieval_Male_Armor_Ex1_body_05
+  - first:
+      4: 400012
+    second: PT_Medieval_Male_Armor_Ex1_body_06
+  - first:
+      4: 400014
+    second: PT_Medieval_Male_Armor_Ex1_body_07
+  - first:
+      4: 400016
+    second: PT_Medieval_Male_Armor_Ex1_body_08
+  - first:
+      4: 400018
+    second: PT_Medieval_Male_Armor_Ex1_body_09
+  - first:
+      4: 400020
+    second: PT_Medieval_Male_Armor_Ex1_body_10
+  - first:
+      4: 400022
+    second: PT_Medieval_Male_Armor_Ex1_body_11
+  - first:
+      4: 400024
+    second: PT_Medieval_Male_Armor_Ex1_body_12
+  - first:
+      4: 400026
+    second: PT_Medieval_Male_Armor_Ex1_body_13
+  - first:
+      4: 400028
+    second: PT_Medieval_Male_Armor_Ex1_body_14
+  - first:
+      4: 400030
+    second: PT_Medieval_Male_Armor_Ex1_body_15
+  - first:
+      4: 400032
+    second: PT_Medieval_Male_Armor_Ex1_body_16
+  - first:
+      4: 400034
+    second: PT_Medieval_Male_Armor_Ex1_body_17
+  - first:
+      4: 400036
+    second: PT_Medieval_Male_Armor_Ex1_body_18
+  - first:
+      4: 400038
+    second: PT_Medieval_Male_Armor_Ex1_body_19
+  - first:
+      4: 400040
+    second: PT_Medieval_Male_Armor_Ex1_body_20
+  - first:
+      4: 400042
+    second: PT_Medieval_Male_Armor_Ex1_body_21
+  - first:
+      4: 400044
+    second: PT_Medieval_Male_Armor_Ex1_body_22
+  - first:
+      4: 400046
+    second: PT_Medieval_Male_Armor_Ex1_body_23
+  - first:
+      4: 400048
+    second: PT_Medieval_Male_Armor_Ex1_body_24
+  - first:
+      4: 400050
+    second: PT_Medieval_Male_Armor_Ex1_body_25
+  - first:
+      4: 400052
+    second: PT_Medieval_Male_Armor_Ex1_body_26
+  - first:
+      4: 400054
+    second: PT_Medieval_Male_Armor_Ex1_body_27
+  - first:
+      4: 400056
+    second: PT_Medieval_Male_Armor_Ex1_body_28
+  - first:
+      4: 400058
+    second: PT_Medieval_Male_Armor_Ex1_body_29
+  - first:
+      4: 400060
+    second: PT_Medieval_Male_Armor_Ex1_body_30
+  - first:
+      4: 400062
+    second: PT_Medieval_Male_Armor_Ex1_body_31
+  - first:
+      4: 400064
+    second: PT_Medieval_Male_Armor_Ex1_body_32
+  - first:
+      4: 400066
+    second: PT_Medieval_Male_Armor_Ex1_boots_01
+  - first:
+      4: 400068
+    second: PT_Medieval_Male_Armor_Ex1_boots_02
+  - first:
+      4: 400070
+    second: PT_Medieval_Male_Armor_Ex1_boots_03
+  - first:
+      4: 400072
+    second: PT_Medieval_Male_Armor_Ex1_boots_04
+  - first:
+      4: 400074
+    second: PT_Medieval_Male_Armor_Ex1_boots_05
+  - first:
+      4: 400076
+    second: PT_Medieval_Male_Armor_Ex1_boots_06
+  - first:
+      4: 400078
+    second: PT_Medieval_Male_Armor_Ex1_boots_07
+  - first:
+      4: 400080
+    second: PT_Medieval_Male_Armor_Ex1_boots_08
+  - first:
+      4: 400082
+    second: PT_Medieval_Male_Armor_Ex1_boots_09
+  - first:
+      4: 400084
+    second: PT_Medieval_Male_Armor_Ex1_boots_10
+  - first:
+      4: 400086
+    second: PT_Medieval_Male_Armor_Ex1_boots_11
+  - first:
+      4: 400088
+    second: PT_Medieval_Male_Armor_Ex1_boots_12
+  - first:
+      4: 400090
+    second: PT_Medieval_Male_Armor_Ex1_boots_13
+  - first:
+      4: 400092
+    second: PT_Medieval_Male_Armor_Ex1_boots_14
+  - first:
+      4: 400094
+    second: PT_Medieval_Male_Armor_Ex1_boots_15
+  - first:
+      4: 400096
+    second: PT_Medieval_Male_Armor_Ex1_boots_16
+  - first:
+      4: 400098
+    second: PT_Medieval_Male_Armor_Ex1_boots_17
+  - first:
+      4: 400100
+    second: PT_Medieval_Male_Armor_Ex1_boots_18
+  - first:
+      4: 400102
+    second: PT_Medieval_Male_Armor_Ex1_boots_19
+  - first:
+      4: 400104
+    second: PT_Medieval_Male_Armor_Ex1_boots_20
+  - first:
+      4: 400106
+    second: PT_Medieval_Male_Armor_Ex1_boots_21
+  - first:
+      4: 400108
+    second: PT_Medieval_Male_Armor_Ex1_boots_22
+  - first:
+      4: 400110
+    second: PT_Medieval_Male_Armor_Ex1_boots_23
+  - first:
+      4: 400112
+    second: PT_Medieval_Male_Armor_Ex1_boots_24
+  - first:
+      4: 400114
+    second: PT_Medieval_Male_Armor_Ex1_boots_25
+  - first:
+      4: 400116
+    second: PT_Medieval_Male_Armor_Ex1_boots_26
+  - first:
+      4: 400118
+    second: PT_Medieval_Male_Armor_Ex1_cape_01
+  - first:
+      4: 400120
+    second: PT_Medieval_Male_Armor_Ex1_cape_02
+  - first:
+      4: 400122
+    second: PT_Medieval_Male_Armor_Ex1_cape_03
+  - first:
+      4: 400124
+    second: PT_Medieval_Male_Armor_Ex1_cape_04
+  - first:
+      4: 400126
+    second: PT_Medieval_Male_Armor_Ex1_cape_05
+  - first:
+      4: 400128
+    second: PT_Medieval_Male_Armor_Ex1_cape_06
+  - first:
+      4: 400130
+    second: PT_Medieval_Male_Armor_Ex1_cape_07
+  - first:
+      4: 400132
+    second: PT_Medieval_Male_Armor_Ex1_cape_08
+  - first:
+      4: 400134
+    second: PT_Medieval_Male_Armor_Ex1_cape_09
+  - first:
+      4: 400136
+    second: PT_Medieval_Male_Armor_Ex1_cape_10
+  - first:
+      4: 400138
+    second: PT_Medieval_Male_Armor_Ex1_cape_11
+  - first:
+      4: 400140
+    second: PT_Medieval_Male_Armor_Ex1_cape_12
+  - first:
+      4: 400142
+    second: PT_Medieval_Male_Armor_Ex1_cape_13
+  - first:
+      4: 400144
+    second: PT_Medieval_Male_Armor_Ex1_cape_14
+  - first:
+      4: 400146
+    second: PT_Medieval_Male_Armor_Ex1_cape_15
+  - first:
+      4: 400148
+    second: PT_Medieval_Male_Armor_Ex1_cape_16
+  - first:
+      4: 400150
+    second: PT_Medieval_Male_Armor_Ex1_cape_17
+  - first:
+      4: 400152
+    second: PT_Medieval_Male_Armor_Ex1_cape_18
+  - first:
+      4: 400154
+    second: PT_Medieval_Male_Armor_Ex1_cape_19
+  - first:
+      4: 400156
+    second: PT_Medieval_Male_Armor_Ex1_cape_20
+  - first:
+      4: 400158
+    second: PT_Medieval_Male_Armor_Ex1_cape_21
+  - first:
+      4: 400160
+    second: PT_Medieval_Male_Armor_Ex1_cape_22
+  - first:
+      4: 400162
+    second: PT_Medieval_Male_Armor_Ex1_cape_23
+  - first:
+      4: 400164
+    second: PT_Medieval_Male_Armor_Ex1_cape_24
+  - first:
+      4: 400166
+    second: PT_Medieval_Male_Armor_Ex1_cape_25
+  - first:
+      4: 400168
+    second: PT_Medieval_Male_Armor_Ex1_cape_26
+  - first:
+      4: 400170
+    second: PT_Medieval_Male_Armor_Ex1_cape_27
+  - first:
+      4: 400172
+    second: PT_Medieval_Male_Armor_Ex1_cape_28
+  - first:
+      4: 400174
+    second: PT_Medieval_Male_Armor_Ex1_cape_29
+  - first:
+      4: 400176
+    second: PT_Medieval_Male_Armor_Ex1_cape_30
+  - first:
+      4: 400178
+    second: PT_Medieval_Male_Armor_Ex1_cape_31
+  - first:
+      4: 400180
+    second: PT_Medieval_Male_Armor_Ex1_cape_32
+  - first:
+      4: 400182
+    second: PT_Medieval_Male_Armor_Ex1_cape_33
+  - first:
+      4: 400184
+    second: PT_Medieval_Male_Armor_Ex1_cape_34
+  - first:
+      4: 400186
+    second: PT_Medieval_Male_Armor_Ex1_cape_35
+  - first:
+      4: 400188
+    second: PT_Medieval_Male_Armor_Ex1_cape_36
+  - first:
+      4: 400190
+    second: PT_Medieval_Male_Armor_Ex1_cape_37
+  - first:
+      4: 400192
+    second: PT_Medieval_Male_Armor_Ex1_cape_38
+  - first:
+      4: 400194
+    second: PT_Medieval_Male_Armor_Ex1_cape_39
+  - first:
+      4: 400196
+    second: PT_Medieval_Male_Armor_Ex1_cape_40
+  - first:
+      4: 400198
+    second: PT_Medieval_Male_Armor_Ex1_cape_41
+  - first:
+      4: 400200
+    second: PT_Medieval_Male_Armor_Ex1_cape_42
+  - first:
+      4: 400202
+    second: PT_Medieval_Male_Armor_Ex1_cape_43
+  - first:
+      4: 400204
+    second: PT_Medieval_Male_Armor_Ex1_cape_44
+  - first:
+      4: 400206
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_01
+  - first:
+      4: 400208
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_02
+  - first:
+      4: 400210
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_03
+  - first:
+      4: 400212
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_04
+  - first:
+      4: 400214
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_05
+  - first:
+      4: 400216
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_06
+  - first:
+      4: 400218
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_07
+  - first:
+      4: 400220
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_08
+  - first:
+      4: 400222
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_09
+  - first:
+      4: 400224
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_10
+  - first:
+      4: 400226
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_11
+  - first:
+      4: 400228
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_12
+  - first:
+      4: 400230
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_13
+  - first:
+      4: 400232
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_14
+  - first:
+      4: 400234
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_15
+  - first:
+      4: 400236
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_16
+  - first:
+      4: 400238
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_17
+  - first:
+      4: 400240
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_18
+  - first:
+      4: 400242
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_19
+  - first:
+      4: 400244
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_20
+  - first:
+      4: 400246
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_21
+  - first:
+      4: 400248
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_22
+  - first:
+      4: 400250
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_23
+  - first:
+      4: 400252
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_24
+  - first:
+      4: 400254
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_25
+  - first:
+      4: 400256
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_26
+  - first:
+      4: 400258
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_27
+  - first:
+      4: 400260
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_28
+  - first:
+      4: 400262
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_29
+  - first:
+      4: 400264
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_30
+  - first:
+      4: 400266
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_31
+  - first:
+      4: 400268
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_32
+  - first:
+      4: 400270
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_33
+  - first:
+      4: 400272
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_34
+  - first:
+      4: 400274
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_35
+  - first:
+      4: 400276
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_36
+  - first:
+      4: 400278
+    second: PT_Medieval_Male_Armor_Ex1_helmet_05
+  - first:
+      4: 400280
+    second: PT_Medieval_Male_Armor_Ex1_helmet_15
+  - first:
+      4: 400282
+    second: PT_Medieval_Male_Armor_Ex1_helmet_16
+  - first:
+      4: 400284
+    second: PT_Medieval_Male_Armor_Ex1_helmet_17
+  - first:
+      4: 400286
+    second: PT_Medieval_Male_Armor_Ex1_helmet_18
+  - first:
+      4: 400288
+    second: PT_Medieval_Male_Armor_Ex1_helmet_19
+  - first:
+      4: 400290
+    second: PT_Medieval_Male_Armor_Ex1_helmet_20
+  - first:
+      4: 400292
+    second: PT_Medieval_Male_Armor_Ex1_helmet_21
+  - first:
+      4: 400294
+    second: PT_Medieval_Male_Armor_Ex1_helmet_22
+  - first:
+      4: 400296
+    second: PT_Medieval_Male_Armor_Ex1_helmet_23
+  - first:
+      4: 400298
+    second: PT_Medieval_Male_Armor_Ex1_helmet_24
+  - first:
+      4: 400300
+    second: PT_Medieval_Male_Armor_Ex1_helmet_25
+  - first:
+      4: 400302
+    second: PT_Medieval_Male_Armor_Ex1_helmet_26
+  - first:
+      4: 400304
+    second: PT_Medieval_Male_Armor_Ex1_helmet_27
+  - first:
+      4: 400306
+    second: PT_Medieval_Male_Armor_Ex1_helmet_28
+  - first:
+      4: 400308
+    second: PT_Medieval_Male_Armor_Ex1_helmet_29
+  - first:
+      4: 400310
+    second: PT_Medieval_Male_Armor_Ex1_helmet_30
+  - first:
+      4: 400312
+    second: PT_Medieval_Male_Armor_Ex1_helmet_31
+  - first:
+      4: 400314
+    second: PT_Medieval_Male_Armor_Ex1_helmet_32
+  - first:
+      4: 400316
+    second: PT_Medieval_Male_Armor_Ex1_helmet_33
+  - first:
+      4: 400318
+    second: PT_Medieval_Male_Armor_Ex1_helmet_34
+  - first:
+      4: 400320
+    second: PT_Medieval_Male_Armor_Ex1_helmet_35
+  - first:
+      4: 400322
+    second: PT_Medieval_Male_Armor_Ex1_helmet_36
+  - first:
+      4: 400324
+    second: PT_Medieval_Male_Armor_Ex1_helmet_37
+  - first:
+      4: 400326
+    second: PT_Medieval_Male_Armor_Ex1_helmet_38
+  - first:
+      4: 400328
+    second: PT_Medieval_Male_Armor_Ex1_helmet_39
+  - first:
+      4: 400330
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_01
+  - first:
+      4: 400332
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_02
+  - first:
+      4: 400334
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_03
+  - first:
+      4: 400336
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_04
+  - first:
+      4: 400338
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_06
+  - first:
+      4: 400340
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_07
+  - first:
+      4: 400342
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_08
+  - first:
+      4: 400344
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_09
+  - first:
+      4: 400346
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_10
+  - first:
+      4: 400348
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_11
+  - first:
+      4: 400350
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_12
+  - first:
+      4: 400352
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_13
+  - first:
+      4: 400354
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_14
+  - first:
+      4: 400356
+    second: PT_Medieval_Male_Armor_Ex1_legs_01
+  - first:
+      4: 400358
+    second: PT_Medieval_Male_Armor_Ex1_legs_02
+  - first:
+      4: 400360
+    second: PT_Medieval_Male_Armor_Ex1_legs_03
+  - first:
+      4: 400362
+    second: PT_Medieval_Male_Armor_Ex1_legs_04
+  - first:
+      4: 400364
+    second: PT_Medieval_Male_Armor_Ex1_legs_05
+  - first:
+      4: 400366
+    second: PT_Medieval_Male_Armor_Ex1_legs_06
+  - first:
+      4: 400368
+    second: PT_Medieval_Male_Armor_Ex1_legs_07
+  - first:
+      4: 400370
+    second: PT_Medieval_Male_Armor_Ex1_legs_08
+  - first:
+      4: 400372
+    second: PT_Medieval_Male_Armor_Ex1_legs_09
+  - first:
+      4: 400374
+    second: PT_Medieval_Male_Armor_Ex1_legs_10
+  - first:
+      4: 400376
+    second: PT_Medieval_Male_Armor_Ex1_legs_11
+  - first:
+      4: 400378
+    second: PT_Medieval_Male_Armor_Ex1_legs_12
+  - first:
+      4: 400380
+    second: PT_Medieval_Male_Armor_Ex1_legs_13
+  - first:
+      4: 400382
+    second: PT_Medieval_Male_Armor_Ex1_legs_14
+  - first:
+      4: 400384
+    second: PT_Medieval_Male_Armor_Ex1_legs_15
+  - first:
+      4: 400386
+    second: PT_Medieval_Male_Armor_Ex1_legs_16
+  - first:
+      4: 400388
+    second: PT_Medieval_Male_Armor_Ex1_legs_17
+  - first:
+      4: 400390
+    second: PT_Medieval_Male_Armor_Ex1_legs_18
+  - first:
+      4: 400392
+    second: PT_Medieval_Male_Armor_Ex1_legs_19
+  - first:
+      4: 400394
+    second: PT_Medieval_Male_Armor_Ex1_legs_20
+  - first:
+      4: 400396
+    second: PT_Medieval_Male_Armor_Ex1_legs_21
+  - first:
+      4: 400398
+    second: PT_Medieval_Male_Armor_Ex1_legs_22
+  - first:
+      4: 400400
+    second: PT_Medieval_Male_Armor_Ex1_legs_23
+  - first:
+      4: 400402
+    second: PT_Medieval_Male_Armor_Ex1_legs_24
+  - first:
+      4: 400404
+    second: PT_Medieval_Male_Armor_Ex1_legs_25
+  - first:
+      4: 400406
+    second: PT_Medieval_Male_Armor_Ex1_legs_26
+  - first:
+      4: 400408
+    second: PT_Medieval_Male_Armor_Head
+  - first:
+      4: 400410
+    second: PT_Medieval_Male_Armor_HeadTop
+  - first:
+      4: 400412
+    second: PT_Medieval_Male_Armor_HeadTopFeathers
+  - first:
+      4: 400414
+    second: PT_Medieval_Male_Armor_Hips
+  - first:
+      4: 400416
+    second: PT_Medieval_Male_Armor_Left_BackCloth
+  - first:
+      4: 400418
+    second: PT_Medieval_Male_Armor_Left_BackCloth2
+  - first:
+      4: 400420
+    second: PT_Medieval_Male_Armor_Left_BackCloth3
+  - first:
+      4: 400422
+    second: PT_Medieval_Male_Armor_Left_FrontCloth
+  - first:
+      4: 400424
+    second: PT_Medieval_Male_Armor_Left_FrontCloth2
+  - first:
+      4: 400426
+    second: PT_Medieval_Male_Armor_Left_FrontCloth3
+  - first:
+      4: 400428
+    second: PT_Medieval_Male_Armor_LeftArm
+  - first:
+      4: 400430
+    second: PT_Medieval_Male_Armor_LeftCape
+  - first:
+      4: 400432
+    second: PT_Medieval_Male_Armor_LeftCape2
+  - first:
+      4: 400434
+    second: PT_Medieval_Male_Armor_LeftCape3
+  - first:
+      4: 400436
+    second: PT_Medieval_Male_Armor_LeftCape4
+  - first:
+      4: 400438
+    second: PT_Medieval_Male_Armor_LeftFoot
+  - first:
+      4: 400440
+    second: PT_Medieval_Male_Armor_LeftForeArm
+  - first:
+      4: 400442
+    second: PT_Medieval_Male_Armor_LeftHand
+  - first:
+      4: 400444
+    second: PT_Medieval_Male_Armor_LeftHandIndex1
+  - first:
+      4: 400446
+    second: PT_Medieval_Male_Armor_LeftHandIndex2
+  - first:
+      4: 400448
+    second: PT_Medieval_Male_Armor_LeftHandIndex3
+  - first:
+      4: 400450
+    second: PT_Medieval_Male_Armor_LeftHandMiddle1
+  - first:
+      4: 400452
+    second: PT_Medieval_Male_Armor_LeftHandMiddle2
+  - first:
+      4: 400454
+    second: PT_Medieval_Male_Armor_LeftHandMiddle3
+  - first:
+      4: 400456
+    second: PT_Medieval_Male_Armor_LeftHandPinky1
+  - first:
+      4: 400458
+    second: PT_Medieval_Male_Armor_LeftHandPinky2
+  - first:
+      4: 400460
+    second: PT_Medieval_Male_Armor_LeftHandPinky3
+  - first:
+      4: 400462
+    second: PT_Medieval_Male_Armor_LeftHandRing1
+  - first:
+      4: 400464
+    second: PT_Medieval_Male_Armor_LeftHandRing2
+  - first:
+      4: 400466
+    second: PT_Medieval_Male_Armor_LeftHandRing3
+  - first:
+      4: 400468
+    second: PT_Medieval_Male_Armor_LeftHandThumb1
+  - first:
+      4: 400470
+    second: PT_Medieval_Male_Armor_LeftHandThumb2
+  - first:
+      4: 400472
+    second: PT_Medieval_Male_Armor_LeftHandThumb3
+  - first:
+      4: 400474
+    second: PT_Medieval_Male_Armor_LeftLeg
+  - first:
+      4: 400476
+    second: PT_Medieval_Male_Armor_LeftShoulder
+  - first:
+      4: 400478
+    second: PT_Medieval_Male_Armor_LeftToe
+  - first:
+      4: 400480
+    second: PT_Medieval_Male_Armor_LeftUpLeg
+  - first:
+      4: 400482
+    second: PT_Medieval_Male_Armor_Neck
+  - first:
+      4: 400484
+    second: PT_Medieval_Male_Armor_Right_BackCloth
+  - first:
+      4: 400486
+    second: PT_Medieval_Male_Armor_Right_BackCloth3
+  - first:
+      4: 400488
+    second: PT_Medieval_Male_Armor_Right_FrontCloth
+  - first:
+      4: 400490
+    second: PT_Medieval_Male_Armor_Right_FrontCloth2
+  - first:
+      4: 400492
+    second: PT_Medieval_Male_Armor_Right_FrontCloth3
+  - first:
+      4: 400494
+    second: PT_Medieval_Male_Armor_RightArm
+  - first:
+      4: 400496
+    second: PT_Medieval_Male_Armor_RightBackCloth2
+  - first:
+      4: 400498
+    second: PT_Medieval_Male_Armor_RightCape
+  - first:
+      4: 400500
+    second: PT_Medieval_Male_Armor_RightCape2
+  - first:
+      4: 400502
+    second: PT_Medieval_Male_Armor_RightCape3
+  - first:
+      4: 400504
+    second: PT_Medieval_Male_Armor_RightCape4
+  - first:
+      4: 400506
+    second: PT_Medieval_Male_Armor_RightFoot
+  - first:
+      4: 400508
+    second: PT_Medieval_Male_Armor_RightForeArm
+  - first:
+      4: 400510
+    second: PT_Medieval_Male_Armor_RightHand
+  - first:
+      4: 400512
+    second: PT_Medieval_Male_Armor_RightHandIndex1
+  - first:
+      4: 400514
+    second: PT_Medieval_Male_Armor_RightHandIndex2
+  - first:
+      4: 400516
+    second: PT_Medieval_Male_Armor_RightHandIndex3
+  - first:
+      4: 400518
+    second: PT_Medieval_Male_Armor_RightHandMiddle1
+  - first:
+      4: 400520
+    second: PT_Medieval_Male_Armor_RightHandMiddle2
+  - first:
+      4: 400522
+    second: PT_Medieval_Male_Armor_RightHandMiddle3
+  - first:
+      4: 400524
+    second: PT_Medieval_Male_Armor_RightHandPinky1
+  - first:
+      4: 400526
+    second: PT_Medieval_Male_Armor_RightHandPinky2
+  - first:
+      4: 400528
+    second: PT_Medieval_Male_Armor_RightHandPinky3
+  - first:
+      4: 400530
+    second: PT_Medieval_Male_Armor_RightHandRing1
+  - first:
+      4: 400532
+    second: PT_Medieval_Male_Armor_RightHandRing2
+  - first:
+      4: 400534
+    second: PT_Medieval_Male_Armor_RightHandRing3
+  - first:
+      4: 400536
+    second: PT_Medieval_Male_Armor_RightHandThumb1
+  - first:
+      4: 400538
+    second: PT_Medieval_Male_Armor_RightHandThumb2
+  - first:
+      4: 400540
+    second: PT_Medieval_Male_Armor_RightHandThumb3
+  - first:
+      4: 400542
+    second: PT_Medieval_Male_Armor_RightLeg
+  - first:
+      4: 400544
+    second: PT_Medieval_Male_Armor_RightShoulder
+  - first:
+      4: 400546
+    second: PT_Medieval_Male_Armor_RightToe
+  - first:
+      4: 400548
+    second: PT_Medieval_Male_Armor_RightUpLeg
+  - first:
+      4: 400550
+    second: PT_Medieval_Male_Armor_Spine
+  - first:
+      4: 400552
+    second: PT_Medieval_Male_Armor_Spine2
+  - first:
+      4: 400554
+    second: PT_Medieval_Male_Armor_Spine3
+  - first:
+      4: 400556
+    second: //RootNode
+  - first:
+      4: 400558
+    second: PT_Medieval_Male_Armor_04_A_helmet
+  - first:
+      4: 400560
+    second: PT_Medieval_Male_Armor_04_B_helmet
+  - first:
+      4: 400562
+    second: PT_Medieval_Male_Armor_04_C_helmet
+  - first:
+      4: 400564
+    second: PT_Medieval_Male_Armor_05_A_helmet
+  - first:
+      4: 400566
+    second: PT_Medieval_Male_Armor_05_B_helmet
+  - first:
+      4: 400568
+    second: PT_Medieval_Male_Armor_05_C_helmet
+  - first:
+      4: 400570
+    second: PT_Medieval_Male_Armor_leather_00_helmet_nv
+  - first:
+      4: 400572
+    second: PT_Medieval_Male_Armor_plate_00_helmet_nv
+  - first:
+      4: 400574
+    second: PT_Medieval_Male_Armor_Large_Shield_slot
+  - first:
+      4: 400576
+    second: PT_Medieval_Male_Armor_Left_Hand_Weapon_slot
+  - first:
+      4: 400578
+    second: PT_Medieval_Male_Armor_Long_Bow_slot
+  - first:
+      4: 400580
+    second: PT_Medieval_Male_Armor_Medium_Bow_slot
+  - first:
+      4: 400582
+    second: PT_Medieval_Male_Armor_Medium_Shield_slot
+  - first:
+      4: 400584
+    second: PT_Medieval_Male_Armor_Quiver_slot
+  - first:
+      4: 400586
+    second: PT_Medieval_Male_Armor_Right_Hand_Weapon_slot
+  - first:
+      4: 400588
+    second: PT_Medieval_Male_Armor_Second_Weapon_slot
+  - first:
+      4: 400590
+    second: PT_Medieval_Male_Armor_Sheat_slot
+  - first:
+      4: 400592
+    second: PT_Medieval_Male_Armor_Small_Shield_slot
+  - first:
+      4: 400594
+    second: group1
+  - first:
+      4: 400596
+    second: PT_Medieval_Female_Armor_Cape
+  - first:
+      4: 400598
+    second: PT_Medieval_Female_Armor_Head
+  - first:
+      4: 400600
+    second: PT_Medieval_Female_Armor_HeadTop
+  - first:
+      4: 400602
+    second: PT_Medieval_Female_Armor_HeadTopFeathers
+  - first:
+      4: 400604
+    second: PT_Medieval_Female_Armor_Hips
+  - first:
+      4: 400606
+    second: PT_Medieval_Female_Armor_Left_BackCloth
+  - first:
+      4: 400608
+    second: PT_Medieval_Female_Armor_Left_BackCloth3
+  - first:
+      4: 400610
+    second: PT_Medieval_Female_Armor_Left_FrontCloth
+  - first:
+      4: 400612
+    second: PT_Medieval_Female_Armor_Left_FrontCloth2
+  - first:
+      4: 400614
+    second: PT_Medieval_Female_Armor_Left_FrontCloth3
+  - first:
+      4: 400616
+    second: PT_Medieval_Female_Armor_LeftArm
+  - first:
+      4: 400618
+    second: PT_Medieval_Female_Armor_LeftBackCloth2
+  - first:
+      4: 400620
+    second: PT_Medieval_Female_Armor_LeftCape
+  - first:
+      4: 400622
+    second: PT_Medieval_Female_Armor_LeftCape2
+  - first:
+      4: 400624
+    second: PT_Medieval_Female_Armor_LeftCape3
+  - first:
+      4: 400626
+    second: PT_Medieval_Female_Armor_LeftCape4
+  - first:
+      4: 400628
+    second: PT_Medieval_Female_Armor_LeftFoot
+  - first:
+      4: 400630
+    second: PT_Medieval_Female_Armor_LeftForeArm
+  - first:
+      4: 400632
+    second: PT_Medieval_Female_Armor_LeftHand
+  - first:
+      4: 400634
+    second: PT_Medieval_Female_Armor_LeftHandIndex1
+  - first:
+      4: 400636
+    second: PT_Medieval_Female_Armor_LeftHandIndex2
+  - first:
+      4: 400638
+    second: PT_Medieval_Female_Armor_LeftHandIndex3
+  - first:
+      4: 400640
+    second: PT_Medieval_Female_Armor_LeftHandMiddle1
+  - first:
+      4: 400642
+    second: PT_Medieval_Female_Armor_LeftHandMiddle2
+  - first:
+      4: 400644
+    second: PT_Medieval_Female_Armor_LeftHandMiddle3
+  - first:
+      4: 400646
+    second: PT_Medieval_Female_Armor_LeftHandPinky1
+  - first:
+      4: 400648
+    second: PT_Medieval_Female_Armor_LeftHandPinky2
+  - first:
+      4: 400650
+    second: PT_Medieval_Female_Armor_LeftHandPinky3
+  - first:
+      4: 400652
+    second: PT_Medieval_Female_Armor_LeftHandRing1
+  - first:
+      4: 400654
+    second: PT_Medieval_Female_Armor_LeftHandRing2
+  - first:
+      4: 400656
+    second: PT_Medieval_Female_Armor_LeftHandRing3
+  - first:
+      4: 400658
+    second: PT_Medieval_Female_Armor_LeftHandThumb1
+  - first:
+      4: 400660
+    second: PT_Medieval_Female_Armor_LeftHandThumb2
+  - first:
+      4: 400662
+    second: PT_Medieval_Female_Armor_LeftHandThumb3
+  - first:
+      4: 400664
+    second: PT_Medieval_Female_Armor_LeftLeg
+  - first:
+      4: 400666
+    second: PT_Medieval_Female_Armor_LeftShoulder
+  - first:
+      4: 400668
+    second: PT_Medieval_Female_Armor_LeftToe
+  - first:
+      4: 400670
+    second: PT_Medieval_Female_Armor_LeftUpLeg
+  - first:
+      4: 400672
+    second: PT_Medieval_Female_Armor_Neck
+  - first:
+      4: 400674
+    second: PT_Medieval_Female_Armor_Right_BackCloth
+  - first:
+      4: 400676
+    second: PT_Medieval_Female_Armor_Right_BackCloth3
+  - first:
+      4: 400678
+    second: PT_Medieval_Female_Armor_Right_FrontCloth
+  - first:
+      4: 400680
+    second: PT_Medieval_Female_Armor_Right_FrontCloth2
+  - first:
+      4: 400682
+    second: PT_Medieval_Female_Armor_Right_FrontCloth3
+  - first:
+      4: 400684
+    second: PT_Medieval_Female_Armor_RightArm
+  - first:
+      4: 400686
+    second: PT_Medieval_Female_Armor_RightBackCloth2
+  - first:
+      4: 400688
+    second: PT_Medieval_Female_Armor_RightCape
+  - first:
+      4: 400690
+    second: PT_Medieval_Female_Armor_RightCape2
+  - first:
+      4: 400692
+    second: PT_Medieval_Female_Armor_RightCape3
+  - first:
+      4: 400694
+    second: PT_Medieval_Female_Armor_RightCape4
+  - first:
+      4: 400696
+    second: PT_Medieval_Female_Armor_RightFoot
+  - first:
+      4: 400698
+    second: PT_Medieval_Female_Armor_RightForeArm
+  - first:
+      4: 400700
+    second: PT_Medieval_Female_Armor_RightHand
+  - first:
+      4: 400702
+    second: PT_Medieval_Female_Armor_RightHandIndex1
+  - first:
+      4: 400704
+    second: PT_Medieval_Female_Armor_RightHandIndex2
+  - first:
+      4: 400706
+    second: PT_Medieval_Female_Armor_RightHandIndex3
+  - first:
+      4: 400708
+    second: PT_Medieval_Female_Armor_RightHandMiddle1
+  - first:
+      4: 400710
+    second: PT_Medieval_Female_Armor_RightHandMiddle2
+  - first:
+      4: 400712
+    second: PT_Medieval_Female_Armor_RightHandMiddle3
+  - first:
+      4: 400714
+    second: PT_Medieval_Female_Armor_RightHandPinky1
+  - first:
+      4: 400716
+    second: PT_Medieval_Female_Armor_RightHandPinky2
+  - first:
+      4: 400718
+    second: PT_Medieval_Female_Armor_RightHandPinky3
+  - first:
+      4: 400720
+    second: PT_Medieval_Female_Armor_RightHandRing1
+  - first:
+      4: 400722
+    second: PT_Medieval_Female_Armor_RightHandRing2
+  - first:
+      4: 400724
+    second: PT_Medieval_Female_Armor_RightHandRing3
+  - first:
+      4: 400726
+    second: PT_Medieval_Female_Armor_RightHandThumb1
+  - first:
+      4: 400728
+    second: PT_Medieval_Female_Armor_RightHandThumb2
+  - first:
+      4: 400730
+    second: PT_Medieval_Female_Armor_RightHandThumb3
+  - first:
+      4: 400732
+    second: PT_Medieval_Female_Armor_RightLeg
+  - first:
+      4: 400734
+    second: PT_Medieval_Female_Armor_RightShoulder
+  - first:
+      4: 400736
+    second: PT_Medieval_Female_Armor_RightToe
+  - first:
+      4: 400738
+    second: PT_Medieval_Female_Armor_RightUpLeg
+  - first:
+      4: 400740
+    second: PT_Medieval_Female_Armor_Spine
+  - first:
+      4: 400742
+    second: PT_Medieval_Female_Armor_Spine2
+  - first:
+      4: 400744
+    second: PT_Medieval_Female_Armor_Spine3
+  - first:
+      4: 400746
+    second: PT_Medieval_Male_Armor_hair_01
+  - first:
+      4: 400748
+    second: PT_Medieval_Male_Armor_head_01
+  - first:
+      4: 400750
+    second: PT_Medieval_Male_Armor_beard_01
+  - first:
+      21: 2100000
+    second: PT_Medieval_Armors_Material
+  - first:
+      23: 2300000
+    second: PT_Medieval_Male_Armor_Ex1_body_01
+  - first:
+      23: 2300002
+    second: PT_Medieval_Male_Armor_Ex1_body_02
+  - first:
+      23: 2300004
+    second: PT_Medieval_Male_Armor_Ex1_body_03
+  - first:
+      23: 2300006
+    second: PT_Medieval_Male_Armor_Ex1_body_04
+  - first:
+      23: 2300008
+    second: PT_Medieval_Male_Armor_Ex1_body_05
+  - first:
+      23: 2300010
+    second: PT_Medieval_Male_Armor_Ex1_body_06
+  - first:
+      23: 2300012
+    second: PT_Medieval_Male_Armor_Ex1_body_07
+  - first:
+      23: 2300014
+    second: PT_Medieval_Male_Armor_Ex1_body_08
+  - first:
+      23: 2300016
+    second: PT_Medieval_Male_Armor_Ex1_body_09
+  - first:
+      23: 2300018
+    second: PT_Medieval_Male_Armor_Ex1_body_10
+  - first:
+      23: 2300020
+    second: PT_Medieval_Male_Armor_Ex1_body_11
+  - first:
+      23: 2300022
+    second: PT_Medieval_Male_Armor_Ex1_body_12
+  - first:
+      23: 2300024
+    second: PT_Medieval_Male_Armor_Ex1_body_13
+  - first:
+      23: 2300026
+    second: PT_Medieval_Male_Armor_Ex1_body_14
+  - first:
+      23: 2300028
+    second: PT_Medieval_Male_Armor_Ex1_body_15
+  - first:
+      23: 2300030
+    second: PT_Medieval_Male_Armor_Ex1_body_16
+  - first:
+      23: 2300032
+    second: PT_Medieval_Male_Armor_Ex1_body_17
+  - first:
+      23: 2300034
+    second: PT_Medieval_Male_Armor_Ex1_body_18
+  - first:
+      23: 2300036
+    second: PT_Medieval_Male_Armor_Ex1_body_19
+  - first:
+      23: 2300038
+    second: PT_Medieval_Male_Armor_Ex1_body_20
+  - first:
+      23: 2300040
+    second: PT_Medieval_Male_Armor_Ex1_body_21
+  - first:
+      23: 2300042
+    second: PT_Medieval_Male_Armor_Ex1_body_22
+  - first:
+      23: 2300044
+    second: PT_Medieval_Male_Armor_Ex1_body_23
+  - first:
+      23: 2300046
+    second: PT_Medieval_Male_Armor_Ex1_body_24
+  - first:
+      23: 2300048
+    second: PT_Medieval_Male_Armor_Ex1_body_25
+  - first:
+      23: 2300050
+    second: PT_Medieval_Male_Armor_Ex1_body_26
+  - first:
+      23: 2300052
+    second: PT_Medieval_Male_Armor_Ex1_body_27
+  - first:
+      23: 2300054
+    second: PT_Medieval_Male_Armor_Ex1_body_28
+  - first:
+      23: 2300056
+    second: PT_Medieval_Male_Armor_Ex1_body_29
+  - first:
+      23: 2300058
+    second: PT_Medieval_Male_Armor_Ex1_body_30
+  - first:
+      23: 2300060
+    second: PT_Medieval_Male_Armor_Ex1_body_31
+  - first:
+      23: 2300062
+    second: PT_Medieval_Male_Armor_Ex1_body_32
+  - first:
+      23: 2300064
+    second: PT_Medieval_Male_Armor_Ex1_boots_01
+  - first:
+      23: 2300066
+    second: PT_Medieval_Male_Armor_Ex1_boots_02
+  - first:
+      23: 2300068
+    second: PT_Medieval_Male_Armor_Ex1_boots_03
+  - first:
+      23: 2300070
+    second: PT_Medieval_Male_Armor_Ex1_boots_04
+  - first:
+      23: 2300072
+    second: PT_Medieval_Male_Armor_Ex1_boots_05
+  - first:
+      23: 2300074
+    second: PT_Medieval_Male_Armor_Ex1_boots_06
+  - first:
+      23: 2300076
+    second: PT_Medieval_Male_Armor_Ex1_boots_07
+  - first:
+      23: 2300078
+    second: PT_Medieval_Male_Armor_Ex1_boots_08
+  - first:
+      23: 2300080
+    second: PT_Medieval_Male_Armor_Ex1_boots_09
+  - first:
+      23: 2300082
+    second: PT_Medieval_Male_Armor_Ex1_boots_10
+  - first:
+      23: 2300084
+    second: PT_Medieval_Male_Armor_Ex1_boots_11
+  - first:
+      23: 2300086
+    second: PT_Medieval_Male_Armor_Ex1_boots_12
+  - first:
+      23: 2300088
+    second: PT_Medieval_Male_Armor_Ex1_boots_13
+  - first:
+      23: 2300090
+    second: PT_Medieval_Male_Armor_Ex1_boots_14
+  - first:
+      23: 2300092
+    second: PT_Medieval_Male_Armor_Ex1_boots_15
+  - first:
+      23: 2300094
+    second: PT_Medieval_Male_Armor_Ex1_boots_16
+  - first:
+      23: 2300096
+    second: PT_Medieval_Male_Armor_Ex1_boots_17
+  - first:
+      23: 2300098
+    second: PT_Medieval_Male_Armor_Ex1_boots_18
+  - first:
+      23: 2300100
+    second: PT_Medieval_Male_Armor_Ex1_boots_19
+  - first:
+      23: 2300102
+    second: PT_Medieval_Male_Armor_Ex1_boots_20
+  - first:
+      23: 2300104
+    second: PT_Medieval_Male_Armor_Ex1_boots_21
+  - first:
+      23: 2300106
+    second: PT_Medieval_Male_Armor_Ex1_boots_22
+  - first:
+      23: 2300108
+    second: PT_Medieval_Male_Armor_Ex1_boots_23
+  - first:
+      23: 2300110
+    second: PT_Medieval_Male_Armor_Ex1_boots_24
+  - first:
+      23: 2300112
+    second: PT_Medieval_Male_Armor_Ex1_boots_25
+  - first:
+      23: 2300114
+    second: PT_Medieval_Male_Armor_Ex1_boots_26
+  - first:
+      23: 2300116
+    second: PT_Medieval_Male_Armor_Ex1_cape_01
+  - first:
+      23: 2300118
+    second: PT_Medieval_Male_Armor_Ex1_cape_02
+  - first:
+      23: 2300120
+    second: PT_Medieval_Male_Armor_Ex1_cape_03
+  - first:
+      23: 2300122
+    second: PT_Medieval_Male_Armor_Ex1_cape_04
+  - first:
+      23: 2300124
+    second: PT_Medieval_Male_Armor_Ex1_cape_05
+  - first:
+      23: 2300126
+    second: PT_Medieval_Male_Armor_Ex1_cape_06
+  - first:
+      23: 2300128
+    second: PT_Medieval_Male_Armor_Ex1_cape_07
+  - first:
+      23: 2300130
+    second: PT_Medieval_Male_Armor_Ex1_cape_08
+  - first:
+      23: 2300132
+    second: PT_Medieval_Male_Armor_Ex1_cape_09
+  - first:
+      23: 2300134
+    second: PT_Medieval_Male_Armor_Ex1_cape_10
+  - first:
+      23: 2300136
+    second: PT_Medieval_Male_Armor_Ex1_cape_11
+  - first:
+      23: 2300138
+    second: PT_Medieval_Male_Armor_Ex1_cape_12
+  - first:
+      23: 2300140
+    second: PT_Medieval_Male_Armor_Ex1_cape_13
+  - first:
+      23: 2300142
+    second: PT_Medieval_Male_Armor_Ex1_cape_14
+  - first:
+      23: 2300144
+    second: PT_Medieval_Male_Armor_Ex1_cape_15
+  - first:
+      23: 2300146
+    second: PT_Medieval_Male_Armor_Ex1_cape_16
+  - first:
+      23: 2300148
+    second: PT_Medieval_Male_Armor_Ex1_cape_17
+  - first:
+      23: 2300150
+    second: PT_Medieval_Male_Armor_Ex1_cape_18
+  - first:
+      23: 2300152
+    second: PT_Medieval_Male_Armor_Ex1_cape_19
+  - first:
+      23: 2300154
+    second: PT_Medieval_Male_Armor_Ex1_cape_20
+  - first:
+      23: 2300156
+    second: PT_Medieval_Male_Armor_Ex1_cape_21
+  - first:
+      23: 2300158
+    second: PT_Medieval_Male_Armor_Ex1_cape_22
+  - first:
+      23: 2300160
+    second: PT_Medieval_Male_Armor_Ex1_cape_23
+  - first:
+      23: 2300162
+    second: PT_Medieval_Male_Armor_Ex1_cape_24
+  - first:
+      23: 2300164
+    second: PT_Medieval_Male_Armor_Ex1_cape_25
+  - first:
+      23: 2300166
+    second: PT_Medieval_Male_Armor_Ex1_cape_26
+  - first:
+      23: 2300168
+    second: PT_Medieval_Male_Armor_Ex1_cape_27
+  - first:
+      23: 2300170
+    second: PT_Medieval_Male_Armor_Ex1_cape_28
+  - first:
+      23: 2300172
+    second: PT_Medieval_Male_Armor_Ex1_cape_29
+  - first:
+      23: 2300174
+    second: PT_Medieval_Male_Armor_Ex1_cape_30
+  - first:
+      23: 2300176
+    second: PT_Medieval_Male_Armor_Ex1_cape_31
+  - first:
+      23: 2300178
+    second: PT_Medieval_Male_Armor_Ex1_cape_32
+  - first:
+      23: 2300180
+    second: PT_Medieval_Male_Armor_Ex1_cape_33
+  - first:
+      23: 2300182
+    second: PT_Medieval_Male_Armor_Ex1_cape_34
+  - first:
+      23: 2300184
+    second: PT_Medieval_Male_Armor_Ex1_cape_35
+  - first:
+      23: 2300186
+    second: PT_Medieval_Male_Armor_Ex1_cape_36
+  - first:
+      23: 2300188
+    second: PT_Medieval_Male_Armor_Ex1_cape_37
+  - first:
+      23: 2300190
+    second: PT_Medieval_Male_Armor_Ex1_cape_38
+  - first:
+      23: 2300192
+    second: PT_Medieval_Male_Armor_Ex1_cape_39
+  - first:
+      23: 2300194
+    second: PT_Medieval_Male_Armor_Ex1_cape_40
+  - first:
+      23: 2300196
+    second: PT_Medieval_Male_Armor_Ex1_cape_41
+  - first:
+      23: 2300198
+    second: PT_Medieval_Male_Armor_Ex1_cape_42
+  - first:
+      23: 2300200
+    second: PT_Medieval_Male_Armor_Ex1_cape_43
+  - first:
+      23: 2300202
+    second: PT_Medieval_Male_Armor_Ex1_cape_44
+  - first:
+      23: 2300204
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_01
+  - first:
+      23: 2300206
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_02
+  - first:
+      23: 2300208
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_03
+  - first:
+      23: 2300210
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_04
+  - first:
+      23: 2300212
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_05
+  - first:
+      23: 2300214
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_06
+  - first:
+      23: 2300216
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_07
+  - first:
+      23: 2300218
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_08
+  - first:
+      23: 2300220
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_09
+  - first:
+      23: 2300222
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_10
+  - first:
+      23: 2300224
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_11
+  - first:
+      23: 2300226
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_12
+  - first:
+      23: 2300228
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_13
+  - first:
+      23: 2300230
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_14
+  - first:
+      23: 2300232
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_15
+  - first:
+      23: 2300234
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_16
+  - first:
+      23: 2300236
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_17
+  - first:
+      23: 2300238
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_18
+  - first:
+      23: 2300240
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_19
+  - first:
+      23: 2300242
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_20
+  - first:
+      23: 2300244
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_21
+  - first:
+      23: 2300246
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_22
+  - first:
+      23: 2300248
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_23
+  - first:
+      23: 2300250
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_24
+  - first:
+      23: 2300252
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_25
+  - first:
+      23: 2300254
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_26
+  - first:
+      23: 2300256
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_27
+  - first:
+      23: 2300258
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_28
+  - first:
+      23: 2300260
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_29
+  - first:
+      23: 2300262
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_30
+  - first:
+      23: 2300264
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_31
+  - first:
+      23: 2300266
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_32
+  - first:
+      23: 2300268
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_33
+  - first:
+      23: 2300270
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_34
+  - first:
+      23: 2300272
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_35
+  - first:
+      23: 2300274
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_36
+  - first:
+      23: 2300276
+    second: PT_Medieval_Male_Armor_Ex1_legs_01
+  - first:
+      23: 2300278
+    second: PT_Medieval_Male_Armor_Ex1_legs_02
+  - first:
+      23: 2300280
+    second: PT_Medieval_Male_Armor_Ex1_legs_03
+  - first:
+      23: 2300282
+    second: PT_Medieval_Male_Armor_Ex1_legs_04
+  - first:
+      23: 2300284
+    second: PT_Medieval_Male_Armor_Ex1_legs_05
+  - first:
+      23: 2300286
+    second: PT_Medieval_Male_Armor_Ex1_legs_06
+  - first:
+      23: 2300288
+    second: PT_Medieval_Male_Armor_Ex1_legs_07
+  - first:
+      23: 2300290
+    second: PT_Medieval_Male_Armor_Ex1_legs_08
+  - first:
+      23: 2300292
+    second: PT_Medieval_Male_Armor_Ex1_legs_09
+  - first:
+      23: 2300294
+    second: PT_Medieval_Male_Armor_Ex1_legs_10
+  - first:
+      23: 2300296
+    second: PT_Medieval_Male_Armor_Ex1_legs_11
+  - first:
+      23: 2300298
+    second: PT_Medieval_Male_Armor_Ex1_legs_12
+  - first:
+      23: 2300300
+    second: PT_Medieval_Male_Armor_Ex1_legs_13
+  - first:
+      23: 2300302
+    second: PT_Medieval_Male_Armor_Ex1_legs_14
+  - first:
+      23: 2300304
+    second: PT_Medieval_Male_Armor_Ex1_legs_15
+  - first:
+      23: 2300306
+    second: PT_Medieval_Male_Armor_Ex1_legs_16
+  - first:
+      23: 2300308
+    second: PT_Medieval_Male_Armor_Ex1_legs_17
+  - first:
+      23: 2300310
+    second: PT_Medieval_Male_Armor_Ex1_legs_18
+  - first:
+      23: 2300312
+    second: PT_Medieval_Male_Armor_Ex1_legs_19
+  - first:
+      23: 2300314
+    second: PT_Medieval_Male_Armor_Ex1_legs_20
+  - first:
+      23: 2300316
+    second: PT_Medieval_Male_Armor_Ex1_legs_21
+  - first:
+      23: 2300318
+    second: PT_Medieval_Male_Armor_Ex1_legs_22
+  - first:
+      23: 2300320
+    second: PT_Medieval_Male_Armor_Ex1_legs_23
+  - first:
+      23: 2300322
+    second: PT_Medieval_Male_Armor_Ex1_legs_24
+  - first:
+      23: 2300324
+    second: PT_Medieval_Male_Armor_Ex1_legs_25
+  - first:
+      23: 2300326
+    second: PT_Medieval_Male_Armor_Ex1_legs_26
+  - first:
+      33: 3300000
+    second: PT_Medieval_Male_Armor_Ex1_body_01
+  - first:
+      33: 3300002
+    second: PT_Medieval_Male_Armor_Ex1_body_02
+  - first:
+      33: 3300004
+    second: PT_Medieval_Male_Armor_Ex1_body_03
+  - first:
+      33: 3300006
+    second: PT_Medieval_Male_Armor_Ex1_body_04
+  - first:
+      33: 3300008
+    second: PT_Medieval_Male_Armor_Ex1_body_05
+  - first:
+      33: 3300010
+    second: PT_Medieval_Male_Armor_Ex1_body_06
+  - first:
+      33: 3300012
+    second: PT_Medieval_Male_Armor_Ex1_body_07
+  - first:
+      33: 3300014
+    second: PT_Medieval_Male_Armor_Ex1_body_08
+  - first:
+      33: 3300016
+    second: PT_Medieval_Male_Armor_Ex1_body_09
+  - first:
+      33: 3300018
+    second: PT_Medieval_Male_Armor_Ex1_body_10
+  - first:
+      33: 3300020
+    second: PT_Medieval_Male_Armor_Ex1_body_11
+  - first:
+      33: 3300022
+    second: PT_Medieval_Male_Armor_Ex1_body_12
+  - first:
+      33: 3300024
+    second: PT_Medieval_Male_Armor_Ex1_body_13
+  - first:
+      33: 3300026
+    second: PT_Medieval_Male_Armor_Ex1_body_14
+  - first:
+      33: 3300028
+    second: PT_Medieval_Male_Armor_Ex1_body_15
+  - first:
+      33: 3300030
+    second: PT_Medieval_Male_Armor_Ex1_body_16
+  - first:
+      33: 3300032
+    second: PT_Medieval_Male_Armor_Ex1_body_17
+  - first:
+      33: 3300034
+    second: PT_Medieval_Male_Armor_Ex1_body_18
+  - first:
+      33: 3300036
+    second: PT_Medieval_Male_Armor_Ex1_body_19
+  - first:
+      33: 3300038
+    second: PT_Medieval_Male_Armor_Ex1_body_20
+  - first:
+      33: 3300040
+    second: PT_Medieval_Male_Armor_Ex1_body_21
+  - first:
+      33: 3300042
+    second: PT_Medieval_Male_Armor_Ex1_body_22
+  - first:
+      33: 3300044
+    second: PT_Medieval_Male_Armor_Ex1_body_23
+  - first:
+      33: 3300046
+    second: PT_Medieval_Male_Armor_Ex1_body_24
+  - first:
+      33: 3300048
+    second: PT_Medieval_Male_Armor_Ex1_body_25
+  - first:
+      33: 3300050
+    second: PT_Medieval_Male_Armor_Ex1_body_26
+  - first:
+      33: 3300052
+    second: PT_Medieval_Male_Armor_Ex1_body_27
+  - first:
+      33: 3300054
+    second: PT_Medieval_Male_Armor_Ex1_body_28
+  - first:
+      33: 3300056
+    second: PT_Medieval_Male_Armor_Ex1_body_29
+  - first:
+      33: 3300058
+    second: PT_Medieval_Male_Armor_Ex1_body_30
+  - first:
+      33: 3300060
+    second: PT_Medieval_Male_Armor_Ex1_body_31
+  - first:
+      33: 3300062
+    second: PT_Medieval_Male_Armor_Ex1_body_32
+  - first:
+      33: 3300064
+    second: PT_Medieval_Male_Armor_Ex1_boots_01
+  - first:
+      33: 3300066
+    second: PT_Medieval_Male_Armor_Ex1_boots_02
+  - first:
+      33: 3300068
+    second: PT_Medieval_Male_Armor_Ex1_boots_03
+  - first:
+      33: 3300070
+    second: PT_Medieval_Male_Armor_Ex1_boots_04
+  - first:
+      33: 3300072
+    second: PT_Medieval_Male_Armor_Ex1_boots_05
+  - first:
+      33: 3300074
+    second: PT_Medieval_Male_Armor_Ex1_boots_06
+  - first:
+      33: 3300076
+    second: PT_Medieval_Male_Armor_Ex1_boots_07
+  - first:
+      33: 3300078
+    second: PT_Medieval_Male_Armor_Ex1_boots_08
+  - first:
+      33: 3300080
+    second: PT_Medieval_Male_Armor_Ex1_boots_09
+  - first:
+      33: 3300082
+    second: PT_Medieval_Male_Armor_Ex1_boots_10
+  - first:
+      33: 3300084
+    second: PT_Medieval_Male_Armor_Ex1_boots_11
+  - first:
+      33: 3300086
+    second: PT_Medieval_Male_Armor_Ex1_boots_12
+  - first:
+      33: 3300088
+    second: PT_Medieval_Male_Armor_Ex1_boots_13
+  - first:
+      33: 3300090
+    second: PT_Medieval_Male_Armor_Ex1_boots_14
+  - first:
+      33: 3300092
+    second: PT_Medieval_Male_Armor_Ex1_boots_15
+  - first:
+      33: 3300094
+    second: PT_Medieval_Male_Armor_Ex1_boots_16
+  - first:
+      33: 3300096
+    second: PT_Medieval_Male_Armor_Ex1_boots_17
+  - first:
+      33: 3300098
+    second: PT_Medieval_Male_Armor_Ex1_boots_18
+  - first:
+      33: 3300100
+    second: PT_Medieval_Male_Armor_Ex1_boots_19
+  - first:
+      33: 3300102
+    second: PT_Medieval_Male_Armor_Ex1_boots_20
+  - first:
+      33: 3300104
+    second: PT_Medieval_Male_Armor_Ex1_boots_21
+  - first:
+      33: 3300106
+    second: PT_Medieval_Male_Armor_Ex1_boots_22
+  - first:
+      33: 3300108
+    second: PT_Medieval_Male_Armor_Ex1_boots_23
+  - first:
+      33: 3300110
+    second: PT_Medieval_Male_Armor_Ex1_boots_24
+  - first:
+      33: 3300112
+    second: PT_Medieval_Male_Armor_Ex1_boots_25
+  - first:
+      33: 3300114
+    second: PT_Medieval_Male_Armor_Ex1_boots_26
+  - first:
+      33: 3300116
+    second: PT_Medieval_Male_Armor_Ex1_cape_01
+  - first:
+      33: 3300118
+    second: PT_Medieval_Male_Armor_Ex1_cape_02
+  - first:
+      33: 3300120
+    second: PT_Medieval_Male_Armor_Ex1_cape_03
+  - first:
+      33: 3300122
+    second: PT_Medieval_Male_Armor_Ex1_cape_04
+  - first:
+      33: 3300124
+    second: PT_Medieval_Male_Armor_Ex1_cape_05
+  - first:
+      33: 3300126
+    second: PT_Medieval_Male_Armor_Ex1_cape_06
+  - first:
+      33: 3300128
+    second: PT_Medieval_Male_Armor_Ex1_cape_07
+  - first:
+      33: 3300130
+    second: PT_Medieval_Male_Armor_Ex1_cape_08
+  - first:
+      33: 3300132
+    second: PT_Medieval_Male_Armor_Ex1_cape_09
+  - first:
+      33: 3300134
+    second: PT_Medieval_Male_Armor_Ex1_cape_10
+  - first:
+      33: 3300136
+    second: PT_Medieval_Male_Armor_Ex1_cape_11
+  - first:
+      33: 3300138
+    second: PT_Medieval_Male_Armor_Ex1_cape_12
+  - first:
+      33: 3300140
+    second: PT_Medieval_Male_Armor_Ex1_cape_13
+  - first:
+      33: 3300142
+    second: PT_Medieval_Male_Armor_Ex1_cape_14
+  - first:
+      33: 3300144
+    second: PT_Medieval_Male_Armor_Ex1_cape_15
+  - first:
+      33: 3300146
+    second: PT_Medieval_Male_Armor_Ex1_cape_16
+  - first:
+      33: 3300148
+    second: PT_Medieval_Male_Armor_Ex1_cape_17
+  - first:
+      33: 3300150
+    second: PT_Medieval_Male_Armor_Ex1_cape_18
+  - first:
+      33: 3300152
+    second: PT_Medieval_Male_Armor_Ex1_cape_19
+  - first:
+      33: 3300154
+    second: PT_Medieval_Male_Armor_Ex1_cape_20
+  - first:
+      33: 3300156
+    second: PT_Medieval_Male_Armor_Ex1_cape_21
+  - first:
+      33: 3300158
+    second: PT_Medieval_Male_Armor_Ex1_cape_22
+  - first:
+      33: 3300160
+    second: PT_Medieval_Male_Armor_Ex1_cape_23
+  - first:
+      33: 3300162
+    second: PT_Medieval_Male_Armor_Ex1_cape_24
+  - first:
+      33: 3300164
+    second: PT_Medieval_Male_Armor_Ex1_cape_25
+  - first:
+      33: 3300166
+    second: PT_Medieval_Male_Armor_Ex1_cape_26
+  - first:
+      33: 3300168
+    second: PT_Medieval_Male_Armor_Ex1_cape_27
+  - first:
+      33: 3300170
+    second: PT_Medieval_Male_Armor_Ex1_cape_28
+  - first:
+      33: 3300172
+    second: PT_Medieval_Male_Armor_Ex1_cape_29
+  - first:
+      33: 3300174
+    second: PT_Medieval_Male_Armor_Ex1_cape_30
+  - first:
+      33: 3300176
+    second: PT_Medieval_Male_Armor_Ex1_cape_31
+  - first:
+      33: 3300178
+    second: PT_Medieval_Male_Armor_Ex1_cape_32
+  - first:
+      33: 3300180
+    second: PT_Medieval_Male_Armor_Ex1_cape_33
+  - first:
+      33: 3300182
+    second: PT_Medieval_Male_Armor_Ex1_cape_34
+  - first:
+      33: 3300184
+    second: PT_Medieval_Male_Armor_Ex1_cape_35
+  - first:
+      33: 3300186
+    second: PT_Medieval_Male_Armor_Ex1_cape_36
+  - first:
+      33: 3300188
+    second: PT_Medieval_Male_Armor_Ex1_cape_37
+  - first:
+      33: 3300190
+    second: PT_Medieval_Male_Armor_Ex1_cape_38
+  - first:
+      33: 3300192
+    second: PT_Medieval_Male_Armor_Ex1_cape_39
+  - first:
+      33: 3300194
+    second: PT_Medieval_Male_Armor_Ex1_cape_40
+  - first:
+      33: 3300196
+    second: PT_Medieval_Male_Armor_Ex1_cape_41
+  - first:
+      33: 3300198
+    second: PT_Medieval_Male_Armor_Ex1_cape_42
+  - first:
+      33: 3300200
+    second: PT_Medieval_Male_Armor_Ex1_cape_43
+  - first:
+      33: 3300202
+    second: PT_Medieval_Male_Armor_Ex1_cape_44
+  - first:
+      33: 3300204
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_01
+  - first:
+      33: 3300206
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_02
+  - first:
+      33: 3300208
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_03
+  - first:
+      33: 3300210
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_04
+  - first:
+      33: 3300212
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_05
+  - first:
+      33: 3300214
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_06
+  - first:
+      33: 3300216
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_07
+  - first:
+      33: 3300218
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_08
+  - first:
+      33: 3300220
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_09
+  - first:
+      33: 3300222
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_10
+  - first:
+      33: 3300224
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_11
+  - first:
+      33: 3300226
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_12
+  - first:
+      33: 3300228
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_13
+  - first:
+      33: 3300230
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_14
+  - first:
+      33: 3300232
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_15
+  - first:
+      33: 3300234
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_16
+  - first:
+      33: 3300236
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_17
+  - first:
+      33: 3300238
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_18
+  - first:
+      33: 3300240
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_19
+  - first:
+      33: 3300242
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_20
+  - first:
+      33: 3300244
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_21
+  - first:
+      33: 3300246
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_22
+  - first:
+      33: 3300248
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_23
+  - first:
+      33: 3300250
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_24
+  - first:
+      33: 3300252
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_25
+  - first:
+      33: 3300254
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_26
+  - first:
+      33: 3300256
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_27
+  - first:
+      33: 3300258
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_28
+  - first:
+      33: 3300260
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_29
+  - first:
+      33: 3300262
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_30
+  - first:
+      33: 3300264
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_31
+  - first:
+      33: 3300266
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_32
+  - first:
+      33: 3300268
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_33
+  - first:
+      33: 3300270
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_34
+  - first:
+      33: 3300272
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_35
+  - first:
+      33: 3300274
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_36
+  - first:
+      33: 3300276
+    second: PT_Medieval_Male_Armor_Ex1_legs_01
+  - first:
+      33: 3300278
+    second: PT_Medieval_Male_Armor_Ex1_legs_02
+  - first:
+      33: 3300280
+    second: PT_Medieval_Male_Armor_Ex1_legs_03
+  - first:
+      33: 3300282
+    second: PT_Medieval_Male_Armor_Ex1_legs_04
+  - first:
+      33: 3300284
+    second: PT_Medieval_Male_Armor_Ex1_legs_05
+  - first:
+      33: 3300286
+    second: PT_Medieval_Male_Armor_Ex1_legs_06
+  - first:
+      33: 3300288
+    second: PT_Medieval_Male_Armor_Ex1_legs_07
+  - first:
+      33: 3300290
+    second: PT_Medieval_Male_Armor_Ex1_legs_08
+  - first:
+      33: 3300292
+    second: PT_Medieval_Male_Armor_Ex1_legs_09
+  - first:
+      33: 3300294
+    second: PT_Medieval_Male_Armor_Ex1_legs_10
+  - first:
+      33: 3300296
+    second: PT_Medieval_Male_Armor_Ex1_legs_11
+  - first:
+      33: 3300298
+    second: PT_Medieval_Male_Armor_Ex1_legs_12
+  - first:
+      33: 3300300
+    second: PT_Medieval_Male_Armor_Ex1_legs_13
+  - first:
+      33: 3300302
+    second: PT_Medieval_Male_Armor_Ex1_legs_14
+  - first:
+      33: 3300304
+    second: PT_Medieval_Male_Armor_Ex1_legs_15
+  - first:
+      33: 3300306
+    second: PT_Medieval_Male_Armor_Ex1_legs_16
+  - first:
+      33: 3300308
+    second: PT_Medieval_Male_Armor_Ex1_legs_17
+  - first:
+      33: 3300310
+    second: PT_Medieval_Male_Armor_Ex1_legs_18
+  - first:
+      33: 3300312
+    second: PT_Medieval_Male_Armor_Ex1_legs_19
+  - first:
+      33: 3300314
+    second: PT_Medieval_Male_Armor_Ex1_legs_20
+  - first:
+      33: 3300316
+    second: PT_Medieval_Male_Armor_Ex1_legs_21
+  - first:
+      33: 3300318
+    second: PT_Medieval_Male_Armor_Ex1_legs_22
+  - first:
+      33: 3300320
+    second: PT_Medieval_Male_Armor_Ex1_legs_23
+  - first:
+      33: 3300322
+    second: PT_Medieval_Male_Armor_Ex1_legs_24
+  - first:
+      33: 3300324
+    second: PT_Medieval_Male_Armor_Ex1_legs_25
+  - first:
+      33: 3300326
+    second: PT_Medieval_Male_Armor_Ex1_legs_26
+  - first:
+      43: 4300000
+    second: PT_Medieval_Male_Armor_Ex1_boots_01
+  - first:
+      43: 4300002
+    second: PT_Medieval_Male_Armor_Ex1_boots_02
+  - first:
+      43: 4300004
+    second: PT_Medieval_Male_Armor_Ex1_boots_03
+  - first:
+      43: 4300006
+    second: PT_Medieval_Male_Armor_Ex1_boots_04
+  - first:
+      43: 4300008
+    second: PT_Medieval_Male_Armor_Ex1_boots_06
+  - first:
+      43: 4300010
+    second: PT_Medieval_Male_Armor_Ex1_boots_07
+  - first:
+      43: 4300012
+    second: PT_Medieval_Male_Armor_Ex1_boots_08
+  - first:
+      43: 4300014
+    second: PT_Medieval_Male_Armor_Ex1_boots_09
+  - first:
+      43: 4300016
+    second: PT_Medieval_Male_Armor_Ex1_boots_10
+  - first:
+      43: 4300018
+    second: PT_Medieval_Male_Armor_Ex1_boots_11
+  - first:
+      43: 4300020
+    second: PT_Medieval_Male_Armor_Ex1_boots_12
+  - first:
+      43: 4300022
+    second: PT_Medieval_Male_Armor_Ex1_boots_13
+  - first:
+      43: 4300024
+    second: PT_Medieval_Male_Armor_Ex1_boots_14
+  - first:
+      43: 4300026
+    second: PT_Medieval_Male_Armor_Ex1_boots_15
+  - first:
+      43: 4300028
+    second: PT_Medieval_Male_Armor_Ex1_boots_16
+  - first:
+      43: 4300030
+    second: PT_Medieval_Male_Armor_Ex1_boots_18
+  - first:
+      43: 4300032
+    second: PT_Medieval_Male_Armor_Ex1_boots_19
+  - first:
+      43: 4300034
+    second: PT_Medieval_Male_Armor_Ex1_boots_20
+  - first:
+      43: 4300036
+    second: PT_Medieval_Male_Armor_Ex1_boots_21
+  - first:
+      43: 4300038
+    second: PT_Medieval_Male_Armor_Ex1_boots_23
+  - first:
+      43: 4300040
+    second: PT_Medieval_Male_Armor_Ex1_boots_24
+  - first:
+      43: 4300042
+    second: PT_Medieval_Male_Armor_Ex1_boots_25
+  - first:
+      43: 4300044
+    second: PT_Medieval_Male_Armor_Ex1_boots_26
+  - first:
+      43: 4300046
+    second: PT_Medieval_Male_Armor_Ex1_cape_01
+  - first:
+      43: 4300048
+    second: PT_Medieval_Male_Armor_Ex1_cape_02
+  - first:
+      43: 4300050
+    second: PT_Medieval_Male_Armor_Ex1_cape_03
+  - first:
+      43: 4300052
+    second: PT_Medieval_Male_Armor_Ex1_cape_04
+  - first:
+      43: 4300054
+    second: PT_Medieval_Male_Armor_Ex1_cape_05
+  - first:
+      43: 4300056
+    second: PT_Medieval_Male_Armor_Ex1_cape_06
+  - first:
+      43: 4300058
+    second: PT_Medieval_Male_Armor_Ex1_cape_07
+  - first:
+      43: 4300060
+    second: PT_Medieval_Male_Armor_Ex1_cape_09
+  - first:
+      43: 4300062
+    second: PT_Medieval_Male_Armor_Ex1_cape_10
+  - first:
+      43: 4300064
+    second: PT_Medieval_Male_Armor_Ex1_cape_11
+  - first:
+      43: 4300066
+    second: PT_Medieval_Male_Armor_Ex1_cape_12
+  - first:
+      43: 4300068
+    second: PT_Medieval_Male_Armor_Ex1_cape_13
+  - first:
+      43: 4300070
+    second: PT_Medieval_Male_Armor_Ex1_cape_14
+  - first:
+      43: 4300072
+    second: PT_Medieval_Male_Armor_Ex1_cape_15
+  - first:
+      43: 4300074
+    second: PT_Medieval_Male_Armor_Ex1_cape_16
+  - first:
+      43: 4300076
+    second: PT_Medieval_Male_Armor_Ex1_cape_17
+  - first:
+      43: 4300078
+    second: PT_Medieval_Male_Armor_Ex1_cape_18
+  - first:
+      43: 4300080
+    second: PT_Medieval_Male_Armor_Ex1_cape_19
+  - first:
+      43: 4300082
+    second: PT_Medieval_Male_Armor_Ex1_cape_20
+  - first:
+      43: 4300084
+    second: PT_Medieval_Male_Armor_Ex1_cape_21
+  - first:
+      43: 4300086
+    second: PT_Medieval_Male_Armor_Ex1_cape_22
+  - first:
+      43: 4300088
+    second: PT_Medieval_Male_Armor_Ex1_cape_23
+  - first:
+      43: 4300090
+    second: PT_Medieval_Male_Armor_Ex1_cape_24
+  - first:
+      43: 4300092
+    second: PT_Medieval_Male_Armor_Ex1_cape_25
+  - first:
+      43: 4300094
+    second: PT_Medieval_Male_Armor_Ex1_cape_26
+  - first:
+      43: 4300096
+    second: PT_Medieval_Male_Armor_Ex1_cape_27
+  - first:
+      43: 4300098
+    second: PT_Medieval_Male_Armor_Ex1_cape_28
+  - first:
+      43: 4300100
+    second: PT_Medieval_Male_Armor_Ex1_cape_29
+  - first:
+      43: 4300102
+    second: PT_Medieval_Male_Armor_Ex1_cape_30
+  - first:
+      43: 4300104
+    second: PT_Medieval_Male_Armor_Ex1_cape_31
+  - first:
+      43: 4300106
+    second: PT_Medieval_Male_Armor_Ex1_cape_32
+  - first:
+      43: 4300108
+    second: PT_Medieval_Male_Armor_Ex1_cape_33
+  - first:
+      43: 4300110
+    second: PT_Medieval_Male_Armor_Ex1_cape_34
+  - first:
+      43: 4300112
+    second: PT_Medieval_Male_Armor_Ex1_cape_35
+  - first:
+      43: 4300114
+    second: PT_Medieval_Male_Armor_Ex1_cape_36
+  - first:
+      43: 4300116
+    second: PT_Medieval_Male_Armor_Ex1_cape_37
+  - first:
+      43: 4300118
+    second: PT_Medieval_Male_Armor_Ex1_cape_38
+  - first:
+      43: 4300120
+    second: PT_Medieval_Male_Armor_Ex1_cape_39
+  - first:
+      43: 4300122
+    second: PT_Medieval_Male_Armor_Ex1_cape_40
+  - first:
+      43: 4300124
+    second: PT_Medieval_Male_Armor_Ex1_cape_41
+  - first:
+      43: 4300126
+    second: PT_Medieval_Male_Armor_Ex1_cape_42
+  - first:
+      43: 4300128
+    second: PT_Medieval_Male_Armor_Ex1_cape_43
+  - first:
+      43: 4300130
+    second: PT_Medieval_Male_Armor_Ex1_cape_44
+  - first:
+      43: 4300132
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_01
+  - first:
+      43: 4300134
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_02
+  - first:
+      43: 4300136
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_03
+  - first:
+      43: 4300138
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_04
+  - first:
+      43: 4300140
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_05
+  - first:
+      43: 4300142
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_06
+  - first:
+      43: 4300144
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_07
+  - first:
+      43: 4300146
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_08
+  - first:
+      43: 4300148
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_09
+  - first:
+      43: 4300150
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_10
+  - first:
+      43: 4300152
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_11
+  - first:
+      43: 4300154
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_12
+  - first:
+      43: 4300156
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_13
+  - first:
+      43: 4300158
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_14
+  - first:
+      43: 4300160
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_15
+  - first:
+      43: 4300162
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_16
+  - first:
+      43: 4300164
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_17
+  - first:
+      43: 4300166
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_18
+  - first:
+      43: 4300168
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_19
+  - first:
+      43: 4300170
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_20
+  - first:
+      43: 4300172
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_21
+  - first:
+      43: 4300174
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_22
+  - first:
+      43: 4300176
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_23
+  - first:
+      43: 4300178
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_26
+  - first:
+      43: 4300180
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_27
+  - first:
+      43: 4300182
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_28
+  - first:
+      43: 4300184
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_29
+  - first:
+      43: 4300186
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_30
+  - first:
+      43: 4300188
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_31
+  - first:
+      43: 4300190
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_32
+  - first:
+      43: 4300192
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_33
+  - first:
+      43: 4300194
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_34
+  - first:
+      43: 4300196
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_35
+  - first:
+      43: 4300198
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_36
+  - first:
+      43: 4300200
+    second: PT_Medieval_Male_Armor_Ex1_helmet_05
+  - first:
+      43: 4300202
+    second: PT_Medieval_Male_Armor_Ex1_helmet_15
+  - first:
+      43: 4300204
+    second: PT_Medieval_Male_Armor_Ex1_helmet_16
+  - first:
+      43: 4300206
+    second: PT_Medieval_Male_Armor_Ex1_helmet_17
+  - first:
+      43: 4300208
+    second: PT_Medieval_Male_Armor_Ex1_helmet_18
+  - first:
+      43: 4300210
+    second: PT_Medieval_Male_Armor_Ex1_helmet_19
+  - first:
+      43: 4300212
+    second: PT_Medieval_Male_Armor_Ex1_helmet_20
+  - first:
+      43: 4300214
+    second: PT_Medieval_Male_Armor_Ex1_helmet_21
+  - first:
+      43: 4300216
+    second: PT_Medieval_Male_Armor_Ex1_helmet_22
+  - first:
+      43: 4300218
+    second: PT_Medieval_Male_Armor_Ex1_helmet_23
+  - first:
+      43: 4300220
+    second: PT_Medieval_Male_Armor_Ex1_helmet_24
+  - first:
+      43: 4300222
+    second: PT_Medieval_Male_Armor_Ex1_helmet_25
+  - first:
+      43: 4300224
+    second: PT_Medieval_Male_Armor_Ex1_helmet_26
+  - first:
+      43: 4300226
+    second: PT_Medieval_Male_Armor_Ex1_helmet_27
+  - first:
+      43: 4300228
+    second: PT_Medieval_Male_Armor_Ex1_helmet_28
+  - first:
+      43: 4300230
+    second: PT_Medieval_Male_Armor_Ex1_helmet_29
+  - first:
+      43: 4300232
+    second: PT_Medieval_Male_Armor_Ex1_helmet_30
+  - first:
+      43: 4300234
+    second: PT_Medieval_Male_Armor_Ex1_helmet_31
+  - first:
+      43: 4300236
+    second: PT_Medieval_Male_Armor_Ex1_helmet_32
+  - first:
+      43: 4300238
+    second: PT_Medieval_Male_Armor_Ex1_helmet_33
+  - first:
+      43: 4300240
+    second: PT_Medieval_Male_Armor_Ex1_helmet_34
+  - first:
+      43: 4300242
+    second: PT_Medieval_Male_Armor_Ex1_helmet_35
+  - first:
+      43: 4300244
+    second: PT_Medieval_Male_Armor_Ex1_helmet_36
+  - first:
+      43: 4300246
+    second: PT_Medieval_Male_Armor_Ex1_helmet_37
+  - first:
+      43: 4300248
+    second: PT_Medieval_Male_Armor_Ex1_helmet_38
+  - first:
+      43: 4300250
+    second: PT_Medieval_Male_Armor_Ex1_helmet_39
+  - first:
+      43: 4300252
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_01
+  - first:
+      43: 4300254
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_02
+  - first:
+      43: 4300256
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_03
+  - first:
+      43: 4300258
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_04
+  - first:
+      43: 4300260
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_06
+  - first:
+      43: 4300262
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_07
+  - first:
+      43: 4300264
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_08
+  - first:
+      43: 4300266
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_09
+  - first:
+      43: 4300268
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_10
+  - first:
+      43: 4300270
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_11
+  - first:
+      43: 4300272
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_12
+  - first:
+      43: 4300274
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_13
+  - first:
+      43: 4300276
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_14
+  - first:
+      43: 4300278
+    second: PT_Medieval_Male_Armor_Ex1_legs_02
+  - first:
+      43: 4300280
+    second: PT_Medieval_Male_Armor_Ex1_legs_04
+  - first:
+      43: 4300282
+    second: PT_Medieval_Male_Armor_Ex1_legs_05
+  - first:
+      43: 4300284
+    second: PT_Medieval_Male_Armor_Ex1_legs_06
+  - first:
+      43: 4300286
+    second: PT_Medieval_Male_Armor_Ex1_legs_07
+  - first:
+      43: 4300288
+    second: PT_Medieval_Male_Armor_Ex1_legs_08
+  - first:
+      43: 4300290
+    second: PT_Medieval_Male_Armor_Ex1_legs_09
+  - first:
+      43: 4300292
+    second: PT_Medieval_Male_Armor_Ex1_legs_10
+  - first:
+      43: 4300294
+    second: PT_Medieval_Male_Armor_Ex1_legs_11
+  - first:
+      43: 4300296
+    second: PT_Medieval_Male_Armor_Ex1_legs_13
+  - first:
+      43: 4300298
+    second: PT_Medieval_Male_Armor_Ex1_legs_14
+  - first:
+      43: 4300300
+    second: PT_Medieval_Male_Armor_Ex1_legs_16
+  - first:
+      43: 4300302
+    second: PT_Medieval_Male_Armor_Ex1_legs_17
+  - first:
+      43: 4300304
+    second: PT_Medieval_Male_Armor_Ex1_legs_18
+  - first:
+      43: 4300306
+    second: PT_Medieval_Male_Armor_Ex1_legs_19
+  - first:
+      43: 4300308
+    second: PT_Medieval_Male_Armor_Ex1_legs_20
+  - first:
+      43: 4300310
+    second: PT_Medieval_Male_Armor_Ex1_legs_22
+  - first:
+      43: 4300312
+    second: PT_Medieval_Male_Armor_Ex1_legs_23
+  - first:
+      43: 4300314
+    second: PT_Medieval_Male_Armor_Ex1_legs_24
+  - first:
+      43: 4300316
+    second: PT_Medieval_Male_Armor_Ex1_legs_25
+  - first:
+      43: 4300318
+    second: PT_Medieval_Male_Armor_Ex1_legs_26
+  - first:
+      43: 4300320
+    second: PT_Medieval_Male_Armor_Ex1_body_01
+  - first:
+      43: 4300322
+    second: PT_Medieval_Male_Armor_Ex1_body_02
+  - first:
+      43: 4300324
+    second: PT_Medieval_Male_Armor_Ex1_body_03
+  - first:
+      43: 4300326
+    second: PT_Medieval_Male_Armor_Ex1_body_04
+  - first:
+      43: 4300328
+    second: PT_Medieval_Male_Armor_Ex1_body_05
+  - first:
+      43: 4300330
+    second: PT_Medieval_Male_Armor_Ex1_body_06
+  - first:
+      43: 4300332
+    second: PT_Medieval_Male_Armor_Ex1_body_07
+  - first:
+      43: 4300334
+    second: PT_Medieval_Male_Armor_Ex1_body_08
+  - first:
+      43: 4300336
+    second: PT_Medieval_Male_Armor_Ex1_body_10
+  - first:
+      43: 4300338
+    second: PT_Medieval_Male_Armor_Ex1_body_11
+  - first:
+      43: 4300340
+    second: PT_Medieval_Male_Armor_Ex1_body_12
+  - first:
+      43: 4300342
+    second: PT_Medieval_Male_Armor_Ex1_body_14
+  - first:
+      43: 4300344
+    second: PT_Medieval_Male_Armor_Ex1_body_16
+  - first:
+      43: 4300346
+    second: PT_Medieval_Male_Armor_Ex1_body_17
+  - first:
+      43: 4300348
+    second: PT_Medieval_Male_Armor_Ex1_body_18
+  - first:
+      43: 4300350
+    second: PT_Medieval_Male_Armor_Ex1_body_19
+  - first:
+      43: 4300352
+    second: PT_Medieval_Male_Armor_Ex1_body_20
+  - first:
+      43: 4300354
+    second: PT_Medieval_Male_Armor_Ex1_body_21
+  - first:
+      43: 4300356
+    second: PT_Medieval_Male_Armor_Ex1_body_22
+  - first:
+      43: 4300358
+    second: PT_Medieval_Male_Armor_Ex1_body_23
+  - first:
+      43: 4300360
+    second: PT_Medieval_Male_Armor_Ex1_body_24
+  - first:
+      43: 4300362
+    second: PT_Medieval_Male_Armor_Ex1_body_25
+  - first:
+      43: 4300364
+    second: PT_Medieval_Male_Armor_Ex1_body_26
+  - first:
+      43: 4300366
+    second: PT_Medieval_Male_Armor_Ex1_body_27
+  - first:
+      43: 4300368
+    second: PT_Medieval_Male_Armor_Ex1_body_28
+  - first:
+      43: 4300370
+    second: PT_Medieval_Male_Armor_Ex1_body_30
+  - first:
+      43: 4300372
+    second: PT_Medieval_Male_Armor_Ex1_body_32
+  - first:
+      43: 4300374
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_24
+  - first:
+      43: 4300376
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_25
+  - first:
+      43: 4300378
+    second: PT_Medieval_Male_Armor_Ex1_body_09
+  - first:
+      43: 4300380
+    second: PT_Medieval_Male_Armor_Ex1_body_13
+  - first:
+      43: 4300382
+    second: PT_Medieval_Male_Armor_Ex1_body_15
+  - first:
+      43: 4300384
+    second: PT_Medieval_Male_Armor_Ex1_body_29
+  - first:
+      43: 4300386
+    second: PT_Medieval_Male_Armor_Ex1_body_31
+  - first:
+      43: 4300388
+    second: PT_Medieval_Male_Armor_Ex1_boots_05
+  - first:
+      43: 4300390
+    second: PT_Medieval_Male_Armor_Ex1_boots_17
+  - first:
+      43: 4300392
+    second: PT_Medieval_Male_Armor_Ex1_boots_22
+  - first:
+      43: 4300394
+    second: PT_Medieval_Male_Armor_Ex1_cape_08
+  - first:
+      43: 4300396
+    second: PT_Medieval_Male_Armor_Ex1_legs_01
+  - first:
+      43: 4300398
+    second: PT_Medieval_Male_Armor_Ex1_legs_03
+  - first:
+      43: 4300400
+    second: PT_Medieval_Male_Armor_Ex1_legs_12
+  - first:
+      43: 4300402
+    second: PT_Medieval_Male_Armor_Ex1_legs_15
+  - first:
+      43: 4300404
+    second: PT_Medieval_Male_Armor_Ex1_legs_21
+  - first:
+      43: 4300406
+    second: PT_Medieval_Male_Armor_04_A_helmet
+  - first:
+      43: 4300408
+    second: PT_Medieval_Male_Armor_04_B_helmet
+  - first:
+      43: 4300410
+    second: PT_Medieval_Male_Armor_04_C_helmet
+  - first:
+      43: 4300412
+    second: PT_Medieval_Male_Armor_05_A_helmet
+  - first:
+      43: 4300414
+    second: PT_Medieval_Male_Armor_05_B_helmet
+  - first:
+      43: 4300416
+    second: PT_Medieval_Male_Armor_05_C_helmet
+  - first:
+      43: 4300418
+    second: PT_Medieval_Male_Armor_leather_00_helmet_nv
+  - first:
+      43: 4300420
+    second: PT_Medieval_Male_Armor_plate_00_helmet_nv
+  - first:
+      43: 4300422
+    second: PT_Medieval_Male_Armor_hair_01
+  - first:
+      43: 4300424
+    second: PT_Medieval_Male_Armor_head_01
+  - first:
+      43: 4300426
+    second: PT_Medieval_Male_Armor_beard_01
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: PT_Medieval_Male_Armor_Ex1_body_01
+  - first:
+      137: 13700002
+    second: PT_Medieval_Male_Armor_Ex1_body_02
+  - first:
+      137: 13700004
+    second: PT_Medieval_Male_Armor_Ex1_body_03
+  - first:
+      137: 13700006
+    second: PT_Medieval_Male_Armor_Ex1_body_04
+  - first:
+      137: 13700008
+    second: PT_Medieval_Male_Armor_Ex1_body_05
+  - first:
+      137: 13700010
+    second: PT_Medieval_Male_Armor_Ex1_body_06
+  - first:
+      137: 13700012
+    second: PT_Medieval_Male_Armor_Ex1_body_07
+  - first:
+      137: 13700014
+    second: PT_Medieval_Male_Armor_Ex1_body_08
+  - first:
+      137: 13700016
+    second: PT_Medieval_Male_Armor_Ex1_body_09
+  - first:
+      137: 13700018
+    second: PT_Medieval_Male_Armor_Ex1_body_10
+  - first:
+      137: 13700020
+    second: PT_Medieval_Male_Armor_Ex1_body_11
+  - first:
+      137: 13700022
+    second: PT_Medieval_Male_Armor_Ex1_body_12
+  - first:
+      137: 13700024
+    second: PT_Medieval_Male_Armor_Ex1_body_13
+  - first:
+      137: 13700026
+    second: PT_Medieval_Male_Armor_Ex1_body_14
+  - first:
+      137: 13700028
+    second: PT_Medieval_Male_Armor_Ex1_body_15
+  - first:
+      137: 13700030
+    second: PT_Medieval_Male_Armor_Ex1_body_16
+  - first:
+      137: 13700032
+    second: PT_Medieval_Male_Armor_Ex1_body_17
+  - first:
+      137: 13700034
+    second: PT_Medieval_Male_Armor_Ex1_body_18
+  - first:
+      137: 13700036
+    second: PT_Medieval_Male_Armor_Ex1_body_19
+  - first:
+      137: 13700038
+    second: PT_Medieval_Male_Armor_Ex1_body_20
+  - first:
+      137: 13700040
+    second: PT_Medieval_Male_Armor_Ex1_body_21
+  - first:
+      137: 13700042
+    second: PT_Medieval_Male_Armor_Ex1_body_22
+  - first:
+      137: 13700044
+    second: PT_Medieval_Male_Armor_Ex1_body_23
+  - first:
+      137: 13700046
+    second: PT_Medieval_Male_Armor_Ex1_body_24
+  - first:
+      137: 13700048
+    second: PT_Medieval_Male_Armor_Ex1_body_25
+  - first:
+      137: 13700050
+    second: PT_Medieval_Male_Armor_Ex1_body_26
+  - first:
+      137: 13700052
+    second: PT_Medieval_Male_Armor_Ex1_body_27
+  - first:
+      137: 13700054
+    second: PT_Medieval_Male_Armor_Ex1_body_28
+  - first:
+      137: 13700056
+    second: PT_Medieval_Male_Armor_Ex1_body_29
+  - first:
+      137: 13700058
+    second: PT_Medieval_Male_Armor_Ex1_body_30
+  - first:
+      137: 13700060
+    second: PT_Medieval_Male_Armor_Ex1_body_31
+  - first:
+      137: 13700062
+    second: PT_Medieval_Male_Armor_Ex1_body_32
+  - first:
+      137: 13700064
+    second: PT_Medieval_Male_Armor_Ex1_boots_01
+  - first:
+      137: 13700066
+    second: PT_Medieval_Male_Armor_Ex1_boots_02
+  - first:
+      137: 13700068
+    second: PT_Medieval_Male_Armor_Ex1_boots_03
+  - first:
+      137: 13700070
+    second: PT_Medieval_Male_Armor_Ex1_boots_04
+  - first:
+      137: 13700072
+    second: PT_Medieval_Male_Armor_Ex1_boots_05
+  - first:
+      137: 13700074
+    second: PT_Medieval_Male_Armor_Ex1_boots_06
+  - first:
+      137: 13700076
+    second: PT_Medieval_Male_Armor_Ex1_boots_07
+  - first:
+      137: 13700078
+    second: PT_Medieval_Male_Armor_Ex1_boots_08
+  - first:
+      137: 13700080
+    second: PT_Medieval_Male_Armor_Ex1_boots_09
+  - first:
+      137: 13700082
+    second: PT_Medieval_Male_Armor_Ex1_boots_10
+  - first:
+      137: 13700084
+    second: PT_Medieval_Male_Armor_Ex1_boots_11
+  - first:
+      137: 13700086
+    second: PT_Medieval_Male_Armor_Ex1_boots_12
+  - first:
+      137: 13700088
+    second: PT_Medieval_Male_Armor_Ex1_boots_13
+  - first:
+      137: 13700090
+    second: PT_Medieval_Male_Armor_Ex1_boots_14
+  - first:
+      137: 13700092
+    second: PT_Medieval_Male_Armor_Ex1_boots_15
+  - first:
+      137: 13700094
+    second: PT_Medieval_Male_Armor_Ex1_boots_16
+  - first:
+      137: 13700096
+    second: PT_Medieval_Male_Armor_Ex1_boots_17
+  - first:
+      137: 13700098
+    second: PT_Medieval_Male_Armor_Ex1_boots_18
+  - first:
+      137: 13700100
+    second: PT_Medieval_Male_Armor_Ex1_boots_19
+  - first:
+      137: 13700102
+    second: PT_Medieval_Male_Armor_Ex1_boots_20
+  - first:
+      137: 13700104
+    second: PT_Medieval_Male_Armor_Ex1_boots_21
+  - first:
+      137: 13700106
+    second: PT_Medieval_Male_Armor_Ex1_boots_22
+  - first:
+      137: 13700108
+    second: PT_Medieval_Male_Armor_Ex1_boots_23
+  - first:
+      137: 13700110
+    second: PT_Medieval_Male_Armor_Ex1_boots_24
+  - first:
+      137: 13700112
+    second: PT_Medieval_Male_Armor_Ex1_boots_25
+  - first:
+      137: 13700114
+    second: PT_Medieval_Male_Armor_Ex1_boots_26
+  - first:
+      137: 13700116
+    second: PT_Medieval_Male_Armor_Ex1_cape_01
+  - first:
+      137: 13700118
+    second: PT_Medieval_Male_Armor_Ex1_cape_02
+  - first:
+      137: 13700120
+    second: PT_Medieval_Male_Armor_Ex1_cape_03
+  - first:
+      137: 13700122
+    second: PT_Medieval_Male_Armor_Ex1_cape_04
+  - first:
+      137: 13700124
+    second: PT_Medieval_Male_Armor_Ex1_cape_05
+  - first:
+      137: 13700126
+    second: PT_Medieval_Male_Armor_Ex1_cape_06
+  - first:
+      137: 13700128
+    second: PT_Medieval_Male_Armor_Ex1_cape_07
+  - first:
+      137: 13700130
+    second: PT_Medieval_Male_Armor_Ex1_cape_08
+  - first:
+      137: 13700132
+    second: PT_Medieval_Male_Armor_Ex1_cape_09
+  - first:
+      137: 13700134
+    second: PT_Medieval_Male_Armor_Ex1_cape_10
+  - first:
+      137: 13700136
+    second: PT_Medieval_Male_Armor_Ex1_cape_11
+  - first:
+      137: 13700138
+    second: PT_Medieval_Male_Armor_Ex1_cape_12
+  - first:
+      137: 13700140
+    second: PT_Medieval_Male_Armor_Ex1_cape_13
+  - first:
+      137: 13700142
+    second: PT_Medieval_Male_Armor_Ex1_cape_14
+  - first:
+      137: 13700144
+    second: PT_Medieval_Male_Armor_Ex1_cape_15
+  - first:
+      137: 13700146
+    second: PT_Medieval_Male_Armor_Ex1_cape_16
+  - first:
+      137: 13700148
+    second: PT_Medieval_Male_Armor_Ex1_cape_17
+  - first:
+      137: 13700150
+    second: PT_Medieval_Male_Armor_Ex1_cape_18
+  - first:
+      137: 13700152
+    second: PT_Medieval_Male_Armor_Ex1_cape_19
+  - first:
+      137: 13700154
+    second: PT_Medieval_Male_Armor_Ex1_cape_20
+  - first:
+      137: 13700156
+    second: PT_Medieval_Male_Armor_Ex1_cape_21
+  - first:
+      137: 13700158
+    second: PT_Medieval_Male_Armor_Ex1_cape_22
+  - first:
+      137: 13700160
+    second: PT_Medieval_Male_Armor_Ex1_cape_23
+  - first:
+      137: 13700162
+    second: PT_Medieval_Male_Armor_Ex1_cape_24
+  - first:
+      137: 13700164
+    second: PT_Medieval_Male_Armor_Ex1_cape_25
+  - first:
+      137: 13700166
+    second: PT_Medieval_Male_Armor_Ex1_cape_26
+  - first:
+      137: 13700168
+    second: PT_Medieval_Male_Armor_Ex1_cape_27
+  - first:
+      137: 13700170
+    second: PT_Medieval_Male_Armor_Ex1_cape_28
+  - first:
+      137: 13700172
+    second: PT_Medieval_Male_Armor_Ex1_cape_29
+  - first:
+      137: 13700174
+    second: PT_Medieval_Male_Armor_Ex1_cape_30
+  - first:
+      137: 13700176
+    second: PT_Medieval_Male_Armor_Ex1_cape_31
+  - first:
+      137: 13700178
+    second: PT_Medieval_Male_Armor_Ex1_cape_32
+  - first:
+      137: 13700180
+    second: PT_Medieval_Male_Armor_Ex1_cape_33
+  - first:
+      137: 13700182
+    second: PT_Medieval_Male_Armor_Ex1_cape_34
+  - first:
+      137: 13700184
+    second: PT_Medieval_Male_Armor_Ex1_cape_35
+  - first:
+      137: 13700186
+    second: PT_Medieval_Male_Armor_Ex1_cape_36
+  - first:
+      137: 13700188
+    second: PT_Medieval_Male_Armor_Ex1_cape_37
+  - first:
+      137: 13700190
+    second: PT_Medieval_Male_Armor_Ex1_cape_38
+  - first:
+      137: 13700192
+    second: PT_Medieval_Male_Armor_Ex1_cape_39
+  - first:
+      137: 13700194
+    second: PT_Medieval_Male_Armor_Ex1_cape_40
+  - first:
+      137: 13700196
+    second: PT_Medieval_Male_Armor_Ex1_cape_41
+  - first:
+      137: 13700198
+    second: PT_Medieval_Male_Armor_Ex1_cape_42
+  - first:
+      137: 13700200
+    second: PT_Medieval_Male_Armor_Ex1_cape_43
+  - first:
+      137: 13700202
+    second: PT_Medieval_Male_Armor_Ex1_cape_44
+  - first:
+      137: 13700204
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_01
+  - first:
+      137: 13700206
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_02
+  - first:
+      137: 13700208
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_03
+  - first:
+      137: 13700210
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_04
+  - first:
+      137: 13700212
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_05
+  - first:
+      137: 13700214
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_06
+  - first:
+      137: 13700216
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_07
+  - first:
+      137: 13700218
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_08
+  - first:
+      137: 13700220
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_09
+  - first:
+      137: 13700222
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_10
+  - first:
+      137: 13700224
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_11
+  - first:
+      137: 13700226
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_12
+  - first:
+      137: 13700228
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_13
+  - first:
+      137: 13700230
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_14
+  - first:
+      137: 13700232
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_15
+  - first:
+      137: 13700234
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_16
+  - first:
+      137: 13700236
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_17
+  - first:
+      137: 13700238
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_18
+  - first:
+      137: 13700240
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_19
+  - first:
+      137: 13700242
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_20
+  - first:
+      137: 13700244
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_21
+  - first:
+      137: 13700246
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_22
+  - first:
+      137: 13700248
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_23
+  - first:
+      137: 13700250
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_24
+  - first:
+      137: 13700252
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_25
+  - first:
+      137: 13700254
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_26
+  - first:
+      137: 13700256
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_27
+  - first:
+      137: 13700258
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_28
+  - first:
+      137: 13700260
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_29
+  - first:
+      137: 13700262
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_30
+  - first:
+      137: 13700264
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_31
+  - first:
+      137: 13700266
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_32
+  - first:
+      137: 13700268
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_33
+  - first:
+      137: 13700270
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_34
+  - first:
+      137: 13700272
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_35
+  - first:
+      137: 13700274
+    second: PT_Medieval_Male_Armor_Ex1_gauntlets_36
+  - first:
+      137: 13700276
+    second: PT_Medieval_Male_Armor_Ex1_helmet_05
+  - first:
+      137: 13700278
+    second: PT_Medieval_Male_Armor_Ex1_helmet_15
+  - first:
+      137: 13700280
+    second: PT_Medieval_Male_Armor_Ex1_helmet_16
+  - first:
+      137: 13700282
+    second: PT_Medieval_Male_Armor_Ex1_helmet_17
+  - first:
+      137: 13700284
+    second: PT_Medieval_Male_Armor_Ex1_helmet_18
+  - first:
+      137: 13700286
+    second: PT_Medieval_Male_Armor_Ex1_helmet_19
+  - first:
+      137: 13700288
+    second: PT_Medieval_Male_Armor_Ex1_helmet_20
+  - first:
+      137: 13700290
+    second: PT_Medieval_Male_Armor_Ex1_helmet_21
+  - first:
+      137: 13700292
+    second: PT_Medieval_Male_Armor_Ex1_helmet_22
+  - first:
+      137: 13700294
+    second: PT_Medieval_Male_Armor_Ex1_helmet_23
+  - first:
+      137: 13700296
+    second: PT_Medieval_Male_Armor_Ex1_helmet_24
+  - first:
+      137: 13700298
+    second: PT_Medieval_Male_Armor_Ex1_helmet_25
+  - first:
+      137: 13700300
+    second: PT_Medieval_Male_Armor_Ex1_helmet_26
+  - first:
+      137: 13700302
+    second: PT_Medieval_Male_Armor_Ex1_helmet_27
+  - first:
+      137: 13700304
+    second: PT_Medieval_Male_Armor_Ex1_helmet_28
+  - first:
+      137: 13700306
+    second: PT_Medieval_Male_Armor_Ex1_helmet_29
+  - first:
+      137: 13700308
+    second: PT_Medieval_Male_Armor_Ex1_helmet_30
+  - first:
+      137: 13700310
+    second: PT_Medieval_Male_Armor_Ex1_helmet_31
+  - first:
+      137: 13700312
+    second: PT_Medieval_Male_Armor_Ex1_helmet_32
+  - first:
+      137: 13700314
+    second: PT_Medieval_Male_Armor_Ex1_helmet_33
+  - first:
+      137: 13700316
+    second: PT_Medieval_Male_Armor_Ex1_helmet_34
+  - first:
+      137: 13700318
+    second: PT_Medieval_Male_Armor_Ex1_helmet_35
+  - first:
+      137: 13700320
+    second: PT_Medieval_Male_Armor_Ex1_helmet_36
+  - first:
+      137: 13700322
+    second: PT_Medieval_Male_Armor_Ex1_helmet_37
+  - first:
+      137: 13700324
+    second: PT_Medieval_Male_Armor_Ex1_helmet_38
+  - first:
+      137: 13700326
+    second: PT_Medieval_Male_Armor_Ex1_helmet_39
+  - first:
+      137: 13700328
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_01
+  - first:
+      137: 13700330
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_02
+  - first:
+      137: 13700332
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_03
+  - first:
+      137: 13700334
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_04
+  - first:
+      137: 13700336
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_06
+  - first:
+      137: 13700338
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_07
+  - first:
+      137: 13700340
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_08
+  - first:
+      137: 13700342
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_09
+  - first:
+      137: 13700344
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_10
+  - first:
+      137: 13700346
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_11
+  - first:
+      137: 13700348
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_12
+  - first:
+      137: 13700350
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_13
+  - first:
+      137: 13700352
+    second: PT_Medieval_Male_Armor_Ex1_helmet_nv_14
+  - first:
+      137: 13700354
+    second: PT_Medieval_Male_Armor_Ex1_legs_01
+  - first:
+      137: 13700356
+    second: PT_Medieval_Male_Armor_Ex1_legs_02
+  - first:
+      137: 13700358
+    second: PT_Medieval_Male_Armor_Ex1_legs_03
+  - first:
+      137: 13700360
+    second: PT_Medieval_Male_Armor_Ex1_legs_04
+  - first:
+      137: 13700362
+    second: PT_Medieval_Male_Armor_Ex1_legs_05
+  - first:
+      137: 13700364
+    second: PT_Medieval_Male_Armor_Ex1_legs_06
+  - first:
+      137: 13700366
+    second: PT_Medieval_Male_Armor_Ex1_legs_07
+  - first:
+      137: 13700368
+    second: PT_Medieval_Male_Armor_Ex1_legs_08
+  - first:
+      137: 13700370
+    second: PT_Medieval_Male_Armor_Ex1_legs_09
+  - first:
+      137: 13700372
+    second: PT_Medieval_Male_Armor_Ex1_legs_10
+  - first:
+      137: 13700374
+    second: PT_Medieval_Male_Armor_Ex1_legs_11
+  - first:
+      137: 13700376
+    second: PT_Medieval_Male_Armor_Ex1_legs_12
+  - first:
+      137: 13700378
+    second: PT_Medieval_Male_Armor_Ex1_legs_13
+  - first:
+      137: 13700380
+    second: PT_Medieval_Male_Armor_Ex1_legs_14
+  - first:
+      137: 13700382
+    second: PT_Medieval_Male_Armor_Ex1_legs_15
+  - first:
+      137: 13700384
+    second: PT_Medieval_Male_Armor_Ex1_legs_16
+  - first:
+      137: 13700386
+    second: PT_Medieval_Male_Armor_Ex1_legs_17
+  - first:
+      137: 13700388
+    second: PT_Medieval_Male_Armor_Ex1_legs_18
+  - first:
+      137: 13700390
+    second: PT_Medieval_Male_Armor_Ex1_legs_19
+  - first:
+      137: 13700392
+    second: PT_Medieval_Male_Armor_Ex1_legs_20
+  - first:
+      137: 13700394
+    second: PT_Medieval_Male_Armor_Ex1_legs_21
+  - first:
+      137: 13700396
+    second: PT_Medieval_Male_Armor_Ex1_legs_22
+  - first:
+      137: 13700398
+    second: PT_Medieval_Male_Armor_Ex1_legs_23
+  - first:
+      137: 13700400
+    second: PT_Medieval_Male_Armor_Ex1_legs_24
+  - first:
+      137: 13700402
+    second: PT_Medieval_Male_Armor_Ex1_legs_25
+  - first:
+      137: 13700404
+    second: PT_Medieval_Male_Armor_Ex1_legs_26
+  - first:
+      137: 13700406
+    second: PT_Medieval_Male_Armor_04_A_helmet
+  - first:
+      137: 13700408
+    second: PT_Medieval_Male_Armor_04_B_helmet
+  - first:
+      137: 13700410
+    second: PT_Medieval_Male_Armor_04_C_helmet
+  - first:
+      137: 13700412
+    second: PT_Medieval_Male_Armor_05_A_helmet
+  - first:
+      137: 13700414
+    second: PT_Medieval_Male_Armor_05_B_helmet
+  - first:
+      137: 13700416
+    second: PT_Medieval_Male_Armor_05_C_helmet
+  - first:
+      137: 13700418
+    second: PT_Medieval_Male_Armor_leather_00_helmet_nv
+  - first:
+      137: 13700420
+    second: PT_Medieval_Male_Armor_plate_00_helmet_nv
+  - first:
+      137: 13700422
+    second: PT_Medieval_Male_Armor_hair_01
+  - first:
+      137: 13700424
+    second: PT_Medieval_Male_Armor_head_01
+  - first:
+      137: 13700426
+    second: PT_Medieval_Male_Armor_beard_01
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  - first:
+      74: -3043916418010271288
+    second: Armors_for_Unity_all
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PT_Medieval_Armors_Material
+    second: {fileID: 2100000, guid: 6f1a3abc3e476eb4f823f1ab4687b4ed, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 1
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 1
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: PT_Male_Armors_Ex1_Modular(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_05
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_07
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_09
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_11
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_12
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_13
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_14
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_15
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_16
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_17
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_24
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_27
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_29
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_30
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_31
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_32
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_01
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_02
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_03
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_04
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_06
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_08
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_10
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_18
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_19
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_20
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_21
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_22
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_23
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_25
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_26
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_body_28
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_01
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_02
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_03
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_04
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_05
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_06
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_07
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_08
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_09
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_10
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_11
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_12
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_13
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_14
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_15
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_16
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_17
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_18
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_19
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_20
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_21
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_22
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_23
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_24
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_25
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_boots_26
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_01
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_02
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_03
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_04
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_05
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_06
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_07
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_08
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_09
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_10
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_11
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_12
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_13
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_14
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_15
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_16
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_17
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_18
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_19
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_20
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_21
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_22
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_23
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_24
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_25
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_26
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_27
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_28
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_29
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_30
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_31
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_32
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_33
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_34
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_35
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_36
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_37
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_38
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_39
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_40
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_41
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_42
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_43
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_cape_44
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_01
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_02
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_03
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_04
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_05
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_06
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_07
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_08
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_09
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_10
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_11
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_12
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_13
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_14
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_15
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_16
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_17
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_18
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_19
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_20
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_21
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_22
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_23
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_24
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_25
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_26
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_27
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_28
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_29
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_30
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_31
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_32
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_33
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_34
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_35
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_gauntlets_36
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_05
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_15
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_16
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_17
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_18
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_19
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_20
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_21
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_22
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_23
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_24
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_25
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_26
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_27
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_28
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_29
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_30
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_31
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_32
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_33
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_34
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_35
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_36
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_37
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_38
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_39
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_01
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_02
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_03
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_04
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_06
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_07
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_08
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_09
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_10
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_11
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_12
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_13
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_helmet_nv_14
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_01
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_02
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_03
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_04
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_05
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_06
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_07
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_08
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_09
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_10
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_11
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_12
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_13
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_14
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_15
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_16
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_17
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_18
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_19
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_20
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_21
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_22
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_23
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_24
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_25
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Male_Armor_Ex1_legs_26
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Hips
+      parentName: PT_Male_Armors_Ex1_Modular(Clone)
+      position: {x: -0, y: 1.0312524, z: 0.01863602}
+      rotation: {x: -0.49908566, y: 0.50091267, z: -0.4990856, w: 0.5009127}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Second_Weapon_slot
+      parentName: PT_Hips
+      position: {x: 0.07096862, y: -0.0058190655, z: -0.21549243}
+      rotation: {x: 0.84430647, y: -0.5279849, z: -0.0068870992, w: 0.09127531}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Weapon_slot
+      parentName: PT_Hips
+      position: {x: 0.070893995, y: -0.026320972, z: 0.20865086}
+      rotation: {x: 0.8629988, y: -0.50031996, z: -0.014370179, w: -0.0686046}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Left_Accessories_slot
+      parentName: PT_Hips
+      position: {x: 0.020076636, y: 0.10371921, z: -0.17047371}
+      rotation: {x: -0.41763106, y: 0.20594959, z: 0.6438725, w: 0.6071221}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Right_Accessories_slot
+      parentName: PT_Hips
+      position: {x: -0.014127467, y: -0.014349858, z: 0.15101647}
+      rotation: {x: -0.36541343, y: 0.30555737, z: 0.6717735, w: 0.56729895}
+      scale: {x: -1, y: 1, z: 1}
+    - name: PT_Spine
+      parentName: PT_Hips
+      position: {x: -0.08349508, y: 0.007508272, z: 0.000000010036421}
+      rotation: {x: 3.1819375e-17, y: -1.1593822e-16, z: 0.06238862, w: 0.99805194}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Spine2
+      parentName: PT_Spine
+      position: {x: -0.11369693, y: 0.030729553, z: 0.000000014021693}
+      rotation: {x: 3.8523733e-17, y: -1.1791649e-16, z: -0.122419804, w: 0.99247843}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Spine3
+      parentName: PT_Spine2
+      position: {x: -0.09200034, y: 0.012233497, z: 0.000000010804878}
+      rotation: {x: 5.514805e-17, y: -1.0829332e-16, z: -0.02425261, w: 0.9997059}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Long_Bow_slot
+      parentName: PT_Spine3
+      position: {x: 0.13089353, y: 0.2369483, z: -0.0981408}
+      rotation: {x: 0.029975576, y: 0.6943499, z: -0.69301003, w: 0.19161628}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Medium_Bow_slot
+      parentName: PT_Spine3
+      position: {x: 0.13392363, y: 0.22764827, z: -0.13446032}
+      rotation: {x: 0.08463952, y: 0.7006904, z: -0.6665819, w: 0.23987019}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Quiver_slot
+      parentName: PT_Spine3
+      position: {x: 0.028170282, y: 0.22161211, z: -0.0640825}
+      rotation: {x: -0.00012627992, y: -0.21822704, z: 0.7869699, w: 0.57710946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftShoulder
+      parentName: PT_Spine3
+      position: {x: -0.06580364, y: 0.003045719, z: -0.06567929}
+      rotation: {x: 0.20891787, y: -0.72941685, z: -0.123044014, w: 0.6396598}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftArm
+      parentName: PT_LeftShoulder
+      position: {x: -0.10703438, y: -0.053543013, z: 0.01315191}
+      rotation: {x: 0.112995856, y: -0.33062962, z: 0.16141921, w: 0.92296255}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftForeArm
+      parentName: PT_LeftArm
+      position: {x: -0.18906297, y: -0.008662653, z: 0.1953233}
+      rotation: {x: -0.054016504, y: 0.07918266, z: 0.26340973, w: 0.9599103}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHand
+      parentName: PT_LeftForeArm
+      position: {x: -0.19456546, y: 0.046398673, z: 0.16965595}
+      rotation: {x: -0.617895, y: -0.019371985, z: -0.010653289, w: 0.7859497}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Left_Hand_Weapon_slot
+      parentName: PT_LeftHand
+      position: {x: -0.07629066, y: -0.03272799, z: 0.04146747}
+      rotation: {x: 0.058108415, y: 0.76032305, z: 0.55022186, w: -0.34027675}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandIndex1
+      parentName: PT_LeftHand
+      position: {x: -0.07128226, y: -0.06780175, z: 0.010569338}
+      rotation: {x: 0.13330467, y: 0.003180121, z: -0.2231795, w: 0.96561414}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandIndex2
+      parentName: PT_LeftHandIndex1
+      position: {x: -0.020168893, y: -0.030969784, z: 0.02153849}
+      rotation: {x: 0.041467566, y: 0.058109004, z: 0.0009747457, w: 0.9974482}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandIndex3
+      parentName: PT_LeftHandIndex2
+      position: {x: -0.021743556, y: -0.023636037, z: 0.01820202}
+      rotation: {x: 0.010611142, y: -0.007850868, z: 0.08285518, w: 0.9964742}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandMiddle1
+      parentName: PT_LeftHand
+      position: {x: -0.06891529, y: -0.069538265, z: 0.040514126}
+      rotation: {x: 0.028548412, y: 0.06129094, z: -0.1895633, w: 0.9795377}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandMiddle2
+      parentName: PT_LeftHandMiddle1
+      position: {x: -0.023718335, y: -0.03348271, z: 0.013175588}
+      rotation: {x: 0.013221937, y: 0.04088175, z: 0.08197152, w: 0.99570805}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandMiddle3
+      parentName: PT_LeftHandMiddle2
+      position: {x: -0.02671397, y: -0.022503046, z: 0.009733843}
+      rotation: {x: 0.00162142, y: 0.038867, z: 0.13362382, w: 0.99026835}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandPinky1
+      parentName: PT_LeftHand
+      position: {x: -0.045057897, y: -0.048856862, z: 0.080302745}
+      rotation: {x: -0.12953776, y: 0.1878969, z: -0.1442131, w: 0.96286935}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandPinky2
+      parentName: PT_LeftHandPinky1
+      position: {x: -0.017949846, y: -0.023946952, z: 0.0018120839}
+      rotation: {x: 0.0064116386, y: 0.013548144, z: -0.0893782, w: 0.99588495}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandPinky3
+      parentName: PT_LeftHandPinky2
+      position: {x: -0.012821267, y: -0.021576261, z: 0.00035866315}
+      rotation: {x: 0.0035809507, y: -0.033796374, z: -0.008930302, w: 0.99938244}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandRing1
+      parentName: PT_LeftHand
+      position: {x: -0.05352922, y: -0.06297708, z: 0.06260317}
+      rotation: {x: -0.08165321, y: 0.12354339, z: -0.13587783, w: 0.97959536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandRing2
+      parentName: PT_LeftHandRing1
+      position: {x: -0.025546256, y: -0.0308295, z: 0.0049156756}
+      rotation: {x: 0.003979876, y: 0.024498712, z: -0.044290494, w: 0.9987104}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandRing3
+      parentName: PT_LeftHandRing2
+      position: {x: -0.023322066, y: -0.028595023, z: 0.0033334435}
+      rotation: {x: -0.00019882337, y: -0.02625777, z: 0.112213, w: 0.99333715}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandThumb1
+      parentName: PT_LeftHand
+      position: {x: -0.047786925, y: -0.01503836, z: -0.019955289}
+      rotation: {x: 0.6529645, y: -0.33279455, z: 0.19676252, w: 0.65128314}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandThumb2
+      parentName: PT_LeftHandThumb1
+      position: {x: -0.047946785, y: 0.021948623, z: 0.036228366}
+      rotation: {x: 0.09457545, y: -0.17169996, z: 0.012663478, w: 0.9805173}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftHandThumb3
+      parentName: PT_LeftHandThumb2
+      position: {x: -0.018853515, y: 0.021115895, z: 0.027791254}
+      rotation: {x: 0.021399098, y: -0.0018834264, z: 0.107937604, w: 0.9939256}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftArmTwist
+      parentName: PT_LeftArm
+      position: {x: -0, y: -1.0658141e-16, z: 1.4210854e-16}
+      rotation: {x: -1.2316537e-16, y: 1.4094628e-16, z: -4.8572257e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightShoulder
+      parentName: PT_Spine3
+      position: {x: -0.065803625, y: 0.0030457212, z: 0.06567931}
+      rotation: {x: 0.72941685, y: 0.20891772, z: 0.63965976, w: 0.12304421}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightArm
+      parentName: PT_RightShoulder
+      position: {x: 0.107034385, y: 0.053543013, z: -0.013151881}
+      rotation: {x: 0.112995856, y: -0.33062962, z: 0.16141921, w: 0.92296255}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightForeArm
+      parentName: PT_RightArm
+      position: {x: 0.18906613, y: 0.008662797, z: -0.19532056}
+      rotation: {x: -0.054016504, y: 0.07918266, z: 0.26340973, w: 0.9599103}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHand
+      parentName: PT_RightForeArm
+      position: {x: 0.19456327, y: -0.046397064, z: -0.16965896}
+      rotation: {x: -0.617895, y: -0.019371985, z: -0.010653289, w: 0.7859497}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Right_Hand_Weapon_slot
+      parentName: PT_RightHand
+      position: {x: 0.06921485, y: 0.03387147, z: -0.020671245}
+      rotation: {x: -0.75315756, y: -0.0070188437, z: 0.36305845, w: 0.54853714}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandIndex1
+      parentName: PT_RightHand
+      position: {x: 0.07128228, y: 0.06780172, z: -0.01056934}
+      rotation: {x: 0.13330467, y: 0.003180121, z: -0.2231795, w: 0.96561414}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandIndex2
+      parentName: PT_RightHandIndex1
+      position: {x: 0.020168902, y: 0.030969774, z: -0.021538492}
+      rotation: {x: 0.041469727, y: 0.058108173, z: 0.00097555644, w: 0.9974482}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandIndex3
+      parentName: PT_RightHandIndex2
+      position: {x: 0.021743564, y: 0.023636028, z: -0.018202024}
+      rotation: {x: 0.010611142, y: -0.007850868, z: 0.08285518, w: 0.9964742}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandMiddle1
+      parentName: PT_RightHand
+      position: {x: 0.06891531, y: 0.06953825, z: -0.04051413}
+      rotation: {x: 0.028548539, y: 0.061291795, z: -0.18956162, w: 0.9795381}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandMiddle2
+      parentName: PT_RightHandMiddle1
+      position: {x: 0.023718344, y: 0.033482704, z: -0.013175592}
+      rotation: {x: 0.013222604, y: 0.04088075, z: 0.08197165, w: 0.99570817}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandMiddle3
+      parentName: PT_RightHandMiddle2
+      position: {x: 0.026713975, y: 0.022503037, z: -0.009733852}
+      rotation: {x: 0.00162142, y: 0.038867, z: 0.13362382, w: 0.99026835}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandPinky1
+      parentName: PT_RightHand
+      position: {x: 0.045057893, y: 0.04885687, z: -0.080302745}
+      rotation: {x: -0.12953776, y: 0.1878969, z: -0.1442131, w: 0.96286935}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandPinky2
+      parentName: PT_RightHandPinky1
+      position: {x: 0.01794985, y: 0.023946948, z: -0.0018120861}
+      rotation: {x: 0.006410277, y: 0.013549042, z: -0.089376144, w: 0.9958852}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandPinky3
+      parentName: PT_RightHandPinky2
+      position: {x: 0.012821272, y: 0.021576256, z: -0.00035866597}
+      rotation: {x: 0.0035809635, y: -0.033796374, z: -0.008930303, w: 0.99938244}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandRing1
+      parentName: PT_RightHand
+      position: {x: 0.053529233, y: 0.062977076, z: -0.06260317}
+      rotation: {x: -0.081653595, y: 0.1235435, z: -0.13587882, w: 0.9795951}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandRing2
+      parentName: PT_RightHandRing1
+      position: {x: 0.025546264, y: 0.030829493, z: -0.004915681}
+      rotation: {x: 0.0039796745, y: 0.024498502, z: -0.04429428, w: 0.99871016}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandRing3
+      parentName: PT_RightHandRing2
+      position: {x: 0.023322074, y: 0.028595015, z: -0.0033334526}
+      rotation: {x: -0.00019882337, y: -0.02625777, z: 0.112213, w: 0.99333715}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandThumb1
+      parentName: PT_RightHand
+      position: {x: 0.04778694, y: 0.015038334, z: 0.019955277}
+      rotation: {x: 0.65297323, y: -0.33277163, z: 0.19682162, w: 0.6512682}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandThumb2
+      parentName: PT_RightHandThumb1
+      position: {x: 0.047946792, y: -0.021948647, z: -0.036228344}
+      rotation: {x: 0.094574586, y: -0.17170013, z: 0.012662349, w: 0.98051745}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightHandThumb3
+      parentName: PT_RightHandThumb2
+      position: {x: 0.018853523, y: -0.021115907, z: -0.027791241}
+      rotation: {x: 0.021399075, y: -0.001883369, z: 0.107937604, w: 0.9939256}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightArmTwist
+      parentName: PT_RightArm
+      position: {x: -0, y: -7.105427e-17, z: -1.4210854e-16}
+      rotation: {x: -0.1732348, y: 4.838788e-18, z: -6.255764e-17, w: 0.98488057}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Neck
+      parentName: PT_Spine3
+      position: {x: -0.13012739, y: -0.0022532898, z: 0.000000015466041}
+      rotation: {x: 3.5627486e-17, y: -1.2767832e-16, z: 0.20371053, w: 0.97903115}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Head
+      parentName: PT_Neck
+      position: {x: -0.09441355, y: -0.001663825, z: 0.000000010965493}
+      rotation: {x: 2.614423e-17, y: -1.2653215e-16, z: -0.1335421, w: 0.99104315}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_HeadTop
+      parentName: PT_Head
+      position: {x: -0.20281038, y: -0.019341866, z: 0.000000024424873}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_HeadTopFeathers
+      parentName: PT_HeadTop
+      position: {x: -0.09847505, y: 0.063093, z: 0.000000011642908}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftCape
+      parentName: PT_Spine3
+      position: {x: -0.09680637, y: 0.14366177, z: 0.00000000859741}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftCape2
+      parentName: PT_LeftCape
+      position: {x: 0.002067632, y: 0.0000644123, z: -0.11146}
+      rotation: {x: -0.17442946, y: 0.6587705, z: 0.72865516, w: 0.06824592}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftCape3
+      parentName: PT_LeftCape2
+      position: {x: -0.34714147, y: -0.11936815, z: 0.007710211}
+      rotation: {x: 0.57227165, y: 0.82004535, z: 0.003174395, w: -0.0045487974}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftCape4
+      parentName: PT_LeftCape3
+      position: {x: -0.005471615, y: -0.361118, z: 0.003680615}
+      rotation: {x: -3.0863045e-33, y: -0.0558464, z: -6.458025e-16, w: 0.9984394}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftCape5
+      parentName: PT_LeftCape4
+      position: {x: 0.00080155267, y: -0.32347998, z: -0.002199548}
+      rotation: {x: 0.5839385, y: -0.49451756, z: 0.49128947, w: -0.41605633}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightCape
+      parentName: PT_Spine3
+      position: {x: -0.096806325, y: 0.14366177, z: 0.000000008597404}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightCape2
+      parentName: PT_RightCape
+      position: {x: 0.0020676397, y: 0.00006441793, z: 0.11146}
+      rotation: {x: -0.17442946, y: 0.6587705, z: 0.72865516, w: 0.06824592}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightCape3
+      parentName: PT_RightCape2
+      position: {x: -0.34146357, y: -0.13481584, z: 0.006535549}
+      rotation: {x: 0.57227165, y: 0.82004535, z: 0.003174395, w: -0.0045487974}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightCape4
+      parentName: PT_RightCape3
+      position: {x: 0.0058738273, y: -0.361118, z: 0.0029972766}
+      rotation: {x: -3.8578806e-34, y: -0.0558464, z: 8.7139494e-17, w: 0.9984394}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightCape5
+      parentName: PT_RightCape4
+      position: {x: -0.0014960723, y: -0.32347998, z: -0.0018006177}
+      rotation: {x: 0.5839385, y: -0.49451756, z: 0.49128947, w: -0.41605633}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftUpLeg
+      parentName: PT_Hips
+      position: {x: 0.09836827, y: 0.010922225, z: -0.07351148}
+      rotation: {x: 0.07370494, y: 0.06213881, z: 0.008584319, w: 0.9953053}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftLeg
+      parentName: PT_LeftUpLeg
+      position: {x: 0.41878918, y: -0.020521047, z: 0.031733476}
+      rotation: {x: -0.04888427, y: -0.018863913, z: 0.06552232, w: 0.99647444}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftFoot
+      parentName: PT_LeftLeg
+      position: {x: 0.4010471, y: -0.037891872, z: 0.036382645}
+      rotation: {x: -0.0058857696, y: -0.031991273, z: -0.07035481, w: 0.9969916}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_LeftToe
+      parentName: PT_LeftFoot
+      position: {x: 0.08599019, y: -0.115369946, z: 0.0074784276}
+      rotation: {x: 0.00008008883, y: -0.000029605244, z: 0.7186337, w: 0.6953888}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Left_BackCloth
+      parentName: PT_LeftUpLeg
+      position: {x: -0.01799325, y: 0.12946583, z: -0.036106415}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Left_BackCloth2
+      parentName: PT_Left_BackCloth
+      position: {x: 0.18135181, y: 0.0062545314, z: 0.021095866}
+      rotation: {x: -0.010352974, y: 0.98578453, z: -0.15768602, w: 0.057069365}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Left_BackCloth3
+      parentName: PT_Left_BackCloth2
+      position: {x: -0.20419002, y: 8.2156505e-17, z: 1.110223e-16}
+      rotation: {x: -0.010352974, y: 0.98578453, z: -0.15768602, w: -0.057069365}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Left_FrontCloth
+      parentName: PT_LeftUpLeg
+      position: {x: -0.02328098, y: -0.122571714, z: -0.000044588298}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Left_FrontCloth2
+      parentName: PT_Left_FrontCloth
+      position: {x: 0.17330375, y: -0.009260005, z: 0.023013592}
+      rotation: {x: -0.010352974, y: 0.98578453, z: -0.15768602, w: 0.057069365}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Left_FrontCloth3
+      parentName: PT_Left_FrontCloth2
+      position: {x: -0.21589956, y: -0.015372355, z: 0.00067447324}
+      rotation: {x: -0.010352974, y: 0.98578453, z: -0.15768602, w: -0.057069365}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightUpLeg
+      parentName: PT_Hips
+      position: {x: 0.09836486, y: 0.009983933, z: 0.07351147}
+      rotation: {x: -0.06213881, y: 0.07370494, z: 0.9953053, w: -0.008584337}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightLeg
+      parentName: PT_RightUpLeg
+      position: {x: -0.4188132, y: 0.01972456, z: -0.031616643}
+      rotation: {x: -0.04888427, y: -0.018863913, z: 0.06552232, w: 0.99647444}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightFoot
+      parentName: PT_RightLeg
+      position: {x: -0.40107203, y: 0.03773454, z: -0.036374472}
+      rotation: {x: -0.0058857696, y: -0.031991273, z: -0.07035481, w: 0.9969916}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_RightToe
+      parentName: PT_RightFoot
+      position: {x: -0.08598935, y: 0.115377955, z: -0.0074788406}
+      rotation: {x: 0.00008008883, y: -0.000029605244, z: 0.7186337, w: 0.6953888}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Right_BackCloth
+      parentName: PT_RightUpLeg
+      position: {x: 0.017965365, y: -0.13039377, z: 0.036242656}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Right_BackCloth2
+      parentName: PT_Right_BackCloth
+      position: {x: -0.18135166, y: -0.00625454, z: -0.021095872}
+      rotation: {x: 0.98578453, y: 0.0103529785, z: 0.05706948, w: 0.15768602}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Right_BackCloth3
+      parentName: PT_Right_BackCloth2
+      position: {x: -0.20418984, y: -8.8817837e-17, z: 3.1530333e-16}
+      rotation: {x: 0.98578453, y: 0.0103529785, z: 0.05706948, w: -0.15768602}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Right_FrontCloth
+      parentName: PT_RightUpLeg
+      position: {x: 0.023252951, y: 0.12164379, z: 0.00018082709}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Right_FrontCloth2
+      parentName: PT_Right_FrontCloth
+      position: {x: -0.17330375, y: 0.009259996, z: -0.02301363}
+      rotation: {x: 0.98578453, y: 0.0103529785, z: 0.05706948, w: 0.15768602}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PT_Right_FrontCloth3
+      parentName: PT_Right_FrontCloth2
+      position: {x: -0.21589956, y: -0.015372366, z: -0.00067447324}
+      rotation: {x: 0.98578453, y: 0.0103529785, z: 0.05706948, w: -0.15768602}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 230037
+  packageName: Lowpoly Modular Armors Expansion Pack 01- MEDIEVAL FANTASY SERIES
+  packageVersion: 3.0.0
+  assetPath: Assets/Polytope Studio/Lowpoly_Characters/Sources/Modular_Armors/Meshes/PT_Male_Armors_Ex1_Modular.fbx
+  uploadId: 721309

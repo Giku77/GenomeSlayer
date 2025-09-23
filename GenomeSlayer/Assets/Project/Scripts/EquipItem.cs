@@ -77,21 +77,45 @@ public class EquipItem : MonoBehaviour
         Debug.Log($"EquipId: {EquipId}");   
         switch (BaseId)
         {
-            case (int)ItemIds.Mace_Durian:
-                PoolWeapons[0].gameObject.SetActive(true);
+            case (int)WeaponIds.Mace_Durian:
+                PoolWeapons[0].SetActive(true);
+                PoolWeapons[1].SetActive(false);
+                PoolWeapons[2].SetActive(false);
                 HandHitbox[0].enabled = false;
                 HandHitbox[1].enabled = false;
                 HandHitbox[0].weaponDef.weaponId = WeaponIds.Mace_Durian;
                 currentWeapon = PoolWeapons[0];
-                equipController.SetEquipped(true);
+                equipController.SetEquipped(WeaponStance.TwoHand);
+                break;
+            case (int)WeaponIds.Katana_Pepper:
+                PoolWeapons[0].SetActive(false);
+                PoolWeapons[1].SetActive(true);
+                PoolWeapons[2].SetActive(false);
+                HandHitbox[0].enabled = false;
+                HandHitbox[1].enabled = false;
+                HandHitbox[0].weaponDef.weaponId = WeaponIds.Katana_Pepper;
+                currentWeapon = PoolWeapons[1];
+                equipController.SetEquipped(WeaponStance.OneHand);
+                break;
+            case (int)WeaponIds.Bowling_Coconut:
+                PoolWeapons[0].SetActive(false);
+                PoolWeapons[1].SetActive(false);
+                PoolWeapons[2].SetActive(true);
+                HandHitbox[0].enabled = false;
+                HandHitbox[1].enabled = false;
+                HandHitbox[0].weaponDef.weaponId = WeaponIds.Bowling_Coconut;
+                currentWeapon = PoolWeapons[2];
+                equipController.SetEquipped(WeaponStance.OneHand);
                 break;
             default:
                 PoolWeapons[0].gameObject.SetActive(false);
+                PoolWeapons[1].gameObject.SetActive(false);
+                PoolWeapons[2].gameObject.SetActive(false);
                 HandHitbox[0].enabled = true;
                 HandHitbox[1].enabled = true;
                 HandHitbox[0].weaponDef.weaponId = WeaponIds.UNKNOWN_WEAPON;
                 currentWeapon = null;
-                equipController.SetEquipped(false);
+                equipController.SetEquipped(WeaponStance.None);
                 break;
         }
         //for (int i = 0; i < parts.Length; i++)
@@ -117,7 +141,7 @@ public class EquipItem : MonoBehaviour
             HandHitbox[0].enabled = true;
             currentWeapon = null;
         }
-        equipController.SetEquipped(false);
+        equipController.SetEquipped(WeaponStance.None);
     }
 
     public bool IsEquipped() => currentWeapon != null;

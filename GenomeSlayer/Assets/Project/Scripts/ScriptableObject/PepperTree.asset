@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PepperTree
   m_EditorClassIdentifier: 
   TreeID: 1221002
-  Fruitprefab: {fileID: 8491280977856286913, guid: 9aaa9612cb7929c46bd0872f8db12a04, type: 3}
+  Fruitprefab: {fileID: 3352777845045872800, guid: 7b2d6bab6b14f254ba225a9cb1594568, type: 3}

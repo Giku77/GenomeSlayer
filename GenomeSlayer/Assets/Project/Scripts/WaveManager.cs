@@ -171,6 +171,8 @@ public class WaveManager : MonoBehaviour
             StopCoroutine(waveCoroutine);
         }
         player.Heal(1000);
+        var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Bowling_Coconut);
+        player.quickSlotInventory.TryAddItem((int)WeaponIds.Bowling_Coconut, 1, weapon.equipDurability, weapon.equipQuantity);
         waveInProgress = true;
         waveDef.WaveInterval = 600f;
         waveCoroutine = StartCoroutine(WaveTimer());

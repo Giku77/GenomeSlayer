@@ -124,7 +124,23 @@ public class PlayerInteractor : MonoBehaviour
         var go = Instantiate(plantPlotPrefab, point + Vector3.forward, Quaternion.identity);
         EventBus.RemoveObj.Add(go);
         var plot = go.GetComponent<PlantPlot>();
-        plot.seed = seedDef;
+        //if(seedDef.itemId)
+        SeedDef def = new SeedDef();
+        def.treePrefab = seedDef.treePrefab;
+        def.itemId = seedDef.itemId;
+
+        if (seedDef.itemId == (int)ItemIds.Mystery_Seed)
+        {
+            var r = Random.Range(0, 3);
+            int[] Seeds = new int[] { (int)ItemIds.Durian_Seed, (int)ItemIds.Pepper_Seed, (int)ItemIds.Coconut_Seed };
+            Debug.Log($"Random value for Mystery Seed: {r}");
+            var sid = Seeds[r];
+            def = seedMap[sid];
+            //Debug.Log("Planting a Mystery Seed, choosing randomly between Durian and Pepper seeds.");
+        }
+
+        plot.seed = def;
+
 
         quickSlotInventory.TryConsume(slotIndex, 1);
         //EventBus.UpdateSlot?.Invoke(slotIndex, quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : "0", quickSlotInventory.GetSlot(slotIndex).IsEmpty ? string.Empty : quickSlotInventory.GetSlot(slotIndex).quantity.ToString(), -1);
@@ -185,6 +201,15 @@ public class PlayerInteractor : MonoBehaviour
         var go = Instantiate(plantPlotPrefab, point + Vector3.forward, Quaternion.identity);
         EventBus.RemoveObj.Add(go);
         var plot = go.GetComponent<PlantPlot>();
+
+
+        if (slot.itemId == (int)ItemIds.Mystery_Seed)
+        {
+            var r = Random.Range(0, 3);
+            var Seeds = new int[] { (int)ItemIds.Durian_Seed, (int)ItemIds.Pepper_Seed, (int)ItemIds.Coconut_Seed };
+            seedDef.itemId = Seeds[r];
+        }
+
         plot.seed = seedDef;
 
 

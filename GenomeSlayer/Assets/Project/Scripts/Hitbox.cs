@@ -19,10 +19,35 @@ public class Hitbox : MonoBehaviour
     }
     public void Open()
     {
-        //Debug.Log("Hitbox Open");
-        active = true;
-        hitEntities.Clear();
-        hitCountThisSwing = 0;
+        if (weaponDef == null) return;
+
+        Debug.Log("Hitbox Open: " + weaponDef.weaponId + " / " + weaponDef.kind);
+
+        if(weaponDef.weaponId == WeaponIds.Bowling_Coconut)
+            weaponDef.kind = WeaponKind.Projectile;
+        else weaponDef.kind = WeaponKind.Melee;
+
+        if (weaponDef.kind == WeaponKind.Projectile)
+        {
+            FireProjectile();
+        }
+        else
+        {
+            Debug.Log("Hitbox Open");
+            active = true;
+            hitEntities.Clear();
+            hitCountThisSwing = 0;
+        }
+    }
+
+    private void FireProjectile()
+    {
+        Debug.Log("FireProjectile");
+        Transform muzzle = transform; 
+        var proj = Instantiate(weaponDef.projectilePrefab, muzzle.position, muzzle.rotation);
+        proj.Init(owner: GetComponentInParent<Player>(),
+                  def: weaponDef,
+                  targetLayers: targetLayers);
     }
 
     public void Close()
