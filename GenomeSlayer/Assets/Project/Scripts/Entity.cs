@@ -39,13 +39,13 @@ public class Entity : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        health = 100;
+        
     }
 
     public virtual void OnDamage(int damage)
     {
         health -= damage;
-        Debug.Log($"Entity OnDamage {damage}, health {health}");
+        //Debug.Log($"Entity OnDamage {damage}, health {health}");
         if (isDead)
         {
             Die();

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponId: -1
   kind: 0
-  damage: 50
+  damage: 30
   projectilePrefab: {fileID: 0}
   projectileSpeed: 12
   maxFlightTime: 0.7

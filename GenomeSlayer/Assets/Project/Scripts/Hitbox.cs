@@ -59,6 +59,7 @@ public class Hitbox : MonoBehaviour
                 break;
         }
         damage += (damage *(int)addDmg);
+        Debug.Log("Hitbox Damage: " + damage);
     }
 
     private void FireProjectile()

@@ -105,6 +105,7 @@ public class Enemy : Entity
             SetEnemyData(enemyData);
         healthSlider.maxValue = maxhealth;
         healthSlider.value = health;
+        Debug.Log($"Enemy Awake: {health}");
         //audioSource = GetComponent<AudioSource>();
     }
 
@@ -112,10 +113,10 @@ public class Enemy : Entity
     //{
     //    //audioSource.PlayOneShot(zombieHit, AudioManager.instance.sfxVolume);
 
-    //    bloodE.transform.position = hitpos;
-    //    bloodE.Play();
-    //    yield return new WaitForSeconds(1.0f);
-    //}
+        //    bloodE.transform.position = hitpos;
+        //    bloodE.Play();
+        //    yield return new WaitForSeconds(1.0f);
+        //}
 
     private void Update()
     {
@@ -210,7 +211,7 @@ public class Enemy : Entity
     public override void OnDamage(int damage)
     {
         base.OnDamage(damage);
-
+        Debug.Log($"Enemy OnDamage {damage}, health {health}");
         healthSlider.value = health;
         //StartCoroutine(bloodEffect(hitPoint));
     }
