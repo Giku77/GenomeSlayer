@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI WaveTimer;
     public Button WaveButton;
     public Button GenomButton;
+    
 
     public GameObject InventoryUI;
     public GameObject StateUI;
@@ -197,7 +198,6 @@ public class UIManager : MonoBehaviour
     {
         StateUI.SetActive(!StateUI.activeSelf);
     }
-
 
     public void ShowTypingText()
     {
