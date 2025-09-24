@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
     public GameObject joystickZone;
     public GameObject AttackButton;
     public GameObject InteractButton;
+    public GameObject HarvesButton;
     public GameObject ViewButton;
     public GameObject timerZone;
 
@@ -210,6 +211,13 @@ public class UIManager : MonoBehaviour
         StateUI.SetActive(!StateUI.activeSelf);
     }
 
+    public void StopTypingText()
+    {
+        TypingTextObject.SetActive(false);
+        WaveButton.interactable = true;
+        GenomButton.interactable = true;
+    }
+
     public void ShowTypingText()
     {
         switch (typingID)
@@ -241,7 +249,7 @@ public class UIManager : MonoBehaviour
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601013:
-                uIFocusHighlighter.target = InteractButton.GetComponent<RectTransform>();
+                uIFocusHighlighter.target = HarvesButton.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601014:
@@ -258,6 +266,10 @@ public class UIManager : MonoBehaviour
                 break;
             case 1601017:
                 uIFocusHighlighter.target = timerZone.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
+            case 1602001:
+                uIFocusHighlighter.target = GenomButton.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601018:
