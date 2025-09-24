@@ -36,7 +36,18 @@ public class UIManager : MonoBehaviour
     public GameObject ViewButton;
     public GameObject timerZone;
 
-    void Awake()
+    public GameObject ActiveArmor;
+    public InventorySlotUI ActiveArmorSlot { 
+        get
+        {
+            return SlotItems[ActiveArmorIndex];
+        }
+    }
+    public int ActiveArmorIndex { get; set; }
+
+    public void SetActiveAromor(bool t) => ActiveArmor.SetActive(t);
+
+    private void Awake()
     {
         AcceptUIPoint.text = stateManager.GenomePoint.ToString();
         typingText = GetComponent<TypingText>();

@@ -14,6 +14,8 @@ public class EquipItem : MonoBehaviour
     private GameObject[] PoolWeapons;
     public GameObject currentWeapon { get; set; }
 
+    public WeaponIds currentWeaponId { get; set; }
+
     private EquipController equipController;
 
     private int index = -1;
@@ -36,11 +38,9 @@ public class EquipItem : MonoBehaviour
         }
         PoolWeapons = new GameObject[weapons.Length];
 
-        for (int i = 0; i < parts.Length; i++)
+        for (int i = 0; i < weapons.Length; i++)
         {
-            var e = Instantiate(weapons[i], parts[i]);
-            PoolWeapons[i] = e;
-            e.gameObject.SetActive(false);
+            PoolWeapons[i] = weapons[i];
         }
     }
 
@@ -83,7 +83,7 @@ public class EquipItem : MonoBehaviour
                 PoolWeapons[2].SetActive(false);
                 //HandHitbox[0].isStop = true;
                 //HandHitbox[1].isStop = true;
-                HandHitbox[0].currentWeaponId = WeaponIds.Mace_Durian;
+                currentWeaponId = WeaponIds.Mace_Durian;
                 currentWeapon = PoolWeapons[0];
                 equipController.SetEquipped(WeaponStance.TwoHand);
                 break;
@@ -93,7 +93,7 @@ public class EquipItem : MonoBehaviour
                 PoolWeapons[2].SetActive(false);
                 //HandHitbox[0].isStop = true;
                 //HandHitbox[1].isStop = true;
-                HandHitbox[0].currentWeaponId = WeaponIds.Katana_Pepper;
+                currentWeaponId = WeaponIds.Katana_Pepper;
                 currentWeapon = PoolWeapons[1];
                 equipController.SetEquipped(WeaponStance.OneHand);
                 break;
@@ -103,9 +103,16 @@ public class EquipItem : MonoBehaviour
                 PoolWeapons[2].SetActive(true);
                 //HandHitbox[0].isStop = true;
                 //HandHitbox[1].isStop = true;
-                HandHitbox[0].currentWeaponId = WeaponIds.Bowling_Coconut;
+                currentWeaponId = WeaponIds.Bowling_Coconut;
                 currentWeapon = PoolWeapons[2];
                 equipController.SetEquipped(WeaponStance.OneHand);
+                break;
+            case (int)WeaponIds.Watermelon_Armor:
+                var d = DataTableManger.EquipmentTable.GetItem(EquipId).equipArmor;
+                GetComponent<Player>().defense = d;
+                var ui = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+                ui.SetActiveAromor(true);
+                ui.ActiveArmorIndex = GetSelectedIndex();
                 break;
             default:
                 PoolWeapons[0].gameObject.SetActive(false);
@@ -113,7 +120,7 @@ public class EquipItem : MonoBehaviour
                 PoolWeapons[2].gameObject.SetActive(false);
                 //HandHitbox[0].isStop = false;
                 //HandHitbox[1].isStop = false;
-                HandHitbox[0].currentWeaponId = WeaponIds.UNKNOWN_WEAPON;
+                currentWeaponId = WeaponIds.UNKNOWN_WEAPON;
                 currentWeapon = null;
                 equipController.SetEquipped(WeaponStance.None);
                 break;

@@ -30,6 +30,9 @@ public class ItemManager : MonoBehaviour
             case (int)TreeIds.Coconut_Tree:
                 id = (int)WeaponIds.Bowling_Coconut;
                 break;
+            case (int)TreeIds.Watermelon_Tree:
+                id = (int)WeaponIds.Watermelon_Armor;
+                break;
             default:
                 Debug.LogWarning($"Unknown TreeId: {TreeId}");
                 return;
