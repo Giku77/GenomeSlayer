@@ -109,10 +109,14 @@ public class EquipItem : MonoBehaviour
                 break;
             case (int)WeaponIds.Watermelon_Armor:
                 var d = DataTableManger.EquipmentTable.GetItem(EquipId).equipArmor;
-                GetComponent<Player>().defense = d;
+                var getDiff = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.ArmorWatermelonDefenseUp);
+                GetComponent<Player>().defense = d + (d * getDiff);
                 var ui = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
                 ui.SetActiveAromor(true);
                 ui.ActiveArmorIndex = GetSelectedIndex();
+                currentWeaponId = WeaponIds.UNKNOWN_WEAPON;
+                currentWeapon = null;
+                equipController.SetEquipped(WeaponStance.None);
                 break;
             default:
                 PoolWeapons[0].gameObject.SetActive(false);

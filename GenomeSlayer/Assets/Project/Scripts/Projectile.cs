@@ -76,7 +76,9 @@ public class Projectile : MonoBehaviour
         if (!hitSet.Add(e)) return;
 
         Haptics.Light(); // º±≈√
-        e.OnDamage(def.damage);
+        var addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.BowlingCoconutAttackUp);
+        var damage = def.damage + (def.damage * (int)addDmg);
+        e.OnDamage(damage);
         pierceCount++;
 
         if (def.kind == WeaponKind.ThrownReturn)

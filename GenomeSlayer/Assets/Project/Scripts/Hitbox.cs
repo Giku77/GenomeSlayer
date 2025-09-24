@@ -45,6 +45,20 @@ public class Hitbox : MonoBehaviour
         hitCountThisSwing = 0;
         foreach (var s in col)
             s.enabled = true;
+        float addDmg = 0;
+        switch (weaponDef.weaponId)
+        {
+            case WeaponIds.Mace_Durian:
+                addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.MaceDurianAttackUp);
+                break;
+            case WeaponIds.Katana_Pepper:
+                addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.KatanaPepperAttackUp);
+                break;
+            default:
+                addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.PlayerAttackUp);
+                break;
+        }
+        damage += (damage *(int)addDmg);
     }
 
     private void FireProjectile()

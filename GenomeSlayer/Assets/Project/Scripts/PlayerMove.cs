@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     private static readonly int GroundHash = Animator.StringToHash("IsGround");
     private static readonly int IdleHash = Animator.StringToHash("Idle");
     private static readonly int AttackHash = Animator.StringToHash("Attack");
+    private static readonly int AttackSpeed = Animator.StringToHash("AttackSpeed");
     private static readonly int HashDoNext = Animator.StringToHash("Combo");
 
     public float moveSpeed = 5f;
@@ -77,6 +78,20 @@ public class PlayerMove : MonoBehaviour
 
         var st = animator.GetCurrentAnimatorStateInfo(0);
         bool inAttack = st.IsTag("Attack");  
+        var equipItem = GetComponent<EquipItem>();
+        var smgr = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>();
+        switch (equipItem.currentWeaponId)
+        {
+            case WeaponIds.Katana_Pepper:
+                animator.SetFloat(AttackSpeed, 1.0f + (smgr.GetUpgradeStatAmount((int)GenomIds.KatanaPepperAtkSpeedUp) * 1.0f));
+                break;
+            case WeaponIds.Bowling_Coconut:
+                animator.SetFloat(AttackSpeed, 1.0f + (smgr.GetUpgradeStatAmount((int)GenomIds.BowlingCoconutAtkSpeedUp) * 1.0f));
+                break;
+            default:
+                animator.SetFloat(AttackSpeed, 2.2f + (smgr.GetUpgradeStatAmount((int)GenomIds.PlayerAttackSpeedUp) * 2.2f));
+                break;
+        }
 
         if (!inAttack)
         {
@@ -167,7 +182,7 @@ public class PlayerMove : MonoBehaviour
 
         bool grounded = IsGrounded();
         bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
-        float speedMul = isAttacking ? 0.7f : 1f;
+        float speedMul = isAttacking ? 0.1f : 1f;
 
         var g = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>();
 
