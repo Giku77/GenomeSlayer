@@ -120,9 +120,9 @@ public class QuickSlotInventory
         var slot = slots[empty];
         slot.itemId = itemId;
         slot.quantity = amount > maxStack ? maxStack : amount;
-        var checkArm = DataTableManger.EquipmentTable.GetItem(itemId).equipType == 3;
-        var DefGenom = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.ArmorWatermelonMaxHpUp);
-        if (checkArm) durability += (int)(durability * DefGenom);
+        //var checkArm = DataTableManger.EquipmentTable.GetItem(itemId).equipType == 3;
+        //var DefGenom = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.ArmorWatermelonMaxHpUp);
+        //if (checkArm) durability += (int)(durability * DefGenom);
         slot.durability = durability;
 
         indexByItem[itemId] = empty;

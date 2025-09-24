@@ -14,7 +14,7 @@ public class EquipItem : MonoBehaviour
     private GameObject[] PoolWeapons;
     public GameObject currentWeapon { get; set; }
 
-    public WeaponIds currentWeaponId { get; set; }
+    public WeaponIds currentWeaponId { get; set; } = WeaponIds.UNKNOWN_WEAPON;
 
     private EquipController equipController;
 
@@ -153,6 +153,7 @@ public class EquipItem : MonoBehaviour
             currentWeapon = null;
         }
         equipController.SetEquipped(WeaponStance.None);
+        currentWeaponId = WeaponIds.UNKNOWN_WEAPON;
     }
 
     public bool IsEquipped() => currentWeapon != null;

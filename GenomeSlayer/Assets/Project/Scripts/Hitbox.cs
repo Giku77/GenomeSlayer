@@ -18,8 +18,8 @@ public class Hitbox : MonoBehaviour
     private void Awake()
     {
         col = GetComponents<Collider>();
-        foreach(var s in col)
-          s.enabled = false;
+        foreach (var s in col)
+            s.enabled = false;
     }
 
     private void Start()

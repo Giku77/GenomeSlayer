@@ -19,6 +19,7 @@ public class ItemManager : MonoBehaviour
     {
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         var id = (int)WeaponIds.UNKNOWN_WEAPON;
+        float addDur = 0;
         switch (TreeId)
         {
             case (int)TreeIds.Durian_Tree:
@@ -31,6 +32,7 @@ public class ItemManager : MonoBehaviour
                 id = (int)WeaponIds.Bowling_Coconut;
                 break;
             case (int)TreeIds.Watermelon_Tree:
+                addDur = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.ArmorWatermelonMaxHpUp);
                 id = (int)WeaponIds.Watermelon_Armor;
                 break;
             default:
@@ -40,7 +42,8 @@ public class ItemManager : MonoBehaviour
         var itemId = (id + (1000 * num));
         Debug.Log($"Adding Equip Item with ID: {itemId}");
         var weapon = DataTableManger.EquipmentTable.GetItem(itemId);
-        player.quickSlotInventory.TryAddItem(itemId, 1, weapon.equipDurability, weapon.equipQuantity);
+        addDur = weapon.equipDurability * addDur;
+        player.quickSlotInventory.TryAddItem(itemId, 1, weapon.equipDurability + (int)addDur, weapon.equipQuantity);
         //var item = DataTableManger.EquipmentTable.GetItem(itemId);
         //EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, item.equipName, player.quickSlotInventory.GetSlotCount().ToString(), item.equipDurability);
     }

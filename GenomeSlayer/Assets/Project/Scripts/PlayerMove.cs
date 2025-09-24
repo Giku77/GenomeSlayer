@@ -83,13 +83,20 @@ public class PlayerMove : MonoBehaviour
         switch (equipItem.currentWeaponId)
         {
             case WeaponIds.Katana_Pepper:
-                animator.SetFloat(AttackSpeed, 1.0f + (smgr.GetUpgradeStatAmount((int)GenomIds.KatanaPepperAtkSpeedUp) * 1.0f));
+                var upKa = smgr.GetUpgradeStatAmount((int)GenomIds.KatanaPepperAtkSpeedUp);
+                var sKa = upKa == 0 ? 1f : upKa + 1f;
+                animator.SetFloat(AttackSpeed, sKa);
                 break;
             case WeaponIds.Bowling_Coconut:
-                animator.SetFloat(AttackSpeed, 1.0f + (smgr.GetUpgradeStatAmount((int)GenomIds.BowlingCoconutAtkSpeedUp) * 1.0f));
+                var upCo = smgr.GetUpgradeStatAmount((int)GenomIds.BowlingCoconutAtkSpeedUp);
+                var sCo = upCo == 0 ? 1f : upCo + 1f;
+                animator.SetFloat(AttackSpeed, sCo);
                 break;
             default:
-                animator.SetFloat(AttackSpeed, 2.2f + (smgr.GetUpgradeStatAmount((int)GenomIds.PlayerAttackSpeedUp) * 2.2f));
+                //var s = 2.2f + (smgr.GetUpgradeStatAmount((int)GenomIds.BowlingCoconutAtkSpeedUp) * 2.2f);
+                var up = smgr.GetUpgradeStatAmount((int)GenomIds.PlayerAttackSpeedUp);
+                var s = up == 0 ? 1f : up + 1f;
+                animator.SetFloat(AttackSpeed, s);
                 break;
         }
 
@@ -101,14 +108,14 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            var equip = GetComponent<EquipItem>();
-            if (equip.IsEquipped())
-            {
-                StartCoroutine(HitboxPulse(0.3f));
-                animator.SetTrigger(AttackHash);
-            }
-          
-            queuedCombo = true;
+            //var equip = GetComponent<EquipItem>();
+            //if (equip.IsEquipped())
+            //{
+            //    StartCoroutine(HitboxPulse(0.3f));
+            //    animator.SetTrigger(AttackHash);
+            //}
+            if (equipItem.currentWeaponId == WeaponIds.UNKNOWN_WEAPON)
+              queuedCombo = true;
         }
     }
 
@@ -182,7 +189,7 @@ public class PlayerMove : MonoBehaviour
 
         bool grounded = IsGrounded();
         bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Attack");
-        float speedMul = isAttacking ? 0.1f : 1f;
+        float speedMul = isAttacking ? 0.7f : 1f;
 
         var g = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>();
 
