@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd210ee80e4f634d8f400486aa2daa0, type: 3}
   m_Name: StateDef
   m_EditorClassIdentifier: 
-  GenomePoint: 0
+  GenomePoint: 9999
   sharedCostCurve: 64000000c8000000900100002003000040060000
   rows:
   - id: 1401001

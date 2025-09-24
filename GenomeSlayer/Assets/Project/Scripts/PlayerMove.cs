@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     private static readonly int GroundHash = Animator.StringToHash("IsGround");
     private static readonly int IdleHash = Animator.StringToHash("Idle");
     private static readonly int AttackHash = Animator.StringToHash("Attack");
+    private static readonly int AttackSpeed = Animator.StringToHash("AttackSpeed");
     private static readonly int HashDoNext = Animator.StringToHash("Combo");
 
     public float moveSpeed = 5f;
@@ -77,6 +78,27 @@ public class PlayerMove : MonoBehaviour
 
         var st = animator.GetCurrentAnimatorStateInfo(0);
         bool inAttack = st.IsTag("Attack");  
+        var equipItem = GetComponent<EquipItem>();
+        var smgr = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>();
+        switch (equipItem.currentWeaponId)
+        {
+            case WeaponIds.Katana_Pepper:
+                var upKa = smgr.GetUpgradeStatAmount((int)GenomIds.KatanaPepperAtkSpeedUp);
+                var sKa = upKa == 0 ? 1f : upKa + 1f;
+                animator.SetFloat(AttackSpeed, sKa);
+                break;
+            case WeaponIds.Bowling_Coconut:
+                var upCo = smgr.GetUpgradeStatAmount((int)GenomIds.BowlingCoconutAtkSpeedUp);
+                var sCo = upCo == 0 ? 1f : upCo + 1f;
+                animator.SetFloat(AttackSpeed, sCo);
+                break;
+            default:
+                //var s = 2.2f + (smgr.GetUpgradeStatAmount((int)GenomIds.BowlingCoconutAtkSpeedUp) * 2.2f);
+                var up = smgr.GetUpgradeStatAmount((int)GenomIds.PlayerAttackSpeedUp);
+                var s = up == 0 ? 1f : up + 1f;
+                animator.SetFloat(AttackSpeed, s);
+                break;
+        }
 
         if (!inAttack)
         {
@@ -86,14 +108,17 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            var equip = GetComponent<EquipItem>();
-            if (equip.IsEquipped())
+            //var equip = GetComponent<EquipItem>();
+            //if (equip.IsEquipped())
+            //{
+            //    StartCoroutine(HitboxPulse(0.3f));
+            //    animator.SetTrigger(AttackHash);
+            //}
+            if (equipItem.currentWeaponId == WeaponIds.UNKNOWN_WEAPON)
             {
-                StartCoroutine(HitboxPulse(0.3f));
-                animator.SetTrigger(AttackHash);
+                queuedCombo = true;
+                animator.SetBool(HashDoNext, true);
             }
-          
-            queuedCombo = true;
         }
     }
 
@@ -107,14 +132,20 @@ public class PlayerMove : MonoBehaviour
         {
             float t = st.normalizedTime % 1f;  // 0..1
 
-            if (queuedCombo && t >= comboWindowOpen && t <= comboWindowClose)
+            if (t > comboWindowClose)
             {
+                animator.SetBool(HashDoNext, false);
                 queuedCombo = false;
-                animator.SetBool(HashDoNext, true);   // Combo = true
             }
 
-            if (t > comboWindowClose)
-                animator.SetBool(HashDoNext, false);
+            //if (queuedCombo && t >= comboWindowOpen && t <= comboWindowClose)
+            //{
+            //    queuedCombo = false;
+            //    animator.SetBool(HashDoNext, true);   // Combo = true
+            //}
+
+            //if (t > comboWindowClose)
+            //    animator.SetBool(HashDoNext, false);
         }
         else
         {
@@ -123,9 +154,27 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    private bool IsAttackingOrTransitioning()
+    {
+        var a = animator;
+        var st = a.GetCurrentAnimatorStateInfo(0);
+        if (st.IsTag("Attack")) return true;
+
+        if (a.IsInTransition(0))
+        {
+            var nt = a.GetNextAnimatorStateInfo(0);
+            if (nt.IsTag("Attack") || st.IsTag("Attack")) return true;
+        }
+        return false;
+    }
+
     private void FixedUpdate()
     {
         if (player.isDead) return;
+
+        bool lockMove = IsAttackingOrTransitioning();
+
+        //bool inAttackTag = animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack");
         //회전
 
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -153,6 +202,24 @@ public class PlayerMove : MonoBehaviour
 
         //    transform.LookAt(target);
         //}
+
+        if (lockMove)
+        {
+            var v = rb.linearVelocity;
+            rb.linearVelocity = new Vector3(0f, v.y, 0f);
+
+            animator.SetFloat(MoveHash, 0f);
+            //animator.SetBool(JumpHash, false);
+
+            //if (Input.GetKeyDown(KeyCode.V) || IsMobileVeiwTopClicked)
+            //{
+            //    isViewTop = !isViewTop;
+            //    TopCamera.SetActive(isViewTop);
+            //    PlayerCamera.SetActive(!isViewTop);
+            //    IsMobileVeiwTopClicked = false;
+            //}
+            return;
+        }
 
         //이동
         Vector3 camFwd = Camera.main.transform.forward;
@@ -205,23 +272,23 @@ public class PlayerMove : MonoBehaviour
         //점프
         //isJumping = rb.linearVelocity.y > 0.1f || rb.linearVelocity.y < -0.1f;
 
-        if (playerInput.Jump /*&& !playerHealth.IsDead*/ && grounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
-            //if (audioSource != null && audioSource.clip != null)
-            //{
-            //    audioSource.Play();
-            //}
-        }
+        //if (playerInput.Jump /*&& !playerHealth.IsDead*/ && grounded)
+        //{
+        //    rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+        //    //if (audioSource != null && audioSource.clip != null)
+        //    //{
+        //    //    audioSource.Play();
+        //    //}
+        //}
 
-        if (playerInput.Attack && !player.isDead && animator != null)
-        {
-            playerInput.Attack = false;
-            StartCoroutine(HitboxPulse(0.3f));
-            animator.SetTrigger(AttackHash);
-            //Debug.Log("Player Attack");
-            //player.Attack();
-        }
+        //if (playerInput.Attack && !player.isDead && animator != null)
+        //{
+        //    playerInput.Attack = false;
+        //    StartCoroutine(HitboxPulse(0.3f));
+        //    animator.SetTrigger(AttackHash);
+        //    //Debug.Log("Player Attack");
+        //    //player.Attack();
+        //}
 
         if (Input.GetKeyDown(KeyCode.V) || IsMobileVeiwTopClicked)
         {

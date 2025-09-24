@@ -9,6 +9,7 @@ TagManager:
   - BlockUI
   - sLV
   - Ges
+  - UIManager
   layers:
   - Default
   - TransparentFX
