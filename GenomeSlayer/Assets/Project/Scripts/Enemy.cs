@@ -10,6 +10,8 @@ public class Enemy : Entity
     private Animator animator;
     private BuffController buffController;
     private Slider healthSlider;
+    public EnemyData enemyData;
+    private EnemyIds enemyId;
 
 
     public enum State
@@ -79,27 +81,30 @@ public class Enemy : Entity
         }
     }
 
-    public void SetZombieData(EnemyData data)
+    public void SetEnemyData(EnemyData data)
     {
+        enemyId = data.enemyId;
+        maxhealth = data.health;
         health = data.health;
         damage = data.damage;
         //attackDelay = data.attackDelay;
         //traceDist = data.traceDist;
         //attackDist = data.attackDist;
-        //agent.speed = data.speed;
-        agent.speed = speed;
+        agent.speed = data.speed;
     }
 
 
     public void Awake()
     {
         healthSlider = GetComponentInChildren<Slider>();
-        healthSlider.maxValue = maxhealth;
-        healthSlider.value = health;
         buffController = GetComponent<BuffController>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        if (enemyData != null)
+            SetEnemyData(enemyData);
+        healthSlider.maxValue = maxhealth;
+        healthSlider.value = health;
         //audioSource = GetComponent<AudioSource>();
     }
 

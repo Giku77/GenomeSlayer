@@ -357,6 +357,7 @@ MonoBehaviour:
   targetPlayer:
     serializedVersion: 2
     m_Bits: 8
+  enemyData: {fileID: 11400000, guid: 4f8a64fb9b94ade4e81163e0e6f6dfa8, type: 2}
   traceDist: 1000
   attackDist: 2
   bloodE: {fileID: 0}
@@ -420,7 +421,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5472856209527987515}
-  m_Material: {fileID: 13400000, guid: b51e2bb8bff12e9449e1988a3b97b87f, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

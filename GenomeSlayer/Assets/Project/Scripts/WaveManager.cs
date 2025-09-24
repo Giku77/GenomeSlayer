@@ -171,9 +171,9 @@ public class WaveManager : MonoBehaviour
             StopCoroutine(waveCoroutine);
         }
         player.Heal(1000);
-        var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Watermelon_Armor);
-        player.quickSlotInventory.TryAddItem((int)WeaponIds.Watermelon_Armor, 1, weapon.equipDurability, weapon.equipQuantity);
-        player.quickSlotInventory.TryAddItem((int)WeaponIds.Katana_Pepper, 1, weapon.equipDurability, weapon.equipQuantity);
+        //var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Watermelon_Armor);
+        //player.quickSlotInventory.TryAddItem((int)WeaponIds.Watermelon_Armor, 1, weapon.equipDurability, weapon.equipQuantity);
+        //player.quickSlotInventory.TryAddItem((int)WeaponIds.Katana_Pepper, 1, weapon.equipDurability, weapon.equipQuantity);
 
         waveInProgress = true;
         waveDef.WaveInterval = 600f;

@@ -214,6 +214,7 @@ public class UIManager : MonoBehaviour
     public void StopTypingText()
     {
         TypingTextObject.SetActive(false);
+        uIFocusHighlighter.gameObject.SetActive(false);
         WaveButton.interactable = true;
         GenomButton.interactable = true;
     }

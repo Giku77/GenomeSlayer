@@ -1,0 +1,5 @@
+monsterId,monsterName,monsterType,monsterHp,monsterAttack,monsterAttackSpeed,monsterMoveSpeed
+1301001,괴물버섯,"1",50,10,0,5
+1302002,독거미,"2",80,20,0.5,8
+1303003,박쥐,"3",40,30,0.3,5
+1304004,오크,4,500,50,1,8

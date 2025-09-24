@@ -14,8 +14,8 @@ public class PlayerMove : MonoBehaviour
     private static readonly int AttackSpeed = Animator.StringToHash("AttackSpeed");
     private static readonly int HashDoNext = Animator.StringToHash("Combo");
 
-    public float moveSpeed = 5f;
-    public float rotationSpeed = 180f;
+    private float moveSpeed = 5f;
+    private float rotationSpeed = 180f;
     public float jumpForce = 5f;
 
     public Hitbox hitbox;
@@ -53,6 +53,12 @@ public class PlayerMove : MonoBehaviour
 
 
         return Physics.CheckCapsule(p1, p2, radius, groundMask, QueryTriggerInteraction.Ignore);
+    }
+
+    private void Start()
+    {
+        moveSpeed = player.moveSpeed;
+        rotationSpeed = player.rotateSpeed;
     }
 
     private void Awake()

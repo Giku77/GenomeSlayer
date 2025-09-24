@@ -50,3 +50,11 @@ public enum GenomIds
     ArmorWatermelonDefenseUp = 1404004, // 갑옷 수박 방어력 증가
     ArmorWatermelonMaxHpUp = 1405004, // 갑옷 수박 추가 체력 증가
 }
+
+public enum EnemyIds
+{
+    MushroomMonster = 1301001, // 괴물버섯
+    PoisonSpider = 1302002, // 독거미
+    Bat = 1303003, // 박쥐
+    Orc = 1304004, // 오크
+}

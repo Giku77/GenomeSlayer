@@ -47,7 +47,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c22c2865dfd34b67adf88fb5dd0297de, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 55ff41e30b5a4587a523ed891466390d, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -74,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2eb0390808094c1da239583e932c7e69, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 49fab40870eb45669f498b659321af6b, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -111,7 +111,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Orc_C
+  m_Name: MushroomMonster_C
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: HasTarget
@@ -641,7 +641,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6dfb4366541c4448aea779b6f80c4820, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 3f8d3d510fca4546ac318ac4c1e722e9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -855,7 +855,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d861728dfb4c45edad747ee6f21cea05, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: a863ea7f36014ea9b93dacde7d837081, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

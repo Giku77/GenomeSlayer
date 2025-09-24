@@ -10,11 +10,26 @@ public class Player : Entity
     public UIManager uiManager;
     public QuickSlotInventory quickSlotInventory = new QuickSlotInventory(7);
     public float defense { get; set; }
+    public PlayerData PlayerData;
+    public float moveSpeed { get; set; }
+    public float rotateSpeed { get; set; }
 
-private void Awake()
+    private void Set()
+    {
+        if (PlayerData != null)
+        {
+            maxhealth = PlayerData.maxHealth;
+            health = PlayerData.maxHealth;
+            moveSpeed = PlayerData.moveSpeed;
+            rotateSpeed = PlayerData.rotateSpeed;
+            uiManager.UpdateHealth(health, maxhealth);
+        }
+    }
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        Set();
     }
 
     private void Start()

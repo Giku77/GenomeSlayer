@@ -47,7 +47,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c22c2865dfd34b67adf88fb5dd0297de, type: 3}
+  m_Motion: {fileID: 7400000, guid: f3f9ba060e014de08c5e5879e39d9b34, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -74,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2eb0390808094c1da239583e932c7e69, type: 3}
+  m_Motion: {fileID: 7400000, guid: b6c46697fe964933996677603569442d, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -111,7 +111,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Orc_C
+  m_Name: Bat_C
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: HasTarget
@@ -641,7 +641,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6dfb4366541c4448aea779b6f80c4820, type: 3}
+  m_Motion: {fileID: 7400000, guid: c164260bb4924235a8ddb8784ba0eb08, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -855,7 +855,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d861728dfb4c45edad747ee6f21cea05, type: 3}
+  m_Motion: {fileID: 7400000, guid: 9fcf7ace75ff4de29a9686b4e4ab47d4, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -9,17 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee7641f931ff3ad459a714fc6503f930, type: 3}
-  m_Name: TestBuff
+  m_Script: {fileID: 11500000, guid: 51ad63fdc50973d4a8ab97cd56db3bf6, type: 3}
+  m_Name: PlayerData
   m_EditorClassIdentifier: 
-  id: 1523004
-  displayName: 
-  duration: 0
-  maxStacks: 1
-  isAura: 1
-  targets:
-    serializedVersion: 2
-    m_Bits: 64
-  moveSpeedMul: 0.75
-  damageAdd: 0
-  armorAdd: 0
+  moveSpeed: 5
+  rotateSpeed: 720
+  maxHealth: 1000

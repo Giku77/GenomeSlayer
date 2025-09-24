@@ -49,6 +49,9 @@ public static class DataTableManger
     var breedTable = new BreedTable();
     breedTable.Load(BreedTable.BreedTableId);
     tables.Add(BreedTable.BreedTableId, breedTable);
+    var enemyTable = new EnemyTable();
+    enemyTable.Load(EnemyTable.EnemyTableId);
+    tables.Add(EnemyTable.EnemyTableId, enemyTable);
     }
 
     //public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
@@ -63,6 +66,7 @@ public static class DataTableManger
     public static StringTable StringTable => Get<StringTable>(StringTable.StrTableId);
 
     public static BreedTable BreedTable => Get<BreedTable>(BreedTable.BreedTableId);
+    public static EnemyTable EnemyTable => Get<EnemyTable>(EnemyTable.EnemyTableId);
 
     public static T Get<T>(string id) where T : DataTable
     {
