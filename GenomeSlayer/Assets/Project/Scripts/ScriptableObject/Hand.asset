@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hand
   m_EditorClassIdentifier: 
   weaponId: -1
-  kind: 2
+  kind: 0
   damage: 50
   projectilePrefab: {fileID: 0}
   projectileSpeed: 12

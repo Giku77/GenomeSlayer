@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WatermelonTree
   m_EditorClassIdentifier: 
   TreeID: 1224004
-  Fruitprefab: {fileID: 8491280977856286913, guid: 9aaa9612cb7929c46bd0872f8db12a04, type: 3}
+  Fruitprefab: {fileID: 2200090604894809356, guid: 2e305e437d49a344c9dd4a08e6c415f5, type: 3}

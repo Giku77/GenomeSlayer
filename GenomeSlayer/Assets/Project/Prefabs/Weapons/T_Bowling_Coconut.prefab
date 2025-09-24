@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7504425939919921658}
   - component: {fileID: 4029656560924906867}
   - component: {fileID: 592487033737537437}
+  - component: {fileID: 5610677343412780656}
   m_Layer: 0
   m_Name: T_Bowling_Coconut
   m_TagString: Untagged
@@ -73,6 +74,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5610677343412780656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4263362786646044531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0e3d0e5c7f387488c1a598dc256cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDef: {fileID: 11400000, guid: 0d21a59c60daeb5489d6b5c1e1f30b34, type: 2}
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  maxTargetsPerSwing: 999
 --- !u!1 &4464012600125094606
 GameObject:
   m_ObjectHideFlags: 0

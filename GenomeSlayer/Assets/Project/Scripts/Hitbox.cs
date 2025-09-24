@@ -3,17 +3,24 @@ using UnityEngine;
 
 public class Hitbox : MonoBehaviour
 {
+    public static Hitbox Active;
     private int damage = 10;
     public WeaponDef weaponDef;
     public LayerMask targetLayers;
     public int maxTargetsPerSwing = 999;
 
-    //public bool isStop { get; set; }
-    public WeaponIds currentWeaponId { get; set; } = WeaponIds.UNKNOWN_WEAPON;
-
     private bool active;
+    public void SetActive(bool v) => active = v;
     private readonly HashSet<Entity> hitEntities = new();
     private int hitCountThisSwing;
+    private Collider[] col;
+
+    private void Awake()
+    {
+        col = GetComponents<Collider>();
+        foreach(var s in col)
+          s.enabled = false;
+    }
 
     private void Start()
     {
@@ -30,13 +37,28 @@ public class Hitbox : MonoBehaviour
         if (weaponDef.kind == WeaponKind.Projectile || weaponDef.kind == WeaponKind.ThrownReturn)
         {
             FireProjectile();
+            return;
         }
-        else
+        Active = this;                  
+        active = true;
+        hitEntities.Clear();
+        hitCountThisSwing = 0;
+        foreach (var s in col)
+            s.enabled = true;
+        float addDmg = 0;
+        switch (weaponDef.weaponId)
         {
-            active = true;
-            hitEntities.Clear();
-            hitCountThisSwing = 0;
+            case WeaponIds.Mace_Durian:
+                addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.MaceDurianAttackUp);
+                break;
+            case WeaponIds.Katana_Pepper:
+                addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.KatanaPepperAttackUp);
+                break;
+            default:
+                addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.PlayerAttackUp);
+                break;
         }
+        damage += (damage *(int)addDmg);
     }
 
     private void FireProjectile()
@@ -68,13 +90,16 @@ public class Hitbox : MonoBehaviour
 
     public void Close()
     {
-            //Debug.Log("Hitbox Close");
-            //active = false;
+        if (Active == this) Active = null;
+        active = false;
+        foreach (var s in col)
+            s.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Hitbox OnTriggerEnter: " + other.name + " / " + active);
+        Debug.Log("active : " + active);
+        if (Active != this) return;
         if (!active) return;
         if (((1 << other.gameObject.layer) & targetLayers) == 0) return;
 
@@ -90,10 +115,12 @@ public class Hitbox : MonoBehaviour
         e.OnDamage(damage);
         hitCountThisSwing++;
 
-        if (hitCountThisSwing >= maxTargetsPerSwing) active = false;
-        //hitEntities.Clear();
+
         if (other.GetComponent<Enemy>())
-          EventBus.AttackDur?.Invoke();
-        active = false;
+            EventBus.AttackDur?.Invoke();
+
+        if (hitCountThisSwing >= maxTargetsPerSwing) Close();
+        //hitEntities.Clear();
+        //active = false;
     }
 }

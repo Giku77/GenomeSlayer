@@ -9,8 +9,9 @@ public class Player : Entity
     private static readonly int hashDie = Animator.StringToHash("Die");
     public UIManager uiManager;
     public QuickSlotInventory quickSlotInventory = new QuickSlotInventory(7);
+    public float defense { get; set; }
 
-    private void Awake()
+private void Awake()
     {
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider>();
@@ -50,6 +51,15 @@ public class Player : Entity
     }
     public override void OnDamage(int damage)
     {
+        if (uiManager.ActiveArmor.activeSelf)
+        {
+            damage = Mathf.Max(0, damage - (int)defense);
+            uiManager.ActiveArmorSlot.UpdateDur();
+            if (uiManager.ActiveArmorSlot.durSlider.value <= 0)
+            {
+                uiManager.SetActiveAromor(false);
+            }
+        }
         base.OnDamage(damage);
         uiManager.UpdateHealth(health, maxhealth);
         //Debug.Log($"Player OnDamage {damage}, health {health}");

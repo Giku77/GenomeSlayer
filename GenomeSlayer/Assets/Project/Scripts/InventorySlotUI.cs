@@ -15,10 +15,10 @@ public class InventorySlotUI : MonoBehaviour
     private Player player => GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     private EquipItem equipItem => GameObject.FindGameObjectWithTag("Player").GetComponent<EquipItem>();
 
-    void OnEnable() { EventBus.AttackDur += UpdatedurSlider; }
-    void OnDisable() { EventBus.AttackDur -= UpdatedurSlider; }
+    void OnEnable() { EventBus.AttackDur += UpdateWeapondur; }
+    void OnDisable() { EventBus.AttackDur -= UpdateWeapondur; }
 
-    public void UpdatedurSlider()
+    public void UpdateWeapondur()
     {
         if (!this) return;
         if (!durSlider) return;
@@ -26,20 +26,26 @@ public class InventorySlotUI : MonoBehaviour
         var selected = equipItem ? equipItem.SelectedIndex : -1;
         if (selected != slotIndex) return;
 
+        UpdateDur();
+    }
+
+    public void UpdateDur()
+    {
         var inventory = player.quickSlotInventory;
         var eId = inventory.GetSlot(slotIndex).itemId;
-        var eNum = DataTableManger.EquipmentTable.GetItem(eId).equipImprovedNum;
+        //var eNum = DataTableManger.EquipmentTable.GetItem(eId).equipImprovedNum;
 
         var normalSeed = DataTableManger.EquipmentTable.GetItem(eId).seedID;
         var improvedSeed = DataTableManger.EquipmentTable.GetItem(eId).improvedSeedID;
         var regpressSeed = DataTableManger.EquipmentTable.GetItem(eId).regressedSeedID;
 
         int[] seeds = new int[] { normalSeed, improvedSeed, regpressSeed };
+
         if (s == null || s.Length == 0)
             s = PickUniqueInts(4, 0, 4);
 
         if (durSlider.value > 0)
-            durSlider.value -= 10;
+            durSlider.value -= 1;
 
         if (durSlider.value <= durSlider.maxValue * 0.75 && s[0] != -1)
         {
@@ -72,6 +78,7 @@ public class InventorySlotUI : MonoBehaviour
             s[3] = -1;
             s = null;
 
+
             //var itable = DataTableManger.ItemTable;
             //inventory.AddItem(normalSeed, 2);
             //EventBus.UpdateSlot?.Invoke(inventory.SelectedIndex, itable.GetItem(normalSeed).itemName, inventory.GetSlotCount().ToString(), -1);
@@ -79,7 +86,6 @@ public class InventorySlotUI : MonoBehaviour
             //EventBus.UpdateSlot?.Invoke(inventory.SelectedIndex, itable.GetItem(improvedSeed).itemName, inventory.GetSlotCount().ToString(), -1);
             //inventory.AddItem(regpressSeed, 1);
             //EventBus.UpdateSlot?.Invoke(inventory.SelectedIndex, itable.GetItem(regpressSeed).itemName, inventory.GetSlotCount().ToString(), -1);
-
         }
     }
 
