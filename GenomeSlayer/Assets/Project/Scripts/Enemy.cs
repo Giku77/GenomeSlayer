@@ -30,6 +30,7 @@ public class Enemy : Entity
 
     private static readonly int hashDie = Animator.StringToHash("Die");
     private static readonly int hashTarget = Animator.StringToHash("HasTarget");
+    private static readonly int hashAttackSpeed = Animator.StringToHash("mASpeed");
 
     private State currentState;
 
@@ -91,6 +92,7 @@ public class Enemy : Entity
         //traceDist = data.traceDist;
         //attackDist = data.attackDist;
         agent.speed = data.speed;
+        //Debug.Log($"SetEnemyData: {enemyId}, health {health}, speed {agent.speed}, damage {damage}, attackSpeed {data.attackSpeed}");
     }
 
 
@@ -105,7 +107,7 @@ public class Enemy : Entity
             SetEnemyData(enemyData);
         healthSlider.maxValue = maxhealth;
         healthSlider.value = health;
-        Debug.Log($"Enemy Awake: {health}");
+        //Debug.Log($"Enemy Awake: {health}");
         //audioSource = GetComponent<AudioSource>();
     }
 
@@ -165,6 +167,7 @@ public class Enemy : Entity
             if (damageable != null && !damageable.isDead)
             {
                 animator.SetBool("Attack", true);
+                animator.SetFloat(hashAttackSpeed, enemyData.attackSpeed);
                 damageable.OnDamage(damage);
             }
         }

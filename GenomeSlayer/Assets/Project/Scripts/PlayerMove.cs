@@ -14,6 +14,8 @@ public class PlayerMove : MonoBehaviour
     private static readonly int AttackSpeed = Animator.StringToHash("AttackSpeed");
     private static readonly int HashDoNext = Animator.StringToHash("Combo");
 
+    private BuffController buffController;
+
     private float moveSpeed = 5f;
     private float rotationSpeed = 180f;
     public float jumpForce = 5f;
@@ -63,6 +65,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Awake()
     {
+        buffController = GetComponent<BuffController>();
         player = GetComponent<Player>();
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
@@ -91,17 +94,20 @@ public class PlayerMove : MonoBehaviour
             case WeaponIds.Katana_Pepper:
                 var upKa = smgr.GetUpgradeStatAmount((int)GenomIds.KatanaPepperAtkSpeedUp);
                 var sKa = upKa == 0 ? 1f : upKa + 1f;
+                sKa = sKa * buffController.AttackSpeed;
                 animator.SetFloat(AttackSpeed, sKa);
                 break;
             case WeaponIds.Bowling_Coconut:
                 var upCo = smgr.GetUpgradeStatAmount((int)GenomIds.BowlingCoconutAtkSpeedUp);
                 var sCo = upCo == 0 ? 1f : upCo + 1f;
+                sCo = sCo * buffController.AttackSpeed;
                 animator.SetFloat(AttackSpeed, sCo);
                 break;
             default:
                 //var s = 2.2f + (smgr.GetUpgradeStatAmount((int)GenomIds.BowlingCoconutAtkSpeedUp) * 2.2f);
                 var up = smgr.GetUpgradeStatAmount((int)GenomIds.PlayerAttackSpeedUp);
                 var s = up == 0 ? 1f : up + 1f;
+                s = s * buffController.AttackSpeed;
                 animator.SetFloat(AttackSpeed, s);
                 break;
         }

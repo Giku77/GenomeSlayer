@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee7641f931ff3ad459a714fc6503f930, type: 3}
-  m_Name: TestBuff
+  m_Name: BuffDef5
   m_EditorClassIdentifier: 
-  id: 1523004
+  id: 1534005
   displayName: 
   duration: 0
   maxStacks: 1
@@ -20,6 +20,7 @@ MonoBehaviour:
   targets:
     serializedVersion: 2
     m_Bits: 64
-  moveSpeedMul: 0.75
-  damageAdd: 0
-  armorAdd: 0
+  moveSpeedMul: 1
+  damageAdd: 1
+  AttackSpeed: 1
+  SetHealthSec: -5

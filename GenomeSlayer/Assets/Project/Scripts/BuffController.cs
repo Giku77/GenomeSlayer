@@ -14,8 +14,8 @@ public class BuffController : MonoBehaviour
     private readonly List<BuffInstance> active = new();
 
     public float MoveSpeedMul { get; private set; } = 1f;
-    public float DamageAdd { get; private set; } = 0f;
-    public float AttackSpeed { get; private set; } = 0f;
+    public float DamageAdd { get; private set; } = 1f;
+    public float AttackSpeed { get; private set; } = 1f;
     public float SetHealthSec { get; private set; } = 0f;
 
     private void Update()
@@ -67,7 +67,7 @@ public class BuffController : MonoBehaviour
 
     private void Recalc()
     {
-        MoveSpeedMul = 1f; DamageAdd = 0f; AttackSpeed = 0f; SetHealthSec = 0f;
+        MoveSpeedMul = 1f; DamageAdd = 1f; AttackSpeed = 1f; SetHealthSec = 0f;
 
         foreach (var bi in active)
         {

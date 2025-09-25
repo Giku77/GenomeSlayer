@@ -3,7 +3,7 @@ using UnityEngine;
 public class DayNightLight : MonoBehaviour
 {
     public Light sunLight;
-    public float maxTime = 60f;
+    private float maxTime;
     private float timer;
 
     public WaveManager waveManager;
@@ -16,6 +16,7 @@ public class DayNightLight : MonoBehaviour
 
     void Start()
     {
+        maxTime = waveManager.waveDef.WaveInterval;
         timer = maxTime;
     }
 

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872f0f5e0b877484d8dcadeb86c779b9, type: 3}
+  m_Name: TestWave
+  m_EditorClassIdentifier: 
+  currentWave: 1
+  EnemyPrefabs:
+  - {fileID: 8911570362332738296, guid: 8a709bdd7227f454f94de96c7dcd3477, type: 3}
+  - {fileID: 772836517467267324, guid: 199e4c12528514349b3bff1c7740baf5, type: 3}
+  - {fileID: 6124913075983309385, guid: e2ae302c21cd5a84185852a38b411fb8, type: 3}
+  WaveInterval: 300
+  fastSpawn: 1
+  fastSpawnTime: 20
+  isBossWave: 1
+  bossPrefab: {fileID: 5472856209527987515, guid: 0ad7a15707c63984f8e1a45a36fdf069, type: 3}
+  bossSpawnTime: 100
+  maxEnemyCount: 50

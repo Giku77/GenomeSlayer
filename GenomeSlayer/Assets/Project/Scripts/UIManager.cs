@@ -205,6 +205,15 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
             StateUI.SetActive(!StateUI.activeSelf);
+        if (Input.GetKeyUp(KeyCode.F12))
+        {
+            //var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Watermelon_Armor);
+            var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            player.quickSlotInventory.TryAddItem((int)ItemIds.Earthy_Fertilizer, 77);
+            player.quickSlotInventory.TryAddItem((int)ItemIds.Watermelon_Seed, 10);
+            player.quickSlotInventory.TryAddItem((int)ItemIds.Coconut_Seed, 10);
+            player.quickSlotInventory.TryAddItem((int)ItemIds.Pepper_Seed, 10);
+        }
     }
 
     public void OnStateUIButtonClicked()

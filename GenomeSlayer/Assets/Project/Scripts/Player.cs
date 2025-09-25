@@ -13,6 +13,8 @@ public class Player : Entity
     public PlayerData PlayerData;
     public float moveSpeed { get; set; }
     public float rotateSpeed { get; set; }
+    private BuffController buffController;
+    public float maxHeal => maxhealth;
 
     private void Set()
     {
@@ -27,6 +29,7 @@ public class Player : Entity
     }
     private void Awake()
     {
+        buffController = GetComponent<BuffController>();
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         Set();
@@ -110,6 +113,14 @@ public class Player : Entity
     {
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void Update()
+    {
+        if (buffController != null)
+        {
+            UpdateHealthSec(1, (int)buffController.SetHealthSec);
+        }
     }
 
 }

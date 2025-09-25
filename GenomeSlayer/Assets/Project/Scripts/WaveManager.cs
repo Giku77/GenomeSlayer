@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,10 +14,12 @@ public class WaveManager : MonoBehaviour
     public WaveDef waveDef;
 
     private int currentEnemyCount = 0;
+    private float waveInterval;
+    private int currentWave;
 
     private int spawnEnemyCount = 0;
 
-    public GameObject enemyPrefab;
+    //public GameObject enemyPrefab;
 
     private Coroutine waveCoroutine;
     private List<Coroutine> returnCoroutine = new List<Coroutine>();
@@ -25,7 +28,13 @@ public class WaveManager : MonoBehaviour
 
     public Player player;
 
+    private bool bossAlive;
+    private bool bossSpawned = false;
+    private bool isFast = false;
+
     private bool waveInProgress = false;
+    private GameObject bossEnemy;
+
 
     public bool waveDone => waveInProgress;
 
@@ -38,10 +47,15 @@ public class WaveManager : MonoBehaviour
         EventBus.EnemyDied += OnEnemyDefeated;
         for(int i = 0; i < waveDef.maxEnemyCount; i++)
         {
-            var e = Instantiate(enemyPrefab, spawnPoint1.position, Quaternion.identity);
+            var e = Instantiate(waveDef.EnemyPrefabs[i % waveDef.EnemyPrefabs.Length], spawnPoint1.position, Quaternion.identity);
             e.SetActive(false);
             poolEnemies.Enqueue(e);
             //EventBus.RemoveObj.Add(e);
+        }
+        if (waveDef.isBossWave)
+        {
+            bossEnemy = Instantiate(waveDef.bossPrefab, spawnPoint1.position, Quaternion.identity);
+            bossEnemy.SetActive(false);
         }
     }
 
@@ -49,7 +63,7 @@ public class WaveManager : MonoBehaviour
     {
         if (poolEnemies.Count == 0)
         {
-            GameObject e = Instantiate(enemyPrefab);
+            GameObject e = Instantiate(waveDef.EnemyPrefabs[Random.Range(0, waveDef.EnemyPrefabs.Length)]);
             e.SetActive(false);
             poolEnemies.Enqueue(e);
         }
@@ -72,10 +86,9 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
-        waveDef.currentEnemyCount = 0;
-        waveDef.currentWave = 0;
-        waveDef.WaveInterval = 600f;
-        uiManager.UpdateWave(waveDef.currentWave);
+        currentEnemyCount = 0;
+        waveInterval = waveDef.WaveInterval;
+        uiManager.UpdateWave(currentWave);
     }
 
     private void OnDisable()
@@ -97,12 +110,12 @@ public class WaveManager : MonoBehaviour
 
     private IEnumerator WaveTimer()
     {
-        while (waveDef.WaveInterval >= -1)
+        while (waveInterval >= -1)
         {
             if (waveInProgress)
             {
-                uiManager.UpdateWaveTimer(waveDef.WaveInterval);
-                waveDef.WaveInterval--;
+                uiManager.UpdateWaveTimer(waveInterval);
+                waveInterval--;
 
                 for(int i = 0; i < spawnEnemyCount; i++)
                 {
@@ -113,7 +126,6 @@ public class WaveManager : MonoBehaviour
                             var e = GetEnemy(spawnPos, Quaternion.identity);
                             //EventBus.RemoveObj.Add(e);
                             currentEnemyCount++;
-                            waveDef.currentEnemyCount = currentEnemyCount;
                         }
                     }
                     else break;
@@ -125,14 +137,49 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if ((waveDef.WaveInterval <= -1 || waveDef.currentWave == 0))
+        if ((waveInterval <= -1) && waveInProgress)
         {
             //Debug.Log("Spawning Wave " + (waveDef.currentWave + 1));
+            isFast = false;
+            bossSpawned = false;
             ResetWaves();
             uiManager.ActiveWaveButton(true);
             uiManager.ActiveGenomButton(true);
             waveInProgress = false;
             //SpawnWave();
+        }
+        if (!isFast && waveDef.fastSpawn && waveInterval <= waveDef.fastSpawnTime && waveInProgress)
+        {
+           spawnEnemyCount = currentWave * 4;
+           isFast = true;
+        }
+        if (!bossSpawned && waveDef.isBossWave && waveInterval <= waveDef.bossSpawnTime && waveInProgress)
+        {
+            SpawnBoss();
+            bossSpawned = true;
+        }
+    }
+
+    public void SpawnBoss()
+    {
+        if (bossEnemy == null || bossAlive) return;
+
+        if (TryFindSpawnPoint(player.transform.position, out var spawnPos))
+        {
+            var agent = bossEnemy.GetComponent<UnityEngine.AI.NavMeshAgent>();
+            if (agent && agent.isOnNavMesh) agent.Warp(spawnPos);
+            else bossEnemy.transform.SetPositionAndRotation(spawnPos, Quaternion.identity);
+
+            var enemy = bossEnemy.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.ResetEnemy();                // 너가 Enemy에 넣은 초기화 함수 재활용
+                                                   // 필요하면 enemy.SetEnemyData(bossEnemyData);   // SO로 보스 전용 데이터 주입
+                                                   // enemy.SetBoss(true); // isBoss 플래그가 필요하면 Enemy에 추가
+            }
+
+            bossEnemy.SetActive(true);
+            bossAlive = true;
         }
     }
 
@@ -170,19 +217,19 @@ public class WaveManager : MonoBehaviour
         {
             StopCoroutine(waveCoroutine);
         }
-        player.Heal(1000);
+        player.Heal((int)player.maxHeal);
         //var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Watermelon_Armor);
         //player.quickSlotInventory.TryAddItem((int)WeaponIds.Watermelon_Armor, 1, weapon.equipDurability, weapon.equipQuantity);
         //player.quickSlotInventory.TryAddItem((int)WeaponIds.Katana_Pepper, 1, weapon.equipDurability, weapon.equipQuantity);
 
         waveInProgress = true;
-        waveDef.WaveInterval = 600f;
+        waveInterval = waveDef.WaveInterval;
         waveCoroutine = StartCoroutine(WaveTimer());
         uiManager.ActiveWaveButton(false);
         uiManager.ActiveGenomButton(false);
-        waveDef.currentWave++;
-        uiManager.UpdateWave(waveDef.currentWave);
-        spawnEnemyCount = waveDef.currentWave * 2;
+        currentWave++;
+        uiManager.UpdateWave(currentWave);
+        spawnEnemyCount = currentWave * 2;
 
         //for (int i = 0; i < currentEnemyCount; i++)
         //{
@@ -191,16 +238,35 @@ public class WaveManager : MonoBehaviour
         //}
     }
 
+    private IEnumerator ReturnBossWait(float s)
+    {
+        yield return new WaitForSeconds(s);
+
+        var enemy = bossEnemy.GetComponent<Enemy>();
+        if (enemy != null) enemy.ResetEnemy();
+
+        bossEnemy.SetActive(false);
+        bossAlive = false;
+
+        // 보스는 currentEnemyCount에 포함하지 않았다면 아무 것도 안 해도 됨
+    }
+
     public void OnEnemyDefeated(GameObject e)
     {
-        returnCoroutine.Add(StartCoroutine(ReturnEnmeyWait(e, 3f)));
+        if (bossEnemy != null && ReferenceEquals(e, bossEnemy))
+        {
+            StartCoroutine(ReturnBossWait(3f));
+        }
+        else
+        {
+            returnCoroutine.Add(StartCoroutine(ReturnEnmeyWait(e, 3f)));
+        }
     }
 
     private IEnumerator ReturnEnmeyWait(GameObject e, float s)
     {
         yield return new WaitForSeconds(s);
         currentEnemyCount--;
-        waveDef.currentEnemyCount = currentEnemyCount;
         if (currentEnemyCount < 0)
         {
             currentEnemyCount = 0;
@@ -230,6 +296,14 @@ public class WaveManager : MonoBehaviour
             ReturnEnemy(enemy);
         }
         currentEnemyCount = 0;
+
+        if (bossEnemy != null)
+        {
+            var enemy = bossEnemy.GetComponent<Enemy>();
+            if (enemy != null) enemy.ResetEnemy();
+            bossEnemy.SetActive(false);
+            bossAlive = false;
+        }
 
         var equip = player.GetComponent<EquipItem>();
         equip.UnEquipItem();

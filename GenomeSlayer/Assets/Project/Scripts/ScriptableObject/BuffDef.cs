@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BuffDef", menuName = "Scriptable Objects/BuffDef")]
 public class BuffDef : ScriptableObject
 {
-    public int id;                    
+    public BuffIds id;                    
     public string displayName;
     public float duration = 0f;       // 0 = Áö¼Ó
     public int maxStacks = 1;
@@ -12,7 +12,7 @@ public class BuffDef : ScriptableObject
     public LayerMask targets;         
 
     public float moveSpeedMul = 1f;   
-    public float damageAdd = 0f;
-    public float AttackSpeed = 0f;
+    public float damageAdd = 1f;
+    public float AttackSpeed = 1f;
     public float SetHealthSec = 0f;
 }

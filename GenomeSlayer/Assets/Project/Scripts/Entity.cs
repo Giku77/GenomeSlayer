@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class Entity : MonoBehaviour
     public bool isDead => health <= 0;
 
     public LayerMask targetPlayer;
+    private Coroutine healthSecCoroutine;
 
     protected Collider FindTarget(float radius)
     {
@@ -39,7 +41,8 @@ public class Entity : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        
+        if (healthSecCoroutine != null)
+            StopCoroutine(healthSecCoroutine);
     }
 
     public virtual void OnDamage(int damage)
@@ -49,8 +52,26 @@ public class Entity : MonoBehaviour
         if (isDead)
         {
             Die();
+            if (healthSecCoroutine != null)
+                StopCoroutine(healthSecCoroutine);
         }
     }   
+
+    protected void UpdateHealthSec(int s, int health)
+    {
+        if (healthSecCoroutine != null || health <= 0)
+            return;
+        healthSecCoroutine = StartCoroutine(StartHealthSec(s, health));
+    }
+
+    private IEnumerator StartHealthSec(int s, int health)
+    {
+        while (!isDead)
+        {
+            yield return new WaitForSeconds(s);
+            this.health += health;
+        }
+    }
 
 
 }

@@ -70,6 +70,7 @@ public class TreeEntity : MonoBehaviour
                     float d = (other.transform.position - transform.position).sqrMagnitude;
                     if (d < bestD)
                     {
+                        if (other.treeDef.TreeID != treeDef.TreeID) continue;
                         bestD = d;
                         best = other;
                     }

@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a79ac20f656fd4fa2891804ce632b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 11400000, guid: 2618baac11433d44fa58ea3abe05f4ea, type: 2}
+  buff: {fileID: 11400000, guid: 21b14fa8245730241888d70614ba5eaa, type: 2}
   radius: 5
   enableWhenPaired: 0
   trig: {fileID: 5849182829948861939}

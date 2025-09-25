@@ -14,19 +14,35 @@ public class Hitbox : MonoBehaviour
     private readonly HashSet<Entity> hitEntities = new();
     private int hitCountThisSwing;
     private Collider[] col;
+    private BuffController buffController;
+
+    private int baseDamage;         
+    private int swingDamage;
 
     private void Awake()
     {
         col = GetComponents<Collider>();
+        buffController = GetComponentInParent<BuffController>();
         foreach (var s in col)
             s.enabled = false;
     }
 
     private void Start()
     {
-        if (weaponDef != null)
-            damage = weaponDef.damage;
+        baseDamage = weaponDef != null ? weaponDef.damage : damage;
     }
+
+    private float GetPlayerAttackUpPercent(WeaponIds id)
+    {
+        var sm = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>();
+        return id switch
+        {
+            WeaponIds.Mace_Durian => sm.GetUpgradeStatAmount((int)GenomIds.MaceDurianAttackUp), // 0.2f 형태 권장
+            WeaponIds.Katana_Pepper => sm.GetUpgradeStatAmount((int)GenomIds.KatanaPepperAttackUp),
+            _ => sm.GetUpgradeStatAmount((int)GenomIds.PlayerAttackUp),
+        };
+    }
+
     public void Open()
     {
         //if (isStop) return;
@@ -45,21 +61,12 @@ public class Hitbox : MonoBehaviour
         hitCountThisSwing = 0;
         foreach (var s in col)
             s.enabled = true;
-        float addDmg = 0;
-        switch (weaponDef.weaponId)
-        {
-            case WeaponIds.Mace_Durian:
-                addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.MaceDurianAttackUp);
-                break;
-            case WeaponIds.Katana_Pepper:
-                addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.KatanaPepperAttackUp);
-                break;
-            default:
-                addDmg = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.PlayerAttackUp);
-                break;
-        }
-        damage += (damage *(int)addDmg);
-        Debug.Log("Hitbox Damage: " + damage);
+        float upgPct = GetPlayerAttackUpPercent(weaponDef.weaponId);
+
+        float mul = 1f + upgPct;
+        if (buffController != null) mul *= buffController.DamageAdd;
+
+        swingDamage = Mathf.RoundToInt(baseDamage * mul);
     }
 
     private void FireProjectile()
@@ -113,7 +120,7 @@ public class Hitbox : MonoBehaviour
         //Debug.Log("Hitbox OnTriggerEnter3: " + other.name);
 
         Haptics.Light();
-        e.OnDamage(damage);
+        e.OnDamage(swingDamage);
         hitCountThisSwing++;
 
 

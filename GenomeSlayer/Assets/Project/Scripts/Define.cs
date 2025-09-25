@@ -53,8 +53,18 @@ public enum GenomIds
 
 public enum EnemyIds
 {
+    UNKNOWN_ENEMY = -1,
     MushroomMonster = 1301001, // ±«¹°¹ö¼¸
     PoisonSpider = 1302002, // µ¶°Å¹Ì
     Bat = 1303003, // ¹ÚÁã
     Orc = 1304004, // ¿ÀÅ©
+}
+
+public enum BuffIds
+{
+    PlayerAttackDamageUp20 = 1511001,
+    PlayerAttackSpeedUp30 = 1512002,
+    PlayerRegen1PerSec = 1514003,
+    EnemyMoveSpeedDown25 = 1523004,
+    EnemyHpDot5PerSec = 1534005,
 }
