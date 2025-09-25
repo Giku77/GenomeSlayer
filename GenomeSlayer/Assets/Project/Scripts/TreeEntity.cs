@@ -29,7 +29,8 @@ public class TreeEntity : MonoBehaviour
 
     private void OnEnable()
     {
-        fruitSocket = GetComponentsInChildren<Transform>()[5];
+        var last = GetComponentsInChildren<Transform>().Length - 1;
+        fruitSocket = GetComponentsInChildren<Transform>()[last];
         StartCoroutine(CheckNeighborLoop());
     }
 

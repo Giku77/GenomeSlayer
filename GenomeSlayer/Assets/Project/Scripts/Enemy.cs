@@ -213,10 +213,24 @@ public class Enemy : Entity
 
     public override void OnDamage(int damage)
     {
+        //base.OnDamage(damage);
+        //Debug.Log($"Enemy OnDamage {damage}, health {health}");
+        //healthSlider.value = health;
+        //StartCoroutine(bloodEffect(hitPoint));
+        OnDamage(damage, transform.position + Vector3.up * 1.0f);
+    }
+
+    public void OnDamage(int damage, Vector3 hitPoint)
+    {
         base.OnDamage(damage);
         Debug.Log($"Enemy OnDamage {damage}, health {health}");
         healthSlider.value = health;
-        //StartCoroutine(bloodEffect(hitPoint));
+
+        var hf = GetComponent<HitFlash>();
+        if (hf) hf.Play();
+
+        if (DamageTextManager.I != null)
+            DamageTextManager.I.Show(damage, hitPoint);
     }
 
     //public void StartSinking()

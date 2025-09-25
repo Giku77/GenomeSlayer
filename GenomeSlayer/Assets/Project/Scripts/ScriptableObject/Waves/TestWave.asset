@@ -17,10 +17,10 @@ MonoBehaviour:
   - {fileID: 8911570362332738296, guid: 8a709bdd7227f454f94de96c7dcd3477, type: 3}
   - {fileID: 772836517467267324, guid: 199e4c12528514349b3bff1c7740baf5, type: 3}
   - {fileID: 6124913075983309385, guid: e2ae302c21cd5a84185852a38b411fb8, type: 3}
-  WaveInterval: 300
+  WaveInterval: 180
   fastSpawn: 1
-  fastSpawnTime: 20
+  fastSpawnTime: 30
   isBossWave: 1
   bossPrefab: {fileID: 5472856209527987515, guid: 0ad7a15707c63984f8e1a45a36fdf069, type: 3}
   bossSpawnTime: 100
-  maxEnemyCount: 50
+  maxEnemyCount: 30

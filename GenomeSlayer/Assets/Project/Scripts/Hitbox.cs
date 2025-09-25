@@ -111,8 +111,8 @@ public class Hitbox : MonoBehaviour
         if (!active) return;
         if (((1 << other.gameObject.layer) & targetLayers) == 0) return;
 
-        if (!other.TryGetComponent<Entity>(out var e))
-            e = other.GetComponentInParent<Entity>();
+        if (!other.TryGetComponent<Enemy>(out var e))
+            e = other.GetComponentInParent<Enemy>();
         if (e == null || e.isDead) return;
         //Debug.Log("Hitbox OnTriggerEnter2: " + other.name);
         if (!hitEntities.Add(e)) return;
@@ -120,7 +120,9 @@ public class Hitbox : MonoBehaviour
         //Debug.Log("Hitbox OnTriggerEnter3: " + other.name);
 
         Haptics.Light();
-        e.OnDamage(swingDamage);
+        Vector3 hitPoint = other.ClosestPoint(transform.position);
+        e.OnDamage(swingDamage, hitPoint);
+        //e.OnDamage(swingDamage);
         hitCountThisSwing++;
 
 

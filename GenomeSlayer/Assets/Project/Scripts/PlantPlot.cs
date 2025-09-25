@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlantPlot : MonoBehaviour, IInteractable
 {
@@ -13,6 +14,7 @@ public class PlantPlot : MonoBehaviour, IInteractable
     //public float autoGrowRate = 0f;       // 초당 자동 성장(선택)
 
     private GameObject player;
+    private Slider slider;
 
 
     public string Prompt => $"[F] Grow ({Mathf.RoundToInt(progress * 100)}%)";
@@ -20,6 +22,13 @@ public class PlantPlot : MonoBehaviour, IInteractable
 
     void Awake()
     {
+        slider = GetComponentInChildren<Slider>();
+        if (slider != null)
+        {
+            slider.minValue = 0f;
+            slider.maxValue = 1f;
+            slider.value = progress;
+        }
         player = GameObject.FindWithTag("Player");
         if (ring != null)
         {
@@ -49,6 +58,8 @@ public class PlantPlot : MonoBehaviour, IInteractable
         {
             //EventBus.UpdateSlot?.Invoke(i, inventory.GetSlot(i).IsEmpty ? string.Empty : "0", inventory.GetSlot(i).IsEmpty ? string.Empty : inventory.GetSlot(i).quantity.ToString(), -1);
             progress = Mathf.Min(1f, progress + interactCharge);
+            if (slider != null)
+                slider.value = progress;
             Debug.Log($"PlantPlot: Progress increased to {progress}");
             TryComplete();
         }

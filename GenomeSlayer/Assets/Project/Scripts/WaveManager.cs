@@ -222,6 +222,7 @@ public class WaveManager : MonoBehaviour
         //player.quickSlotInventory.TryAddItem((int)WeaponIds.Watermelon_Armor, 1, weapon.equipDurability, weapon.equipQuantity);
         //player.quickSlotInventory.TryAddItem((int)WeaponIds.Katana_Pepper, 1, weapon.equipDurability, weapon.equipQuantity);
 
+        ResetWaves();
         waveInProgress = true;
         waveInterval = waveDef.WaveInterval;
         waveCoroutine = StartCoroutine(WaveTimer());

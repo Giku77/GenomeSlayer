@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Seed_1128004
   m_EditorClassIdentifier: 
   itemId: 1128004
-  treePrefab: {fileID: 1548967885931952483, guid: e14c74ce0f693054387fa2978d22007d, type: 3}
+  treePrefab: {fileID: 1983915086842907881, guid: e14c74ce0f693054387fa2978d22007d, type: 3}

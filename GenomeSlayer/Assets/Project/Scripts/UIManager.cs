@@ -213,6 +213,7 @@ public class UIManager : MonoBehaviour
             player.quickSlotInventory.TryAddItem((int)ItemIds.Watermelon_Seed, 10);
             player.quickSlotInventory.TryAddItem((int)ItemIds.Coconut_Seed, 10);
             player.quickSlotInventory.TryAddItem((int)ItemIds.Pepper_Seed, 10);
+            player.quickSlotInventory.TryAddItem((int)ItemIds.Durian_Seed, 10);
         }
     }
 
@@ -231,6 +232,9 @@ public class UIManager : MonoBehaviour
 
     public void ShowTypingText()
     {
+        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        var arm = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Watermelon_Armor);
+        var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Mace_Durian);
         switch (typingID)
         {
             case 0:
@@ -247,11 +251,14 @@ public class UIManager : MonoBehaviour
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601006:
+                player.quickSlotInventory.TryAddItem((int)ItemIds.Earthy_Fertilizer, 10);
+                player.quickSlotInventory.TryAddItem((int)ItemIds.Durian_Seed, 10);
                 uIFocusHighlighter.target = InventoryUI.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601007:
-                uIFocusHighlighter.target = SlotItems[0].GetComponent<RectTransform>();
+                player.quickSlotInventory.TryAddItem((int)WeaponIds.Mace_Durian, 1, weapon.equipDurability, weapon.equipQuantity);
+                uIFocusHighlighter.target = SlotItems[2].GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601008:
