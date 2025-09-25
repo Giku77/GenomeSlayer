@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CoconutTree
   m_EditorClassIdentifier: 
   TreeID: 1222003
-  Fruitprefab: {fileID: 8491280977856286913, guid: 9aaa9612cb7929c46bd0872f8db12a04, type: 3}
+  Fruitprefab: {fileID: 8830908549340234586, guid: d2c8002d42890884a8aa4bd6c90d77b1, type: 3}

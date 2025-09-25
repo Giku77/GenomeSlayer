@@ -13,5 +13,6 @@ public class BuffDef : ScriptableObject
 
     public float moveSpeedMul = 1f;   
     public float damageAdd = 0f;
-    public float armorAdd = 0f;
+    public float AttackSpeed = 0f;
+    public float SetHealthSec = 0f;
 }

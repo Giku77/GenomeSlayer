@@ -190,6 +190,7 @@ public class UIManager : MonoBehaviour
         SlotItems[index].itemCount.text = count;
         if (dur > 0)
         {
+            if (!SlotItems[index].durSlider) return;
             SlotItems[index].durSlider.gameObject.SetActive(true);
             SlotItems[index].durSlider.maxValue = dur;
             SlotItems[index].durSlider.value = dur;

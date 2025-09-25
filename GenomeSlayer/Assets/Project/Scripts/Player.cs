@@ -61,8 +61,6 @@ public class Player : Entity
     protected override void OnEnable()
     {
         //base.OnEnable();
-        health = 1000;
-        maxhealth = 1000;
     }
     public override void OnDamage(int damage)
     {

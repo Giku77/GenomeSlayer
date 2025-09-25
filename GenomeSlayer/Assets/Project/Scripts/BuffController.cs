@@ -15,7 +15,8 @@ public class BuffController : MonoBehaviour
 
     public float MoveSpeedMul { get; private set; } = 1f;
     public float DamageAdd { get; private set; } = 0f;
-    public float ArmorAdd { get; private set; } = 0f;
+    public float AttackSpeed { get; private set; } = 0f;
+    public float SetHealthSec { get; private set; } = 0f;
 
     private void Update()
     {
@@ -66,7 +67,7 @@ public class BuffController : MonoBehaviour
 
     private void Recalc()
     {
-        MoveSpeedMul = 1f; DamageAdd = 0f; ArmorAdd = 0f;
+        MoveSpeedMul = 1f; DamageAdd = 0f; AttackSpeed = 0f; SetHealthSec = 0f;
 
         foreach (var bi in active)
         {
@@ -75,8 +76,9 @@ public class BuffController : MonoBehaviour
             for (int s = 0; s < bi.stacks; s++)
             {
                 MoveSpeedMul *= d.moveSpeedMul;
-                DamageAdd += d.damageAdd;
-                ArmorAdd += d.armorAdd;
+                DamageAdd *= d.damageAdd;
+                AttackSpeed *= d.AttackSpeed;
+                SetHealthSec += d.SetHealthSec;
             }
         }
     }
