@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dab0e87d7575f4889f4b1c73615d24, type: 3}
   m_Name: PoisonSpider
   m_EditorClassIdentifier: 
-  enemyId: 1304004
+  enemyId: 1302002
   enemyType: 2
   enemyName: "\uB3C5\uAC70\uBBF8"
   health: 80

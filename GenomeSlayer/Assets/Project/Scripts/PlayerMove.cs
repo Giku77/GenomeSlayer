@@ -129,7 +129,7 @@ public class PlayerMove : MonoBehaviour
             if (equipItem.currentWeaponId == WeaponIds.UNKNOWN_WEAPON)
             {
                 queuedCombo = true;
-                animator.SetBool(HashDoNext, true);
+                //animator.SetBool(HashDoNext, true);
             }
         }
     }
@@ -143,6 +143,12 @@ public class PlayerMove : MonoBehaviour
         if (st.IsTag("Attack"))
         {
             float t = st.normalizedTime % 1f;  // 0..1
+
+            if (queuedCombo && t >= comboWindowOpen && t <= comboWindowClose)
+            {
+                animator.SetBool(HashDoNext, true);
+                queuedCombo = false; 
+            }
 
             if (t > comboWindowClose)
             {
@@ -165,7 +171,6 @@ public class PlayerMove : MonoBehaviour
             queuedCombo = false;
         }
     }
-
     private bool IsAttackingOrTransitioning()
     {
         var a = animator;
@@ -180,11 +185,32 @@ public class PlayerMove : MonoBehaviour
         return false;
     }
 
+    bool IsAttackHardLocked(out float t01)
+    {
+        t01 = 0f;
+        if (animator == null) return false;
+
+        var st = animator.GetCurrentAnimatorStateInfo(0);
+
+        //if (animator.IsInTransition(0))
+        //{
+        //    var nt = animator.GetNextAnimatorStateInfo(0);
+        //    if (nt.IsTag("Attack")) return true;
+        //}
+
+        if (!st.IsTag("Attack")) return false;
+
+        t01 = st.normalizedTime % 1f;
+
+        return t01 < 0.9f;
+    }
+
     private void FixedUpdate()
     {
         if (player.isDead) return;
 
-        bool lockMove = IsAttackingOrTransitioning();
+        //var attackLockMove = IsAttackingOrTransitioning();
+        var attackLockMove = IsAttackHardLocked(out float atkT);
 
         //bool inAttackTag = animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack");
         //회전
@@ -215,12 +241,16 @@ public class PlayerMove : MonoBehaviour
         //    transform.LookAt(target);
         //}
 
-        if (lockMove)
+        if (attackLockMove)
         {
             var v = rb.linearVelocity;
             rb.linearVelocity = new Vector3(0f, v.y, 0f);
 
             animator.SetFloat(MoveHash, 0f);
+
+            //Vector3 step = transform.forward * (1.2f * Time.fixedDeltaTime);
+            //rb.MovePosition(rb.position + step);
+
             //animator.SetBool(JumpHash, false);
 
             //if (Input.GetKeyDown(KeyCode.V) || IsMobileVeiwTopClicked)
@@ -252,17 +282,17 @@ public class PlayerMove : MonoBehaviour
 
         rb.MovePosition(rb.position + move * ((moveSpeed + g.GetUpgradeStatAmount((int)GenomIds.PlayerMoveSpeedUp))* speedMul) * Time.fixedDeltaTime);
 
-        bool hasMoveInput = (new Vector2(playerInput.MoveX, playerInput.MoveZ).sqrMagnitude > 0.0001f);
+        //bool hasMoveInput = (new Vector2(playerInput.MoveX, playerInput.MoveZ).sqrMagnitude > 0.0001f);
 
-        if (!hasMoveInput)
-        {
-            camFwd = Camera.main.transform.forward; camFwd.y = 0; camFwd.Normalize();
-            if (camFwd.sqrMagnitude > 0.001f)
-            {
-                Quaternion target = Quaternion.LookRotation(camFwd, Vector3.up);
-                rb.MoveRotation(Quaternion.Slerp(rb.rotation, target, 8f * Time.deltaTime));
-            }
-        }
+        //if (!hasMoveInput)
+        //{
+        //    camFwd = Camera.main.transform.forward; camFwd.y = 0; camFwd.Normalize();
+        //    if (camFwd.sqrMagnitude > 0.001f)
+        //    {
+        //        Quaternion target = Quaternion.LookRotation(camFwd, Vector3.up);
+        //        rb.MoveRotation(Quaternion.Slerp(rb.rotation, target, 8f * Time.deltaTime));
+        //    }
+        //}
 
         if (move.sqrMagnitude > 0.001f)
         {

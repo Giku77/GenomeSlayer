@@ -12,4 +12,6 @@ public class WaveDef : ScriptableObject
     public GameObject bossPrefab;
     public float bossSpawnTime = 40f;
     public int maxEnemyCount = 10;
+    public float spawnInterval = 1f;
+    public int enemiesPerSpawn = 1;
 }
