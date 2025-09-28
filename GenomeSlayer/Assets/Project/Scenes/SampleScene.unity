@@ -6197,7 +6197,24 @@ MonoBehaviour:
   spawnPoint1: {fileID: 1009562831}
   waveDef:
   - {fileID: 11400000, guid: 35d774383de3a214c9bde1b43099b53d, type: 2}
+  - {fileID: 11400000, guid: 52c9d1fe197ee1d4eaf3df3764342eb3, type: 2}
+  - {fileID: 11400000, guid: 2a9147a242202814ca8477be8a42f860, type: 2}
+  - {fileID: 11400000, guid: 373c67eacd36db447a964923a57e3af7, type: 2}
   - {fileID: 11400000, guid: 9b8094cf8d29bd04b9a433184be2c87c, type: 2}
+  - {fileID: 11400000, guid: 58b3c7f997f7f4c4eba2e6dc6bcf01b6, type: 2}
+  - {fileID: 11400000, guid: 2e5c1f0a518af0e4db3c8db9d2140d3d, type: 2}
+  - {fileID: 11400000, guid: c1fe59fde37eb884f8cfa022284cda13, type: 2}
+  - {fileID: 11400000, guid: 4ad8f97a7b0d85a4f93c773791844bf8, type: 2}
+  - {fileID: 11400000, guid: d2d6438251190e44e98ee84724d0fd35, type: 2}
+  - {fileID: 11400000, guid: 9492b6f4ae6cc8643aee2f9703420424, type: 2}
+  - {fileID: 11400000, guid: 9a6bfb2f623827741bc2b44337747a42, type: 2}
+  - {fileID: 11400000, guid: 8edd86c6224f3d741be77cb2f9fff7e7, type: 2}
+  - {fileID: 11400000, guid: 75136445e2ce1eb4491e1680a0764d5e, type: 2}
+  - {fileID: 11400000, guid: 563bc5de3809d8a499d7e8fa6e5ad759, type: 2}
+  - {fileID: 11400000, guid: 0eff68369a9a21d43b0c4ba72633ec6e, type: 2}
+  - {fileID: 11400000, guid: 2c17ce738122e86409fbc5bd3cc785d7, type: 2}
+  - {fileID: 11400000, guid: e35e141367b6ad34fb8f3e05b6aabca4, type: 2}
+  - {fileID: 11400000, guid: 276fe732639c360449298fdd47ec22f7, type: 2}
   - {fileID: 11400000, guid: 55297de9b32f7bd4087b05e0612e0b47, type: 2}
   enemyPrefabs:
   - {fileID: 8911570362332738296, guid: 8a709bdd7227f454f94de96c7dcd3477, type: 3}
