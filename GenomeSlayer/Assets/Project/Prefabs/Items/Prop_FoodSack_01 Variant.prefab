@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1588739481372700395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692661923935176197}
+  - component: {fileID: 8779855186477087567}
+  m_Layer: 9
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &692661923935176197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588739481372700395}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351142599811610440}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8779855186477087567
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588739481372700395}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.7
+  m_Center: {x: 0.011529148, y: 0.5135274, z: -0.011200026}
 --- !u!1001 &2870407360431505642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,13 +117,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop_FoodSack_01 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2900862076209114392, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235165556384956352, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3693253787083279565, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2524898834302695330, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 692661923935176197}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2900862076209114392, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
       insertIndex: -1
@@ -78,7 +142,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2900862076209114392, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4006222832288571034}
+    - targetCorrespondingSourceObject: {fileID: 2900862076209114392, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 826409905333688755}
   m_SourcePrefab: {fileID: 100100000, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
+--- !u!4 &351142599811610440 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2524898834302695330, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
+  m_PrefabInstance: {fileID: 2870407360431505642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1122613437025185266 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2900862076209114392, guid: 2777f86191011ac48aea47fbd5f02928, type: 3}
@@ -122,4 +194,25 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!135 &826409905333688755
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122613437025185266}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.7
+  m_Center: {x: 0.011529148, y: 0.5135274, z: -0.011200026}

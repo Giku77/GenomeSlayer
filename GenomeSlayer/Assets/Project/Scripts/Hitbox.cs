@@ -122,6 +122,19 @@ public class Hitbox : MonoBehaviour
         Haptics.Light();
         Vector3 hitPoint = other.ClosestPoint(transform.position);
         e.OnDamage(swingDamage, hitPoint);
+
+        var dir = (e.transform.position - hitPoint);
+        //dir.y = 1f;
+        dir.Normalize();
+
+        e.Knockback(dir, force: 13.5f, duration: 0.18f);
+
+        if (weaponDef.weaponId == WeaponIds.UNKNOWN_WEAPON)
+        {
+            AudioManager.I.PlaySFX("Hit", hitPoint);
+            EffectManager.I.Play("Hit", hitPoint, Quaternion.identity);
+        }
+
         //e.OnDamage(swingDamage);
         hitCountThisSwing++;
 

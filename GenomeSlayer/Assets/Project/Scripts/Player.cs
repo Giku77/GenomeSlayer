@@ -27,6 +27,11 @@ public class Player : Entity
             uiManager.UpdateHealth(health, maxhealth);
         }
     }
+
+    void OnCollisionEnter(Collision col)
+    {
+        Debug.Log($"[PLAYER COLLISION] hit {col.collider.name} layer={LayerMask.LayerToName(col.collider.gameObject.layer)}");
+    }
     private void Awake()
     {
         buffController = GetComponent<BuffController>();

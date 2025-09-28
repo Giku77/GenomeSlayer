@@ -146,6 +146,7 @@ public class Enemy : Entity
         //Debug.Log("Zombie is dead.");
     }
 
+
     private void UpdateAttack()
     {
         if (target == null || (target != null && Vector3.Distance(transform.position, target.position) > attackDist))
@@ -248,6 +249,72 @@ public class Enemy : Entity
     //    Destroy(gameObject, 5f);
     //}
 
+    bool inKnockback;
+
+    public void Knockback(Vector3 dir, float force, float duration = 0.18f)
+    {
+        if (!gameObject.activeInHierarchy) return;
+        StartCoroutine(CoKnockback(dir, force, duration));
+    }
+
+    IEnumerator CoKnockback(Vector3 dir, float force, float duration)
+    {
+        if (inKnockback) yield break;
+        inKnockback = true;
+
+        if (agent)
+        {
+            agent.isStopped = true;
+            agent.updatePosition = false;
+            agent.updateRotation = false;
+        }
+
+        var rb = GetComponent<Rigidbody>();
+        if (rb)
+        {
+            var prevKin = rb.isKinematic;
+            var prevGrav = rb.useGravity;
+            var prevCons = rb.constraints;
+            var prevCd = rb.collisionDetectionMode;
+
+            rb.isKinematic = false;                        
+            rb.useGravity = false;                         
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+
+            rb.constraints = prevCons | RigidbodyConstraints.FreezePositionY;
+
+            dir.y = 0f; dir.Normalize();
+
+            rb.AddForce(dir * force, ForceMode.VelocityChange);
+
+            float t = 0f;
+            while (t < duration)
+            {
+                t += Time.fixedDeltaTime;
+                yield return new WaitForFixedUpdate();
+            }
+
+            rb.linearVelocity = Vector3.zero;
+            rb.constraints = prevCons;
+            rb.useGravity = prevGrav;
+            rb.isKinematic = prevKin;
+            rb.collisionDetectionMode = prevCd;
+        }
+
+        if (agent)
+        {
+            agent.Warp(transform.position);
+            agent.updatePosition = true;
+            agent.updateRotation = true;
+            agent.isStopped = false;
+        }
+
+        inKnockback = false;
+    }
+
+
     protected override void Die()
     {
         //audioSource.PlayOneShot(zombieDie, AudioManager.instance.sfxVolume);
@@ -264,7 +331,7 @@ public class Enemy : Entity
         state = State.Die;
         animator.SetTrigger(hashDie);
         EventBus.EnemyDied?.Invoke(gameObject);
-        EventBus.EnemyDropSeed?.Invoke(gameObject.transform.position);
+        EventBus.EnemyDropSeed?.Invoke(gameObject.transform.position + Vector3.up);
 
         //Destroy(gameObject, 3f);
     }

@@ -279,7 +279,6 @@ public class PlayerMove : MonoBehaviour
             if (attackDesiredForward.HasValue && ang <= attackSnapAngle)
                 attackDesiredForward = null;
 
-            // 전진 연출 유지(원하면 값 줄여서 과한 ‘훅’ 느낌 완화)
             Vector3 step = transform.forward * (0.12f * dt);
             rb.MovePosition(rb.position + step);
 
