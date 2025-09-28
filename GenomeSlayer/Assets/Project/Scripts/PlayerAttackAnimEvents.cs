@@ -42,6 +42,7 @@ public class PlayerAttackAnimEvents : MonoBehaviour
     public void AE_DurianAttackEnd()
     {
         if (equipItem.currentWeaponId != WeaponIds.Mace_Durian) return;
+        Debug.Log("Durian Attack End");
         DurianAttackbox?.Close();
     }
     public void AE_PepperAttackStart()

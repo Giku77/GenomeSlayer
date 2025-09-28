@@ -61,6 +61,11 @@ public class Hitbox : MonoBehaviour
         hitCountThisSwing = 0;
         foreach (var s in col)
             s.enabled = true;
+        if (weaponDef.weaponId == WeaponIds.Mace_Durian)
+        {
+            AudioManager.I.PlaySFX("DurianSlash", transform.position);
+        }
+
         float upgPct = GetPlayerAttackUpPercent(weaponDef.weaponId);
 
         float mul = 1f + upgPct;
@@ -132,8 +137,13 @@ public class Hitbox : MonoBehaviour
         if (weaponDef.weaponId == WeaponIds.UNKNOWN_WEAPON)
         {
             AudioManager.I.PlaySFX("Hit", hitPoint);
-            EffectManager.I.Play("Hit", hitPoint, Quaternion.identity);
         }
+        if (weaponDef.weaponId == WeaponIds.Mace_Durian)
+        {
+            AudioManager.I.PlaySFX("DurianHit", transform.position);
+        }
+
+        EffectManager.I.Play("Hit", hitPoint, Quaternion.identity);
 
         //e.OnDamage(swingDamage);
         hitCountThisSwing++;
