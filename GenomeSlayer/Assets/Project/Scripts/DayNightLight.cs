@@ -6,7 +6,7 @@ public class DayNightLight : MonoBehaviour
     private float maxTime;
     private float timer;
 
-    public WaveManager waveManager;
+    public WavesManager waveManager;
 
     public float dayIntensity = 2.0f;
     public float nightIntensity = 0.1f;
@@ -16,7 +16,7 @@ public class DayNightLight : MonoBehaviour
 
     void Start()
     {
-        maxTime = waveManager.waveDef.WaveInterval;
+        maxTime = waveManager.currentInterval;
         timer = maxTime;
     }
 

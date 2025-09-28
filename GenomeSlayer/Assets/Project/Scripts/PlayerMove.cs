@@ -42,7 +42,12 @@ public class PlayerMove : MonoBehaviour
     //private bool isJumping = false;
 
     private int groundMask = ~0;
-    private float groundedSkin = 0.05f; 
+    private float groundedSkin = 0.05f;
+
+    Vector3? attackDesiredForward;     
+    float attackTurnSpeed = 540f;       
+    float attackSnapAngle = 10f;        
+
     private bool IsGrounded()
     {
         Vector3 center = transform.TransformPoint(cap.center);
@@ -142,12 +147,25 @@ public class PlayerMove : MonoBehaviour
 
         if (st.IsTag("Attack"))
         {
-            float t = st.normalizedTime % 1f;  // 0..1
+            float t = st.normalizedTime % 1f;
+
+            Vector3 camFwd = Camera.main.transform.forward;
+            Vector3 camRight = Camera.main.transform.right;
+            camFwd.y = 0f; camRight.y = 0f;
+            camFwd.Normalize(); camRight.Normalize();
+            Vector3 desiredMove = camRight * playerInput.MoveX + camFwd * playerInput.MoveZ;
+            bool hasDirInput = desiredMove.sqrMagnitude > 0.001f;
 
             if (queuedCombo && t >= comboWindowOpen && t <= comboWindowClose)
             {
                 animator.SetBool(HashDoNext, true);
-                queuedCombo = false; 
+
+                if (hasDirInput)
+                {
+                    attackDesiredForward = desiredMove.normalized;
+                }
+
+                queuedCombo = false;
             }
 
             if (t > comboWindowClose)
@@ -155,20 +173,12 @@ public class PlayerMove : MonoBehaviour
                 animator.SetBool(HashDoNext, false);
                 queuedCombo = false;
             }
-
-            //if (queuedCombo && t >= comboWindowOpen && t <= comboWindowClose)
-            //{
-            //    queuedCombo = false;
-            //    animator.SetBool(HashDoNext, true);   // Combo = true
-            //}
-
-            //if (t > comboWindowClose)
-            //    animator.SetBool(HashDoNext, false);
         }
         else
         {
             animator.SetBool(HashDoNext, false);
             queuedCombo = false;
+            attackDesiredForward = null; 
         }
     }
     private bool IsAttackingOrTransitioning()
@@ -209,8 +219,9 @@ public class PlayerMove : MonoBehaviour
     {
         if (player.isDead) return;
 
-        //var attackLockMove = IsAttackingOrTransitioning();
-        var attackLockMove = IsAttackHardLocked(out float atkT);
+        var attackLockMove = IsAttackingOrTransitioning();
+        //var attackLockMove = IsAttackHardLocked(out float atkT);
+        //var attackLockMove = false;
 
         //bool inAttackTag = animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack");
         //회전
@@ -245,21 +256,33 @@ public class PlayerMove : MonoBehaviour
         {
             var v = rb.linearVelocity;
             rb.linearVelocity = new Vector3(0f, v.y, 0f);
-
             animator.SetFloat(MoveHash, 0f);
 
-            //Vector3 step = transform.forward * (1.2f * Time.fixedDeltaTime);
-            //rb.MovePosition(rb.position + step);
+            Vector3 camFwd2 = Camera.main.transform.forward;
+            Vector3 camRight2 = Camera.main.transform.right;
+            camFwd2.y = 0f; camRight2.y = 0f;
+            camFwd2.Normalize(); camRight2.Normalize();
 
-            //animator.SetBool(JumpHash, false);
+            Vector3 desiredMove = camRight2 * playerInput.MoveX + camFwd2 * playerInput.MoveZ;
+            bool hasDirInputNow = desiredMove.sqrMagnitude > 0.001f;
 
-            //if (Input.GetKeyDown(KeyCode.V) || IsMobileVeiwTopClicked)
-            //{
-            //    isViewTop = !isViewTop;
-            //    TopCamera.SetActive(isViewTop);
-            //    PlayerCamera.SetActive(!isViewTop);
-            //    IsMobileVeiwTopClicked = false;
-            //}
+            Vector3 targetForward =
+                attackDesiredForward.HasValue ? attackDesiredForward.Value :
+                hasDirInputNow ? desiredMove.normalized :
+                transform.forward; 
+
+            float dt = Time.fixedDeltaTime;
+            Quaternion targetRot = Quaternion.LookRotation(targetForward, Vector3.up);
+            rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRot, attackTurnSpeed * dt));
+
+            float ang = Quaternion.Angle(rb.rotation, targetRot);
+            if (attackDesiredForward.HasValue && ang <= attackSnapAngle)
+                attackDesiredForward = null;
+
+            // 전진 연출 유지(원하면 값 줄여서 과한 ‘훅’ 느낌 완화)
+            Vector3 step = transform.forward * (0.12f * dt);
+            rb.MovePosition(rb.position + step);
+
             return;
         }
 

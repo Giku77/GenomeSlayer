@@ -23,6 +23,72 @@ public class StateManager : MonoBehaviour
         InvalidIndex
     }
 
+    public StateSaveData ExportSave()
+    {
+        var dict = levels != null ? new Dictionary<int, int>(levels)
+                                  : new Dictionary<int, int>();
+
+        // for (int i = 0; i < RowCount; i++)
+        // {
+        //     var row = def.rows[i];
+        //     int lv = GetLevel(row.id);
+        //     dict[row.id] = lv;
+        // }
+
+        return StateSaveData.FromDict(GenomePoint, dict);
+    }
+
+    public void ApplySave(StateSaveData save, bool suppressEvents = true)
+    {
+        if (save == null) return;
+
+        var gpHandlers = OnGenomePointChanged;
+        var lvHandlers = OnLevelChanged;
+        if (suppressEvents)
+        {
+            OnGenomePointChanged = null;
+            OnLevelChanged = null;
+        }
+
+        try
+        {
+            levels = save.ToDict();               
+            GenomePoint = save.genomePoint;      
+            if (def != null && levels != null)
+            {
+                var tmp = new Dictionary<int, int>();
+                foreach (var row in def.rows)
+                {
+                    int storedLv = 0;
+                    if (levels.TryGetValue(row.id, out var lv))
+                        storedLv = Mathf.Clamp(lv, 0, def.MaxLevelFor(row.id));
+                    else
+                        storedLv = row.defaultLv; 
+                    tmp[row.id] = storedLv;
+                }
+                levels = tmp;
+            }
+
+            if (!suppressEvents)
+            {
+                OnGenomePointChanged?.Invoke(GenomePoint);
+                if (levels != null)
+                    foreach (var kv in levels) OnLevelChanged?.Invoke(kv.Key, kv.Value);
+            }
+        }
+        finally
+        {
+            if (suppressEvents)
+            {
+                OnGenomePointChanged = gpHandlers;
+                OnLevelChanged = lvHandlers;
+                OnGenomePointChanged?.Invoke(GenomePoint);
+                if (levels != null)
+                    foreach (var kv in levels) OnLevelChanged?.Invoke(kv.Key, kv.Value);
+            }
+        }
+    }
+
     void Awake()
     {
         GenomePoint = def.GenomePoint;

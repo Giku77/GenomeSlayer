@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI WaveTimer;
     public Button WaveButton;
     public Button GenomButton;
+
+    public GameObject SettingUI;
     
 
     public GameObject InventoryUI;
@@ -37,6 +39,8 @@ public class UIManager : MonoBehaviour
     public GameObject HarvesButton;
     public GameObject ViewButton;
     public GameObject timerZone;
+    public GameObject showFPS;
+    public void ActiveShowFPS(bool t) => showFPS.SetActive(t);
 
     public GameObject ActiveArmor;
     public InventorySlotUI ActiveArmorSlot { 
@@ -53,9 +57,6 @@ public class UIManager : MonoBehaviour
     {
         AcceptUIPoint.text = stateManager.GenomePoint.ToString();
         typingText = GetComponent<TypingText>();
-        WaveButton.interactable = false;
-        GenomButton.interactable = false;
-        ShowTypingText();
         SlotItems = InventoryUI.GetComponentsInChildren<InventorySlotUI>();
         for (int i = 0; i < SlotItems.Length; i++)
         {
@@ -86,6 +87,23 @@ public class UIManager : MonoBehaviour
         {
             RefreshStateLevels();
         };
+    }
+
+    private void Start()
+    {
+        var settings = FindFirstObjectByType<SettingsManager>();
+        if (settings != null)
+        {
+            WaveButton.interactable = settings.tutorialCompleted == 0;
+            GenomButton.interactable = settings.tutorialCompleted == 0;
+            ShowTypingText();
+        }
+    }
+
+    public void OnAbleButtons(bool s)
+    {
+        WaveButton.interactable = s;
+        GenomButton.interactable = s;
     }
 
     public void ActiveFalseSlider()
@@ -200,6 +218,7 @@ public class UIManager : MonoBehaviour
 
     public void CloseButton() => StateUI.SetActive(false);
     public void CloseAccpet() => AcceptUI.SetActive(false);
+    public void CloseSetting() => SettingUI.SetActive(false);
 
     private void Update()
     {
@@ -222,12 +241,19 @@ public class UIManager : MonoBehaviour
         StateUI.SetActive(!StateUI.activeSelf);
     }
 
+    public void OnSettingButtonClicked()
+    {
+        SettingUI.SetActive(!SettingUI.activeSelf);
+    }
+
     public void StopTypingText()
     {
         TypingTextObject.SetActive(false);
         uIFocusHighlighter.gameObject.SetActive(false);
         WaveButton.interactable = true;
         GenomButton.interactable = true;
+        var settings = FindFirstObjectByType<SettingsManager>();
+        settings.tutorialCompleted = 0;
     }
 
     public void ShowTypingText()
@@ -238,9 +264,7 @@ public class UIManager : MonoBehaviour
         switch (typingID)
         {
             case 0:
-                TypingTextObject.SetActive(false);
-                WaveButton.interactable = true;
-                GenomButton.interactable = true;
+                StopTypingText();
                 return;
             case 1601004:
                 uIFocusHighlighter.target = joystickZone.GetComponent<RectTransform>();

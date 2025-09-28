@@ -17,7 +17,9 @@ public class WavesManager : MonoBehaviour
     public readonly static int maxEnemyCount = 200;
 
     private int currentEnemyCount = 0;
-    private float waveInterval;
+    public float waveInterval { get; set; }
+
+    public float currentInterval { get => waveDef[currentWave].waveDuration; }
     private int currentWave;
 
     private int spawnEnemyCount = 0;
@@ -60,6 +62,57 @@ public class WavesManager : MonoBehaviour
     //private Queue<GameObject> poolEnemies = new Queue<GameObject>();
     private Dictionary<int, Queue<GameObject>> pools = new Dictionary<int, Queue<GameObject>>();
     private List<GameObject> activeEnemies = new List<GameObject>();
+
+    public WavesSaveData ExportSave()
+    {
+        int idx = currentWave;
+        if (waveInProgress)
+            idx = Mathf.Max(0, idx - 1);
+
+        return new WavesSaveData
+        {
+            nextWaveIndex = Mathf.Clamp(idx, 0, Mathf.Max(0, waveDef.Length - 1)),
+            inProgress = waveInProgress
+        };
+    }
+
+    public void ApplySave(WavesSaveData save)
+    {
+
+        if (waveSpawns != null)
+            foreach (var c in waveSpawns) if (c != null) StopCoroutine(c);
+        if (waveCoroutine != null) StopCoroutine(waveCoroutine);
+
+
+        foreach (var enemy in activeEnemies.ToArray())
+            ReturnEnemy(enemy);
+        activeEnemies.Clear();
+        currentEnemyCount = 0;
+        bossSpawned = false;
+        bossAlive = false;
+
+  
+        uiManager.ActiveWaveButton(true);
+        uiManager.ActiveGenomButton(true);
+
+   
+        if (save != null && waveDef != null && waveDef.Length > 0)
+        {
+            currentWave = Mathf.Clamp(save.nextWaveIndex, 0, waveDef.Length - 1);
+        }
+        else
+        {
+            currentWave = 0;
+        }
+
+        uiManager.UpdateWave(waveDef[currentWave].chapterNum);
+
+        waveInProgress = false;
+        //if (save != null && save.inProgress)
+        //{
+        //    SpawnWave(); 
+        //}
+    }
 
     private void SpawnMonsters()
     {

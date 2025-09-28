@@ -2,6 +2,8 @@ using UnityEngine;
 
 public static class Haptics
 {
+    public static bool Enabled { get; set; } = true;
+
 #if UNITY_ANDROID && !UNITY_EDITOR
     static AndroidJavaObject GetVibrator()
     {
@@ -31,6 +33,7 @@ public static class Haptics
 
     public static void Vibrate(long millis, int amplitude = 255)
     {
+        if (!Enabled) return;
 #if UNITY_ANDROID && !UNITY_EDITOR
         try
         {
