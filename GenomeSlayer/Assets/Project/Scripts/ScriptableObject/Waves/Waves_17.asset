@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2790d36d359a084d8cd37b79e0aac93, type: 3}
+  m_Name: Waves_17
+  m_EditorClassIdentifier: 
+  waveID: 1917001
+  chapterNum: 17
+  waveDuration: 240
+  spawns:
+  - enemyData: {fileID: 11400000, guid: e64b6f99b29ba3b438b2dce6a70324c5, type: 2}
+    startTime: 240
+    period: 1
+    amount: 1
+    isBoss: 0
+  - enemyData: {fileID: 11400000, guid: 9a49578916563964eb9f98dd65e54e74, type: 2}
+    startTime: 180
+    period: 2
+    amount: 2
+    isBoss: 0
