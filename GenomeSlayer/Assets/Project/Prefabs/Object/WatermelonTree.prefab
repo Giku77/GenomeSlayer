@@ -129,7 +129,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5004228435807283043
 MonoBehaviour:
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a79ac20f656fd4fa2891804ce632b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 11400000, guid: 2618baac11433d44fa58ea3abe05f4ea, type: 2}
+  buff: {fileID: 11400000, guid: 3edf11ecfddcfe74c81720b4ec17b56a, type: 2}
   radius: 5
   enableWhenPaired: 0
   trig: {fileID: 1918850133849588049}

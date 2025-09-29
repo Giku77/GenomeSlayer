@@ -18,5 +18,5 @@ MonoBehaviour:
   health: 50
   speed: 5
   damage: 10
-  attackSpeed: 1
+  attackSpeed: 0.5
   enemyPrefab: {fileID: 8911570362332738296, guid: 8a709bdd7227f454f94de96c7dcd3477, type: 3}

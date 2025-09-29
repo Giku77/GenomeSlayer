@@ -17,6 +17,8 @@ public class Item : MonoBehaviour
             var player = collision.gameObject.GetComponent<Player>();
             if (player != null)
             {
+                AudioManager.I.PlaySFX("PickUp");
+                EffectManager.I.Play("PickUp", player.transform.position, Quaternion.identity, parent : player.transform);
                 player.quickSlotInventory.TryAddItem(itemData.itemID, 1);
                 //EventBus.UpdateSlot?.Invoke(player.quickSlotInventory.SelectedIndex, itemData.itemName, player.quickSlotInventory.GetSlotCount().ToString(), -1);
             }

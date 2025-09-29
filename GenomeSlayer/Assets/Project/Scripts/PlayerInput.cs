@@ -48,7 +48,7 @@ public class PlayerInput : MonoBehaviour
         });
         viewButton.onClick.AddListener(() =>
         {
-            Debug.Log("click");
+            AudioManager.I.PlaySFX("UIClicked");
             var pm = GetComponent<PlayerMove>();
             pm.IsMobileVeiwTopClicked = true;
         });

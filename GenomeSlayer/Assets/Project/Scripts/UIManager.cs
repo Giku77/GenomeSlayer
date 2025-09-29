@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
     public GameObject TypingTextObject;
     private TypingText typingText;
     private int typingID = 1601001;
+    public void SetTypingID(int id) => typingID = id;
 
     public UIFocusHighlighter uIFocusHighlighter;
     public GameObject slideZone;
@@ -76,6 +77,7 @@ public class UIManager : MonoBehaviour
       
         acceptButtons[1].onClick.AddListener(() =>
         {
+            AudioManager.I.PlaySFX("UIClicked");
             OnAcceptLevelUpClicked();
         });
 
@@ -134,6 +136,7 @@ public class UIManager : MonoBehaviour
             buttons[i].onClick.RemoveAllListeners();
             buttons[i].onClick.AddListener(() =>
             {
+                AudioManager.I.PlaySFX("UIClicked");
                 currentIndex = index;
                 AcceptUI.SetActive(true);
 
@@ -238,11 +241,13 @@ public class UIManager : MonoBehaviour
 
     public void OnStateUIButtonClicked()
     {
+        AudioManager.I.PlaySFX("UIClicked");
         StateUI.SetActive(!StateUI.activeSelf);
     }
 
     public void OnSettingButtonClicked()
     {
+        AudioManager.I.PlaySFX("UIClicked");
         SettingUI.SetActive(!SettingUI.activeSelf);
     }
 
@@ -261,6 +266,7 @@ public class UIManager : MonoBehaviour
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         var arm = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Watermelon_Armor);
         var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Mace_Durian);
+        AudioManager.I.PlaySFX("UIClicked");
         switch (typingID)
         {
             case 0:

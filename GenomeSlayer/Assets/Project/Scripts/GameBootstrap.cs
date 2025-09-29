@@ -17,7 +17,7 @@ public class GameBootstrap : MonoBehaviour
 
         if (SaveService.TryLoad<SaveRoot>(out var save))
         {
-            stateManager.ApplySave(save.state, suppressEvents: true);
+            stateManager.ApplySave(save.state, suppressEvents: false);
             wavesManager.ApplySave(save.waves);
         }
         else

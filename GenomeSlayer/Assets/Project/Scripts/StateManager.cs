@@ -5,7 +5,7 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     [SerializeField] private StateDef def;
-    private Dictionary<int, int> levels;
+    private Dictionary<int, int> levels = new Dictionary<int, int>();
 
     public int GenomePoint { get; private set; }
 
@@ -93,7 +93,7 @@ public class StateManager : MonoBehaviour
     {
         GenomePoint = def.GenomePoint;
         OnGenomePointChanged?.Invoke(GenomePoint);
-        levels = new Dictionary<int, int>();
+        //levels = new Dictionary<int, int>();
         // TODO: JSON 로드 연결
     }
 

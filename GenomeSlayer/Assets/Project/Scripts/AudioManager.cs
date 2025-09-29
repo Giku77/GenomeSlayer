@@ -9,10 +9,10 @@ public class AudioManager : MonoBehaviour
     public AudioMixer mixer;         
     public AudioMixerGroup bgmGroup, sfxGroup;
 
-    //[Header("BGM")]
-    //public AudioSource bgmA, bgmB;
-    //AudioSource _activeBGM;
-    //float _bgmFadeSec = 0.7f;
+    [Header("BGM")]
+    public AudioSource bgmA, bgmB;
+    AudioSource _activeBGM;
+    float _bgmFadeSec = 0.7f;
 
     [Header("SFX Pool")]
     public int initialSfxSources = 16;
@@ -35,15 +35,15 @@ public class AudioManager : MonoBehaviour
         // 풀 초기화
         for (int i = 0; i < initialSfxSources; i++) sfxPool.Enqueue(MakeSfxSource());
 
-        // BGM 소스 설정
-        //if (!bgmA) bgmA = gameObject.AddComponent<AudioSource>();
-        //if (!bgmB) bgmB = gameObject.AddComponent<AudioSource>();
-        //foreach (var s in new[] { bgmA, bgmB })
-        //{
-        //    s.outputAudioMixerGroup = bgmGroup;
-        //    s.loop = true; s.playOnAwake = false; s.spatialBlend = 0f;
-        //}
-        //_activeBGM = bgmA;
+        //BGM 소스 설정
+        if (!bgmA) bgmA = gameObject.AddComponent<AudioSource>();
+        if (!bgmB) bgmB = gameObject.AddComponent<AudioSource>();
+        foreach (var s in new[] { bgmA, bgmB })
+        {
+            s.outputAudioMixerGroup = bgmGroup;
+            s.loop = true; s.playOnAwake = false; s.spatialBlend = 0f;
+        }
+        _activeBGM = bgmA;
     }
 
     AudioSource MakeSfxSource()
@@ -73,14 +73,14 @@ public class AudioManager : MonoBehaviour
             if (!src.isPlaying) ReturnSfx(src);
     }
 
-    //public void PlayBGM(AudioClip clip, float fadeSec = -1f)
-    //{
-    //    if (!clip) return;
-    //    var next = (_activeBGM == bgmA) ? bgmB : bgmA;
-    //    next.clip = clip; next.volume = 0f; next.Play();
-    //    StartCoroutine(FadeSwap(_activeBGM, next, fadeSec > 0 ? fadeSec : _bgmFadeSec));
-    //    _activeBGM = next;
-    //}
+    public void PlayBGM(AudioClip clip, float fadeSec = -1f)
+    {
+        if (!clip) return;
+        var next = (_activeBGM == bgmA) ? bgmB : bgmA;
+        next.clip = clip; next.volume = 0f; next.Play();
+        StartCoroutine(FadeSwap(_activeBGM, next, fadeSec > 0 ? fadeSec : _bgmFadeSec));
+        _activeBGM = next;
+    }
     System.Collections.IEnumerator FadeSwap(AudioSource from, AudioSource to, float t)
     {
         float e = 0; while (e < t)
@@ -95,10 +95,10 @@ public class AudioManager : MonoBehaviour
         to.volume = 1f;
     }
 
-    //public void StopBGM(float fadeSec = 0.5f)
-    //{
-    //    StartCoroutine(FadeOut(_activeBGM, fadeSec));
-    //}
+    public void StopBGM(float fadeSec = 0.5f)
+    {
+        StartCoroutine(FadeOut(_activeBGM, fadeSec));
+    }
     System.Collections.IEnumerator FadeOut(AudioSource a, float t)
     {
         if (!a || !a.isPlaying) yield break;
@@ -121,9 +121,18 @@ public class AudioManager : MonoBehaviour
         a.Play();
     }
 
+    public AudioClip CurrentBGM => _activeBGM ? _activeBGM.clip : null;
+    public void PlayBGMIfDifferent(AudioClip clip, float fadeSec = -1f)
+    {
+        if (!clip) return;
+        if (CurrentBGM == clip && IsBgmPlaying()) return;
+        PlayBGM(clip, fadeSec);
+    }
+
     // Settings 연동 (0..1 -> dB)
     public void SetBgmVolume(float v) => mixer.SetFloat("BGM_dB", Lin2dB(v));
     public void SetSfxVolume(float v) => mixer.SetFloat("SFX_dB", Lin2dB(v));
     public void SetMasterVolume(float v) => mixer.SetFloat("Master_dB", Lin2dB(v));
     float Lin2dB(float v) => Mathf.Log10(Mathf.Clamp(v, 0.0001f, 1f)) * 20f;
+    public bool IsBgmPlaying() => _activeBGM != null && _activeBGM.isPlaying;
 }

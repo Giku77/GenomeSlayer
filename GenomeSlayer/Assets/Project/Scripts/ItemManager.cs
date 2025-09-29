@@ -9,10 +9,16 @@ public class ItemManager : MonoBehaviour
     public GameObject ItemPrefab;
     private List<ItemData> activeItems = new List<ItemData>();
 
-    private void Awake()
+    private void OnEnable()
     {
         EventBus.EnemyDropSeed += SpawnItems;
         EventBus.RaiseFruitHarvested += AddEquipItem;
+    }
+
+    private void OnDisable()
+    {
+        EventBus.EnemyDropSeed -= SpawnItems;
+        EventBus.RaiseFruitHarvested -= AddEquipItem;
     }
 
     private void AddEquipItem(int TreeId, int num)

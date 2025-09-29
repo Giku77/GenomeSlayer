@@ -11,6 +11,8 @@ public class BuffEmitter : MonoBehaviour
 
     public SphereCollider trig;
     private readonly HashSet<BuffController> inside = new();
+    private readonly Dictionary<BuffController, Coroutine> playerCos = new();
+    private readonly Dictionary<BuffController, Coroutine> enemyCos = new();
 
     private void Awake()
     {
@@ -21,12 +23,40 @@ public class BuffEmitter : MonoBehaviour
         //gameObject.layer = gameObject.layer; 
     }
 
+    private IEnumerator buffPlayerEffect(Player p)
+    {
+        var em = EffectManager.I;
+        while (true)
+        {
+            em.Play("Buff", p.transform.position, Quaternion.identity, parent: p.transform, life: 1f);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+    private IEnumerator debuffEnemyEffect(Enemy e)
+    {
+        var em = EffectManager.I;
+        while (true)
+        {
+            em.Play("DeBuff", e.transform.position, Quaternion.identity, parent: e.transform, life: 1f);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log($"[BuffEmitter] {other.name} enter {buff.displayName}");
         if (((1 << other.gameObject.layer) & buff.targets) == 0) return;
         if (!other.TryGetComponent<BuffController>(out var bc))
             bc = other.GetComponentInParent<BuffController>();
         if (!bc) return;
+
+        if (bc.TryGetComponent(out Player p) && !playerCos.ContainsKey(bc))
+            playerCos[bc] = StartCoroutine(buffPlayerEffect(p));
+
+        if (bc.TryGetComponent(out Enemy e) && !enemyCos.ContainsKey(bc))
+            enemyCos[bc] = StartCoroutine(debuffEnemyEffect(e));
 
         bc.AddOrRefresh(buff, this, 0);
 
@@ -42,8 +72,21 @@ public class BuffEmitter : MonoBehaviour
             bc = other.GetComponentInParent<BuffController>();
         if (!bc) return;
 
-        if (inside.Remove(bc))
-            bc.RemoveByIssuer(buff, this);
+        if (playerCos.TryGetValue(bc, out var pco) && other.TryGetComponent<Player>(out var p))
+        {
+            //Debug.Log($"[BuffEmitter] {other.name} exit {buff.displayName}");
+            if (pco != null) StopCoroutine(pco);
+            playerCos.Remove(bc);
+            if (inside.Remove(bc))
+                bc.RemoveByIssuer(buff, this);
+        }
+        if (enemyCos.TryGetValue(bc, out var eco))
+        {
+            if (eco != null) StopCoroutine(eco);
+            enemyCos.Remove(bc);
+            if (inside.Remove(bc))
+                bc.RemoveByIssuer(buff, this);
+        }
     }
 
     private void OnDestroy()

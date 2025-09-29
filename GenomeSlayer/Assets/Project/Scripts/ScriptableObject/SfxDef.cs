@@ -5,7 +5,7 @@ public class SfxDef : ScriptableObject
 {
     public string id;                
     public AudioClip clip;
-    [Range(0f, 1f)] public float volume = 1f;
+    [Range(0f, 5f)] public float volume = 1f;
     public bool spatial = false;
     public float pitchMin = 1f, pitchMax = 1f;
     public float maxDistance = 25f;

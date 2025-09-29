@@ -63,7 +63,31 @@ public class Hitbox : MonoBehaviour
             s.enabled = true;
         if (weaponDef.weaponId == WeaponIds.Mace_Durian)
         {
+            //var refT = transform;
+            //var dir = refT.TransformDirection(Vector3.right);
+
+            //dir = Vector3.ProjectOnPlane(dir, Vector3.up).normalized;
+            //if (dir.sqrMagnitude < 1e-4f)
+            //    dir = Vector3.ProjectOnPlane(GetComponentInParent<Player>().transform.forward, Vector3.up).normalized;
+            var owner = GetComponentInParent<Player>().transform;
+            var fwd = Vector3.ProjectOnPlane(owner.forward, Vector3.up).normalized;
+            if (fwd.sqrMagnitude < 0.0001f) fwd = Vector3.forward;
+
+            var rot = Quaternion.LookRotation(fwd, Vector3.up) * Quaternion.Euler(-60f, 0f, 60f);
+
             AudioManager.I.PlaySFX("DurianSlash", transform.position);
+            EffectManager.I.Play("DurianSlash", transform.position, rot);
+        }
+        if (weaponDef.weaponId == WeaponIds.UNKNOWN_WEAPON)
+        {
+            var owner = GetComponentInParent<Player>().transform;
+            var fwd = Vector3.ProjectOnPlane(owner.forward, Vector3.up).normalized;
+            if (fwd.sqrMagnitude < 0.0001f) fwd = Vector3.forward;
+
+            const float yawFix = -90f;
+            var rot = Quaternion.LookRotation(fwd, Vector3.up) * Quaternion.Euler(0f, yawFix, 0f);
+
+            EffectManager.I.Play("Punch", transform.position, rot);
         }
 
         float upgPct = GetPlayerAttackUpPercent(weaponDef.weaponId);

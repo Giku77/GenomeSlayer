@@ -11,6 +11,10 @@ public class WavesManager : MonoBehaviour
 {
     public Transform spawnPoint1;
 
+    public AudioClip BreakTimebgmClip;
+    public AudioClip WavebgmClip;
+    public AudioClip BossbgmClip;
+
     public WavesDef[] waveDef;
     public GameObject[] enemyPrefabs;
 
@@ -42,11 +46,11 @@ public class WavesManager : MonoBehaviour
     private bool isBossWave {
         get 
         { 
-            for (int i = 0; i < waveDef[currentWave].spawns.Count; i++)
+            for (int i = 0; i < waveDef[currentWave - 1].spawns.Count; i++)
             {
-                if (waveDef[currentWave].spawns[i].isBoss)
+                if (waveDef[currentWave - 1].spawns[i].isBoss)
                 {
-                    bossSpawnTime = waveDef[currentWave].spawns[i].startTime;
+                    bossSpawnTime = waveDef[currentWave - 1].spawns[i].startTime;
                     return true;
                 }
             }
@@ -286,6 +290,17 @@ public class WavesManager : MonoBehaviour
             waveInProgress = false;
             //SpawnWave();
         }
+        if (!waveInProgress)
+        {
+            AudioManager.I.SetBgmVolume(1f);
+            AudioManager.I.PlayBGMIfDifferent(BreakTimebgmClip);
+        }
+        else if (!isBossWave) AudioManager.I.PlayBGMIfDifferent(WavebgmClip);
+        else
+        {
+            AudioManager.I.SetBgmVolume(0.3f);
+            AudioManager.I.PlayBGMIfDifferent(BossbgmClip);
+        }
         //if (!bossSpawned && isBossWave && waveInterval <= bossSpawnTime && waveInProgress)
         //{
         //    SpawnBoss();
@@ -350,6 +365,7 @@ public class WavesManager : MonoBehaviour
         {
             StopCoroutine(waveCoroutine);
         }
+        AudioManager.I.PlaySFX("UIClicked");
         player.Heal((int)player.maxHeal);
         //var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Watermelon_Armor);
         //player.quickSlotInventory.TryAddItem((int)WeaponIds.Watermelon_Armor, 1, weapon.equipDurability, weapon.equipQuantity);

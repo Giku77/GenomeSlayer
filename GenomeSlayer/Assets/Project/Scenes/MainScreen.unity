@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 229837371}
   - component: {fileID: 229837370}
   - component: {fileID: 229837372}
+  - component: {fileID: 229837373}
   m_Layer: 0
   m_Name: MainScreenManager
   m_TagString: Untagged
@@ -149,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2e3eb093b202c408ec203f765bd4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: e96c6c5625392184b8f428bad8001738, type: 3}
 --- !u!4 &229837371
 Transform:
   m_ObjectHideFlags: 0
@@ -178,6 +180,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetText: {fileID: 840907969}
   blinkSpeed: 1
+--- !u!114 &229837373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229837369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5d6a978387d1e47a67628b95e34a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 623b78d25c88f5945acdd54fd694b01a, type: 2}
+  bgmGroup: {fileID: 4807228870268246291, guid: 623b78d25c88f5945acdd54fd694b01a, type: 2}
+  sfxGroup: {fileID: 3014986880084073839, guid: 623b78d25c88f5945acdd54fd694b01a, type: 2}
+  bgmA: {fileID: 0}
+  bgmB: {fileID: 0}
+  initialSfxSources: 16
+  sfxDefs:
+  - {fileID: 11400000, guid: 4f4217d31e9aa014b8214a01a01a6057, type: 2}
+  - {fileID: 11400000, guid: 8d8e2c3df2b89d14c9ed46fa443a32d4, type: 2}
+  - {fileID: 11400000, guid: 200fbd5a3c0d33d45a3807db2899cc26, type: 2}
+  - {fileID: 11400000, guid: 94f74b0731a86234a98bd73fa95424f7, type: 2}
+  - {fileID: 11400000, guid: c34a223aba7a39548a2326bf664f629c, type: 2}
+  - {fileID: 11400000, guid: 10f1bf39b58a38f4897800ec72463556, type: 2}
+  - {fileID: 11400000, guid: 1c333830fddd21b4cb3d234f444a24fe, type: 2}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +861,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SampleScene
+          m_StringArgument: GameScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!222 &1943834110

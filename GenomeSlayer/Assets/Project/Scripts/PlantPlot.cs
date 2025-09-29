@@ -56,6 +56,8 @@ public class PlantPlot : MonoBehaviour, IInteractable
         Debug.Log($"PlantPlot: Found fertilizer slot at index {i}");
         if (inventory.TryConsume(i, 1))
         {
+            AudioManager.I.PlaySFX("PlantGrow");
+            EffectManager.I.Play("PlantGrow", transform.position + Vector3.up * 0.5f, Quaternion.identity);
             //EventBus.UpdateSlot?.Invoke(i, inventory.GetSlot(i).IsEmpty ? string.Empty : "0", inventory.GetSlot(i).IsEmpty ? string.Empty : inventory.GetSlot(i).quantity.ToString(), -1);
             progress = Mathf.Min(1f, progress + interactCharge);
             if (slider != null)

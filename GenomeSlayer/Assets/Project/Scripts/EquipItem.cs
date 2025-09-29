@@ -32,6 +32,7 @@ public class EquipItem : MonoBehaviour
             int closureIndex = i;
             buttons[i].onClick.AddListener(() =>
             {
+                AudioManager.I.PlaySFX("UIClicked");
                 EventSystem.current.SetSelectedGameObject(buttons[closureIndex].gameObject);
                 SelectedIndex = closureIndex;
             });
