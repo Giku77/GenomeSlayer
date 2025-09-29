@@ -283,6 +283,7 @@ public class WavesManager : MonoBehaviour
         if ((waveInterval <= -1) && waveInProgress)
         {
             //Debug.Log("Spawning Wave " + (waveDef.currentWave + 1));
+            AudioManager.I.PlaySFX("ChapterClear");
             bossSpawned = false;
             ResetWaves();
             uiManager.ActiveWaveButton(true);

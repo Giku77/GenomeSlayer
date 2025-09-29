@@ -52,6 +52,7 @@ public class Hitbox : MonoBehaviour
 
         if (weaponDef.kind == WeaponKind.Projectile || weaponDef.kind == WeaponKind.ThrownReturn)
         {
+            AudioManager.I.PlaySFX("Bowling", transform.position);
             FireProjectile();
             return;
         }
@@ -63,20 +64,23 @@ public class Hitbox : MonoBehaviour
             s.enabled = true;
         if (weaponDef.weaponId == WeaponIds.Mace_Durian)
         {
-            //var refT = transform;
-            //var dir = refT.TransformDirection(Vector3.right);
+            //var owner = GetComponentInParent<Player>().transform;
+            //var fwd = Vector3.ProjectOnPlane(owner.forward, Vector3.up).normalized;
+            //if (fwd.sqrMagnitude < 0.0001f) fwd = Vector3.forward;
 
-            //dir = Vector3.ProjectOnPlane(dir, Vector3.up).normalized;
-            //if (dir.sqrMagnitude < 1e-4f)
-            //    dir = Vector3.ProjectOnPlane(GetComponentInParent<Player>().transform.forward, Vector3.up).normalized;
-            var owner = GetComponentInParent<Player>().transform;
-            var fwd = Vector3.ProjectOnPlane(owner.forward, Vector3.up).normalized;
-            if (fwd.sqrMagnitude < 0.0001f) fwd = Vector3.forward;
-
-            var rot = Quaternion.LookRotation(fwd, Vector3.up) * Quaternion.Euler(-60f, 0f, 60f);
-
-            AudioManager.I.PlaySFX("DurianSlash", transform.position);
-            EffectManager.I.Play("DurianSlash", transform.position, rot);
+            //var rot = Quaternion.LookRotation(fwd, Vector3.up) * Quaternion.Euler(-60f, 0f, 60f);
+            var t = GetComponentInChildren<Transform>();
+            var ts = GetComponentsInChildren<Transform>();
+            var tD = ts[ts.Length - 1];
+            EffectManager.I.Play("DurianSlash", t.position, tD.rotation);
+            AudioManager.I.PlaySFX("DurianSlash", tD.position);
+            //EffectManager.I.Play("DurianSlash", transform.position, rot);
+        }
+        if (weaponDef.weaponId == WeaponIds.Katana_Pepper)
+        {
+            var t = GetComponentInChildren<Transform>();
+            EffectManager.I.Play("Katana", t.position, t.rotation, parent : t);
+            AudioManager.I.PlaySFX("KatanaSlash", t.position);
         }
         if (weaponDef.weaponId == WeaponIds.UNKNOWN_WEAPON)
         {
@@ -116,6 +120,7 @@ public class Hitbox : MonoBehaviour
         var rot = Quaternion.LookRotation(dir, Vector3.up);
 
         var proj = Instantiate(weaponDef.projectilePrefab, spawnPos, rot);
+        EffectManager.I.Play("Bowling", spawnPos, rot, parent : proj.transform);
         //var proj = Instantiate(weaponDef.projectilePrefab, muzzle.position, muzzle.rotation);
         proj.Init(owner: GameObject.FindGameObjectWithTag("Player").GetComponent<Player>(),
                   def: weaponDef,
@@ -127,6 +132,7 @@ public class Hitbox : MonoBehaviour
 
     public void Close()
     {
+        Debug.Log("Hitbox Close");
         if (Active == this) Active = null;
         active = false;
         foreach (var s in col)
@@ -165,6 +171,14 @@ public class Hitbox : MonoBehaviour
         if (weaponDef.weaponId == WeaponIds.Mace_Durian)
         {
             AudioManager.I.PlaySFX("DurianHit", transform.position);
+        }
+        if (weaponDef.weaponId == WeaponIds.Katana_Pepper)
+        {
+            AudioManager.I.PlaySFX("KatanaHit", transform.position);
+        }
+        if (weaponDef.weaponId == WeaponIds.Bowling_Coconut)
+        {
+            AudioManager.I.PlaySFX("BowlingHit", transform.position);
         }
 
         EffectManager.I.Play("Hit", hitPoint, Quaternion.identity);

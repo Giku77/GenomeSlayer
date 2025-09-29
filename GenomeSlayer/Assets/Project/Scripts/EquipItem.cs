@@ -113,6 +113,7 @@ public class EquipItem : MonoBehaviour
                 var getDiff = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>().GetUpgradeStatAmount((int)GenomIds.ArmorWatermelonDefenseUp);
                 GetComponent<Player>().defense = d + (d * getDiff);
                 var ui = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+                if (!ui.GetActiveAromor()) AudioManager.I.PlaySFX("Equip");
                 ui.SetActiveAromor(true);
                 ui.ActiveArmorIndex = GetSelectedIndex();
                 currentWeaponId = WeaponIds.UNKNOWN_WEAPON;

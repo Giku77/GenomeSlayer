@@ -15,4 +15,4 @@ MonoBehaviour:
   id: DurianSlash
   prefab: {fileID: 1044528419629608, guid: 3be98662c9e7ef5468cb9c4e11010dc7, type: 3}
   defaultLife: 1
-  attachToParent: 1
+  attachToParent: 0

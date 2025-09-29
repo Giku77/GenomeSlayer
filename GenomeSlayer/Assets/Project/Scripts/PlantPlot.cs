@@ -22,6 +22,7 @@ public class PlantPlot : MonoBehaviour, IInteractable
 
     void Awake()
     {
+        AudioManager.I.PlaySFX("Dirt");
         slider = GetComponentInChildren<Slider>();
         if (slider != null)
         {

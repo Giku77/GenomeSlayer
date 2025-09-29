@@ -53,6 +53,7 @@ public class UIManager : MonoBehaviour
     public int ActiveArmorIndex { get; set; }
 
     public void SetActiveAromor(bool t) => ActiveArmor.SetActive(t);
+    public bool GetActiveAromor() => ActiveArmor.activeSelf;
 
     private void Awake()
     {

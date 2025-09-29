@@ -5,12 +5,22 @@ using TMPro;
 
 public class TextBlinker : MonoBehaviour
 {
-    public TextMeshProUGUI targetText; // TextMeshProUGUI를 쓰는 경우엔 Text 대신 TextMeshProUGUI로 변경
+    private TextMeshProUGUI targetText; // TextMeshProUGUI를 쓰는 경우엔 Text 대신 TextMeshProUGUI로 변경
     public float blinkSpeed = 1.0f; // 깜빡이는 속도
+    private Coroutine blinkCoroutine;
 
     private void Start()
     {
-        StartCoroutine(BlinkText());
+        targetText = GameObject.FindGameObjectWithTag("TitleText").GetComponent<TextMeshProUGUI>();
+        blinkCoroutine = StartCoroutine(BlinkText());
+    }
+
+    private void OnDestroy()
+    {
+        if (blinkCoroutine != null)
+        {
+            StopCoroutine(blinkCoroutine);
+        }
     }
 
     IEnumerator BlinkText()
@@ -34,6 +44,7 @@ public class TextBlinker : MonoBehaviour
 
     void SetAlpha(float alpha)
     {
+        if (targetText == null) return;
         Color color = targetText.color;
         color.a = alpha;
         targetText.color = color;
