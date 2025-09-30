@@ -30,9 +30,14 @@ public class SettingsManager : MonoBehaviour
         if (uiManager)
         {
             uiManager.ActiveShowFPS(showFPS == 1);
-            if (tutorialCompleted == 1)
-                uiManager.SetTypingID(1601001);
             uiManager.TypingTextObject.SetActive(tutorialCompleted == 1);
+            uiManager.GuidScreen.SetActive(tutorialCompleted == 1);
+            if (tutorialCompleted == 1)
+            {
+                //uiManager.SetTypingID(1601001);
+                //uiManager.ShowTypingText();
+                uiManager.SettingUI.SetActive(false);
+            }
         }
 
         Haptics.Enabled = (vibration == 1);

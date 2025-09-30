@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,9 +30,11 @@ public class UIManager : MonoBehaviour
     private static readonly string rStr = "레벨업을 하시겠습니까?";
 
     public GameObject TypingTextObject;
+    public GameObject GuidScreen;
     private TypingText typingText;
     private int typingID = 1601001;
     public void SetTypingID(int id) => typingID = id;
+    public int GetTypingID() => typingID;
 
     public UIFocusHighlighter uIFocusHighlighter;
     public GameObject slideZone;
@@ -50,6 +54,17 @@ public class UIManager : MonoBehaviour
             return SlotItems[ActiveArmorIndex];
         }
     }
+
+    private void OnEnable()
+    {
+        EventBus.UpdateSlot += UpdateInventory;
+    }
+
+    private void OnDisable()
+    {
+        EventBus.UpdateSlot -= UpdateInventory;
+    }
+
     public int ActiveArmorIndex { get; set; }
 
     public void SetActiveAromor(bool t) => ActiveArmor.SetActive(t);
@@ -67,8 +82,6 @@ public class UIManager : MonoBehaviour
             SlotItems[i].slotIndex = i;
         }
 
-       
-        EventBus.UpdateSlot += UpdateInventory;
 
       
         SetupStateGrid();
@@ -254,45 +267,96 @@ public class UIManager : MonoBehaviour
 
     public void StopTypingText()
     {
+        typingID = 1601001;
+        //ShowTypingText();
         TypingTextObject.SetActive(false);
+        GuidScreen.SetActive(false);
         uIFocusHighlighter.gameObject.SetActive(false);
         WaveButton.interactable = true;
         GenomButton.interactable = true;
         var settings = FindFirstObjectByType<SettingsManager>();
         settings.tutorialCompleted = 0;
+
+        GenomButton.gameObject.SetActive(true);
+        WaveButton.gameObject.SetActive(true);
     }
 
     public void ShowTypingText()
     {
+        if (!TypingTextObject.activeSelf) return;
+
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        var arm = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Watermelon_Armor);
-        var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Mace_Durian);
+        var e = player.GetComponent<EquipItem>();
+
         AudioManager.I.PlaySFX("UIClicked");
+
+        int guard = 0; 
+        while (guard++ < 10)
+        {
+            var msg = DataTableManger.StringTable.GetItem(typingID);
+
+            if (typingID == 1601007)
+            {
+                bool equipped = (e != null && e.currentWeaponId != WeaponIds.UNKNOWN_WEAPON);
+                if (equipped)
+                {
+                    typingID = msg.nextToolTip;
+                    continue; 
+                }
+            }
+
+            break; 
+        }
+
+        var message = DataTableManger.StringTable.GetItem(typingID);
+
+        uIFocusHighlighter.gameObject.SetActive(false);
+
         switch (typingID)
         {
             case 0:
                 StopTypingText();
                 return;
+
+            case 1601001:
+                GenomButton.gameObject.SetActive(false);
+                WaveButton.gameObject.SetActive(false);
+                break;
+
             case 1601004:
                 uIFocusHighlighter.target = joystickZone.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
+
             case 1601005:
                 uIFocusHighlighter.target = slideZone.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
+
             case 1601006:
                 player.quickSlotInventory.TryAddItem((int)ItemIds.Earthy_Fertilizer, 10);
                 player.quickSlotInventory.TryAddItem((int)ItemIds.Durian_Seed, 10);
                 uIFocusHighlighter.target = InventoryUI.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
+
             case 1601007:
-                player.quickSlotInventory.TryAddItem((int)WeaponIds.Mace_Durian, 1, weapon.equipDurability, weapon.equipQuantity);
-                uIFocusHighlighter.target = SlotItems[2].GetComponent<RectTransform>();
+                {
+                    if (player.quickSlotInventory.GetSlot(2).itemId == -1)
+                    {
+                        var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Mace_Durian);
+                        player.quickSlotInventory.TryAddItem((int)WeaponIds.Mace_Durian, 1, weapon.equipDurability, weapon.equipQuantity);
+                    }
+
+                    uIFocusHighlighter.target = SlotItems[2].GetComponent<RectTransform>();
+                    uIFocusHighlighter.gameObject.SetActive(true);
+                    break;
+                }
+
+            case 1601008:
+                uIFocusHighlighter.target = SlotItems[1].GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
-            case 1601008:
             case 1601009:
                 uIFocusHighlighter.target = InteractButton.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
@@ -310,6 +374,7 @@ public class UIManager : MonoBehaviour
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601016:
+                WaveButton.gameObject.SetActive(true);
                 uIFocusHighlighter.target = ViewButton.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
@@ -325,12 +390,122 @@ public class UIManager : MonoBehaviour
                 uIFocusHighlighter.target = HealthSilder.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
-            default:
-                uIFocusHighlighter.gameObject.SetActive(false);
-                break;
         }
-        var message = DataTableManger.StringTable.GetItem(typingID);
+
         typingText.Play(message.toolTipText);
-        typingID = message.nextToolTip;
+
+        if (typingID == 1601007)
+        {
+            bool equipped = (e != null && e.currentWeaponId != WeaponIds.UNKNOWN_WEAPON);
+            if (equipped)
+            {
+                typingID = message.nextToolTip;
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            typingID = message.nextToolTip;
+        }
     }
+
+
+    //public void ShowTypingText()
+    //{
+    //    if (!TypingTextObject.activeSelf) return;
+    //    var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    //    var arm = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Watermelon_Armor);
+    //    var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Mace_Durian);
+    //    AudioManager.I.PlaySFX("UIClicked");
+    //    switch (typingID)
+    //    {
+    //        case 0:
+    //            StopTypingText();
+    //            return;
+    //        case 1601001:
+    //            GenomButton.gameObject.SetActive(false);
+    //            WaveButton.gameObject.SetActive(false);
+    //            break;
+    //        case 1601004:
+    //            uIFocusHighlighter.target = joystickZone.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601005:
+    //            uIFocusHighlighter.target = slideZone.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601006:
+    //            player.quickSlotInventory.TryAddItem((int)ItemIds.Earthy_Fertilizer, 10);
+    //            player.quickSlotInventory.TryAddItem((int)ItemIds.Durian_Seed, 10);
+    //            uIFocusHighlighter.target = InventoryUI.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601007:
+    //            if (player.quickSlotInventory.GetSlot(2).itemId == -1)
+    //                player.quickSlotInventory.TryAddItem((int)WeaponIds.Mace_Durian, 1, weapon.equipDurability, weapon.equipQuantity);
+
+    //            uIFocusHighlighter.target = SlotItems[2].GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601008:
+    //            uIFocusHighlighter.target = SlotItems[1].GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601009:
+    //            uIFocusHighlighter.target = InteractButton.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601013:
+    //            uIFocusHighlighter.target = HarvesButton.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601014:
+    //            uIFocusHighlighter.target = AttackButton.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601015:
+    //            uIFocusHighlighter.target = WaveButton.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601016:
+    //            WaveButton.gameObject.SetActive(true);
+    //            uIFocusHighlighter.target = ViewButton.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601017:
+    //            uIFocusHighlighter.target = timerZone.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1602001:
+    //            uIFocusHighlighter.target = GenomButton.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        case 1601018:
+    //            uIFocusHighlighter.target = HealthSilder.GetComponent<RectTransform>();
+    //            uIFocusHighlighter.gameObject.SetActive(true);
+    //            break;
+    //        default:
+    //            uIFocusHighlighter.gameObject.SetActive(false);
+    //            break;
+    //    }
+    //    var message = DataTableManger.StringTable.GetItem(typingID);
+    //    typingText.Play(message.toolTipText);
+    //    if (typingID == 1601007)
+    //    {
+    //        GuidScreen.SetActive(false);
+    //        var e = player.GetComponent<EquipItem>();
+    //        if (e != null && e.currentWeaponId == WeaponIds.UNKNOWN_WEAPON)
+    //        {
+    //            return;
+    //        }
+    //        else 
+    //        {
+    //            GuidScreen.SetActive(true);
+    //        }
+    //    }
+    //    typingID = message.nextToolTip;
+    //}
 }
