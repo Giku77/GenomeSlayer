@@ -58,6 +58,7 @@ public enum EnemyIds
     PoisonSpider = 1302002, // 독거미
     Bat = 1303003, // 박쥐
     Orc = 1304004, // 오크
+    Demon = 1305005, // 데몬
 }
 
 public enum BuffIds

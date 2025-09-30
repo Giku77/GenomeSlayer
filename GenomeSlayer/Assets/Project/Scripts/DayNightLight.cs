@@ -9,12 +9,12 @@ public class DayNightLight : MonoBehaviour
     public WavesManager waveManager;
 
     public float dayIntensity = 2.0f;
-    public float nightIntensity = 0.1f;
+    public float nightIntensity = 0f;
 
     public Color dayColor = Color.white;
     public Color nightColor = new Color(0.1f, 0.1f, 0.35f); // ¹ã ÆÄ¶õºû
 
-    void Start()
+    public void StartDay()
     {
         maxTime = waveManager.currentInterval;
         timer = maxTime;

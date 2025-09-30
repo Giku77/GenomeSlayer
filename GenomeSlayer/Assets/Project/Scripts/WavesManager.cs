@@ -309,7 +309,7 @@ public class WavesManager : MonoBehaviour
         }
         if (waveInProgress && !isBossWave && currentAudioState != AudioState.Wave)
         {
-            AudioManager.I.SetBgmVolume(1f);
+            AudioManager.I.SetBgmVolume(2f);
             AudioManager.I.PlayBGMIfDifferent(WavebgmClip);
             currentAudioState = AudioState.Wave;
         }
@@ -390,8 +390,10 @@ public class WavesManager : MonoBehaviour
         //player.quickSlotInventory.TryAddItem((int)WeaponIds.Katana_Pepper, 1, weapon.equipDurability, weapon.equipQuantity);
 
         ResetWaves();
-        waveInProgress = true;
         waveInterval = waveDef[currentWave].waveDuration;
+        var day = GetComponent<DayNightLight>();
+        if (day != null) day.StartDay();
+        waveInProgress = true;
         waveCoroutine = StartCoroutine(WaveTimer());
         SpawnMonsters();
         uiManager.ActiveWaveButton(false);

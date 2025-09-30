@@ -24,6 +24,7 @@ public class ItemManager : MonoBehaviour
     private void AddEquipItem(int TreeId, int num)
     {
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        var uimanager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         var id = (int)WeaponIds.UNKNOWN_WEAPON;
         float addDur = 0;
         switch (TreeId)
@@ -45,6 +46,7 @@ public class ItemManager : MonoBehaviour
                 Debug.LogWarning($"Unknown TreeId: {TreeId}");
                 return;
         }
+        uimanager.IsGetEquipItem = true;
         var itemId = (id + (1000 * num));
         Debug.Log($"Adding Equip Item with ID: {itemId}");
         var weapon = DataTableManger.EquipmentTable.GetItem(itemId);

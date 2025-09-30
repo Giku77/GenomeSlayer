@@ -65,7 +65,7 @@ public class PlayerAttackAnimEvents : MonoBehaviour
     public void AE_CoconutAttackEnd()
     {
         if (equipItem.currentWeaponId != WeaponIds.Bowling_Coconut) return;
-        CoconutAttackbox?.Close();
+        //CoconutAttackbox?.Close();
     }
 
 }

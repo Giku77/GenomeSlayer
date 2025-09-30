@@ -1588,6 +1588,7 @@ MonoBehaviour:
   ViewButton: {fileID: 749418545}
   timerZone: {fileID: 722875388}
   showFPS: {fileID: 723440555}
+  SettingButton: {fileID: 1051355328}
   ActiveArmor: {fileID: 1328428106}
 --- !u!114 &136801374
 MonoBehaviour:
@@ -8401,6 +8402,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 20480533319570857, guid: 2a17b61317891bb42b39020ac648f5af, type: 3}
   m_PrefabInstance: {fileID: 1051355326}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1051355328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5967748406012653929, guid: 2a17b61317891bb42b39020ac648f5af, type: 3}
+  m_PrefabInstance: {fileID: 1051355326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1055493100
 GameObject:
   m_ObjectHideFlags: 0
@@ -8721,6 +8727,7 @@ MonoBehaviour:
   - {fileID: 772836517467267324, guid: 199e4c12528514349b3bff1c7740baf5, type: 3}
   - {fileID: 6124913075983309385, guid: e2ae302c21cd5a84185852a38b411fb8, type: 3}
   - {fileID: 5472856209527987515, guid: 0ad7a15707c63984f8e1a45a36fdf069, type: 3}
+  - {fileID: 772836517467267324, guid: 6170a4f5539c049488db0d19e04f1384, type: 3}
   uiManager: {fileID: 136801373}
   player: {fileID: 358311697}
 --- !u!114 &1123420672 stripped

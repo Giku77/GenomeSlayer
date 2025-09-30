@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: PickUp
   clip: {fileID: 8300000, guid: a5e9bb53751240f4285b6b7e4127bb0c, type: 3}
-  volume: 1
+  volume: 0.3
   spatial: 0
   pitchMin: 1
   pitchMax: 1

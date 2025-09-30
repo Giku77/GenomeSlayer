@@ -100,6 +100,8 @@ public class SettingsUIController : MonoBehaviour
     {
         SaveService.Delete();
 
+        settings.tutorialCompleted = 1;
+
         var Bootstrap = FindFirstObjectByType<GameBootstrap>();
         if (Bootstrap != null)
         {

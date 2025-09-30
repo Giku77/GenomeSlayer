@@ -31,3 +31,8 @@ MonoBehaviour:
     period: 0
     amount: 1
     isBoss: 1
+  - enemyData: {fileID: 11400000, guid: 7eb329e7107dc604eb9c4b2b513ccee8, type: 2}
+    startTime: 120
+    period: 0
+    amount: 1
+    isBoss: 1

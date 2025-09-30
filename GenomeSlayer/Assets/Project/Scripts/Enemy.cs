@@ -91,7 +91,7 @@ public class Enemy : Entity
         //attackDelay = data.attackDelay;
         //traceDist = data.traceDist;
         //attackDist = data.attackDist;
-        agent.speed = data.speed;
+        speed = data.speed;
         //Debug.Log($"SetEnemyData: {enemyId}, health {health}, speed {agent.speed}, damage {damage}, attackSpeed {data.attackSpeed}");
     }
 

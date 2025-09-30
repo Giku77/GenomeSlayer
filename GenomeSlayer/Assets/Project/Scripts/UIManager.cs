@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
     public GameObject ViewButton;
     public GameObject timerZone;
     public GameObject showFPS;
+    public GameObject SettingButton;
     public void ActiveShowFPS(bool t) => showFPS.SetActive(t);
 
     public GameObject ActiveArmor;
@@ -279,8 +280,10 @@ public class UIManager : MonoBehaviour
 
         GenomButton.gameObject.SetActive(true);
         WaveButton.gameObject.SetActive(true);
+        SettingButton.gameObject.SetActive(true);
     }
 
+    public bool IsGetEquipItem { get; set; }
     public void ShowTypingText()
     {
         if (!TypingTextObject.activeSelf) return;
@@ -305,6 +308,35 @@ public class UIManager : MonoBehaviour
                 }
             }
 
+            if (typingID == 1601008)
+            {
+                bool slotCheck = (player.quickSlotInventory.GetSlot(1).quantity < 10);
+                if (slotCheck)
+                {
+                    typingID = msg.nextToolTip;
+                    continue;
+                }
+            }
+
+            if (typingID == 1601010)
+            {
+                bool slotCheck = (player.quickSlotInventory.GetSlot(0).quantity < 7);
+                if (slotCheck)
+                {
+                    typingID = msg.nextToolTip;
+                    continue;
+                }
+            }
+
+            if (typingID == 1601013)
+            {
+                if (IsGetEquipItem)
+                {
+                    typingID = msg.nextToolTip;
+                    continue;
+                }
+            }
+
             break; 
         }
 
@@ -319,6 +351,8 @@ public class UIManager : MonoBehaviour
                 return;
 
             case 1601001:
+                IsGetEquipItem = false;
+                SettingButton.gameObject.SetActive(false);
                 GenomButton.gameObject.SetActive(false);
                 WaveButton.gameObject.SetActive(false);
                 break;
@@ -347,7 +381,7 @@ public class UIManager : MonoBehaviour
                         var weapon = DataTableManger.EquipmentTable.GetItem((int)WeaponIds.Mace_Durian);
                         player.quickSlotInventory.TryAddItem((int)WeaponIds.Mace_Durian, 1, weapon.equipDurability, weapon.equipQuantity);
                     }
-
+                    GuidScreen.SetActive(false);
                     uIFocusHighlighter.target = SlotItems[2].GetComponent<RectTransform>();
                     uIFocusHighlighter.gameObject.SetActive(true);
                     break;
@@ -358,6 +392,7 @@ public class UIManager : MonoBehaviour
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601009:
+            case 1601010:
                 uIFocusHighlighter.target = InteractButton.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
@@ -366,15 +401,16 @@ public class UIManager : MonoBehaviour
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601014:
+                GuidScreen.SetActive(true);
                 uIFocusHighlighter.target = AttackButton.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601015:
+                WaveButton.gameObject.SetActive(true);
                 uIFocusHighlighter.target = WaveButton.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1601016:
-                WaveButton.gameObject.SetActive(true);
                 uIFocusHighlighter.target = ViewButton.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
@@ -383,10 +419,21 @@ public class UIManager : MonoBehaviour
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
             case 1602001:
+                GenomButton.gameObject.SetActive(true);
                 uIFocusHighlighter.target = GenomButton.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
+            case 1602002:
+                GuidScreen.SetActive(false);
+                StateUI.SetActive(true);
+                var p = StateUI.GetComponentsInChildren<TextMeshProUGUI>();
+                var pc = p[0].GetComponentInChildren<RectTransform>();
+                uIFocusHighlighter.target = pc.GetComponent<RectTransform>();
+                uIFocusHighlighter.gameObject.SetActive(true);
+                break;
             case 1601018:
+                GuidScreen.SetActive(true);
+                StateUI.SetActive(false);
                 uIFocusHighlighter.target = HealthSilder.GetComponent<RectTransform>();
                 uIFocusHighlighter.gameObject.SetActive(true);
                 break;
@@ -398,6 +445,41 @@ public class UIManager : MonoBehaviour
         {
             bool equipped = (e != null && e.currentWeaponId != WeaponIds.UNKNOWN_WEAPON);
             if (equipped)
+            {
+                typingID = message.nextToolTip;
+            }
+            else
+            {
+                return;
+            }
+        }
+        else if (typingID == 1601008)
+        {
+            bool slotCheck = (player.quickSlotInventory.GetSlot(1).quantity < 10);
+            if (slotCheck)
+            {
+                typingID = message.nextToolTip;
+            }
+            else
+            {
+                return;
+            }
+        }
+        else if (typingID == 1601010)
+        {
+            bool slotCheck = (player.quickSlotInventory.GetSlot(0).quantity < 7);
+            if (slotCheck)
+            {
+                typingID = message.nextToolTip;
+            }
+            else
+            {
+                return;
+            }
+        }
+        else if (typingID == 1601013)
+        {
+            if (IsGetEquipItem)
             {
                 typingID = message.nextToolTip;
             }
