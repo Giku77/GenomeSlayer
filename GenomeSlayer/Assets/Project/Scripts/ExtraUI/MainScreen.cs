@@ -11,6 +11,7 @@ public class SceneChanger : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         AudioManager.I.PlaySFX("mainButton");
-        SceneManager.LoadScene(sceneName);
+        SceneLoader.I.Load(sceneName);
+        //SceneManager.LoadScene(sceneName);
     }
 }
