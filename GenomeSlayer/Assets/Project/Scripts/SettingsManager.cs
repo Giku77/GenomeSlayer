@@ -36,8 +36,10 @@ public class SettingsManager : MonoBehaviour
         }
 
         Haptics.Enabled = (vibration == 1);
-        // 오디오 믹서에 반영(있다면)
-        // AudioMixer.SetFloat("MasterVol", Mathf.Log10(Mathf.Max(0.0001f, masterVol)) * 20f);
+
+        Debug.Log("bgmVol: " + bgmVol + ", sfxVol: " + sfxVol);
+        AudioManager.I.SetBgmVolume(bgmVol);
+        AudioManager.I.SetSfxVolume(sfxVol);
 
         QualitySettings.SetQualityLevel(Mathf.Clamp(qualityLevel, 0, QualitySettings.names.Length - 1));
     }

@@ -131,6 +131,7 @@ public class AudioManager : MonoBehaviour
 
     // Settings ¿¬µ¿ (0..1 -> dB)
     public void SetBgmVolume(float v) => mixer.SetFloat("BGM_dB", Lin2dB(v));
+    public float GetBgmVolum() { mixer.GetFloat("BGM_dB", out var v); return Mathf.Pow(10f, v / 20f); }
     public void SetSfxVolume(float v) => mixer.SetFloat("SFX_dB", Lin2dB(v));
     public void SetMasterVolume(float v) => mixer.SetFloat("Master_dB", Lin2dB(v));
     float Lin2dB(float v) => Mathf.Log10(Mathf.Clamp(v, 0.0001f, 1f)) * 20f;

@@ -72,7 +72,7 @@ public class Hitbox : MonoBehaviour
             var t = GetComponentInChildren<Transform>();
             var ts = GetComponentsInChildren<Transform>();
             var tD = ts[ts.Length - 1];
-            EffectManager.I.Play("DurianSlash", t.position, tD.rotation);
+            EffectManager.I.Play("DurianSlash", transform.position, tD.rotation);
             AudioManager.I.PlaySFX("DurianSlash", tD.position);
             //EffectManager.I.Play("DurianSlash", transform.position, rot);
         }

@@ -278,6 +278,16 @@ public class WavesManager : MonoBehaviour
         }
     }
 
+    private enum AudioState
+    {
+        None,
+        BreakTime,
+        Wave,
+        Boss
+    }
+
+    private AudioState currentAudioState = AudioState.None;
+
     private void Update()
     {
         if ((waveInterval <= -1) && waveInProgress)
@@ -291,16 +301,23 @@ public class WavesManager : MonoBehaviour
             waveInProgress = false;
             //SpawnWave();
         }
-        if (!waveInProgress)
+        if (!waveInProgress && currentAudioState != AudioState.BreakTime)
         {
             AudioManager.I.SetBgmVolume(1f);
             AudioManager.I.PlayBGMIfDifferent(BreakTimebgmClip);
+            currentAudioState = AudioState.BreakTime;
         }
-        else if (!isBossWave) AudioManager.I.PlayBGMIfDifferent(WavebgmClip);
-        else
+        if (waveInProgress && !isBossWave && currentAudioState != AudioState.Wave)
+        {
+            AudioManager.I.SetBgmVolume(1f);
+            AudioManager.I.PlayBGMIfDifferent(WavebgmClip);
+            currentAudioState = AudioState.Wave;
+        }
+        if (waveInProgress && isBossWave && currentAudioState != AudioState.Boss)
         {
             AudioManager.I.SetBgmVolume(0.3f);
             AudioManager.I.PlayBGMIfDifferent(BossbgmClip);
+            currentAudioState = AudioState.Boss;
         }
         //if (!bossSpawned && isBossWave && waveInterval <= bossSpawnTime && waveInProgress)
         //{
