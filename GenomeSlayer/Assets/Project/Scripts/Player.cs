@@ -119,7 +119,8 @@ public class Player : Entity
         //yield return new WaitForSeconds(4f);
         //EffectManager.I.Play("Death", transform.position, Quaternion.identity);
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneLoader.I.Load(SceneManager.GetActiveScene().name);
     }
 
     private void Update()

@@ -110,7 +110,8 @@ public class SettingsUIController : MonoBehaviour
             Bootstrap.skipAutoSaveOnce = true;
         }
         RuntimeToast.Show("세이브 데이터를 삭제했어요.", 1.8f, 32,
-        onDone: () => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
+        //onDone: () => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
+        onDone: () => SceneLoader.I.Load(SceneManager.GetActiveScene().name));
     }
 
     private void LoadToUI(SettingsManager s)
