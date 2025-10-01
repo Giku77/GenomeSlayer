@@ -72,7 +72,7 @@ public class SceneLoader : MonoBehaviour
 
     void UpdateUI(float p)  // p: 0~1
     {
-        Debug.Log($"Loading progress: {p}");
+        //Debug.Log($"Loading progress: {p}");
         if (spinner) spinner.rectTransform.Rotate(0f, 0f, -360f * Time.unscaledDeltaTime);
         //if (progressText) progressText.text = $"·ÎµùÁß {Mathf.RoundToInt(p * 100f)}%";
     }

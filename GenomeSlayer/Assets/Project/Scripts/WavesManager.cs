@@ -290,7 +290,7 @@ public class WavesManager : MonoBehaviour
 
     private void Update()
     {
-        if ((waveInterval <= -1) && waveInProgress)
+        if ((waveInterval <= -2) && waveInProgress)
         {
             //Debug.Log("Spawning Wave " + (waveDef.currentWave + 1));
             AudioManager.I.PlaySFX("ChapterClear");

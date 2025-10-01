@@ -16,7 +16,7 @@ MonoBehaviour:
   enemyType: 2
   enemyName: "\uB3C5\uAC70\uBBF8"
   health: 80
-  speed: 8
+  speed: 5
   damage: 20
   attackSpeed: 1
   enemyPrefab: {fileID: 772836517467267324, guid: 199e4c12528514349b3bff1c7740baf5, type: 3}

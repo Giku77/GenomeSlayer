@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 229837371}
   - component: {fileID: 229837370}
   - component: {fileID: 229837372}
-  - component: {fileID: 229837373}
   m_Layer: 0
   m_Name: MainScreenManager
   m_TagString: Untagged
@@ -179,19 +178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blinkSpeed: 1
---- !u!114 &229837373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229837369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6831ae437f37b124187f4805c50051d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingCanvasPrefab: {fileID: 8335678180449863112, guid: 1a7a6f448955c9d4898afad23ec1af54, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138450812}
   - component: {fileID: 1138450811}
+  - component: {fileID: 1138450813}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -564,6 +551,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1138450813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138450810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6831ae437f37b124187f4805c50051d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingCanvasPrefab: {fileID: 2879161263564898924, guid: 1a7a6f448955c9d4898afad23ec1af54, type: 3}
 --- !u!1 &1181836327
 GameObject:
   m_ObjectHideFlags: 0

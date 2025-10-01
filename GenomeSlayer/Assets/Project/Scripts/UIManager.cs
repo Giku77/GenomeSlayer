@@ -236,7 +236,7 @@ public class UIManager : MonoBehaviour
 
     public void CloseButton() => StateUI.SetActive(false);
     public void CloseAccpet() => AcceptUI.SetActive(false);
-    public void CloseSetting() => SettingUI.SetActive(false);
+    public void CloseSetting() { SettingUI.SetActive(false); Time.timeScale = 1f; }
 
     private void Update()
     {
@@ -264,6 +264,10 @@ public class UIManager : MonoBehaviour
     {
         AudioManager.I.PlaySFX("UIClicked");
         SettingUI.SetActive(!SettingUI.activeSelf);
+        if (SettingUI.activeSelf)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1f;
     }
 
     public void StopTypingText()

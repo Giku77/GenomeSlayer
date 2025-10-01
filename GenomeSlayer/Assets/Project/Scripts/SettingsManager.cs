@@ -42,7 +42,7 @@ public class SettingsManager : MonoBehaviour
 
         Haptics.Enabled = (vibration == 1);
 
-        Debug.Log("bgmVol: " + bgmVol + ", sfxVol: " + sfxVol);
+        //Debug.Log("bgmVol: " + bgmVol + ", sfxVol: " + sfxVol);
         AudioManager.I.SetBgmVolume(bgmVol);
         AudioManager.I.SetSfxVolume(sfxVol);
 

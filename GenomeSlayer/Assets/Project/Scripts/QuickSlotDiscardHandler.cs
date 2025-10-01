@@ -25,11 +25,13 @@ public class QuickSlotDiscardHandler : MonoBehaviour,
     private QuickSlotInventory inventory;
     private EquipItem equipItem;
     private Button button;                       // 원래 버튼(클릭 막기 용도)
+    private Slider slider;
 
     void Awake()
     {
         if (!canvas) canvas = GetComponentInParent<Canvas>();
         button = GetComponent<Button>();
+        slider = GetComponentInChildren<Slider>(true);
         equipItem = GameObject.FindGameObjectWithTag("Player").GetComponent<EquipItem>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().quickSlotInventory;
         if (!quickbarArea) quickbarArea = transform.parent as RectTransform; 
@@ -115,11 +117,15 @@ public class QuickSlotDiscardHandler : MonoBehaviour,
         {
             if (equipItem && equipItem.SelectedIndex == slotIndex)
             {
-                var slider = GetComponentInChildren<Slider>();
-                if (slider) slider.gameObject.SetActive(false);
                 equipItem.UnEquipItem();
             }
+            if (inventory.GetSlot(slotIndex).itemId == (int)WeaponIds.Watermelon_Armor)
+            {
+                var Uimanager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+                Uimanager.SetActiveAromor(false);
+            }
 
+            if (slider) slider.gameObject.SetActive(false);
             inventory.RemoveItem(slotIndex);
             AudioManager.I?.PlaySFX("Drop");
         }

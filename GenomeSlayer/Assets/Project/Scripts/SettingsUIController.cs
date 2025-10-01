@@ -44,6 +44,7 @@ public class SettingsUIController : MonoBehaviour
 
         var uimanager = FindFirstObjectByType<UIManager>();
         tutorialCompletedTgl.onValueChanged.AddListener(v => { 
+            if (v > 0) Time.timeScale = 1f;
             settings.tutorialCompleted = (int)v; settings.ApplyRuntime();
             uimanager.OnAbleButtons(v == 0);
         });
@@ -70,7 +71,7 @@ public class SettingsUIController : MonoBehaviour
         defaultsBtn.onClick.AddListener(LoadDefaults);
 
         deleteBtn.onClick.AddListener(DeleteData);
-        mainBtn.onClick.AddListener(()=> SceneManager.LoadScene("MainScreen"));
+        mainBtn.onClick.AddListener(()=> { SceneLoader.I.Load("MainScreen"); Time.timeScale = 1f; });
     }
 
     private void OnDisable()
@@ -99,6 +100,7 @@ public class SettingsUIController : MonoBehaviour
     private void DeleteData()
     {
         SaveService.Delete();
+        Time.timeScale = 1f;
 
         settings.tutorialCompleted = 1;
 
@@ -113,6 +115,7 @@ public class SettingsUIController : MonoBehaviour
 
     private void LoadToUI(SettingsManager s)
     {
+        Debug.Log("SettingsUIController: LoadToUI : " + s.tutorialCompleted + " | " + s.invertY);
         tutorialCompletedTgl.SetValueWithoutNotify(s.tutorialCompleted);
         showFpsTgl.SetValueWithoutNotify(s.showFPS);
         sensitivitySld.SetValueWithoutNotify(s.lookSensitivity);
