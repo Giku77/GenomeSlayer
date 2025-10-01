@@ -16,7 +16,7 @@ public class DayNightLight : MonoBehaviour
 
     public void StartDay()
     {
-        maxTime = waveManager.currentInterval;
+        maxTime = waveManager.currentInterval + 1;
         timer = maxTime;
     }
 
