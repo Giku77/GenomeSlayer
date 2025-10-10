@@ -183,8 +183,12 @@ public class PlayerMove : MonoBehaviour
     }
     private bool IsAttackingOrTransitioning()
     {
+        var i = 0;
+        var equipItem = GetComponent<EquipItem>();
+        if (equipItem.currentWeaponId != WeaponIds.UNKNOWN_WEAPON) i = 1;
         var a = animator;
         var st = a.GetCurrentAnimatorStateInfo(0);
+
         if (st.IsTag("Attack")) return true;
 
         if (a.IsInTransition(0))
@@ -256,7 +260,10 @@ public class PlayerMove : MonoBehaviour
         {
             var v = rb.linearVelocity;
             rb.linearVelocity = new Vector3(0f, v.y, 0f);
-            animator.SetFloat(MoveHash, 0f);
+            var equipItem = GetComponent<EquipItem>();
+            if (equipItem.currentWeaponId == WeaponIds.UNKNOWN_WEAPON)
+                animator.SetFloat(MoveHash, 0f);
+            else animator.SetFloat(MoveHash, 0.1f);
 
             Vector3 camFwd2 = Camera.main.transform.forward;
             Vector3 camRight2 = Camera.main.transform.right;
@@ -279,8 +286,8 @@ public class PlayerMove : MonoBehaviour
             if (attackDesiredForward.HasValue && ang <= attackSnapAngle)
                 attackDesiredForward = null;
 
-            Vector3 step = transform.forward * (0.12f * dt);
-            rb.MovePosition(rb.position + step);
+            //Vector3 step = transform.forward * (0.12f * dt);
+            //rb.MovePosition(rb.position + step);
 
             return;
         }
