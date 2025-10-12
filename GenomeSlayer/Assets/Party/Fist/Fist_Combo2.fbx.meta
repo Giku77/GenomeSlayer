@@ -62,10 +62,24 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0
+        functionName: Ev_ComboOpen
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 2336acd934bd5e446885be332add2ff8, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.42727274
         functionName: AEr_AttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 104a441cc7a41034d8009e98084f3abd, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8608414
+        functionName: Ev_ComboClose
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 2336acd934bd5e446885be332add2ff8, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

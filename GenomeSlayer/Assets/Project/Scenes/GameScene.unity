@@ -2949,7 +2949,7 @@ MonoBehaviour:
   TopCamera: {fileID: 1507114763}
   PlayerCamera: {fileID: 1757115119}
   comboWindowOpen: 0.5
-  comboWindowClose: 0.85
+  comboWindowClose: 0.973
 --- !u!114 &358311695
 MonoBehaviour:
   m_ObjectHideFlags: 0

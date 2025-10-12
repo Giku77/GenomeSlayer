@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +16,9 @@ public class PlayerMove : MonoBehaviour
     private static readonly int HashDoNext = Animator.StringToHash("Combo");
 
     private BuffController buffController;
+
+    private int BASE = 0;
+    private int EQUIP;
 
     private float moveSpeed = 5f;
     private float rotationSpeed = 180f;
@@ -75,14 +79,32 @@ public class PlayerMove : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        EQUIP = animator.GetLayerIndex("Equip Layer");
         //playerHealth = GetComponent<PlayerHealth>();
         //gun = GetComponentInChildren<Gun>();
         audioSource = GetComponent<AudioSource>();
         cap = GetComponent<CapsuleCollider>();
     }
 
-    [SerializeField, Range(0f, 1f)] float comboWindowOpen = 0.5f;
-    [SerializeField, Range(0f, 1f)] float comboWindowClose = 0.85f;
+    private int ActiveAttackLayer()
+    {
+        var st0 = animator.GetCurrentAnimatorStateInfo(BASE);
+        if (st0.tagHash == Animator.StringToHash("Attack")) return BASE;
+
+        if (EQUIP >= 0)
+        {
+            var st1 = animator.GetCurrentAnimatorStateInfo(EQUIP);
+            if (st1.tagHash == Animator.StringToHash("Attack")) return EQUIP;
+        }
+        return BASE; 
+    }
+
+    //[SerializeField, Range(0f, 1f)] float comboWindowOpen = 0.5f;
+    //[SerializeField, Range(0f, 1f)] float comboWindowClose = 0.85f;
+
+    [SerializeField] int weaponMaxCombo = 3;
+    int currentCombo = 0;
+    bool canQueue = false;   // 창 열림
 
     bool queuedCombo;  
 
@@ -90,8 +112,14 @@ public class PlayerMove : MonoBehaviour
     {
         if (player.isDead || animator == null) return;
 
-        var st = animator.GetCurrentAnimatorStateInfo(0);
-        bool inAttack = st.IsTag("Attack");  
+        int layer = ActiveAttackLayer();
+        var st = animator.GetCurrentAnimatorStateInfo(layer);
+        bool inAttack = st.IsTag("Attack");
+        if (!inAttack && animator.IsInTransition(layer))
+        {
+            var nt = animator.GetNextAnimatorStateInfo(layer);
+            if (nt.IsTag("Attack")) inAttack = true;
+        }
         var equipItem = GetComponent<EquipItem>();
         var smgr = GameObject.FindGameObjectWithTag("Ges").GetComponent<StateManager>();
         switch (equipItem.currentWeaponId)
@@ -119,31 +147,73 @@ public class PlayerMove : MonoBehaviour
 
         if (!inAttack)
         {
+            currentCombo = 0;
             animator.ResetTrigger(AttackHash);
+            animator.SetBool(HashDoNext, false);
             animator.SetTrigger(AttackHash);
             queuedCombo = false;
         }
         else
         {
-            //var equip = GetComponent<EquipItem>();
+            var equip = GetComponent<EquipItem>();
             //if (equip.IsEquipped())
             //{
             //    StartCoroutine(HitboxPulse(0.3f));
             //    animator.SetTrigger(AttackHash);
             //}
-            if (equipItem.currentWeaponId == WeaponIds.UNKNOWN_WEAPON)
-            {
+            if (equipItem.currentWeaponId != WeaponIds.Bowling_Coconut)
                 queuedCombo = true;
-                //animator.SetBool(HashDoNext, true);
-            }
+            //if (equipItem.currentWeaponId == WeaponIds.UNKNOWN_WEAPON)
+            //{
+            //    queuedCombo = true;
+            //    //animator.SetBool(HashDoNext, true);
+            //}
         }
     }
+
+    public void Ev_ComboOpen()
+    {
+        //Debug.Log("Combo Open");
+        canQueue = true;
+        if (queuedCombo) Ev_ComboConsume();
+    }
+
+    public void Ev_ComboClose()
+    {
+        //Debug.Log("Combo Close");
+        canQueue = false;
+        //StartCoroutine(ClearComboNextFrame());
+        animator.SetBool(HashDoNext, false);
+    }
+
+    IEnumerator ClearComboNextFrame()
+    {
+        yield return null; 
+        animator.SetBool(HashDoNext, false);
+    }
+
+    public void Ev_ComboConsume()
+    {
+        //Debug.Log("Combo Consume");
+        if (!canQueue) return;
+        if (currentCombo >= weaponMaxCombo - 1)
+        {
+            queuedCombo = false;
+            animator.SetBool(HashDoNext, false);
+            return;
+        }
+        animator.SetBool(HashDoNext, true);
+        queuedCombo = false;
+        currentCombo++;
+    }
+
 
     private void Update()
     {
         if (player.isDead || animator == null) return;
 
-        var st = animator.GetCurrentAnimatorStateInfo(0);
+        int layer = ActiveAttackLayer();
+        var st = animator.GetCurrentAnimatorStateInfo(layer);
 
         if (st.IsTag("Attack"))
         {
@@ -156,7 +226,8 @@ public class PlayerMove : MonoBehaviour
             Vector3 desiredMove = camRight * playerInput.MoveX + camFwd * playerInput.MoveZ;
             bool hasDirInput = desiredMove.sqrMagnitude > 0.001f;
 
-            if (queuedCombo && t >= comboWindowOpen && t <= comboWindowClose)
+            //if (queuedCombo && t >= comboWindowOpen && t <= comboWindowClose)
+            if (queuedCombo && canQueue)
             {
                 animator.SetBool(HashDoNext, true);
 
@@ -168,11 +239,11 @@ public class PlayerMove : MonoBehaviour
                 queuedCombo = false;
             }
 
-            if (t > comboWindowClose)
-            {
-                animator.SetBool(HashDoNext, false);
-                queuedCombo = false;
-            }
+            //if (t > comboWindowClose)
+            //{
+            //    animator.SetBool(HashDoNext, false);
+            //    queuedCombo = false;
+            //}
         }
         else
         {
@@ -183,18 +254,15 @@ public class PlayerMove : MonoBehaviour
     }
     private bool IsAttackingOrTransitioning()
     {
-        var i = 0;
-        var equipItem = GetComponent<EquipItem>();
-        if (equipItem.currentWeaponId != WeaponIds.UNKNOWN_WEAPON) i = 1;
-        var a = animator;
-        var st = a.GetCurrentAnimatorStateInfo(0);
-
-        if (st.IsTag("Attack")) return true;
-
-        if (a.IsInTransition(0))
+        for (int layer = 0; layer < animator.layerCount; layer++)
         {
-            var nt = a.GetNextAnimatorStateInfo(0);
-            if (nt.IsTag("Attack") || st.IsTag("Attack")) return true;
+            var st = animator.GetCurrentAnimatorStateInfo(layer);
+            if (st.IsTag("Attack")) return true;
+            if (animator.IsInTransition(layer))
+            {
+                var nt = animator.GetNextAnimatorStateInfo(layer);
+                if (nt.IsTag("Attack") || st.IsTag("Attack")) return true;
+            }
         }
         return false;
     }
@@ -260,10 +328,11 @@ public class PlayerMove : MonoBehaviour
         {
             var v = rb.linearVelocity;
             rb.linearVelocity = new Vector3(0f, v.y, 0f);
-            var equipItem = GetComponent<EquipItem>();
-            if (equipItem.currentWeaponId == WeaponIds.UNKNOWN_WEAPON)
-                animator.SetFloat(MoveHash, 0f);
-            else animator.SetFloat(MoveHash, 0.1f);
+            animator.SetFloat(MoveHash, 0f);
+            //var equipItem = GetComponent<EquipItem>();
+            //if (equipItem.currentWeaponId == WeaponIds.UNKNOWN_WEAPON)
+            //    animator.SetFloat(MoveHash, 0f);
+            //else animator.SetFloat(MoveHash, 0.1f);
 
             Vector3 camFwd2 = Camera.main.transform.forward;
             Vector3 camRight2 = Camera.main.transform.right;
