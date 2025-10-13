@@ -2948,8 +2948,7 @@ MonoBehaviour:
   hitbox: {fileID: 1350704896382971645, guid: 03bdb08937e47f74684ef720f63cb18a, type: 3}
   TopCamera: {fileID: 1507114763}
   PlayerCamera: {fileID: 1757115119}
-  comboWindowOpen: 0.5
-  comboWindowClose: 0.973
+  weaponMaxCombo: 3
 --- !u!114 &358311695
 MonoBehaviour:
   m_ObjectHideFlags: 0

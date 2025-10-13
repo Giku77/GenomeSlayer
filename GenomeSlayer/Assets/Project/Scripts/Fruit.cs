@@ -7,6 +7,7 @@ public class Fruit : MonoBehaviour, IInteractable
     public string Prompt => "[F] Harvest";
     public void Interact(Player player)
     {
+        AudioManager.I.PlaySFX("Harvest");
         ownerTree?.OnFruitHarvested();
         Destroy(gameObject);
     }
