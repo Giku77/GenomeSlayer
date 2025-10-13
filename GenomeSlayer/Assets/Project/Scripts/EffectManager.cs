@@ -24,9 +24,12 @@ public class EffectManager : MonoBehaviour
     }
     void Return(EffectDef d, GameObject go)
     {
+        if (!go) return; 
+        if (!pools.TryGetValue(d.id, out var q)) { q = new(); pools[d.id] = q; }
+
         go.SetActive(false);
         go.transform.SetParent(transform);
-        pools[d.id].Enqueue(go);
+        q.Enqueue(go);
     }
 
     public GameObject Play(string id, Vector3 pos, Quaternion rot, Transform parent = null, float life = -1f)
@@ -47,6 +50,7 @@ public class EffectManager : MonoBehaviour
     System.Collections.IEnumerator ReturnLater(EffectDef d, GameObject go, float t)
     {
         yield return new WaitForSeconds(t);
+        if (!go) yield break;
         Return(d, go);
     }
 }

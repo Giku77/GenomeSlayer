@@ -8814,6 +8814,8 @@ MonoBehaviour:
   - {fileID: 6124913075983309385, guid: e2ae302c21cd5a84185852a38b411fb8, type: 3}
   - {fileID: 5472856209527987515, guid: 0ad7a15707c63984f8e1a45a36fdf069, type: 3}
   - {fileID: 772836517467267324, guid: 6170a4f5539c049488db0d19e04f1384, type: 3}
+  - {fileID: 1769610813174955757, guid: a4310191e8bbf064db554386a88b898e, type: 3}
+  - {fileID: 377510900949747340, guid: bb3d5f16f77bdb8469341387efd89eba, type: 3}
   uiManager: {fileID: 136801373}
   player: {fileID: 358311697}
 --- !u!114 &1123420672 stripped
