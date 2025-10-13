@@ -63,20 +63,19 @@ public class Enemy : Entity
             {
                 case State.Idle:
                     animator.SetBool(hashTarget, false);
-                    if(agent.isOnNavMesh)
-                     agent.isStopped = true;
+                    AgentStopSafe(true);
                     break;
                 case State.Trace:
                     animator.SetBool(hashTarget, true);
-                    agent.isStopped = false;
+                    AgentStopSafe(false);
                     break;
                 case State.Attack:
                     animator.SetBool(hashTarget, false);
-                    agent.isStopped = true;
+                    AgentStopSafe(true);
                     break;
                 case State.Die:
                     animator.SetTrigger(hashDie);
-                    agent.isStopped = true;
+                    AgentStopSafe(true);
                     break;
             }
         }
@@ -176,19 +175,18 @@ public class Enemy : Entity
 
     private void UpdateTrace()
     {
-        if (target != null && Vector3.Distance(transform.position, target.position) <= attackDist)
-        {
-            state = State.Attack;
-            return;
-        }
-        if (target == null && Vector3.Distance(transform.position, target.position) > traceDist)
-        {
-            state = State.Idle;
-            return;
-        }
-        //animator.SetBool("HasTarget", true);
+        if (target == null) { state = State.Idle; return; }
+
+        float dist = Vector3.Distance(transform.position, target.position);
+        if (dist <= attackDist) { state = State.Attack; return; }
+        if (dist > traceDist) { state = State.Idle; return; }
+
+        if (!AgentUsable()) return;
+
         agent.speed = speed * buffController.MoveSpeedMul;
-        agent.SetDestination(target.position);
+
+        if (NavMesh.SamplePosition(target.position, out var hit, 1f, NavMesh.AllAreas))
+            AgentSetDestinationSafe(hit.position);
     }
 
     private void UpdateIdle()
@@ -249,6 +247,32 @@ public class Enemy : Entity
     //    Destroy(gameObject, 5f);
     //}
 
+    private bool AgentUsable()
+    {
+        return agent && agent.isActiveAndEnabled && agent.isOnNavMesh;
+    }
+
+    private void AgentStopSafe(bool stop)
+    {
+        if (!AgentUsable()) return;
+        agent.isStopped = stop;
+        if (stop) agent.ResetPath();
+    }
+
+    private bool AgentSetDestinationSafe(Vector3 dst)
+    {
+        if (!AgentUsable()) return false;
+        agent.SetDestination(dst);
+        return true;
+    }
+
+    private bool AgentWarpSafe(Vector3 pos)
+    {
+        if (!agent || !agent.isActiveAndEnabled) return false;
+        if (!NavMesh.SamplePosition(pos, out var hit, 2f, NavMesh.AllAreas)) return false;
+        return agent.Warp(hit.position);
+    }
+
     bool inKnockback;
 
     public void Knockback(Vector3 dir, float force, float duration = 0.18f)
@@ -262,9 +286,9 @@ public class Enemy : Entity
         if (inKnockback) yield break;
         inKnockback = true;
 
+        AgentStopSafe(true);
         if (agent)
         {
-            agent.isStopped = true;
             agent.updatePosition = false;
             agent.updateRotation = false;
         }
@@ -303,12 +327,18 @@ public class Enemy : Entity
             rb.collisionDetectionMode = prevCd;
         }
 
-        if (agent)
+        if (AgentWarpSafe(transform.position))
         {
-            agent.Warp(transform.position);
-            agent.updatePosition = true;
-            agent.updateRotation = true;
-            agent.isStopped = false;
+            if (agent)
+            {
+                agent.updatePosition = true;
+                agent.updateRotation = true;
+            }
+            AgentStopSafe(false);
+        }
+        else
+        {
+            if (agent) agent.enabled = false;
         }
 
         inKnockback = false;
@@ -349,6 +379,11 @@ public class Enemy : Entity
         health = maxhealth;
         healthSlider.value = health;
         animator.ResetTrigger(hashDie);
+        //if (agent && !agent.isOnNavMesh)
+        //{
+        //    AgentWarpSafe(transform.position);
+        //    if (!agent.isOnNavMesh) agent.enabled = false;
+        //}
         state = State.Idle;
         //animator.Rebind();
         //animator.Update(0f);

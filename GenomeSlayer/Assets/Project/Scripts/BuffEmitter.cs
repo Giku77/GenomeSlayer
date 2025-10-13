@@ -9,6 +9,9 @@ public class BuffEmitter : MonoBehaviour
     public float radius = 5f;       
     public bool enableWhenPaired = false;  // 1그루일 때만 on/off
 
+    [Header("FX Limit")]
+    [SerializeField, Range(0, 32)] int maxEnemyFx = 5; // 이펙트는 최대 5마리만
+
     public SphereCollider trig;
     private readonly HashSet<BuffController> inside = new();
     private readonly Dictionary<BuffController, Coroutine> playerCos = new();
@@ -55,7 +58,7 @@ public class BuffEmitter : MonoBehaviour
         if (bc.TryGetComponent(out Player p) && !playerCos.ContainsKey(bc))
             playerCos[bc] = StartCoroutine(buffPlayerEffect(p));
 
-        if (bc.TryGetComponent(out Enemy e) && !enemyCos.ContainsKey(bc))
+        if (bc.TryGetComponent(out Enemy e) && !enemyCos.ContainsKey(bc) && enemyCos.Count < maxEnemyFx)
             enemyCos[bc] = StartCoroutine(debuffEnemyEffect(e));
 
         bc.AddOrRefresh(buff, this, 0);

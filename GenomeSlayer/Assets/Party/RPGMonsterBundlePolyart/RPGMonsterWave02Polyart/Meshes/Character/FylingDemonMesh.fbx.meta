@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: 9ebb3345fd9e4df183a1c85d72a8af78
+AssetOrigin:
+  serializedVersion: 1
+  productId: 261480
+  packageName: RPG Monster BUNDLE Polyart
+  packageVersion: 1.0
+  assetPath: Assets/RPGMonsterBundlePolyart/RPGMonsterWave02Polyart/Meshes/Character/FylingDemonMesh.fbx
+  uploadId: 602801
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 22200
   internalIDToNameTable:
   - first:
       1: 100000
@@ -478,8 +485,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -502,6 +507,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -529,6 +535,7 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 0
     normalImportMode: 1
@@ -550,7 +557,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -561,15 +568,9 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 261480
-  packageName: RPG Monster BUNDLE Polyart
-  packageVersion: 1.0
-  assetPath: Assets/RPGMonsterBundlePolyart/RPGMonsterWave02Polyart/Meshes/Character/FylingDemonMesh.fbx
-  uploadId: 602801
