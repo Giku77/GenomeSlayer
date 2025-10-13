@@ -59,6 +59,8 @@ public enum EnemyIds
     Bat = 1303003, // 박쥐
     Orc = 1304004, // 오크
     Demon = 1305005, // 데몬
+    Slime = 1306006, // 슬라임
+    FlyingDemon = 1307007, // 날으는 데몬
 }
 
 public enum BuffIds

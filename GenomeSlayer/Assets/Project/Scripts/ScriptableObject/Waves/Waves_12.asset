@@ -21,7 +21,7 @@ MonoBehaviour:
     period: 4
     amount: 2
     isBoss: 0
-  - enemyData: {fileID: 11400000, guid: 9a49578916563964eb9f98dd65e54e74, type: 2}
+  - enemyData: {fileID: 11400000, guid: e137ca222bd673140afd4820ea7dd880, type: 2}
     startTime: 120
     period: 2
     amount: 2

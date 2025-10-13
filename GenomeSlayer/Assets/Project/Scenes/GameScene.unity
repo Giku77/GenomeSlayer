@@ -2948,8 +2948,7 @@ MonoBehaviour:
   hitbox: {fileID: 1350704896382971645, guid: 03bdb08937e47f74684ef720f63cb18a, type: 3}
   TopCamera: {fileID: 1507114763}
   PlayerCamera: {fileID: 1757115119}
-  comboWindowOpen: 0.5
-  comboWindowClose: 0.973
+  weaponMaxCombo: 3
 --- !u!114 &358311695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8815,6 +8814,8 @@ MonoBehaviour:
   - {fileID: 6124913075983309385, guid: e2ae302c21cd5a84185852a38b411fb8, type: 3}
   - {fileID: 5472856209527987515, guid: 0ad7a15707c63984f8e1a45a36fdf069, type: 3}
   - {fileID: 772836517467267324, guid: 6170a4f5539c049488db0d19e04f1384, type: 3}
+  - {fileID: 1769610813174955757, guid: a4310191e8bbf064db554386a88b898e, type: 3}
+  - {fileID: 377510900949747340, guid: bb3d5f16f77bdb8469341387efd89eba, type: 3}
   uiManager: {fileID: 136801373}
   player: {fileID: 358311697}
 --- !u!114 &1123420672 stripped
