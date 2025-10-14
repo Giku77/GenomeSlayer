@@ -16,13 +16,18 @@ MonoBehaviour:
   chapterNum: 18
   waveDuration: 240
   spawns:
-  - enemyData: {fileID: 11400000, guid: e9e9f5cdc908a8e44bd3944885001dea, type: 2}
+  - enemyData: {fileID: 11400000, guid: a3fe268c3fe709e478f17df83e7bc2af, type: 2}
     startTime: 240
     period: 1
     amount: 1
     isBoss: 0
   - enemyData: {fileID: 11400000, guid: e137ca222bd673140afd4820ea7dd880, type: 2}
     startTime: 180
-    period: 6
+    period: 2
     amount: 2
+    isBoss: 0
+  - enemyData: {fileID: 11400000, guid: 9a49578916563964eb9f98dd65e54e74, type: 2}
+    startTime: 120
+    period: 1
+    amount: 1
     isBoss: 0
