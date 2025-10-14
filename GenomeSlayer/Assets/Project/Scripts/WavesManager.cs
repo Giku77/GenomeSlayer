@@ -46,11 +46,13 @@ public class WavesManager : MonoBehaviour
     private bool isBossWave {
         get 
         { 
-            for (int i = 0; i < waveDef[currentWave].spawns.Count; i++)
+            var cWave = currentWave - 1;
+            if (cWave < 0) cWave = waveDef.Length - 1;
+            for (int i = 0; i < waveDef[cWave].spawns.Count; i++)
             {
-                if (waveDef[currentWave].spawns[i].isBoss)
+                if (waveDef[cWave].spawns[i].isBoss)
                 {
-                    bossSpawnTime = waveDef[currentWave].spawns[i].startTime;
+                    bossSpawnTime = waveDef[cWave].spawns[i].startTime;
                     return true;
                 }
             }
@@ -71,7 +73,9 @@ public class WavesManager : MonoBehaviour
     {
         int idx = currentWave;
         if (waveInProgress)
-            idx = Mathf.Max(0, idx - 1);
+            idx = currentWave - 1;
+            //idx = Mathf.Max(0, currentWave - 1);
+        if (idx < 0) idx = waveDef.Length - 1;
 
         return new WavesSaveData
         {
