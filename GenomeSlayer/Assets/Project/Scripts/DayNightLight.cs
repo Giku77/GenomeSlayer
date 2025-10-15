@@ -7,6 +7,8 @@ public class DayNightLight : MonoBehaviour
     private float maxTime;
     private float timer;
 
+    public float NightTime => maxTime * 0.1f;
+
     public WavesManager waveManager;
 
     public float dayIntensity = 2.0f;

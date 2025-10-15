@@ -11,6 +11,7 @@ TagManager:
   - Ges
   - UIManager
   - TitleText
+  - WaveManager
   layers:
   - Default
   - TransparentFX
