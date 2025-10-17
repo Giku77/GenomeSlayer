@@ -1,21 +1,18 @@
 using Newtonsoft.Json;
 using System;
 using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public static class SaveService
 {
     static readonly string Dir = Application.persistentDataPath;
-    static readonly string FileName = "savegame.json";
+    static readonly string FileName = "savegame.json"; 
     static readonly string BackupName = "savegame.bak";
 
     static readonly JsonSerializerSettings JsonSettings = new()
     {
-        Formatting = Formatting.None,          // 용량 줄이기 (디버그 시 Indented 추천)
+        Formatting = Formatting.None,
         NullValueHandling = NullValueHandling.Ignore,
-        // 필요 시: ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-        // 다형성 필요 시: TypeNameHandling = TypeNameHandling.Auto (보안 유의)
     };
 
     static string PathMain => Path.Combine(Dir, FileName);
@@ -27,19 +24,17 @@ public static class SaveService
         {
             if (!Directory.Exists(Dir)) Directory.CreateDirectory(Dir);
 
-            string json = JsonConvert.SerializeObject(data, JsonSettings);
+            // 1) JSON 직렬화 → 2) 암호화(Base64 문자열)
+            string b64 = SecureSave.EncryptJsonToBase64(data, compress: true);
             string tmpPath = PathMain + ".tmp";
 
- 
-            File.WriteAllText(tmpPath, json);
+            File.WriteAllText(tmpPath, b64);
 
             if (File.Exists(PathMain))
             {
-    
                 if (File.Exists(PathBackup)) File.Delete(PathBackup);
                 File.Move(PathMain, PathBackup);
             }
-
             File.Move(tmpPath, PathMain);
         }
         catch (Exception e)
@@ -55,16 +50,52 @@ public static class SaveService
         {
             if (File.Exists(PathMain))
             {
-                string json = File.ReadAllText(PathMain);
-                data = JsonConvert.DeserializeObject<T>(json, JsonSettings);
-                return data != null;
+                var text = File.ReadAllText(PathMain);
+
+                // 암호화 판별 → 해독 시도
+                if (SecureSave.LooksLikeEncrypted(text))
+                {
+                    if (SecureSave.TryDecryptBase64ToJson<T>(text, out var dec, compressed: true))
+                    {
+                        data = dec; return true;
+                    }
+                    // 암호화로 보이는데 실패 → 백업 시도
+                }
+                else
+                {
+                    // (구버전) 플레인 JSON → 한번 로드해서 곧바로 암호화 재저장(마이그레이션)
+                    var plain = JsonConvert.DeserializeObject<T>(text, JsonSettings);
+                    if (plain != null)
+                    {
+                        data = plain;
+                        Save(data); // 즉시 암호화 저장
+                        return true;
+                    }
+                }
             }
-  
+
             if (File.Exists(PathBackup))
             {
-                string json = File.ReadAllText(PathBackup);
-                data = JsonConvert.DeserializeObject<T>(json, JsonSettings);
-                return data != null;
+                var btxt = File.ReadAllText(PathBackup);
+                if (SecureSave.LooksLikeEncrypted(btxt))
+                {
+                    if (SecureSave.TryDecryptBase64ToJson<T>(btxt, out var dec, compressed: true))
+                    {
+                        data = dec;
+                        Save(data);
+                        return true;
+                    }
+                }
+                else
+                {
+                    var plain = JsonConvert.DeserializeObject<T>(btxt, JsonSettings);
+                    if (plain != null)
+                    {
+                        data = plain;
+                        Save(data);
+                        return true;
+                    }
+                }
             }
         }
         catch (Exception e)
@@ -74,9 +105,19 @@ public static class SaveService
             {
                 if (File.Exists(PathBackup))
                 {
-                    string json = File.ReadAllText(PathBackup);
-                    data = JsonConvert.DeserializeObject<T>(json, JsonSettings);
-                    return data != null;
+                    var btxt = File.ReadAllText(PathBackup);
+                    if (SecureSave.LooksLikeEncrypted(btxt))
+                    {
+                        if (SecureSave.TryDecryptBase64ToJson<T>(btxt, out var dec, compressed: true))
+                        {
+                            data = dec; Save(data); return true;
+                        }
+                    }
+                    else
+                    {
+                        var plain = JsonConvert.DeserializeObject<T>(btxt, JsonSettings);
+                        if (plain != null) { data = plain; Save(data); return true; }
+                    }
                 }
             }
             catch (Exception be)
@@ -86,6 +127,7 @@ public static class SaveService
         }
         return false;
     }
+
     public static void Delete()
     {
         try
