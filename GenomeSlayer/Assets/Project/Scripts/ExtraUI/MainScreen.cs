@@ -4,6 +4,15 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     public AudioClip AudioClip;
+
+    private void Awake()
+    {
+        #if UNITY_EDITOR
+                Debug.unityLogger.logEnabled = true;
+        #else
+                Debug.unityLogger.logEnabled = false;
+        #endif
+    }
     private void Start()
     {
          AudioManager.I.PlayBGM(AudioClip);

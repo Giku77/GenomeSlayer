@@ -12,7 +12,7 @@ Library: C:\Users\KGA\Desktop\GS_Unity\GenomeSlayer\GenomeSlayer\Temp\BurstOutpu
 --float-mode=Fast
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\KGA\Desktop\GS_Unity\GenomeSlayer\GenomeSlayer\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\KGA\Desktop\GS_Unity\GenomeSlayer\GenomeSlayer\Library\Burst
 --output=C:\Users\KGA\Desktop\GS_Unity\GenomeSlayer\GenomeSlayer\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
@@ -30,7 +30,7 @@ Library: C:\Users\KGA\Desktop\GS_Unity\GenomeSlayer\GenomeSlayer\Temp\BurstOutpu
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\KGA\Desktop\GS_Unity\GenomeSlayer\GenomeSlayer\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.55f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\KGA\Desktop\GS_Unity\GenomeSlayer\GenomeSlayer\Library\Burst
 --output=C:\Users\KGA\Desktop\GS_Unity\GenomeSlayer\GenomeSlayer\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
