@@ -22,8 +22,8 @@
 ---
 
 ## Gameplay
-- `docs/images/gameplay_01.gif`
-- `docs/images/gameplay_02.gif`
+![게임플레이1](docs/images/gameplay_01.png)
+![게임플레이2](docs/images/gameplay_02.png)
 
 ---
 
@@ -32,7 +32,7 @@
 - 정비 시간에 포인트로 능력 강화
 - 5의 배수 웨이브는 보스 웨이브
 
-`docs/images/coreloop.png`
+![코어루프](docs/images/coreloop.png)
 
 ---
 
