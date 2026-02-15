@@ -41,40 +41,40 @@
 ### 1) Data-driven Content Pipeline (ScriptableObject)
 - 신규 콘텐츠 추가/밸런싱을 코드 수정 없이 처리
 - 무기/적/웨이브/버프/이펙트/식물 데이터를 SO로 분리
-#### 📁 관련 코드: [`Assets/Scripts/ScriptableObject/`](Assets/Scripts/ScriptableObject/)
+#### 📁 관련 코드: [`ScriptableObject`](GenomeSlayer/Assets/Project/Scripts/ScriptableObject/)
 
 ### 2) WaveSO Timeline Spawn + Validation
 - WaveSO에서 시간 기반 스폰(startTime/period/amount/isBoss) 정의
 - 런타임에서 WavesManager가 스케줄 스폰 실행
 - `OnValidate()`로 보스 스폰 규칙/수량 최소값 강제 (데이터 오류 사전 차단)
 - `EstimateTotalSpawns()`로 난이도/부하 빠른 산정
-#### 📁 관련 코드: [`Assets/Scripts/ScriptableObject/Waves`](Assets/Scripts/ScriptableObject/Waves)
+#### 📁 관련 코드: [`Waves`](GenomeSlayer/Assets/Project/Scripts/ScriptableObject/Waves/)
 
 ### 3) Save/Load (안정성 중심)
 - Atomic Write: `save.tmp`에 저장 후 main 교체
 - Backup Recovery: `save.bak` 자동 복구
 - Backward Compatibility: 구버전 JSON 감지 → 로드 후 즉시 마이그레이션 저장
 - Security/Size: JSON → (압축) → Base64 암호화
-#### 📁 관련 코드: [`Assets/Scripts/SaveService.cs`](Assets/Scripts/SaveService.cs)
+#### 📁 관련 코드: [`SaveService.cs`](GenomeSlayer/Assets/Project/Scripts/SaveService.cs)
 
 ### 4) Wave Manager 통합 상태 관리 + 성능 보호
 - BreakTime ↔ Wave 진행 상태 통합 관리
 - maxEnemyCount 상한 + **ID별 Queue Pooling** + Prewarm
 - 웨이브 종료 시 활성 적 회수/카운트 정리 + UI/플레이어 상태 리셋
-#### 📁 관련 코드: [`Assets/Scripts/WavesManager.cs`](Assets/Scripts/WavesManager.cs)
+#### 📁 관련 코드: [`WavesManager.cs`](GenomeSlayer/Assets/Project/Scripts/WavesManager.cs)
 
 ### 5) Audio Manager
 - BGM 2채널 크로스페이드로 자연스러운 전환
 - SFX는 AudioSource 풀링으로 동시 재생 안정화
 - Mixer 파라미터를 Settings와 연동 (슬라이더 저장)
-#### 📁 관련 코드: [`Assets/Scripts/AudioManager.cs`](Assets/Scripts/AudioManager.cs)
+#### 📁 관련 코드: [`AudioManager.cs`](GenomeSlayer/Assets/Project/Scripts/AudioManager.cs)
 
 ### 6) Mobile UX
 - 카메라: 드래그 회전/핀치 줌/더블탭 스냅 + UI 터치 차단
 - 인벤: 롱프레스 이후 드래그로 드랍/폐기(오동작 방지)
-#### 📁 관련 코드: 
-- 카메라 : [`Assets/Scripts/CamHorizontalDrag.cs`](Assets/Scripts/CamHorizontalDrag.cs)
-- 롱프레스 : [`Assets/Scripts/QuickSlotDiscardHandler.cs`](Assets/Scripts/QuickSlotDiscardHandler.cs)
+#### 📁 관련 코드:
+- 카메라 : [`CamHorizontalDrag.cs`](GenomeSlayer/Assets/Project/Scripts/CamHorizontalDrag.cs)
+- 롱프레스 : [`QuickSlotDiscardHandler.cs`](GenomeSlayer/Assets/Project/Scripts/QuickSlotDiscardHandler.cs)
 
 ---
 
